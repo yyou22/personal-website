@@ -13,7 +13,13 @@ import thumbPichu2 from '../public/images/works/pichu2_eyecatch.png'
 import thumbFreeDBTagger from '../public/images/works/freedbtagger_eyecatch.png'
 import thumbAmembo from '../public/images/works/amembo_eyecatch.png'
 
+import thumbRNN from '../public/images/works/rnn_eyecatch.png'
+import thumbST from '../public/images/works/st_eyecatch.jpg'
+import thumbSocr from '../public/images/works/socr_eyecatch.png'
+import thumbEzbake from '../public/images/works/ezbake_eyecatch.png'
+
 const Works = () => (
+
   <Layout title="Works">
     <Container>
       <Heading as="h3" fontSize={20} mb={4}>
@@ -21,95 +27,53 @@ const Works = () => (
       </Heading>
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
-        <Section>
-          <WorkGridItem id="inkdrop" title="Inkdrop" thumbnail={thumbInkdrop}>
-            A Markdown note-taking app with 100+ plugins, cross-platform and
-            encrypted data sync support
-          </WorkGridItem>
-        </Section>
+
         <Section>
           <WorkGridItem
-            id="walknote"
-            title="walknote"
-            thumbnail={thumbWalknote}
+            id="rnn"
+            title="AI Melody"
+            thumbnail={thumbRNN}
           >
-            Music recommendation app for iOS
+            A RNN-based melody generator (vanilla RNN, LSTM & GRU networks)
+            that generates music based on Touhou Project
+          </WorkGridItem>
+        </Section>
+
+        <Section>
+          <WorkGridItem
+            id="softtriple"
+            title="BaselineST"
+            thumbnail={thumbST}
+          >
+            A novel machine learning model that incorporates SoftTriple loss to elevate
+            state-of-the-art performance in few-shot classifications
           </WorkGridItem>
         </Section>
 
         <Section delay={0.1}>
           <WorkGridItem
-            id="fourpainters"
-            title="The four painters"
-            thumbnail={thumbFourPainters}
+            id="socr"
+            title="SOCR"
+            thumbnail={thumbSocr}
           >
-            A video work generated with deep learning, imitating famous four
-            painters like Van Gogh
+            Design and disseminate advanced methods/tools in probability, staticstics,
+            and machine learning; develop enhanced analysis and visualizations on "Big Data"
           </WorkGridItem>
         </Section>
+
         <Section delay={0.1}>
-          <WorkGridItem id="menkiki" thumbnail={thumbMenkiki} title="Menkiki">
-            An app that suggests ramen(noodle) shops based on a given photo of
-            the ramen you want to eat
-          </WorkGridItem>
-        </Section>
-      </SimpleGrid>
-
-      <Section delay={0.2}>
-        <Divider my={6} />
-
-        <Heading as="h3" fontSize={20} mb={4}>
-          Collaborations
-        </Heading>
-      </Section>
-
-      <SimpleGrid columns={[1, 1, 2]} gap={6}>
-        <Section delay={0.3}>
           <WorkGridItem
-            id="modetokyo"
-            thumbnail={thumbModeTokyo}
-            title="mode.tokyo"
+            id="ezbake"
+            title="ezBake"
+            thumbnail={thumbEzbake}
           >
-            The mode magazine for understanding to personally enjoy Japan
+            Implementation of a complex software that automates quality testing
+            of camera lens by communicating with a thermal chamber via Modbus Protocol
           </WorkGridItem>
         </Section>
-        <Section delay={0.3}>
-          <WorkGridItem id="styly" thumbnail={thumbStyly} title="Styly">
-            A VR Creative tools for fashion brands
-          </WorkGridItem>
-        </Section>
+
       </SimpleGrid>
 
-      <Section delay={0.4}>
-        <Divider my={6} />
-
-        <Heading as="h3" fontSize={20} mb={4}>
-          Old works
-        </Heading>
-      </Section>
-
-      <SimpleGrid columns={[1, 1, 2]} gap={6}>
-        <Section delay={0.5}>
-          <WorkGridItem id="pichu2" thumbnail={thumbPichu2} title="Pichu*Pichu">
-            Twitter client app for iPhone Safari
-          </WorkGridItem>
-        </Section>
-        <Section delay={0.5}>
-          <WorkGridItem
-            id="freedbtagger"
-            thumbnail={thumbFreeDBTagger}
-            title="freeDBTagger"
-          >
-            Automatic audio file tagging tool using FreeDB for Windows
-          </WorkGridItem>
-        </Section>
-        <Section delay={0.6}>
-          <WorkGridItem id="amembo" thumbnail={thumbAmembo} title="Amembo">
-            P2P private file sharing tool with MSN Messenger integration for
-            Windows
-          </WorkGridItem>
-        </Section>
-      </SimpleGrid>
     </Container>
   </Layout>
 )
