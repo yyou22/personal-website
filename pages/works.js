@@ -7,6 +7,7 @@ import thumbRNN from '../public/images/works/rnn_eyecatch.png'
 import thumbST from '../public/images/works/st_eyecatch.png'
 import thumbSocr from '../public/images/works/socr_eyecatch.png'
 import thumbEzbake from '../public/images/works/ezbake_eyecatch.png'
+import thumbPop from '../public/images/works/pop_eyecatch.png'
 
 const Works = () => (
 
@@ -21,7 +22,7 @@ const Works = () => (
         <Section>
           <WorkGridItem
             id="rnn"
-            title="AI Melody"
+            title="Melody AI"
             thumbnail={thumbRNN}
           >
             A RNN-based melody generator (vanilla RNN, LSTM & GRU networks)
@@ -43,7 +44,7 @@ const Works = () => (
         <Section delay={0.1}>
           <WorkGridItem
             id="socr"
-            title="SOCR"
+            title="SOCR - Big Data"
             thumbnail={thumbSocr}
           >
             Design and disseminate advanced methods/tools in probability, statistics,
@@ -63,14 +64,24 @@ const Works = () => (
         </Section>
 
         <Section delay={0.2}>
-          <Divider my={6} />
-
-          <Heading as="h3" fontSize={20} mb={4}>
-            Older Work
-          </Heading>
+          <WorkGridItem
+            id="ngram"
+            title="Pop AI"
+            thumbnail={thumbPop}
+          >
+            An N-gram-based AI application that produces new generated notes and combines them with drum beats
+          </WorkGridItem>
         </Section>
 
       </SimpleGrid>
+
+      <Section delay={0.3}>
+        <Divider my={6} />
+
+        <Heading as="h3" fontSize={20} mb={4}>
+          Older Works
+        </Heading>
+      </Section>
 
     </Container>
   </Layout>
