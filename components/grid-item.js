@@ -14,8 +14,7 @@ import {
   ModalBody,
   ModalFooter,
   Button,
-  useColorModeValue,
-  Badge
+  useColorModeValue
 } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
