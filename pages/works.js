@@ -63,7 +63,19 @@ const Works = () => (
           </WorkGridItem>
         </Section>
 
-        <Section delay={0.2}>
+      </SimpleGrid>
+
+      <Section delay={0.2}>
+        <Divider my={6} />
+
+        <Heading as="h3" fontSize={20} mb={4}>
+          Older Works
+        </Heading>
+      </Section>
+
+      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+
+        <Section delay={0.3}>
           <WorkGridItem
             id="ngram"
             title="Pop AI"
@@ -74,14 +86,6 @@ const Works = () => (
         </Section>
 
       </SimpleGrid>
-
-      <Section delay={0.3}>
-        <Divider my={6} />
-
-        <Heading as="h3" fontSize={20} mb={4}>
-          Older Works
-        </Heading>
-      </Section>
 
     </Container>
   </Layout>
