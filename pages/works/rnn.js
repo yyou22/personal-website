@@ -23,13 +23,15 @@ const Work = () => (
         series Touhou Project.
       </P>
       <P>
-        In this study, three RNN-based models are implemented with multiple RNN
-        variants (vanilla RNN, LSTM & GRU). A set of MIDI files are collected and
-        partitioned into single-instrument melodies to be used as training data and
-        starting sequences.
+        In this study, three RNN-based models are implemented each with a RNN
+        variant (vanilla RNN, LSTM & GRU). A set of MIDI files are collected and
+        partitioned via DAW into single-instrument melodies to be used as training data and
+        starting sequences. Model performance is evaluated via note prediction accuracy
+        and user survey on generated melodies.
       </P>
       <UnorderedList my={4}>
-        <ListItem>Takes MIDI files as inputs</ListItem>
+        <Meta>Core Features</Meta>
+        <ListItem>Takes MIDI files as network inputs</ListItem>
         <ListItem>Includes 3 RNN variant models (vanilla RNN, LSTM & GRU)</ListItem>
         <ListItem>Generates novel melodies based on provided starting sequences</ListItem>
       </UnorderedList>
@@ -42,8 +44,14 @@ const Work = () => (
           <span>Python3, Keras Tensorflow, Logic Pro</span>
         </ListItem>
         <ListItem>
+          <Meta>Playlist</Meta>
+          <Link href="https://soundcloud.com/yyou22/sets/melody-ai">
+            soundcloud.com/yyou22/sets/melody-ai <ExternalLinkIcon mx="2px" />
+          </Link>
+        </ListItem>
+        <ListItem>
           <Meta>Source</Meta>
-          <Link href="https://github.com/craftzdog/caffe-ios-sample">
+          <Link href="https://github.com/yyou22/RNN-Melody-Generator">
             github.com/yyou22/RNN-Melody-Generator <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
