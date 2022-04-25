@@ -1,17 +1,14 @@
 import {
-  Box,
   Container,
   Badge,
   Link,
   List,
   ListItem,
-  SimpleGrid,
   UnorderedList,
-  Image
 } from '@chakra-ui/react'
 import Layout from '../../components/layouts/article'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { Title, WorkImage, Meta } from '../../components/work'
+import { Title, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 
 const Work = () => (
@@ -26,8 +23,8 @@ const Work = () => (
         series Touhou Project.
       </P>
       <P>
-        In this study, three RNN-based models are implemented with different kinds of RNN
-        variants (vanilla RNN, LSTM & GRU). A set o MIDI files are collected and
+        In this study, three RNN-based models are implemented with multiple RNN
+        variants (vanilla RNN, LSTM & GRU). A set of MIDI files are collected and
         partitioned into single-instrument melodies to be used as training data and
         starting sequences.
       </P>
@@ -37,7 +34,7 @@ const Work = () => (
         <ListItem>Generates novel melodies based on provided starting sequences</ListItem>
       </UnorderedList>
 
-      <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1429623169&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+      <iframe width="100%" height="300" scrolling="no" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1429623169&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 
       <List ml={4} my={4}>
         <ListItem>
@@ -47,7 +44,7 @@ const Work = () => (
         <ListItem>
           <Meta>Source</Meta>
           <Link href="https://github.com/craftzdog/caffe-ios-sample">
-            github.com/craftzdog/caffe-ios-sample <ExternalLinkIcon mx="2px" />
+            github.com/yyou22/RNN-Melody-Generator <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
       </List>
