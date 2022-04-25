@@ -25,6 +25,12 @@ const Work = () => (
         of sequence size 100 based on music from the Japanese video game
         series Touhou Project.
       </P>
+      <P>
+        In this study, three RNN-based models are implemented with different kinds of RNN
+        variants (vanilla RNN, LSTM & GRU). A set o MIDI files are collected and
+        partitioned into single-instrument melodies to be used as training data and
+        starting sequences.
+      </P>
       <UnorderedList my={4}>
         <ListItem>Takes MIDI files as inputs</ListItem>
         <ListItem>Includes 3 RNN variant models (vanilla RNN, LSTM & GRU)</ListItem>
