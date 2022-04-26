@@ -41,7 +41,7 @@ const Work = () => (
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Skills</Meta>
-          <span>Python3, Keras Tensorflow, Logic Pro</span>
+          <span>Python3, Keras Tensorflow, Machine Learning, Logic Pro</span>
         </ListItem>
         <ListItem>
           <Meta>Playlist</Meta>
