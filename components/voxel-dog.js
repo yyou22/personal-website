@@ -74,7 +74,7 @@ const VoxelDog = () => {
       controls.target = target
       setControls(controls)
 
-      loadGLTFModel(scene, '/dog.glb', {
+      loadGLTFModel(scene, '/scene.glb', {
         receiveShadow: false,
         castShadow: false
       }).then(() => {
@@ -87,11 +87,12 @@ const VoxelDog = () => {
       const animate = () => {
         req = requestAnimationFrame(animate)
 
-        frame = frame <= 100 ? frame + 1 : frame
+        frame = frame <= 0 ? frame + 1 : frame
 
-        if (frame <= 100) {
+        if (frame == 0) {
           const p = initialCameraPosition
-          const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20
+          //const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20
+          const rotSpeed = 5
 
           camera.position.y = 10
           camera.position.x =
