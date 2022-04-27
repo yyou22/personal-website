@@ -55,6 +55,10 @@ const Work = () => (
             github.com/yyou22/RNN-Melody-Generator <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
+        <ListItem>
+          <Meta>Keywords</Meta>
+          <span>Recurrent Neural Network, Artificial Intelligence</span>
+        </ListItem>
       </List>
     </Container>
   </Layout>

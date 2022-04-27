@@ -18,30 +18,38 @@ const Work = () => (
       <P>
         In this model, a feature extractor and a Baseline++ classifier is trained from scratch with
         a hybrid loss function that combines the SoftTriple loss and standard cross-entropy
-        loss.
+        loss. The goal is to improve model performance by capturing the hidden distribution of
+        the dataset by reducing the intra-class variance, as each class is assigned multiple representative
+        centers rather than one from the conventional SoftMax loss function.
+        In the fine-tuning stage, the general structure from Baseline++ is retained and a
+        new classifier is trained and fine-turned with the labeled examples from the support set.
+        The model is evaluated in tasks such as image classification (with CUB-200-2011 dataset)
+        and cross-domain character recognition (Omniglot -> EMNIST).
+      </P>
+      <P>
+        An alternative model, denoted as BaselineST+, is also investigated in the Appendix section
+        of the paper. In BaselineST+, a classifier is built with the SoftTriple loss by summing up
+        the resulting weights of each centroud from the same class, whic is then fed through a
+        SoftMax function to finalize the proabibility for eac class.
       </P>
       <List ml={4} my={4}>
         <ListItem>
-          <Meta>Website</Meta>
-          <Link href="https://www.inkdrop.app/">
-            https://www.inkdrop.app/ <ExternalLinkIcon mx="2px" />
-          </Link>
-        </ListItem>
-        <ListItem>
           <Meta>Skills</Meta>
-          <span>Python3, Pytorch, Machine Learning, Few-shot Classification</span>
+          <span>Python3, Pytorch, Machine Learning</span>
         </ListItem>
         <ListItem>
-          <Meta>Blogpost</Meta>
-          <Link href="https://blog.inkdrop.app/how-ive-attracted-the-first-500-paid-users-for-my-saas-that-costs-5-mo-7a5b94b8e820">
-            How I’ve Attracted The First 500 Paid Users For My SaaS That Costs
-            $5/mo <ExternalLinkIcon mx="2px" />
+          <Meta>Source</Meta>
+          <Link href="https://github.com/yyou22/FewShotSoftTriple">
+            github.com/yyou22/FewShotSoftTriple <ExternalLinkIcon mx="2px" />
           </Link>
+        </ListItem>
+        <ListItem>
+          <Meta>Keywords</Meta>
+          <span>Image Classification, Few-shot Classification, Distance Metric Learning,
+          Convolution Network, Cross-Domain Character Recognition</span>
         </ListItem>
       </List>
 
-      <WorkImage src="/images/works/inkdrop_01.png" alt="Inkdrop" />
-      <WorkImage src="/images/works/inkdrop_02.png" alt="Inkdrop" />
     </Container>
   </Layout>
 )
