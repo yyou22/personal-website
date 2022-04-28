@@ -22,6 +22,10 @@ import thumbYouTube from '../public/images/links/youtube.png'
 import thumbInkdrop from '../public/images/works/inkdrop_eyecatch.png'
 import Image from 'next/image'
 
+import { WorkGridItem } from '../components/grid-item'
+import thumbRNN from '../public/images/works/rnn_eyecatch.png'
+import thumbSocr from '../public/images/works/socr_eyecatch.png'
+
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
 })
@@ -64,7 +68,7 @@ const Home = () => (
             overflow="hidden"
           >
             <ProfileImage
-              src="/images/takuya.jpg"
+              src="/images/pfp.jpg"
               alt="Profile image"
               borderRadius="full"
               width="100%"
@@ -115,11 +119,37 @@ const Home = () => (
         </Heading>
       </Section>
 
+      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+
+        <Section delay={0.4}>
+          <WorkGridItem
+            id="rnn"
+            title="Melody AI"
+            thumbnail={thumbRNN}
+          >
+            A RNN-based melody generator (vanilla RNN, LSTM & GRU networks)
+            that generates music based on Touhou Project
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.4}>
+          <WorkGridItem
+            id="socr"
+            title="SOCR - Big Data"
+            thumbnail={thumbSocr}
+          >
+            Design and disseminate advanced methods/tools in probability, statistics,
+            and machine learning; develop enhanced analysis and visualizations on &quot;Big Data&quot;
+          </WorkGridItem>
+        </Section>
+
+      </SimpleGrid>
+
       <Section delay={0.4}>
         <Box align="center" my={4}>
           <NextLink href="/works" scroll={false}>
             <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-              Click to see my full portfolio
+              See My Full Portfolio
             </Button>
           </NextLink>
         </Box>
