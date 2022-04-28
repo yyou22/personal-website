@@ -83,16 +83,13 @@ const Home = () => (
           About Me
         </Heading>
         <Paragraph>
-          Takuya is a freelance and a full-stack developer based in Osaka with a
-          passion for building digital services/stuff he wants. He has a knack
-          for all things launching products, from planning and designing all the
-          way to solving real-life problems with code. When not online, he loves
-          hanging out with his camera. Currently, he is living off of his own
-          product called{' '}
-          <NextLink href="/works/inkdrop" scroll={false}>
-            <Link>Inkdrop</Link>
-          </NextLink>
-          .
+          Hello, my name is Yuzhe and I am a Mathematics / Computer Science student
+          seeking a full-time job starting Januray 2023. I was an undergraduate research member of
+          the Statistics Online Computational Resource (SOCR) at University of Michigan,
+          Ann Arbor and I am currently pursuing a Master's degree in Mathematics + Computer Science.
+          Some of my academic interests include Software Development, Data Analytics,
+          Machine Learning, Creative AI & more. During my spare time, I like to work on
+          my personal projects.
         </Paragraph>
       </Section>
 
@@ -101,15 +98,8 @@ const Home = () => (
           I ♥
         </Heading>
         <Paragraph>
-          Art, Music,{' '}
-          <Link href="https://illust.odoruinu.net/" target="_blank">
-            Drawing
-          </Link>
-          , Playing Drums,{' '}
-          <Link href="https://500px.com/p/craftzdog" target="_blank">
-            Photography
-          </Link>
-          , Leica, Machine Learning
+          Coding, Software Development, Data Analytics, Machine Learning, Drawing,
+          Graphic Design, Music Composing, Story Writing, UI/UX Design
         </Paragraph>
       </Section>
 
