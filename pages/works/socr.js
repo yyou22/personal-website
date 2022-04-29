@@ -66,6 +66,8 @@ const Work = () => (
         </ListItem>
       </List>
 
+      <WorkImage src="/images/works/socr0.jpg" alt="socr" />
+
     </Container>
   </Layout>
 )
