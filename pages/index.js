@@ -41,7 +41,7 @@ const Home = () => (
         bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
         css={{ backdropFilter: 'blur(10px)' }}
       >
-        Hello, my name is Yuzhe! Welcome to my personal website.
+        Hello, I am Yuzhe! Welcome to my personal website.
       </Box>
 
       <Box display={{ md: 'flex' }}>
@@ -105,7 +105,7 @@ const Home = () => (
 
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
-          Feature Works
+          Featured Works
         </Heading>
       </Section>
 
