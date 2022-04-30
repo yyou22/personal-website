@@ -1,4 +1,4 @@
-import { Container, Badge, Link, List, ListItem } from '@chakra-ui/react'
+import { Container, Badge, Link, List, ListItem, SimpleGrid } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
@@ -24,13 +24,18 @@ const Work = () => (
         Division: Data Analytics - MIMIC-III
       </P>
       <P>
-        Our Role: Interrogated the MIMIC-III database, a large collection of ~43,000
+        My Role: Interrogated the MIMIC-III database, a large collection of ~43,000
         critical care patients from an ICU in Boston, MA, by utilizing R/Rstudio to digest
         the vital signs, laboratory results, free-text data, and wavefroms available in this
         unique dataset and predict clinical outcomes via statistical modeling tools; developed
         advanced AI/ML dara analytics to address specific biomedical, healthcare, neuroimaging-genectics,
         and other applications.
       </P>
+      <br />
+      <SimpleGrid columns={1} gap={2}>
+        <WorkImage src="/images/works/socr0.jpg" alt="socr" />
+        <WorkImage src="/images/works/socr2.png" alt="socr" />
+      </SimpleGrid>
       <List ml={4} my={4}>
         <ListItem>
           <Meta>SOCR Website</Meta>
@@ -65,8 +70,6 @@ const Work = () => (
           <span>SOCR, Big Data, Data Analytics, Numerical Methods</span>
         </ListItem>
       </List>
-
-      <WorkImage src="/images/works/socr0.jpg" alt="socr" />
 
     </Container>
   </Layout>
