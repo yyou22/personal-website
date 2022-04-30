@@ -1,25 +1,17 @@
 import NextLink from 'next/link'
 import {
-  Link,
   Container,
   Heading,
   Box,
   SimpleGrid,
   Button,
-  List,
-  ListItem,
   useColorModeValue,
   chakra
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
-import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import { GridItem } from '../components/grid-item'
-import { IoLogoTwitter, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
-import thumbYouTube from '../public/images/links/youtube.png'
-import thumbInkdrop from '../public/images/works/inkdrop_eyecatch.png'
 import Image from 'next/image'
 
 import { WorkGridItem } from '../components/grid-item'
@@ -86,7 +78,7 @@ const Home = () => (
           Hello, my name is Yuzhe and I am a Mathematics / Computer Science student
           seeking a full-time job starting Januray 2023. I was an undergraduate research member of
           the Statistics Online Computational Resource (SOCR) at University of Michigan,
-          Ann Arbor and I am currently pursuing a Master's degree in Mathematics + Computer Science.
+          Ann Arbor and I am currently pursuing a Master&apos;s degree in Mathematics + Computer Science.
           Some of my academic interests include Software Development, Data Analytics,
           Machine Learning, Creative AI & more. During my spare time, I like to work on
           my personal projects.

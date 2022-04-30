@@ -1,6 +1,6 @@
 import { Container, Badge, Link, List, ListItem } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { Title, WorkImage, Meta } from '../../components/work'
+import { Title, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 
@@ -24,7 +24,7 @@ const Work = () => (
         In the fine-tuning stage, the general structure from Baseline++ is retained and a
         new classifier is trained and fine-turned with the labeled examples from the support set.
         The model is evaluated in tasks such as image classification (with CUB-200-2011 dataset)
-        and cross-domain character recognition (Omniglot -> EMNIST).
+        and cross-domain character recognition (Omniglot -&gt; EMNIST).
       </P>
       <P>
         An alternative model, denoted as BaselineST+, is also investigated in the Appendix section
