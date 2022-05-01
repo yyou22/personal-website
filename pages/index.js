@@ -95,7 +95,10 @@ const Home = () => (
           I ♥
         </Heading>
         <Paragraph>
-          Coding, Software Development, Data Analytics, Machine Learning, Drawing,
+          Coding, Software Development, {' '}
+          <NextLink href="/works/socr" scroll={false}>
+            <Link>Data Analytics</Link>
+          </NextLink>, Machine Learning, Drawing,
           Graphic Design, Music Composing, Story Writing, UI/UX Design
         </Paragraph>
       </Section>
