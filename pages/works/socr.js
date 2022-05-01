@@ -11,20 +11,34 @@ const Work = () => (
         SOCR - Big Data <Badge>2019</Badge>
       </Title>
       <P>
-        The Statistics Online Computational Resource (SOCR) designs and disseminates
+        The {' '}
+        <Link href="https://www.socr.umich.edu/" scroll={false}>
+          <Link>Statistics Online Computational Resource</Link>
+        </Link>
+        &nbsp;(SOCR) designs and disseminates
         educational materials, web-services, and advanced methods/tools in probability,
-        statistics, and machine learning. This is a research team led by faculties under the
-        UMich-MDP Progam (University of Michigan Multidisciplinary Design Program) that
+        statistics, and machine learning. This is a research team led by faculties under the {' '}
+        <Link href="https://mdp.engin.umich.edu/" scroll={false}>
+          <Link>UMich-MDP Progam</Link>
+        </Link>
+        &nbsp;(University of Michigan Multidisciplinary Design Program) that
         develops enhanced analysis and visualization toolboxes with an emphasis on &quot;Big Data,&quot;
         which are large, heterogeneous, time-varying, multisource and incomplete dataset that are
         difficult to analyze and interpret in meaningful ways using classical probability,
         statistical or algorithmic appoaches.
       </P>
       <P>
-        Division: Data Analytics - MIMIC-III
+        Division: {' '}
+        <Link href="https://github.com/SOCR/MIMIC-Analytics" scroll={false}>
+          <Link>Data Analytics - MIMIC-III</Link>
+        </Link>
       </P>
       <P>
-        My Role: Interrogated the MIMIC-III database, a large collection of ~43,000
+        My Role: Interrogated the {' '}
+        <Link href="https://physionet.org/content/mimiciii/1.4/" scroll={false}>
+          <Link>MIMIC-III</Link>
+        </Link>
+        &nbsp;database, a large collection of ~43,000
         critical care patients from an ICU in Boston, MA, by utilizing R/Rstudio to digest
         the vital signs, laboratory results, free-text data, and wavefroms available in this
         unique dataset and predict clinical outcomes via statistical modeling tools; developed
@@ -32,9 +46,10 @@ const Work = () => (
         and other applications.
       </P>
       <br />
-      <SimpleGrid columns={1} gap={2}>
-        <WorkImage src="/images/works/socr0.jpg" alt="socr" />
+      <WorkImage src="/images/works/socr0.jpg" alt="socr" />
+      <SimpleGrid columns={2} gap={2}>
         <WorkImage src="/images/works/socr2.png" alt="socr" />
+        <WorkImage src="/images/works/socr3.jpg" alt="socr" />
       </SimpleGrid>
       <List ml={4} my={4}>
         <ListItem>
@@ -47,6 +62,12 @@ const Work = () => (
           <Meta>MDP Website</Meta>
           <Link href="https://mdp.engin.umich.edu/">
             https://mdp.engin.umich.edu/ <ExternalLinkIcon mx="2px" />
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Meta>MIMIC-III</Meta>
+          <Link href="https://physionet.org/content/mimiciii/1.4/">
+            MIMIC-III Clinical Database <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
         <ListItem>

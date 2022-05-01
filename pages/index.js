@@ -1,5 +1,6 @@
 import NextLink from 'next/link'
 import {
+  Link,
   Container,
   Heading,
   Box,
@@ -76,8 +77,12 @@ const Home = () => (
         </Heading>
         <Paragraph>
           Hello, my name is Yuzhe and I am a Mathematics / Computer Science student
-          seeking a full-time job starting Januray 2023. I was an undergraduate research member of
-          the Statistics Online Computational Resource (SOCR) at University of Michigan,
+          seeking a full-time job starting in 2023. I was an undergraduate research member of
+          the {' '}
+          <Link href="https://www.socr.umich.edu/" scroll={false}>
+            <Link>Statistics Online Computational Resource</Link>
+          </Link>
+          &nbsp;(SOCR) at University of Michigan,
           Ann Arbor and I am currently pursuing a Master&apos;s degree in Mathematics + Computer Science.
           Some of my academic interests include Software Development, Data Analytics,
           Machine Learning, Creative AI & more. During my spare time, I like to work on
