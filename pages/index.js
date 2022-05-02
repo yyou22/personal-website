@@ -98,7 +98,16 @@ const Home = () => (
           Coding, Software Development, {' '}
           <NextLink href="/works/socr" scroll={false}>
             <Link>Data Analytics</Link>
-          </NextLink>, Machine Learning, Drawing,
+          </NextLink>
+          ,&nbsp;
+          <NextLink href="/works/rnn" scroll={false}>
+            <Link>Creative AI</Link>
+          </NextLink>
+          ,&nbsp;
+          <NextLink href="/works/softtriple" scroll={false}>
+            <Link>Machine Learning</Link>
+          </NextLink>
+          , Drawing,
           Graphic Design, Music Composing, Story Writing, UI/UX Design
         </Paragraph>
       </Section>
