@@ -1,4 +1,4 @@
-import { Container, Badge, Link, List, ListItem } from '@chakra-ui/react'
+import { Container, Badge, Link, List, ListItem, UnorderedList, } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, Meta } from '../../components/work'
 import P from '../../components/paragraph'
@@ -23,8 +23,17 @@ const Work = () => (
         centers rather than one from the conventional SoftMax loss function.
         In the fine-tuning stage, the general structure from Baseline++ is retained and a
         new classifier is trained and fine-turned with the labeled examples from the support set.
-        The model is evaluated in tasks such as image classification (with CUB-200-2011 dataset)
-        and cross-domain character recognition (Omniglot -&gt; EMNIST).
+        The model is evaluated in tasks such as image classification (with {' '}
+        <Link href="https://paperswithcode.com/dataset/cub-200-2011" scroll={false}>
+          <Link>CUB-200-2011 dataset</Link>
+        </Link>)
+        and cross-domain character recognition ({''}
+        <Link href="https://github.com/brendenlake/omniglot" scroll={false}>
+          <Link>Omniglot</Link>
+        </Link> -&gt;&nbsp;
+        <Link href="https://paperswithcode.com/dataset/emnist" scroll={false}>
+          <Link>EMNIST</Link>
+        </Link>).
       </P>
       <P>
         An alternative model, denoted as BaselineST+, is also investigated in the Appendix section
@@ -32,6 +41,14 @@ const Work = () => (
         the resulting weights of each centroid from the same class, whic is then fed through a
         SoftMax function to finalize the probability for each class.
       </P>
+      <UnorderedList my={4}>
+        <Meta>Core Features</Meta>
+        <ListItem>Incorporates SoftTriple loss into existing distance metric learning techniques</ListItem>
+        <ListItem>Trained a feature extractor and a classifier from scratch and fine-tuned the model with support set</ListItem>
+        <ListItem> Evaluated model performance in image classification and cross-domain character recognition</ListItem>
+        <ListItem>Reproduced and re-evaluated the experimental results of Baseline++</ListItem>
+        <ListItem>Investigated an alternative model that performed few-shot classification based on SoftTriple loss only</ListItem>
+      </UnorderedList>
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Skills</Meta>
