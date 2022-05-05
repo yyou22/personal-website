@@ -5,7 +5,7 @@ import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 
 const Work = () => (
-  <Layout title="Inkdrop">
+  <Layout title="ezBake">
     <Container>
       <Title>
         ezBake <Badge>2019</Badge>
@@ -18,21 +18,22 @@ const Work = () => (
       <P>
         A separate interactive software is scripted in MATLAB that assists in developing
         complex graphical charts and testing camera controls by extracting and manipulating the
-        data from the thermal chamber.
+        data from the thermal chamber. The goal is to simplify the process of quality control and
+        provide visualizations of data that are easy to understand for potential clients.
       </P>
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Skills</Meta>
-          <span>C++, MATLAB, Automated Quality Testing</span>
+          <span>C++, MATLAB, Data Visualization, HCI</span>
         </ListItem>
         <ListItem>
           <Meta>Keywords</Meta>
-          <span>Software Development, Automated Testing</span>
+          <span>Software Development, Automated Quality Testing</span>
         </ListItem>
       </List>
 
-      <WorkImage src="/images/works/inkdrop_01.png" alt="Inkdrop" />
-      <WorkImage src="/images/works/inkdrop_02.png" alt="Inkdrop" />
+      <WorkImage src="/images/works/ezbake1.JPG" alt="ezbake" />
+      <WorkImage src="/images/works/ezbake2.JPG" alt="ezbake" />
     </Container>
   </Layout>
 )
