@@ -107,8 +107,8 @@ const Home = () => (
           <NextLink href="/works/softtriple" scroll={false}>
             <Link>Machine Learning</Link>
           </NextLink>
-          , Drawing,
-          Graphic Design, Music Composing, Story Writing, UI/UX Design
+          , Data Visualization, Drawing,
+          Graphic Design, Music Composing, Writing, UI/UX Design
         </Paragraph>
       </Section>
 
