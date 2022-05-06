@@ -15,30 +15,26 @@ const Work = () => (
         variants (Unigram, Bigram & Trigram) that reads from an inventory of
         pre-loaded songs and generates novel note sequences by detecting language
         patterns found in those music. It utilizes natural language processing techniques and a
-        Python program named PySynth to generate random clips of music and then combines
+        Python program named PySynth to generate short clips of music and then combines
         the output with a selection from a pre-defined set of drum beats and bass loops.
+      </P>
+      <P>
+        A separate Reddit Bot is implemented that replies to any comment exactly once on
+        a Reddit Threadt if it contains the words "music" or "lyric," regardless of
+        the letter case. If the comment contains "lyrics," the bot will reply with
+        artificially generated lyrics. If the comment contains "music," the bot will generate
+        music, access its own google drive, and upload its music and reply with a link to the
+        song on Google Drive.
       </P>
       <List ml={4} my={4}>
         <ListItem>
-          <Meta>Website</Meta>
-          <Link href="https://www.inkdrop.app/">
-            https://www.inkdrop.app/ <ExternalLinkIcon mx="2px" />
-          </Link>
+          <Meta>Skills</Meta>
+          <span>Python 2.7, PySynth</span>
         </ListItem>
         <ListItem>
-          <Meta>Platform</Meta>
-          <span>Windows/macOS/Linux/iOS/Android</span>
-        </ListItem>
-        <ListItem>
-          <Meta>Stack</Meta>
-          <span>NodeJS, Electron, React Native</span>
-        </ListItem>
-        <ListItem>
-          <Meta>Blogpost</Meta>
-          <Link href="https://blog.inkdrop.app/how-ive-attracted-the-first-500-paid-users-for-my-saas-that-costs-5-mo-7a5b94b8e820">
-            How I’ve Attracted The First 500 Paid Users For My SaaS That Costs
-            $5/mo <ExternalLinkIcon mx="2px" />
-          </Link>
+          <Meta>Keywords</Meta>
+          <span>Creative AI, N-gram Model, Natural Language Processing (NLP),
+          Probabilistic Language Model</span>
         </ListItem>
       </List>
 

@@ -1,4 +1,4 @@
-import { Container, Badge, List, ListItem } from '@chakra-ui/react'
+import { Container, Badge, List, ListItem, UnorderedList} from '@chakra-ui/react'
 import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
@@ -20,6 +20,14 @@ const Work = () => (
         data from the thermal chamber. The goal is to simplify the process of quality control and
         provide visualizations of data that are easy to understand for potential clients.
       </P>
+
+      <UnorderedList my={4}>
+        <Meta>Core Features</Meta>
+        <ListItem>Automate and simplify camera lenses quality testing</ListItem>
+        <ListItem>Communicate with the testing chamber via Modbus Protocol</ListItem>
+        <ListItem>Generate data visualizations that are easy to comprehend</ListItem>
+      </UnorderedList>
+
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Skills</Meta>
