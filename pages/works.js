@@ -1,4 +1,4 @@
-import { Container, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
@@ -8,6 +8,7 @@ import thumbST from '../public/images/works/st_eyecatch.png'
 import thumbSocr from '../public/images/works/socr_eyecatch.png'
 import thumbEzbake from '../public/images/works/ezbake_eyecatch.png'
 import thumbPop from '../public/images/works/pop_eyecatch.png'
+import thumbInfoVis from '../public/images/works/infovis_eyecatch.png'
 
 const Works = () => (
 
@@ -60,6 +61,16 @@ const Works = () => (
           >
             Implementation of a complex software that automates quality testing
             of camera lens by communicating with a thermal chamber via Modbus Protocol
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.1}>
+          <WorkGridItem
+            id="infovis"
+            title="InfoVis xAI"
+            thumbnail={thumbInfoVis}
+          >
+            Design, develop, and evaluate visualization methods for AI explainability
           </WorkGridItem>
         </Section>
 
