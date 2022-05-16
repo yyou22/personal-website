@@ -1,4 +1,4 @@
-import { Container, Badge, List, ListItem } from '@chakra-ui/react'
+import { Container, Badge, List, ListItem, UnorderedList} from '@chakra-ui/react'
 import { Title, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
@@ -19,12 +19,21 @@ const Work = () => (
       </P>
       <P>
         A separate Reddit Bot is implemented that replies to any comment exactly once on
-        a Reddit Threadt if it contains the words &quot;music&quot; or &quot;lyric,&quot; regardless of
+        a Reddit Thread if it contains the words &quot;music&quot; or &quot;lyric,&quot; regardless of
         the letter case. If the comment contains &quot;lyrics,&quot; the bot will reply with
         artificially generated lyrics. If the comment contains &quot;music,&quot; the bot will generate
         music, access its own google drive, and upload its music and reply with a link to the
         song on Google Drive.
       </P>
+      <UnorderedList my={4}>
+        <Meta>Core Features</Meta>
+        <ListItem>Generates novel note sequences and combines them with drum beats and bass tunes</ListItem>
+        <ListItem>Includes 3 N-gram variant models (Unigram, Bigram & Trigram)</ListItem>
+        <ListItem>Comes with a Reddit Bot that responds to user requests for new music & lyrics</ListItem>
+      </UnorderedList>
+
+      <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1437817255&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Skills</Meta>
