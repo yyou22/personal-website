@@ -76,8 +76,8 @@ const Home = () => (
           About Me
         </Heading>
         <Paragraph>
-          Hello, my name is Yuzhe and I am a Mathematics / Computer Science student
-          seeking a full-time job starting in 2023. I was an undergraduate research member of
+          Hello, my name is Yuzhe and I am a Mathematics / Computer Science graduate student.
+          I was an undergraduate research member of
           the {' '}
           <Link href="https://www.socr.umich.edu/" scroll={false}>
             <Link>Statistics Online Computational Resource</Link>

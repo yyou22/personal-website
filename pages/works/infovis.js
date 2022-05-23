@@ -1,4 +1,4 @@
-import { Container, Badge, Link, List, ListItem, SimpleGrid } from '@chakra-ui/react'
+import { Container, Badge, Link, List, ListItem } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
@@ -33,6 +33,13 @@ const Work = () => (
       </P>
       <br />
       <WorkImage src="/images/works/infovis1.png" alt="infovis" />
+      <P>
+        <b>VD3: Adjacency Matrix v.s. Node-Link Diagram</b> is an implementation of an
+        animated transition between a node-link diagram and an adjancency matrix based on the
+        Les Miserables Network Dataset. Clicking a button will initiate an animated sequence in which
+        the nodes of the node-link diagram will transition into the IDs of the characters and the resulted
+        adjacency matrix will fade in.
+      </P>
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Skills</Meta>
@@ -42,6 +49,12 @@ const Work = () => (
           <Meta>Source VD1</Meta>
           <Link href="https://github.com/yyou22/D3-Linked-Graph">
             github.com/yyou22/D3-Linked-Graph <ExternalLinkIcon mx="2px" />
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Meta>Source VD2</Meta>
+          <Link href="https://github.com/yyou22/D3-Dimensionality-Reduction">
+            github.com/yyou22/D3-Dimensionality-Reduction <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
         <ListItem>

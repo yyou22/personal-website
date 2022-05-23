@@ -33,12 +33,11 @@ const Works = () => (
 
         <Section>
           <WorkGridItem
-            id="softtriple"
-            title="BaselineST"
-            thumbnail={thumbST}
+            id="infovis"
+            title="InfoVis xAI"
+            thumbnail={thumbInfoVis}
           >
-            A novel machine learning model that incorporates SoftTriple loss to elevate
-            state-of-the-art performance in few-shot classifications
+            Design, develop, and evaluate visualization methods for AI explainability
           </WorkGridItem>
         </Section>
 
@@ -55,22 +54,23 @@ const Works = () => (
 
         <Section delay={0.1}>
           <WorkGridItem
+            id="softtriple"
+            title="BaselineST"
+            thumbnail={thumbST}
+          >
+            A novel machine learning model that incorporates SoftTriple loss to elevate
+            state-of-the-art performance in few-shot classifications
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.2}>
+          <WorkGridItem
             id="ezbake"
             title="ezBake"
             thumbnail={thumbEzbake}
           >
             Implementation of a complex software that automates quality testing
             of camera lens by communicating with a thermal chamber via Modbus Protocol
-          </WorkGridItem>
-        </Section>
-
-        <Section delay={0.1}>
-          <WorkGridItem
-            id="infovis"
-            title="InfoVis xAI"
-            thumbnail={thumbInfoVis}
-          >
-            Design, develop, and evaluate visualization methods for AI explainability
           </WorkGridItem>
         </Section>
 
