@@ -40,6 +40,8 @@ const Work = () => (
         the nodes of the node-link diagram will transition into the IDs of the characters and the resulted
         adjacency matrix will fade in.
       </P>
+      <br />
+      <WorkImage src="/images/works/infovis2.png" alt="infovis" />
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Skills</Meta>
