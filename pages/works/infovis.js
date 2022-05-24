@@ -31,8 +31,6 @@ const Work = () => (
         will highlight the corresponding dots in otehr visualizations. This is a NodeJS-based web app that can run on a
         local server.
       </P>
-      <br />
-      <WorkImage src="/images/works/infovis1.png" alt="infovis" />
       <P>
         <b>VD3: Adjacency Matrix v.s. Node-Link Diagram</b> is an implementation of an
         animated transition between a node-link diagram and an adjancency matrix based on the
@@ -41,7 +39,7 @@ const Work = () => (
         adjacency matrix will fade in.
       </P>
       <br />
-      <WorkImage src="/images/works/infovis2.png" alt="infovis" />
+      <WorkImage src="/images/works/infovis1.png" alt="infovis" />
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Skills</Meta>

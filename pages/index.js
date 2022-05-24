@@ -84,7 +84,7 @@ const Home = () => (
           </Link>
           &nbsp;(SOCR) at University of Michigan,
           Ann Arbor and I am currently pursuing a Master&apos;s degree in Mathematics + Computer Science.
-          Some of my academic interests include Software Development, Data Analytics,
+          Some of my academic interests include Software Development, Data Analytics, Data Visualizations,
           Machine Learning, Creative AI & more. During my spare time, I like to work on
           my personal projects.
         </Paragraph>
@@ -107,7 +107,7 @@ const Home = () => (
           <NextLink href="/works/softtriple" scroll={false}>
             <Link>Machine Learning</Link>
           </NextLink>
-          , Data Visualization, Drawing,
+          , Data Visualizations, Drawing,
           Graphic Design, Music Composing, Writing, UI/UX Design
         </Paragraph>
       </Section>
