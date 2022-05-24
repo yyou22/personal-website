@@ -9,6 +9,7 @@ import thumbSocr from '../public/images/works/socr_eyecatch.png'
 import thumbEzbake from '../public/images/works/ezbake_eyecatch.png'
 import thumbPop from '../public/images/works/pop_eyecatch.png'
 import thumbInfoVis from '../public/images/works/infovis_eyecatch.png'
+import thumbRobust from '../public/images/works/robust_eyecatch.png'
 
 const Works = () => (
 
@@ -54,6 +55,17 @@ const Works = () => (
 
         <Section delay={0.1}>
           <WorkGridItem
+            id="robust"
+            title="Adversarial ML"
+            thumbnail={thumbRobust}
+          >
+            Robustness of machine learning with a special emphasis on adversarial
+            machine learning
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.2}>
+          <WorkGridItem
             id="softtriple"
             title="BaselineST"
             thumbnail={thumbST}
@@ -74,7 +86,7 @@ const Works = () => (
           </WorkGridItem>
         </Section>
 
-        <Section delay={0.2}>
+        <Section delay={0.3}>
           <WorkGridItem
             id="ngram"
             title="Pop AI"
