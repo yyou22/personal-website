@@ -8,7 +8,7 @@ const Work = () => (
   <Layout title="socr">
     <Container>
       <Title>
-        SOCR - Big Data <Badge>2019</Badge>
+        SOCR - Big Data <Badge>2019 - 2020</Badge>
       </Title>
       <P>
         The {' '}

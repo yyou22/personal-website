@@ -13,7 +13,7 @@ const Work = () => (
       <P>
         The goal of InfoVis for AI Explainability is to design, develop, and evaluate
         visualization techniques for solving real-world data problems and gain hands-on
-        experience in prototyping visualization designs.
+        experience in prototyping visualization designs. This is a course designed and instructed by Dr. Jian Zhao.
       </P>
       <P>
         <b>VD1: Hello, D3!</b> is a project that includes two visualizations interactively linked together, each encodes
@@ -28,7 +28,7 @@ const Work = () => (
         including PCA, MDS, and t-SNE to the 10,000 test set of Fashion MNIST by projecting the high-dimensional
         data points onto a 2D plane. Python is used to pre-process the data and generate the projected coordinates, and the
         resulting visualizations is linked interactively as hovering over one dot in one visualization
-        will highlight the corresponding dots in otehr visualizations. This is a NodeJS-based web app that can run on a
+        will highlight the corresponding dots in other visualizations. This is a NodeJS-based web app that can run on a
         local server.
       </P>
       <P>
@@ -55,6 +55,12 @@ const Work = () => (
           <Meta>Source VD2</Meta>
           <Link href="https://github.com/yyou22/D3-Dimensionality-Reduction">
             github.com/yyou22/D3-Dimensionality-Reduction <ExternalLinkIcon mx="2px" />
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Meta>Source VD3</Meta>
+          <Link href="https://github.com/yyou22/D3-Animated-Transition">
+            github.com/yyou22/D3-Animated-Transition <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
         <ListItem>

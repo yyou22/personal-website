@@ -15,7 +15,7 @@ const Work = () => (
         Modbus Protocol.
       </P>
       <P>
-        A separate interactive software is scripted in MATLAB that assists in developing
+        A separate interactive software is scripted in MATLAB that assists in developing and visualizing
         complex graphical charts and testing camera controls by extracting and manipulating the
         data from the thermal chamber. The goal is to simplify the process of quality control and
         provide visualizations of data that are easy to understand for potential clients.

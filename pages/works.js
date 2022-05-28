@@ -34,16 +34,6 @@ const Works = () => (
 
         <Section>
           <WorkGridItem
-            id="infovis"
-            title="InfoVis xAI"
-            thumbnail={thumbInfoVis}
-          >
-            Design, develop, and evaluate visualization methods for AI explainability
-          </WorkGridItem>
-        </Section>
-
-        <Section delay={0.1}>
-          <WorkGridItem
             id="socr"
             title="SOCR - Big Data"
             thumbnail={thumbSocr}
@@ -61,6 +51,16 @@ const Works = () => (
           >
             Robustness of machine learning with a special emphasis on adversarial
             machine learning
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.1}>
+          <WorkGridItem
+            id="infovis"
+            title="InfoVis xAI"
+            thumbnail={thumbInfoVis}
+          >
+            Design, develop, and evaluate visualization methods for AI explainability
           </WorkGridItem>
         </Section>
 
