@@ -16,7 +16,7 @@ const Work = () => (
         enhance the robustness of machine learning with a special emphasis on defense against adversarial examples.
       </P>
       <P>
-        <b>Attacking TRADES</b> is a project where we design our own evasion attack to
+        <b>Attack on TRADES</b> is a project where we design our own evasion attack to
         fool TRADES, the state-of-the-art method for training an adversarially robust deep
         neural networks. Our attack utilizes a gradient-based approach with an iterative method
         that includes randomization in each step. The attack achieves a robust accuracy of
@@ -44,6 +44,10 @@ const Work = () => (
           <Link href="">
             placeholder <ExternalLinkIcon mx="2px" />
           </Link>
+        </ListItem>
+        <ListItem>
+          <Meta>Keywords</Meta>
+          <span>Machine Learning, Adversarial Attack, Self-supervised Learning</span>
         </ListItem>
       </List>
 
