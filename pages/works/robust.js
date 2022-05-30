@@ -41,8 +41,8 @@ const Work = () => (
         </ListItem>
         <ListItem>
           <Meta>Source</Meta>
-          <Link href="">
-            placeholder <ExternalLinkIcon mx="2px" />
+          <Link href="https://github.com/yyou22/TRADES">
+            github.com/yyou22/TRADES <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
         <ListItem>

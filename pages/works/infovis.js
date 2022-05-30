@@ -13,8 +13,13 @@ const Work = () => (
       <P>
         The goal of InfoVis for AI Explainability is to design, develop, and evaluate
         visualization techniques for solving real-world data problems and gain hands-on
-        experience in prototyping visualization designs. This is a course designed and instructed by Dr. Jian Zhao.
+        experience in prototyping visualization designs. This is a course designed and instructed by
+        <Link href="https://www.jeffjianzhao.com/" scroll={false}>
+          <Link> Dr. Jian Zhao</Link>
+        </Link>
+        .
       </P>
+      <br></br>
       <P>
         <b>VD1: Hello, D3!</b> is a project that includes two visualizations interactively linked together, each encodes
         three variables of the Income Evaluation Dataset. When a user hovers over a circle
@@ -23,6 +28,7 @@ const Work = () => (
         rendered at real-time by reading the CSV file containing the dataset and making needed
         calculations.
       </P>
+      <br></br>
       <P>
         <b>VD2: Dimensionality Reduction</b> is a project that applies various dimensionality reduction methods,
         including PCA, MDS, and t-SNE to the 10,000 test set of Fashion MNIST by projecting the high-dimensional
@@ -31,6 +37,7 @@ const Work = () => (
         will highlight the corresponding dots in other visualizations. This is a NodeJS-based web app that can run on a
         local server.
       </P>
+      <br></br>
       <P>
         <b>VD3: Adjacency Matrix v.s. Node-Link Diagram</b> is an implementation of an
         animated transition between a node-link diagram and an adjancency matrix based on the
