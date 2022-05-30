@@ -1,12 +1,6 @@
-# Takuya's Homepage
+# Personal Website
 
-[https://www.craftz.dog/](https://www.craftz.dog/)
-
-## Tutorial
-
-Watch how I built this website on YouTube:
-
-[![YouTube thumbnail](./doc/thumb.png)](https://www.youtube.com/watch?v=bSMZgXzC9AA)
+This is a personal website built with the goal of showcasing past works and portfolios.
 
 ## Stack
 
@@ -29,17 +23,10 @@ $PROJECT_ROOT
 └── public
 ```
 
-## License
+## External Resources
 
-MIT License.
+[Takuya's Homepage](https://www.craftz.dog/)
 
-You can create your own homepage for free without notifying me by forking this project under the following conditions:
+[Japanese Bridge Garden by Kristen Lee](https://sketchfab.com/3d-models/japanese-bridge-garden-d122e17593eb4012913cde927486d15a)
 
-- Add a link to [my homepage](https://www.craftz.dog/)
-- Do not use the 3d voxel dog
-
----
-
-Looking for a Markdown note-taking app? Check out my app called Inkdrop:
-
-[![Inkdrop](https://github.com/craftzdog/dotfiles-public/raw/master/images/inkdrop.png)](https://www.inkdrop.app/)
+[Voxel Cockatoo by malijkovicdusan](https://www.cgtrader.com/3d-models/character/other/voxel-cockatoo-parrot)
