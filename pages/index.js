@@ -76,14 +76,17 @@ const Home = () => (
           About Me
         </Heading>
         <Paragraph>
-          Hello, my name is Yuzhe and I am a Mathematics / Computer Science graduate student.
+          Hello, my name is Yuzhe and I am a Mathematics / Computer Science graduate thesis student.
           I was an undergraduate research member of
           the {' '}
           <Link href="https://www.socr.umich.edu/" scroll={false}>
             <Link>Statistics Online Computational Resource</Link>
           </Link>
           &nbsp;(SOCR) and I am currently pursuing a Master&apos;s degree in Mathematics + Computer Science.
-          Some of my academic interests include Software Development, Data Analytics, Data Visualizations,
+        </Paragraph>
+        <Paragraph>
+          My primary research interest is InfoVis for AI Explainability. 
+          My other academic interests include Software Development, Data Analytics, 
           Machine Learning, Creative AI & more.
         </Paragraph>
         <Paragraph>
