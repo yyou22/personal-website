@@ -76,7 +76,7 @@ const Home = () => (
           About Me
         </Heading>
         <Paragraph>
-          Hello, my name is Yuzhe and I am a Master's of Mathematics (Computer Science) thesis student.
+          Hello, my name is Yuzhe and I am a Master&apos;s of Mathematics (Computer Science) thesis student.
           I was an undergraduate research member at
           {' '}
           <Link href="https://www.socr.umich.edu/" scroll={false}>
