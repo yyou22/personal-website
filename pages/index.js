@@ -76,17 +76,15 @@ const Home = () => (
           About Me
         </Heading>
         <Paragraph>
-          Hello, my name is Yuzhe and I am a Mathematics / Computer Science graduate thesis student.
-          I was an undergraduate research member of
-          the {' '}
+          Hello, my name is Yuzhe and I am a Master's of Mathematics (Computer Science) thesis student.
+          I was an undergraduate research member at
+          {' '}
           <Link href="https://www.socr.umich.edu/" scroll={false}>
-            <Link>Statistics Online Computational Resource</Link>
+            <Link> Statistics Online Computational Resource</Link>
           </Link>
-          &nbsp;(SOCR) and I am currently pursuing a Master&apos;s degree in Mathematics + Computer Science.
-        </Paragraph>
-        <Paragraph>
-          My primary research interest is InfoVis for AI Explainability. 
-          My other academic interests include Software Development, Data Analytics, 
+          &nbsp;(SOCR) and I am currently working as part of iTTS Lab and WatVis Research Group.
+          My primary research interest is InfoVis for AI Explainability.
+          My other academic interests include Software Development, Data Analytics,
           Machine Learning, Creative AI & more.
         </Paragraph>
         <Paragraph>
@@ -100,7 +98,7 @@ const Home = () => (
           I ♥
         </Heading>
         <Paragraph>
-          Coding, Software Development, {' '}
+          Information Visualization, Software Development, {' '}
           <NextLink href="/works/socr" scroll={false}>
             <Link>Data Analytics</Link>
           </NextLink>
@@ -112,7 +110,7 @@ const Home = () => (
           <NextLink href="/works/softtriple" scroll={false}>
             <Link>Machine Learning</Link>
           </NextLink>
-          , Data Visualizations, Drawing,
+          , Drawing,
           Graphic Design, Music Composing, Writing, UI/UX Design
         </Paragraph>
       </Section>
