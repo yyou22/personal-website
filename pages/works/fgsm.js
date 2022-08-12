@@ -12,8 +12,8 @@ const Work = () => (
       </Title>
       <P>
         The FGSM Explainer is an on-going project in which we design and implement an
-        interactive web-based visualization software that demonstrate the underlying logic and consequences of
-        FGSM Attack, a gradient-based white-box attack in Adversarial Machine Learning (AML), while simultaneously perform
+        interactive web-based visualization software that demonstrates the underlying logic and consequences of
+        FGSM Attack, a gradient-based white-box attack in Adversarial Machine Learning (AML), while simultaneously performs
         data analytics and model performance analysis.
       </P>
       <P>
