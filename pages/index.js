@@ -18,6 +18,7 @@ import Image from 'next/image'
 import { WorkGridItem } from '../components/grid-item'
 import thumbRNN from '../public/images/works/rnn_eyecatch.png'
 import thumbSocr from '../public/images/works/socr_eyecatch.png'
+import thumbFGSM from '../public/images/works/fgsm_eyecatch.png'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -76,14 +77,15 @@ const Home = () => (
           About Me
         </Heading>
         <Paragraph>
-          Hello, my name is Yuzhe and I am a Mathematics / Computer Science graduate student.
+          Hello, my name is Yuzhe and I am a Mathematics / Computer Science graduate thesis student.
           I was an undergraduate research member of
           the {' '}
           <Link href="https://www.socr.umich.edu/" scroll={false}>
             <Link>Statistics Online Computational Resource</Link>
           </Link>
           &nbsp;(SOCR) and I am currently pursuing a Master&apos;s degree in Mathematics + Computer Science.
-          Some of my academic interests include Software Development, Data Analytics, Information Visualization,
+          My primary research interest is InfoVis for AI Explainability with a focus on adversarial machine learning & traffic analysis.
+          My other academic interests include Software Development, Data Analytics,
           Machine Learning, Creative AI & more.
         </Paragraph>
         <Paragraph>
@@ -124,12 +126,11 @@ const Home = () => (
 
         <Section delay={0.4}>
           <WorkGridItem
-            id="rnn"
-            title="Melody AI"
-            thumbnail={thumbRNN}
+            id="fgsm"
+            title="FGSM Explainer"
+            thumbnail={thumbFGSM}
           >
-            A RNN-based melody generator (vanilla RNN, LSTM & GRU networks)
-            that generates music based on Touhou Project
+            An Interactive Visualization for Understanding Adversarial Attack
           </WorkGridItem>
         </Section>
 
