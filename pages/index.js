@@ -16,7 +16,6 @@ import Section from '../components/section'
 import Image from 'next/image'
 
 import { WorkGridItem } from '../components/grid-item'
-import thumbRNN from '../public/images/works/rnn_eyecatch.png'
 import thumbSocr from '../public/images/works/socr_eyecatch.png'
 import thumbFGSM from '../public/images/works/fgsm_eyecatch.png'
 
