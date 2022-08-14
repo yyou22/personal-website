@@ -38,7 +38,7 @@ const Work = () => (
       <P>
         An alternative model, denoted as BaselineST+, is also investigated in the Appendix section
         of the paper. In BaselineST+, a classifier is built with the SoftTriple loss by summing up
-        the resulting weights of each centroid from the same class, whic is then fed through a
+        the resulting weights of each centroid from the same class, which is then fed through a
         SoftMax function to finalize the probability for each class.
       </P>
       <UnorderedList my={4}>

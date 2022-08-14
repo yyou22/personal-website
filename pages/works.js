@@ -24,12 +24,11 @@ const Works = () => (
 
         <Section>
           <WorkGridItem
-            id="rnn"
-            title="Melody AI"
-            thumbnail={thumbRNN}
+            id="fgsm"
+            title="FGSM Explainer"
+            thumbnail={thumbFGSM}
           >
-            A RNN-based melody generator (vanilla RNN, LSTM & GRU networks)
-            that generates music based on Touhou Project
+            An Interactive Visualization for Understanding Adversarial Attack
           </WorkGridItem>
         </Section>
 
@@ -46,11 +45,12 @@ const Works = () => (
 
         <Section delay={0.1}>
           <WorkGridItem
-            id="fgsm"
-            title="FGSM Explainer"
-            thumbnail={thumbFGSM}
+            id="rnn"
+            title="Melody AI"
+            thumbnail={thumbRNN}
           >
-            An Interactive Visualization for Understanding Adversarial Attack.
+            A RNN-based melody generator (vanilla RNN, LSTM & GRU networks)
+            that generates music based on Touhou Project
           </WorkGridItem>
         </Section>
 
