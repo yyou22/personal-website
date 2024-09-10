@@ -16,8 +16,9 @@ import Section from '../components/section'
 import Image from 'next/image'
 
 import { WorkGridItem } from '../components/grid-item'
-import thumbSocr from '../public/images/works/socr_eyecatch.png'
+//import thumbSocr from '../public/images/works/socr_eyecatch.png'
 import thumbFGSM from '../public/images/works/fgsm_eyecatch.png'
+import thumbNavEaz from '../public/images/works/naveaz1.png'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -76,20 +77,27 @@ const Home = () => (
           About Me
         </Heading>
         <Paragraph>
-          Hello, my name is Yuzhe and I am a Mathematics / Computer Science graduate thesis student.
+          Hello, my name is Yuzhe and I am a PhD student in Computer Science.
           I was an undergraduate research member of
           the {' '}
-          <Link href="https://www.socr.umich.edu/" scroll={false}>
-            <Link>Statistics Online Computational Resource</Link>
+          <Link href="https://www.socr.umich.edu/">
+            Statistics Online Computational Resource
           </Link>
-          &nbsp;(SOCR) and I am currently pursuing a Master&apos;s degree in Mathematics + Computer Science.
-          My primary research interest is InfoVis for AI Explainability with a focus on adversarial machine learning & traffic analysis.
-          My other academic interests include Software Development, Data Analytics,
-          Machine Learning, Creative AI & more.
+          &nbsp;(SOCR), and now I am a member of {' '}
+          <Link href="https://www.jeffjianzhao.com/">
+            WatVis Research Group
+          </Link>
+          &nbsp;and {' '}
+          <Link href="https://www.civil.uwaterloo.ca/itss/index.htm">
+            iTSS Lab
+          </Link>
+          &nbsp;at the University of Waterloo.
+          My primary research interest is InfoVis for Explainable AI, with a focus on adversarial attacks & intelligent traffic analysis.
+          My other academic interests include Computer Vision,
+          Machine Learning, Data Science & more.
         </Paragraph>
         <Paragraph>
-          During my spare time, I enjoy working on my personal projects. I am also a digital artist & graphic design
-          hobbyist.
+          During my spare time, I enjoy working on my personal projects. I am also a digital artist and graphic designer.
         </Paragraph>
       </Section>
 
@@ -110,7 +118,7 @@ const Home = () => (
           <NextLink href="/works/softtriple" scroll={false}>
             <Link>Machine Learning</Link>
           </NextLink>
-          , Drawing,
+          , Digital Art,
           Graphic Design, Music Composing, Writing, UI/UX Design
         </Paragraph>
       </Section>
@@ -135,6 +143,17 @@ const Home = () => (
 
         <Section delay={0.4}>
           <WorkGridItem
+            id="naveaz"
+            title="NavEaz"
+            thumbnail={thumbNavEaz}
+          >
+            An AI-powered SmartWatch App for Driver Impairment Prediction
+          </WorkGridItem>
+        </Section>
+
+        {/*
+        <Section delay={0.4}>
+          <WorkGridItem
             id="socr"
             title="SOCR - Big Data"
             thumbnail={thumbSocr}
@@ -143,6 +162,7 @@ const Home = () => (
             and machine learning; develop enhanced analysis and visualizations on &quot;Big Data&quot;
           </WorkGridItem>
         </Section>
+        */}
 
       </SimpleGrid>
 

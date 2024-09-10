@@ -11,6 +11,7 @@ import thumbPop from '../public/images/works/pop_eyecatch.png'
 import thumbInfoVis from '../public/images/works/infovis_eyecatch.png'
 import thumbRobust from '../public/images/works/robust_eyecatch.png'
 import thumbFGSM from '../public/images/works/fgsm_eyecatch.png'
+import thumbNavEaz from '../public/images/works/naveaz1.png'
 
 const Works = () => (
 
@@ -21,6 +22,16 @@ const Works = () => (
       </Heading>
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
+
+        <Section>
+          <WorkGridItem
+            id="naveaz"
+            title="NavEaz"
+            thumbnail={thumbNavEaz}
+          >
+            An AI-powered SmartWatch App for Driver Impairment Prediction
+          </WorkGridItem>
+        </Section>
 
         <Section>
           <WorkGridItem
