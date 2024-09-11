@@ -12,13 +12,13 @@ const Work = () => (
       </Title>
       <P>
       CoPrompt is a collaborative prompt engineering tool designed to assist programmers in natural language programming by facilitating seamless collaboration on prompt creation and refinement. 
-      It offers four key mechanisms: sharing, referring, linking, and requesting. These features enable programmers to share information effortlessly, modify prompts by referring to others' work, 
-      link prompts for automatic updates, and request assistance without interrupting collaborators' workflow. By providing multi-level hierarchical views and contextual prompt information, 
+      It offers four key mechanisms: sharing, referring, linking, and requesting. These features enable programmers to share information effortlessly, modify prompts by referring to others&apos; work, 
+      link prompts for automatic updates, and request assistance without interrupting collaborators&apos; workflow. By providing multi-level hierarchical views and contextual prompt information, 
       CoPrompt helps reduce communication barriers and repetitive updates, making collaborative prompt engineering more efficient.
       </P>
       <P>
       In a user study with 12 experienced programmers, 
-      CoPrompt improved both real-time and asynchronous collaboration by helping users easily understand, build upon, and modify collaborators' prompts. 
+      CoPrompt improved both real-time and asynchronous collaboration by helping users easily understand, build upon, and modify collaborators&apos; prompts. 
       It addressed common challenges like maintaining context, tracking revisions, and managing dependencies, making it an effective tool for streamlining collaborative NL programming workflows.
       </P>
       <br />
