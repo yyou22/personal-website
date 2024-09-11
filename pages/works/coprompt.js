@@ -12,8 +12,8 @@ const Work = () => (
       </Title>
       <P>
       CoPrompt is a collaborative prompt engineering tool designed to assist programmers in natural language programming by facilitating seamless collaboration on prompt creation and refinement. 
-      It offers four key mechanisms: sharing, referring, linking, and requesting. These features enable programmers to share information effortlessly, modify prompts by referring to others’ work, 
-      link prompts for automatic updates, and request assistance without interrupting collaborators’ workflow. By providing multi-level hierarchical views and contextual prompt information, 
+      It offers four key mechanisms: sharing, referring, linking, and requesting. These features enable programmers to share information effortlessly, modify prompts by referring to others' work, 
+      link prompts for automatic updates, and request assistance without interrupting collaborators' workflow. By providing multi-level hierarchical views and contextual prompt information, 
       CoPrompt helps reduce communication barriers and repetitive updates, making collaborative prompt engineering more efficient.
       </P>
       <P>
@@ -24,8 +24,15 @@ const Work = () => (
       <br />
       <WorkImage src="/images/works/coprompt2.png" alt="coprompt" />
       <WorkImage src="/images/works/coprompt1.png" alt="coprompt" />
-      <iframe width="100%" height="315" src="https://www.youtube.com/embed/JGnXe_geyY0?si=GSnYmJMhmGsYzT95" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe
+        width="100%"
+        height="315"
+        src="https://www.youtube.com/embed/JGnXe_geyY0?si=GSnYmJMhmGsYzT95"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        style={{ maxWidth: '600px' }}
+      ></iframe>
       <UnorderedList my={4}>
         <Meta>Core Features</Meta>
         <ListItem>Seamless collaboration through sharing, referring, linking, and requesting prompts</ListItem>

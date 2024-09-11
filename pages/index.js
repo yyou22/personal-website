@@ -120,18 +120,18 @@ const Home = () => (
           <BioYear>Apr 2024</BioYear>
           Co-authored paper {' '}
           <Link href="https://dl.acm.org/doi/10.1145/3613904.3642212">
-          "CoPrompt"
+          &quot;CoPrompt&quot;
           </Link> on collaborative natural language programming
            accepted at CHI 2024.
         </BioSection>
         <BioSection>
           <BioYear>Mar 2024</BioYear>
-          Received "Business Incubation Award" (3rd Place) in a Hackathon 
+          Received &quot;Business Incubation Award&quot; (3rd Place) in a Hackathon 
           hosted by Dynamic Map Platform Co. (50,000 JPY).
         </BioSection>
         <BioSection>
           <BioYear>Sep 2023</BioYear>
-          Received "Innovation Design Award" in a Smart Mobility Innovation Contest
+          Received &quot;Innovation Design Award&quot; in a Smart Mobility Innovation Contest
           hosted by ICACHI (5,000 RMB).
         </BioSection>
         <BioSection>
