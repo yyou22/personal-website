@@ -7,11 +7,12 @@ import thumbRNN from '../public/images/works/rnn_eyecatch.png'
 import thumbST from '../public/images/works/st_eyecatch.png'
 import thumbSocr from '../public/images/works/socr_eyecatch.png'
 import thumbEzbake from '../public/images/works/ezbake_eyecatch.png'
-import thumbPop from '../public/images/works/pop_eyecatch.png'
-import thumbInfoVis from '../public/images/works/infovis_eyecatch.png'
+//import thumbPop from '../public/images/works/pop_eyecatch.png'
+//import thumbInfoVis from '../public/images/works/infovis_eyecatch.png'
 import thumbRobust from '../public/images/works/robust_eyecatch.png'
-import thumbFGSM from '../public/images/works/fgsm_eyecatch.png'
+import thumbFGSM from '../public/images/works/advex1.png'
 import thumbNavEaz from '../public/images/works/naveaz1.png'
+import thumbCoPrompt from '../public/images/works/coprompt3.png'
 
 const Works = () => (
 
@@ -23,6 +24,16 @@ const Works = () => (
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
 
+      <Section>
+          <WorkGridItem
+            id="advex"
+            title="AdvEx"
+            thumbnail={thumbFGSM}
+          >
+            An Interactive Visualization for Explaining AI-targeted Adversarial Attacks
+          </WorkGridItem>
+        </Section>
+
         <Section>
           <WorkGridItem
             id="naveaz"
@@ -33,17 +44,17 @@ const Works = () => (
           </WorkGridItem>
         </Section>
 
-        <Section>
+        <Section delay={0.1}>
           <WorkGridItem
-            id="fgsm"
-            title="FGSM Explainer"
-            thumbnail={thumbFGSM}
+            id="coprompt"
+            title="CoPrompt"
+            thumbnail={thumbCoPrompt}
           >
-            An Interactive Visualization for Understanding Adversarial Attack
+            A a collaborative prompt engineering tool for natural language programming
           </WorkGridItem>
         </Section>
 
-        <Section>
+        <Section delay={0.1}>
           <WorkGridItem
             id="socr"
             title="SOCR - Big Data"
@@ -65,7 +76,7 @@ const Works = () => (
           </WorkGridItem>
         </Section>
 
-        <Section delay={0.1}>
+        <Section delay={0.2}>
           <WorkGridItem
             id="robust"
             title="Adversarial ML"
@@ -76,6 +87,7 @@ const Works = () => (
           </WorkGridItem>
         </Section>
 
+        {/*
         <Section delay={0.2}>
           <WorkGridItem
             id="infovis"
@@ -85,6 +97,7 @@ const Works = () => (
             Design, develop, and evaluate visualization methods for AI explainability
           </WorkGridItem>
         </Section>
+        */}
 
         <Section delay={0.2}>
           <WorkGridItem
@@ -108,6 +121,7 @@ const Works = () => (
           </WorkGridItem>
         </Section>
 
+        {/*
         <Section delay={0.3}>
           <WorkGridItem
             id="ngram"
@@ -117,6 +131,7 @@ const Works = () => (
             An N-gram-based AI application that produces new generated notes and combines them with drum beats
           </WorkGridItem>
         </Section>
+        */}
 
       </SimpleGrid>
 
