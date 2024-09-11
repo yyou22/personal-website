@@ -11,13 +11,14 @@ import {
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
+import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Image from 'next/image'
 
 import { WorkGridItem } from '../components/grid-item'
 //import thumbSocr from '../public/images/works/socr_eyecatch.png'
-import thumbFGSM from '../public/images/works/fgsm_eyecatch.png'
+import thumbFGSM from '../public/images/works/advex1.png'
 import thumbNavEaz from '../public/images/works/naveaz1.png'
 
 const ProfileImage = chakra(Image, {
@@ -43,7 +44,7 @@ const Home = () => (
           <Heading as="h2" variant="page-title">
             Yuzhe Y.
           </Heading>
-          <p> Developer / Artist / Designer / Writer</p>
+          <p> Researcher / Developer / Artist / Designer</p>
         </Box>
         <Box
           flexShrink={0}
@@ -78,23 +79,24 @@ const Home = () => (
         </Heading>
         <Paragraph>
           Hello, my name is Yuzhe and I am a PhD student in Computer Science.
-          I was an undergraduate research member of
+          I was a research member of
           the {' '}
-          <Link href="https://www.socr.umich.edu/">
-            Statistics Online Computational Resource
+          <Link href="https://www.socr.umich.edu/" target="_blank" rel="noopener noreferrer">
+            SOCR Big Data & Predictive Analytics
           </Link>
-          &nbsp;(SOCR), and now I am a member of {' '}
-          <Link href="https://www.jeffjianzhao.com/">
+          &nbsp;at University of Michigan-Ann Arbor, and now I am a member of {' '}
+          <Link href="https://www.jeffjianzhao.com/" target="_blank" rel="noopener noreferrer">
             WatVis Research Group
           </Link>
           &nbsp;and {' '}
-          <Link href="https://www.civil.uwaterloo.ca/itss/index.htm">
+          <Link href="https://www.civil.uwaterloo.ca/itss/index.htm" target="_blank" rel="noopener noreferrer">
             iTSS Lab
           </Link>
           &nbsp;at the University of Waterloo.
-          My primary research interest is InfoVis for Explainable AI, with a focus on adversarial attacks & intelligent traffic analysis.
+          My primary research interest is InfoVis for Explainable AI, with a focus on visualizing AI models under adversarial attacks. 
+          I also conduct research on applying machine learning to develop intelligent transportation solutions.
           My other academic interests include Computer Vision,
-          Machine Learning, Data Science & more.
+          Machine Learning, Data Science, and more.
         </Paragraph>
         <Paragraph>
           During my spare time, I enjoy working on my personal projects. I am also a digital artist and graphic designer.
@@ -106,21 +108,36 @@ const Home = () => (
           I ♥
         </Heading>
         <Paragraph>
-          Information Visualization, Artificial Intelligence, Software Development, {' '}
-          <NextLink href="/works/socr" scroll={false}>
-            <Link>Data Analytics</Link>
-          </NextLink>
-          ,&nbsp;
-          <NextLink href="/works/rnn" scroll={false}>
-            <Link>Creative AI</Link>
-          </NextLink>
-          ,&nbsp;
-          <NextLink href="/works/softtriple" scroll={false}>
-            <Link>Machine Learning</Link>
-          </NextLink>
-          , Digital Art,
-          Graphic Design, Music Composing, Writing, UI/UX Design
+          Visualization, Explainable AI, Machine Learning, Computer Vision, Coding, Digital Art, Graphic Design, UI/UX Design, Cockatoos
         </Paragraph>
+      </Section>
+
+      <Section delay={0.2}>
+        <Heading as="h3" variant="section-title">
+          Recent news
+        </Heading>
+        <BioSection>
+          <BioYear>Apr 2024</BioYear>
+          Co-authored paper {' '}
+          <Link href="https://dl.acm.org/doi/10.1145/3613904.3642212">
+          &quot;CoPrompt&quot;
+          </Link> on collaborative natural language programming
+           accepted at CHI 2024.
+        </BioSection>
+        <BioSection>
+          <BioYear>Mar 2024</BioYear>
+          Received &quot;Business Incubation Award&quot; (3rd Place) in a Hackathon 
+          hosted by Dynamic Map Platform Co. (50,000 JPY).
+        </BioSection>
+        <BioSection>
+          <BioYear>Sep 2023</BioYear>
+          Received &quot;Innovation Design Award&quot; in a Smart Mobility Innovation Contest
+          hosted by ICACHI (5,000 RMB).
+        </BioSection>
+        <BioSection>
+          <BioYear>May 2023</BioYear>
+          Recipient of GO-Bell Scholarship (24,000 CAD).
+        </BioSection>
       </Section>
 
       <Section delay={0.3}>
@@ -133,11 +150,11 @@ const Home = () => (
 
         <Section delay={0.4}>
           <WorkGridItem
-            id="fgsm"
-            title="FGSM Explainer"
+            id="advex"
+            title="AdvEx"
             thumbnail={thumbFGSM}
           >
-            An Interactive Visualization for Understanding Adversarial Attack
+            An Interactive Visualization for Explaining AI-targeted Adversarial Attacks
           </WorkGridItem>
         </Section>
 
