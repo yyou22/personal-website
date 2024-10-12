@@ -18,7 +18,8 @@ import Section from '../components/section'
 import Image from 'next/image'
 import { WorkGridItem } from '../components/grid-item'
 //import thumbSocr from '../public/images/works/socr_eyecatch.png'
-import thumbFGSM from '../public/images/works/advex1.png'
+import thumbFGSM from '../public/images/works/advex/advex1.gif'
+import thumbFGSM2 from '../public/images/works/advex1.png'
 import thumbNavEaz from '../public/images/works/naveaz1.png'
 import { IoLogoTwitter, IoLogoLinkedin} from 'react-icons/io5'
 
@@ -193,6 +194,7 @@ const Home = () => (
             id="advex"
             title="AdvEx"
             thumbnail={thumbFGSM}
+            blurPlaceholder={thumbFGSM2}
           >
             An Interactive Visualization for Explaining AI-targeted Adversarial Attacks
           </WorkGridItem>
