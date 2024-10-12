@@ -36,7 +36,7 @@ const Works = () => (
             thumbnail={thumbVISxAI}
             blurPlaceholder={thumbVISxAI2}
           >
-            A Beginner's Introduction to Adversarial Attacks
+            A Beginner&apos;s Introduction to Adversarial Attacks
           </WorkGridItem>
         </Section>
 
