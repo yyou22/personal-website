@@ -17,7 +17,10 @@ const Work = () => (
       Our smart AI allows NavEaz to predict when a driver is about to lose focus, 
       ensuring that they correct their attention before danger arises.
       </P>
-      <br />
+      <UnorderedList my={4}>
+        <Meta>Recognition & Outreach</Meta>
+        <ListItem>Received an Innovation Design Award from ICACHI (5,000 RMB).</ListItem>
+      </UnorderedList>
       <WorkImage src="/images/works/naveaz1.png" alt="naveaz" />
       <WorkImage src="/images/works/naveaz4.png" alt="naveaz" />
       <WorkImage src="/images/works/naveaz5.png" alt="naveaz" />

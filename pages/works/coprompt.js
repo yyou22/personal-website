@@ -16,12 +16,20 @@ const Work = () => (
       link prompts for automatic updates, and request assistance without interrupting collaborators&apos; workflow. By providing multi-level hierarchical views and contextual prompt information, 
       CoPrompt helps reduce communication barriers and repetitive updates, making collaborative prompt engineering more efficient.
       </P>
+      <UnorderedList my={4}>
+        <Meta>Recognition & Outreach</Meta>
+        <ListItem>
+          Accepted and presented at CHI 2024: {' '}
+          <Link href="https://dl.acm.org/doi/10.1145/3613904.3642212">
+          CoPrompt: Supporting Prompt Sharing and Referring in Collaborative Natural Language Programming <ExternalLinkIcon mx="2px" />
+          </Link>
+        </ListItem>
+      </UnorderedList>
       {/*<P>
       In a user study with 12 experienced programmers, 
       CoPrompt improved both real-time and asynchronous collaboration by helping users easily understand, build upon, and modify collaborators&apos; prompts. 
       It addressed common challenges like maintaining context, tracking revisions, and managing dependencies, making it an effective tool for streamlining collaborative NL programming workflows.
       </P>*/}
-      <br />
       <WorkImage src="/images/works/coprompt2.png" alt="coprompt" />
       <WorkImage src="/images/works/coprompt1.png" alt="coprompt" />
       <iframe
@@ -48,12 +56,6 @@ const Work = () => (
         <ListItem>
           <Meta>Authors</Meta>
           Li Feng, Ryan Yen, Yuzhe You, Mingming Fan, Jian Zhao, Zhicong Lu
-        </ListItem>
-        <ListItem>
-          <Meta>Paper Link</Meta>
-          <Link href="https://dl.acm.org/doi/10.1145/3613904.3642212">
-          CoPrompt: Supporting Prompt Sharing and Referring in Collaborative Natural Language Programming <ExternalLinkIcon mx="2px" />
-          </Link>
         </ListItem>
         <ListItem>
           <Meta>Keywords</Meta>

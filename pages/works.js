@@ -3,7 +3,7 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
 
-import thumbRNN from '../public/images/works/rnn_eyecatch.png'
+//import thumbRNN from '../public/images/works/rnn_eyecatch.png'
 import thumbST from '../public/images/works/st_eyecatch.png'
 import thumbSocr from '../public/images/works/socr_eyecatch.png'
 //import thumbEzbake from '../public/images/works/ezbake_eyecatch.png'
@@ -16,6 +16,8 @@ import thumbNavEaz from '../public/images/works/naveaz1.png'
 import thumbCoPrompt from '../public/images/works/coprompt3.png'
 import thumbGradflix from '../public/images/works/gradflix/gradflix.gif'
 import thumbGradflix2 from '../public/images/works/gradflix/gradflix.png'
+import thumbVISxAI from '../public/images/works/visxai/visxai1.gif'
+import thumbVISxAI2 from '../public/images/works/visxai/visxai1.png'
 
 const Works = () => (
 
@@ -29,12 +31,12 @@ const Works = () => (
 
       <Section>
           <WorkGridItem
-            id="advex"
-            title="AdvEx"
-            thumbnail={thumbFGSM}
-            blurPlaceholder={thumbFGSM2}
+            id="visxai"
+            title="Panda or Gibbon?"
+            thumbnail={thumbVISxAI}
+            blurPlaceholder={thumbVISxAI2}
           >
-            An Interactive Visualization for Explaining AI-targeted Adversarial Attacks
+            A Beginner's Introduction to Adversarial Attacks
           </WorkGridItem>
         </Section>
 
@@ -50,22 +52,33 @@ const Works = () => (
 
         <Section delay={0.1}>
           <WorkGridItem
-            id="coprompt"
-            title="CoPrompt"
-            thumbnail={thumbCoPrompt}
-          >
-            A a collaborative prompt engineering tool for natural language programming
-          </WorkGridItem>
-        </Section>
-
-        <Section delay={0.1}>
-          <WorkGridItem
             id="gradflix"
             title="GRADflix"
             thumbnail={thumbGradflix}
             blurPlaceholder={thumbGradflix2}
           >
             A 8-bit Pixel Video Game that Showcases my MMath Research
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.1}>
+          <WorkGridItem
+            id="advex"
+            title="AdvEx"
+            thumbnail={thumbFGSM}
+            blurPlaceholder={thumbFGSM2}
+          >
+            An Interactive Visualization for Explaining AI-targeted Adversarial Attacks
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.2}>
+          <WorkGridItem
+            id="coprompt"
+            title="CoPrompt"
+            thumbnail={thumbCoPrompt}
+          >
+            A a collaborative prompt engineering tool for LLM-driven natural language programming
           </WorkGridItem>
         </Section>
 
@@ -80,6 +93,7 @@ const Works = () => (
           </WorkGridItem>
         </Section>
 
+        {/*
         <Section delay={0.2}>
           <WorkGridItem
             id="rnn"
@@ -90,6 +104,7 @@ const Works = () => (
             that generates music based on Touhou Project
           </WorkGridItem>
         </Section>
+        */}
 
         <Section delay={0.3}>
           <WorkGridItem
