@@ -13,6 +13,8 @@ import thumbRobust from '../public/images/works/robust_eyecatch.png'
 import thumbFGSM from '../public/images/works/advex1.png'
 import thumbNavEaz from '../public/images/works/naveaz1.png'
 import thumbCoPrompt from '../public/images/works/coprompt3.png'
+import thumbGradflix from '../public/images/works/gradflix/gradflix.gif'
+import thumbGradflix2 from '../public/images/works/gradflix/gradflix.png'
 
 const Works = () => (
 
@@ -56,6 +58,17 @@ const Works = () => (
 
         <Section delay={0.1}>
           <WorkGridItem
+            id="gradflix"
+            title="GRADflix"
+            thumbnail={thumbGradflix}
+            blurPlaceholder={thumbGradflix2}
+          >
+            A 8-bit Pixel Video Game that Showcases my MMath Research
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.2}>
+          <WorkGridItem
             id="socr"
             title="SOCR - Big Data"
             thumbnail={thumbSocr}
@@ -65,7 +78,7 @@ const Works = () => (
           </WorkGridItem>
         </Section>
 
-        <Section delay={0.1}>
+        <Section delay={0.2}>
           <WorkGridItem
             id="rnn"
             title="Melody AI"
@@ -76,7 +89,7 @@ const Works = () => (
           </WorkGridItem>
         </Section>
 
-        <Section delay={0.2}>
+        <Section delay={0.3}>
           <WorkGridItem
             id="robust"
             title="Adversarial ML"
@@ -99,7 +112,7 @@ const Works = () => (
         </Section>
         */}
 
-        <Section delay={0.2}>
+        <Section delay={0.3}>
           <WorkGridItem
             id="softtriple"
             title="BaselineST"
@@ -109,8 +122,9 @@ const Works = () => (
             state-of-the-art performance in few-shot classifications
           </WorkGridItem>
         </Section>
-
-        <Section delay={0.3}>
+        
+        {/*
+        <Section delay={0.4}>
           <WorkGridItem
             id="ezbake"
             title="ezBake"
@@ -120,6 +134,7 @@ const Works = () => (
             of camera lens by communicating with a thermal chamber via Modbus Protocol
           </WorkGridItem>
         </Section>
+        */}
 
         {/*
         <Section delay={0.3}>

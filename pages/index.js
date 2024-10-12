@@ -143,12 +143,12 @@ const Home = () => (
           Received &quot;Business Incubation Award&quot; (3rd Place) in a Hackathon 
           hosted by Dynamic Map Platform Co. (50,000 JPY).
         </BioSection>
-        {/*<BioSection>
+        <BioSection>
           <BioYear>Sep 2023</BioYear>
           Received &quot;Innovation Design Award&quot; in a Smart Mobility Innovation Contest
           hosted by ICACHI (5,000 RMB).
         </BioSection>
-        <BioSection>
+        {/*<BioSection>
           <BioYear>May 2023</BioYear>
           Recipient of GO-Bell Scholarship (24,000 CAD).
         </BioSection>*/}
@@ -249,7 +249,7 @@ const Home = () => (
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
         style={{ maxWidth: '600px' }}
-      ></iframe>
+        ></iframe>
       </Section>
 
     </Container>
