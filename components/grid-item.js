@@ -36,9 +36,12 @@ const GridBox = styled.span`
     color: #88ccca;
   }
 `
+const isGif = (thumbnail) => {
+  return typeof thumbnail === 'object' && thumbnail.src.endsWith('.gif');
+}
 
 // For works linked to the outside
-export const GridItem = ({ children, href, title, thumbnail}) => (
+export const GridItem = ({ children, href, title, thumbnail, blurPlaceholder }) => (
   <Box w="100%" textAlign="center">
     <GridBox>
       <LinkBox cursor="pointer">
@@ -47,6 +50,7 @@ export const GridItem = ({ children, href, title, thumbnail}) => (
           alt={title}
           className="grid-item-thumbnail"
           placeholder="blur"
+          blurDataURL={isGif(thumbnail) ? blurPlaceholder?.src : undefined}
           loading="lazy"
           layout="intrinsic"
         />
@@ -62,7 +66,7 @@ export const GridItem = ({ children, href, title, thumbnail}) => (
 )
 
 // For works displayed directly inside the site
-export const WorkGridItem = ({ children, id, title, thumbnail}) => (
+export const WorkGridItem = ({ children, id, title, thumbnail, blurPlaceholder }) => (
   <Box w="100%" textAlign="center">
     <NextLink href={`/works/${id}`}>
     <GridBox>
@@ -73,6 +77,7 @@ export const WorkGridItem = ({ children, id, title, thumbnail}) => (
           layout="intrinsic"
           className="grid-item-thumbnail"
           placeholder="blur"
+          blurDataURL={isGif(thumbnail) ? blurPlaceholder?.src : undefined}
           loading="lazy"
         />
         <LinkOverlay href={`/works/${id}`}>
@@ -103,6 +108,7 @@ export const WorkGridItemWithModal = ({
           alt={title}
           className="grid-item-thumbnail"
           placeholder="blur"
+          blurDataURL={isGif(thumbnail) ? blurPlaceholder?.src : undefined}
         />
         <Text mt={2} fontSize={20}>
           {title}

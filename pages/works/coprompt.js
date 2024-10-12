@@ -16,11 +16,11 @@ const Work = () => (
       link prompts for automatic updates, and request assistance without interrupting collaborators&apos; workflow. By providing multi-level hierarchical views and contextual prompt information, 
       CoPrompt helps reduce communication barriers and repetitive updates, making collaborative prompt engineering more efficient.
       </P>
-      <P>
+      {/*<P>
       In a user study with 12 experienced programmers, 
       CoPrompt improved both real-time and asynchronous collaboration by helping users easily understand, build upon, and modify collaborators&apos; prompts. 
       It addressed common challenges like maintaining context, tracking revisions, and managing dependencies, making it an effective tool for streamlining collaborative NL programming workflows.
-      </P>
+      </P>*/}
       <br />
       <WorkImage src="/images/works/coprompt2.png" alt="coprompt" />
       <WorkImage src="/images/works/coprompt1.png" alt="coprompt" />

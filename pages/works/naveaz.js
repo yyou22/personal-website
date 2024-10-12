@@ -37,7 +37,7 @@ const Work = () => (
         </ListItem>
         <ListItem>
           <Meta>Team Members</Meta>
-          Yuzhe You, Yubo Jiao, Ce Zhang, Yutong Hu
+          Yuzhe You, Yubo Jiao, Ce Zhang, Michael Brazeau
         </ListItem>
         <ListItem>
           <Meta>Keywords</Meta>
