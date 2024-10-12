@@ -21,7 +21,7 @@ const Work = () => {
           Panda or Gibbon? <Badge>2024</Badge>
         </Title>
         <P>
-          <Link href="https://visxai-aml.vercel.app/">
+          <Link href="https://visxai-aml.vercel.app/" target="_blank" rel="noopener noreferrer">
           &quot;Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks&quot; <ExternalLinkIcon mx="2px" />
           </Link> is an interactive beginner-friendly visualization guide designed to introduce users to adversarial attacks in machine learning, 
           specifically focusing on the Fast Gradient Sign Method (FGSM) attack. Our interactive explainable uses engaging visualizations to show how subtle, 
@@ -31,7 +31,7 @@ const Work = () => {
         <UnorderedList my={4}>
           <Meta>Link to Explainable: {' '}</Meta>
           <ListItem>
-            <Link href="https://visxai-aml.vercel.app/">
+            <Link href="https://visxai-aml.vercel.app/" target="_blank" rel="noopener noreferrer">
               Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks <ExternalLinkIcon mx="2px" />
             </Link>
           </ListItem>
