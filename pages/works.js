@@ -10,7 +10,8 @@ import thumbSocr from '../public/images/works/socr_eyecatch.png'
 //import thumbPop from '../public/images/works/pop_eyecatch.png'
 //import thumbInfoVis from '../public/images/works/infovis_eyecatch.png'
 import thumbRobust from '../public/images/works/robust_eyecatch.png'
-import thumbFGSM from '../public/images/works/advex1.png'
+import thumbFGSM from '../public/images/works/advex/advex2.gif'
+import thumbFGSM2 from '../public/images/works/advex1.png'
 import thumbNavEaz from '../public/images/works/naveaz1.png'
 import thumbCoPrompt from '../public/images/works/coprompt3.png'
 import thumbGradflix from '../public/images/works/gradflix/gradflix.gif'
@@ -31,6 +32,7 @@ const Works = () => (
             id="advex"
             title="AdvEx"
             thumbnail={thumbFGSM}
+            blurPlaceholder={thumbFGSM2}
           >
             An Interactive Visualization for Explaining AI-targeted Adversarial Attacks
           </WorkGridItem>
