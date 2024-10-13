@@ -45,8 +45,8 @@ const Work = () => {
           </ListItem>
         </UnorderedList>
         <WorkImage src="/images/works/visxai/visxai2.gif" alt="visxai" />
-        <WorkImage src="/images/works/visxai/visxai3.gif" alt="visxai" />
         <WorkImage src="/images/works/visxai/visxai4.gif" alt="visxai" />
+        <WorkImage src="/images/works/visxai/visxai6.jpg" alt="visxai" />
         <UnorderedList my={4}>
           <Meta>Core Features</Meta>
           <ListItem>Explains adversarial attacks using beginner-friendly interactive visualizations.</ListItem>
