@@ -1,9 +1,8 @@
 import { useEffect } from 'react'
-import { Container, Badge, List, ListItem, UnorderedList, Link } from '@chakra-ui/react'
+import { Container, Badge, List, ListItem, UnorderedList,} from '@chakra-ui/react'
 import { Title, Meta, WorkImage } from '../../components/work'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 const Work = () => {
   useEffect(() => {
