@@ -99,8 +99,8 @@ const Works = () => (
             title="SOCR - Big Data"
             thumbnail={thumbSocr}
           >
-            Design and disseminate advanced methods/tools in probability, statistics,
-            and machine learning
+            Design and Disseminate Advanced Methods/tools in Probability, Statistics,
+            and Machine Learning
           </WorkGridItem>
         </Section>
 
