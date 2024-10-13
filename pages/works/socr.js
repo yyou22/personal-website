@@ -47,6 +47,7 @@ const Work = () => (
       </P>
       <br />
       <WorkImage src="/images/works/socr0.jpg" alt="socr" />
+      <WorkImage src="/images/works/socr/socr1.png" alt="socr" />
       <SimpleGrid columns={2} gap={2}>
         <WorkImage src="/images/works/socr2.png" alt="socr" />
         <WorkImage src="/images/works/socr3.jpg" alt="socr" />
@@ -64,24 +65,20 @@ const Work = () => (
             https://mdp.engin.umich.edu/ <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
+        {/*
         <ListItem>
           <Meta>MIMIC-III</Meta>
           <Link href="https://physionet.org/content/mimiciii/1.4/">
             MIMIC-III Clinical Database <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
+        */}
         <ListItem>
           <Meta>Skills</Meta>
           <span>R/RStudio, Machine Learning, SQL, Quantitative Analytics</span>
         </ListItem>
         <ListItem>
-          <Meta>Source</Meta>
-          <Link href="https://github.com/SOCR/MIMIC-Analytics">
-            github.com/SOCR/MIMIC-Analytics <ExternalLinkIcon mx="2px" />
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Meta>Publication</Meta>
+          <Meta>Contribution</Meta>
           <Link href="http://www.socr.umich.edu/people/dinov/courses/DSPA_notes/DSPA_Appendix_5_SQL_DB_Queries.html">
             Appendix 5: Database SQL Queries <ExternalLinkIcon mx="2px" />
           </Link>
