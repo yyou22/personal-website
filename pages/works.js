@@ -5,11 +5,11 @@ import { WorkGridItem } from '../components/grid-item'
 
 //import thumbRNN from '../public/images/works/rnn_eyecatch.png'
 //import thumbST from '../public/images/works/st_eyecatch.png'
-import thumbSocr from '../public/images/works/socr_eyecatch.png'
+import thumbSocr from '../public/images/works/socr3.jpg'
 //import thumbEzbake from '../public/images/works/ezbake_eyecatch.png'
 //import thumbPop from '../public/images/works/pop_eyecatch.png'
 //import thumbInfoVis from '../public/images/works/infovis_eyecatch.png'
-import thumbRobust from '../public/images/works/robust_eyecatch.png'
+//import thumbRobust from '../public/images/works/robust_eyecatch.png'
 import thumbFGSM from '../public/images/works/advex/advex2.gif'
 import thumbFGSM2 from '../public/images/works/advex1.png'
 import thumbNavEaz from '../public/images/works/naveaz1.png'
@@ -100,7 +100,7 @@ const Works = () => (
             thumbnail={thumbSocr}
           >
             Design and disseminate advanced methods/tools in probability, statistics,
-            and machine learning; develop enhanced analysis and visualizations on &quot;Big Data&quot;
+            and machine learning
           </WorkGridItem>
         </Section>
 
@@ -117,6 +117,7 @@ const Works = () => (
         </Section>
         */}
 
+        {/*
         <Section delay={0.3}>
           <WorkGridItem
             id="robust"
@@ -127,6 +128,7 @@ const Works = () => (
             machine learning
           </WorkGridItem>
         </Section>
+        */}
 
         {/*
         <Section delay={0.2}>
