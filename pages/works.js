@@ -4,7 +4,7 @@ import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
 
 //import thumbRNN from '../public/images/works/rnn_eyecatch.png'
-import thumbST from '../public/images/works/st_eyecatch.png'
+//import thumbST from '../public/images/works/st_eyecatch.png'
 import thumbSocr from '../public/images/works/socr_eyecatch.png'
 //import thumbEzbake from '../public/images/works/ezbake_eyecatch.png'
 //import thumbPop from '../public/images/works/pop_eyecatch.png'
@@ -18,6 +18,7 @@ import thumbGradflix from '../public/images/works/gradflix/gradflix.gif'
 import thumbGradflix2 from '../public/images/works/gradflix/gradflix.png'
 import thumbVISxAI from '../public/images/works/visxai/visxai1.gif'
 import thumbVISxAI2 from '../public/images/works/visxai/visxai1.png'
+import thumbCloud from '../public/images/works/point\ cloud/pc3.png'
 
 const Works = () => (
 
@@ -78,11 +79,21 @@ const Works = () => (
             title="CoPrompt"
             thumbnail={thumbCoPrompt}
           >
-            A a collaborative prompt engineering tool for LLM-driven natural language programming
+            A Collaborative Prompt Engineering Tool for LLM-driven Natural Language Programming
           </WorkGridItem>
         </Section>
 
         <Section delay={0.2}>
+          <WorkGridItem
+            id="pointcloud"
+            title="Point Cloud Visibility"
+            thumbnail={thumbCloud}
+          >
+            A Point Cloud-based Application that Uses Ray-casting to Compute Visbility of POIs
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.3}>
           <WorkGridItem
             id="socr"
             title="SOCR - Big Data"
@@ -129,7 +140,8 @@ const Works = () => (
         </Section>
         */}
 
-        <Section delay={0.3}>
+        {/*
+        <Section delay={0.4}>
           <WorkGridItem
             id="softtriple"
             title="BaselineST"
@@ -139,6 +151,7 @@ const Works = () => (
             state-of-the-art performance in few-shot classifications
           </WorkGridItem>
         </Section>
+        */}
         
         {/*
         <Section delay={0.4}>
