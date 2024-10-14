@@ -19,6 +19,7 @@ import thumbGradflix2 from '../public/images/works/gradflix/gradflix.png'
 import thumbVISxAI from '../public/images/works/visxai/visxai1.gif'
 import thumbVISxAI2 from '../public/images/works/visxai/visxai1.png'
 import thumbCloud from '../public/images/works/point\ cloud/pc3.png'
+import thumbMusashi from '../public/images/works/musashi/musashi1.png'
 
 const Works = () => (
 
@@ -102,6 +103,17 @@ const Works = () => (
         </Section>
 
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
+
+        <Section delay={0.3}>
+          <WorkGridItem
+            id="musashi"
+            title="Waterloo.AI Challenge"
+            thumbnail={thumbMusashi}
+          >
+            Ensemble AI Solution for Human Detection in Top-down Fisheye Workplace Monitoring
+          </WorkGridItem>
+        </Section>
+
         <Section delay={0.3}>
           <WorkGridItem
             id="socr"
