@@ -20,8 +20,8 @@ const Work = () => {
           Point Cloud Visibility <Badge>2024</Badge>
         </Title>
         <P>
-          This project, &quot;Exploring Urban Landscapes: A Point Cloud-based Tourist Experience,&quot; focuses on enhancing the tourist experience by providing a visibility assessment tool for urban landscapes using point cloud data. 
-          By leveraging advanced ray-casting techniques, the application allows users to explore the visibility of Points of Interest (POIs) in a city. Our tool analyzes and visualizes where a specific POI is visible from across the city, 
+          Our project &quot;Exploring Urban Landscapes: A Point Cloud-based Tourist Experience&quot; focuses on improving the tourist experience by providing a visibility assessment software for urban landscapes using point cloud data. 
+          By employing ray-casting techniques, our point cloud application allows users to explore the visibility of Points of Interest (POIs) in a city. Our tool analyzes and visualizes where a specific POI is visible from across the city, 
           providing tourists, real estate professionals, and urban planners with insights into optimal viewpoints and visibility conditions.
         </P>
         <UnorderedList my={4}>

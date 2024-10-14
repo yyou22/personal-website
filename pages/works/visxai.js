@@ -23,29 +23,30 @@ const Work = () => {
         <P>
           <Link href="https://visxai-aml.vercel.app/" target="_blank" rel="noopener noreferrer">
           &quot;Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks&quot; <ExternalLinkIcon mx="2px" />
-          </Link> is an interactive beginner-friendly visualization guide designed to introduce users to adversarial attacks in machine learning, 
-          specifically focusing on the Fast Gradient Sign Method (FGSM) attack. Our interactive explainable uses engaging visualizations to show how subtle, 
+          </Link> is an interactive beginner-friendly visualization guide designed to introduce AI learners to adversarial attacks in machine learning, 
+          specifically focusing on the Fast Gradient Sign Method (FGSM) attack. Created primarily with D3.js and Idyll-lang, our interactive explainable uses dynamic visualizations and animations to show how subtle, 
           human-imperceptible perturbations can fool image classification models like ResNet-34 into making incorrect predictions. 
-          The guide allows users to explore the impact of these adversarial attacks on model behavior by comparing clean and perturbed data points, and ResNet-34 models trained with standard and adversarial methods.
+          The guide allows users to explore the impact of these adversarial attacks on model behavior by comparing clean and perturbed data points, as well as two different ResNet-34 models trained with standard and adversarial methods.
         </P>
         <UnorderedList my={4}>
           <Meta>Link to Explainable: {' '}</Meta>
           <ListItem>
             <Link href="https://visxai-aml.vercel.app/" target="_blank" rel="noopener noreferrer">
-              Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks <ExternalLinkIcon mx="2px" />
+              https://visxai-aml.vercel.app/ <ExternalLinkIcon mx="2px" />
             </Link>
           </ListItem>
         </UnorderedList>
         <UnorderedList my={4}>
           <Meta>Recognition & Outreach</Meta>
           <ListItem>Accepted at the 7th VISxAI Workshop at IEEE VIS24: {' '}
-          <Link href="https://visxai.io/">
+          <Link href="https://visxai.io/" target="_blank" rel="noopener noreferrer">
             VISxAI Workshop Program Info <ExternalLinkIcon mx="2px" />
           </Link>
           </ListItem>
         </UnorderedList>
         <WorkImage src="/images/works/visxai/visxai2.gif" alt="visxai" />
         <WorkImage src="/images/works/visxai/visxai4.gif" alt="visxai" />
+        <WorkImage src="/images/works/visxai/visxai7.PNG" alt="visxai" />
         <WorkImage src="/images/works/visxai/visxai6.jpg" alt="visxai" />
         <UnorderedList my={4}>
           <Meta>Core Features</Meta>
@@ -64,7 +65,7 @@ const Work = () => {
           </ListItem>
           <ListItem>
             <Meta>Keywords</Meta>
-            <span>Adversarial Machine Learning, FGSM Attack, Adversarial Attack, Image Classification, Visualization, ResNet-34, Model Robustness</span>
+            <span>Adversarial Machine Learning, FGSM Attack, Adversarial Attack, Image Classification, Visualization, ResNet, Model Robustness</span>
           </ListItem>
         </List>
 
