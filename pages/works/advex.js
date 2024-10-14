@@ -48,7 +48,7 @@ const Work = () => (
         </ListItem>
         <ListItem>
           <Meta>Paper Link</Meta>
-          <Link href="https://arxiv.org/abs/2311.13656">
+          <Link href="https://arxiv.org/abs/2311.13656" target="_blank" rel="noopener noreferrer">
           Panda or not Panda? Understanding Adversarial Attacks with Interactive Visualization <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>

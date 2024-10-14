@@ -11,8 +11,8 @@ const Work = () => (
         CoPrompt <Badge>2024</Badge>
       </Title>
       <P>
-      CoPrompt is a collaborative prompt engineering tool designed to assist programmers in natural language programming by facilitating seamless collaboration on prompt creation and refinement. 
-      It offers four key mechanisms: sharing, referring, linking, and requesting. These features enable programmers to share information effortlessly, modify prompts by referring to others&apos; work, 
+      CoPrompt is a collaborative prompt engineering tool designed to assist programmers in LLM-driven natural language programming by facilitating seamless collaboration on prompt creation and refinement. 
+      It offers four key mechanisms: sharing, referring, linking, and requesting. These features allow programmers to share information effortlessly, modify prompts by referring to others&apos; work, 
       link prompts for automatic updates, and request assistance without interrupting collaborators&apos; workflow. By providing multi-level hierarchical views and contextual prompt information, 
       CoPrompt helps reduce communication barriers and repetitive updates, making collaborative prompt engineering more efficient.
       </P>
@@ -30,7 +30,7 @@ const Work = () => (
       CoPrompt improved both real-time and asynchronous collaboration by helping users easily understand, build upon, and modify collaborators&apos; prompts. 
       It addressed common challenges like maintaining context, tracking revisions, and managing dependencies, making it an effective tool for streamlining collaborative NL programming workflows.
       </P>*/}
-      <WorkImage src="/images/works/coprompt2.png" alt="coprompt" />
+      <WorkImage src="/images/works/coprompt4.jpeg" alt="coprompt" />
       <WorkImage src="/images/works/coprompt1.png" alt="coprompt" />
       <iframe
         width="100%"
@@ -51,7 +51,7 @@ const Work = () => (
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Skills</Meta>
-          <span>Python, PyTorch, scikit-learn, Machine Learning, Evasion Attacks, D3.js, JavaScript, HTML, CSS</span>
+          <span>Python, PyTorch, scikit-learn, Machine Learning, Evasion Attacks, D3.js, JavaScript, OpenAI API</span>
         </ListItem>
         <ListItem>
           <Meta>Authors</Meta>
@@ -59,7 +59,7 @@ const Work = () => (
         </ListItem>
         <ListItem>
           <Meta>Keywords</Meta>
-          <span>HCI, Collaborative Programming, Natural Language Programming, Prompt Engineering, Sharing</span>
+          <span>HCI, Collaborative Programming, Natural Language Programming, Prompt Engineering, Large Language Models (LLMs)</span>
         </ListItem>
       </List>
 

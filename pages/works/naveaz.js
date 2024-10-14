@@ -10,11 +10,11 @@ const Work = () => (
         NavEaz <Badge>2024</Badge>
       </Title>
       <P>
-      NavEaz is an AI-powered smartwatch app designed to enhance driver safety by monitoring and predicting driver impairment in real time. 
-      Using advanced machine learning algorithms developed and tested by our team, 
+      NavEaz is a novel AI-powered smartwatch app designed to enhance driver safety by monitoring and predicting driver impairment in real time. 
+      Using advanced machine learning algorithms that combines CNNs and LSTMs, developed and tested by our team, 
       NavEaz analyzes physiological signals like heart rate and electrodermal activity to detect fatigue, drowsiness, 
       and other impairments with high accuracy. 
-      Our smart AI allows NavEaz to predict when a driver is about to lose focus, 
+      Our smart AI allows NavEaz to predict when a driver is about to lose focus in the next 5 to 15 minutes, 
       ensuring that they correct their attention before danger arises.
       </P>
       <UnorderedList my={4}>
@@ -36,7 +36,7 @@ const Work = () => (
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Skills</Meta>
-          <span>Python, Machine Learning, Real-Time Data Analysis, Generative AI, HRV Analysis, Electrodermal Activity Monitoring, Wearable Technology</span>
+          <span>Python, Machine Learning, Real-Time Data Analysis, Generative AI, PPG & EDA Analysis, Electrodermal Activity Monitoring, Wearable Technology</span>
         </ListItem>
         <ListItem>
           <Meta>Team Members</Meta>

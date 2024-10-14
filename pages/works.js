@@ -1,4 +1,4 @@
-import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
@@ -92,7 +92,16 @@ const Works = () => (
             A Point Cloud-based Application that Uses Ray-casting to Compute Visbility of POIs
           </WorkGridItem>
         </Section>
+        </SimpleGrid>
 
+        <Section delay={0.3}>
+        <Divider my={6} />
+          <Heading as="h3" fontSize={20} mb={4}>
+            Older Works
+          </Heading>
+        </Section>
+
+        <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section delay={0.3}>
           <WorkGridItem
             id="socr"
