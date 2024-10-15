@@ -129,7 +129,7 @@ const Home = () => (
           <BioYear>Oct 2024</BioYear>
           <Link href="works/advex">
           AdvEx
-          </Link> poster accepted at UWaterloo&apos;s 2024 CPI Conference.
+          </Link> received 3rd place best poster award (300 CAD) at UWaterloo&apos;s 2024 CPI Conference.
         </BioSection>
         <BioSection>
           <BioYear>Apr 2024</BioYear>

@@ -22,7 +22,7 @@ const Work = () => (
         <ListItem>
         In submission to ACM Transactions on Interactive Intelligent System journal.
         </ListItem>
-        <ListItem>Presented a poster at the 2024 Cybersecurity and Privacy Institute Annual Conference, University of Waterloo.</ListItem>
+        <ListItem>Received 3rd place best poster award (300 CAD) at the 2024 Cybersecurity and Privacy Institute Annual Conference, University of Waterloo.</ListItem>
         <ListItem>
         Delivered an oral and poster presentation at the 2023 Math and Computing Research Discovery Days, University of Waterloo.
         </ListItem>
