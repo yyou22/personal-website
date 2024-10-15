@@ -16,10 +16,14 @@ import thumbNavEaz from '../public/images/works/naveaz1.png'
 import thumbCoPrompt from '../public/images/works/coprompt3.png'
 import thumbGradflix from '../public/images/works/gradflix/gradflix.gif'
 import thumbGradflix2 from '../public/images/works/gradflix/gradflix.png'
-import thumbVISxAI from '../public/images/works/visxai/visxai1.gif'
+import thumbVISxAI from '../public/images/works/visxai/visxai7.gif'
 import thumbVISxAI2 from '../public/images/works/visxai/visxai1.png'
 import thumbCloud from '../public/images/works/point\ cloud/pc3.png'
 import thumbMusashi from '../public/images/works/musashi/musashi1.png'
+import thumbGamification from '../public/images/works/gamification/gamification3.gif'
+import thumbGamification2 from '../public/images/works/gamification/gamification4.png'
+import thumbVATRA from '../public/images/works/vatra/vatra1.gif'
+import thumbVATRA2 from '../public/images/works/vatra/vatra2.png'
 
 const Works = () => (
 
@@ -31,7 +35,7 @@ const Works = () => (
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
 
-      <Section>
+        <Section>
           <WorkGridItem
             id="visxai"
             title="Panda or Gibbon?"
@@ -54,6 +58,28 @@ const Works = () => (
 
         <Section delay={0.1}>
           <WorkGridItem
+            id="gamification"
+            title="XAI Gamification"
+            thumbnail={thumbGamification}
+            blurPlaceholder={thumbGamification2}
+          >
+            LLM-Powered Narrative Gamification Framework for XAI Visualizations
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.1}>
+          <WorkGridItem
+            id="vatra"
+            title="VATRA"
+            thumbnail={thumbVATRA}
+            blurPlaceholder={thumbVATRA2}
+          >
+            Comparative Visual Analytics for AI Model Trade-off Analysis
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.2}>
+          <WorkGridItem
             id="gradflix"
             title="GRADflix"
             thumbnail={thumbGradflix}
@@ -63,7 +89,7 @@ const Works = () => (
           </WorkGridItem>
         </Section>
 
-        <Section delay={0.1}>
+        <Section delay={0.2}>
           <WorkGridItem
             id="advex"
             title="AdvEx"
@@ -74,7 +100,7 @@ const Works = () => (
           </WorkGridItem>
         </Section>
 
-        <Section delay={0.2}>
+        <Section delay={0.3}>
           <WorkGridItem
             id="coprompt"
             title="CoPrompt"
@@ -84,7 +110,7 @@ const Works = () => (
           </WorkGridItem>
         </Section>
 
-        <Section delay={0.2}>
+        <Section delay={0.3}>
           <WorkGridItem
             id="pointcloud"
             title="Point Cloud Visibility"
@@ -95,7 +121,7 @@ const Works = () => (
         </Section>
         </SimpleGrid>
 
-        <Section delay={0.3}>
+        <Section delay={0.4}>
         <Divider my={6} />
           <Heading as="h3" fontSize={20} mb={4}>
             Older Works
@@ -104,7 +130,7 @@ const Works = () => (
 
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
 
-        <Section delay={0.3}>
+        <Section delay={0.4}>
           <WorkGridItem
             id="musashi"
             title="Waterloo.AI Challenge"
@@ -114,7 +140,7 @@ const Works = () => (
           </WorkGridItem>
         </Section>
 
-        <Section delay={0.3}>
+        <Section delay={0.4}>
           <WorkGridItem
             id="socr"
             title="SOCR - Big Data"
