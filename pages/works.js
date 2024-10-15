@@ -20,9 +20,9 @@ import thumbVISxAI from '../public/images/works/visxai/visxai7_thumbnail.gif'
 import thumbVISxAI2 from '../public/images/works/visxai/visxai1_thumbnail.png'
 import thumbCloud from '../public/images/works/point\ cloud/pc3.png'
 import thumbMusashi from '../public/images/works/musashi/musashi1.png'
-import thumbGamification from '../public/images/works/gamification/gamification3_thumbnail.gif'
+import thumbGamification from '../public/images/works/gamification/gamification3_thumbnail_.gif'
 import thumbGamification2 from '../public/images/works/gamification/gamification4_thumbnail.png'
-import thumbVATRA from '../public/images/works/vatra/vatra1_thumbnail.gif'
+import thumbVATRA from '../public/images/works/vatra/vatra1_thumbnail_.gif'
 import thumbVATRA2 from '../public/images/works/vatra/vatra2_thumbnail.png'
 
 const Works = () => (
