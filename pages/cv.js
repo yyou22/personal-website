@@ -92,13 +92,13 @@ const CV = () => (
             <Box>
               <Text fontSize="lg" fontWeight="bold">WatVis Research Group</Text>
               <Text>Researcher</Text>
-              <Text color="#6d758e">Waterloo, ON | June 2022 - Present</Text>
+              <Text color="#6d758e">Waterloo, ON | Jun 2022 - Present</Text>
             </Box>
             <Divider />
             <Box>
               <Text fontSize="lg" fontWeight="bold">iTSS Lab</Text>
               <Text>Researcher</Text>
-              <Text color="#6d758e">Waterloo, ON | June 2022 - Present</Text>
+              <Text color="#6d758e">Waterloo, ON | Jun 2022 - Present</Text>
             </Box>
             <Divider />
             <Box>
@@ -270,7 +270,7 @@ const CV = () => (
             <Box>
               <Text fontSize="lg" fontWeight="bold">University of Waterloo</Text>
               <Text>Student host for Prof. Niklas Elmqvist&apos;s Seminar on Human-Centered AI Tools</Text>
-              <Text color="#6d758e">August 2024</Text>
+              <Text color="#6d758e">Aug 2024</Text>
             </Box>
             <Box>
               <Text>Student host for Prof. John Stasko&apos;s Distinguished Lecture on Visualization </Text>
