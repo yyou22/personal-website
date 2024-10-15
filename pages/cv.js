@@ -135,7 +135,7 @@ const CV = () => (
                     Oct 2024
                   </Text>
                   </BioYear>
-                  3rd Place Best Poster Award (300 CAD) in 2024 UWaterloo CPI Conference
+                  3rd Place Best Poster Award (300 CAD) in UWaterloo CPI Conference
                 </BioSection>
                 <BioSection>
                   <BioYear>
