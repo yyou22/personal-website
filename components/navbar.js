@@ -74,6 +74,9 @@ const Navbar = props => {
           <LinkItem href="/works" path={path}>
             Works
           </LinkItem>
+          <LinkItem href="/cv" path={path}>
+            CV
+          </LinkItem>
           <LinkItem
             target="_blank"
             href="https://github.com/yyou22/personal-website"
@@ -105,6 +108,9 @@ const Navbar = props => {
                 </NextLink>
                 <NextLink href="/works" passHref>
                   <MenuItem as={Link}>Works</MenuItem>
+                </NextLink>
+                <NextLink href="/cv" passHref>
+                  <MenuItem as={Link}>CV</MenuItem>
                 </NextLink>
                 <MenuItem
                   as={Link}
