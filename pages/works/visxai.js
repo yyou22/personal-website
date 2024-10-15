@@ -38,7 +38,7 @@ const Work = () => {
         </UnorderedList>
         <UnorderedList my={4}>
           <Meta>Recognition & Outreach</Meta>
-          <ListItem>Accepted at the 7th VISxAI Workshop at IEEE VIS24: {' '}
+          <ListItem>Accepted and presented at the 7th VISxAI Workshop at IEEE VIS24: {' '}
           <Link href="https://visxai.io/" target="_blank" rel="noopener noreferrer">
             VISxAI Workshop Program Info <ExternalLinkIcon mx="2px" />
           </Link>
