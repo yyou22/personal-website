@@ -20,7 +20,7 @@ import { WorkGridItem } from '../components/grid-item'
 //import thumbSocr from '../public/images/works/socr_eyecatch.png'
 import thumbFGSM from '../public/images/works/advex/advex1_thumbnail.gif'
 import thumbFGSM2 from '../public/images/works/advex/advex1_thumbnail.png'
-import thumbNavEaz from '../public/images/works/naveaz1.png'
+import thumbNavEaz from '../public/images/works/naveaz/naveaz1_thumbnail.png'
 import { IoLogoTwitter, IoLogoLinkedin} from 'react-icons/io5'
 
 const ProfileImage = chakra(Image, {
