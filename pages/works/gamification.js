@@ -25,7 +25,7 @@ const Work = () => {
           &quot;Gamifying XAI: Enhancing AI Explainability for Non-technical Users through LLM-Powered Narrative Gamifications&quot; <ExternalLinkIcon mx="2px" />
         </Link> is a  
           project that explores how gamification and narrative-driven interactions, powered by Large Language Models (LLMs), can enhance AI explainability for non-technical users. 
-          The study focuses on integrating LLMs into Explainable AI (XAI) visualization frameworks, aiming to improve non-technical users' understanding of AI concepts, and addressing the gap of existing XAI methods being too techno-centric.
+          The study focuses on integrating LLMs into Explainable AI (XAI) visualization frameworks, aiming to improve non-technical users&apos; understanding of AI concepts, and addressing the gap of existing XAI methods being too techno-centric.
           Our prototype introduces LLM-driven conversational NPCs that guide users through complex AI concepts and XAI visual encodings, helping them understand things like model prediction process and decision boundaries in a more intuitive way.
         </P>
         <br/>
