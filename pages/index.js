@@ -155,6 +155,16 @@ const Home = () => (
         </BioSection>*/}
       </Section>
 
+      <Section delay={0.2}>
+        <Box align="center" my={4}>
+          <NextLink href="/cv" scroll={false}>
+            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+              See My Full CV
+            </Button>
+          </NextLink>
+        </Box>
+      </Section>
+
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
           Connect with Me
