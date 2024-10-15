@@ -129,6 +129,14 @@ const CV = () => (
             <Box>
             <Text fontSize="lg" fontWeight="bold">Graduate</Text>
               <VStack align="start" spacing={2} mt={2}>
+              <BioSection>
+                  <BioYear>
+                  <Text as="span" color="#6d758e" fontWeight="normal">
+                    Oct 2024
+                  </Text>
+                  </BioYear>
+                  3rd Place Best Poster Award (300 CAD) in 2024 UWaterloo CPI Conference
+                </BioSection>
                 <BioSection>
                   <BioYear>
                   <Text as="span" color="#6d758e" fontWeight="normal">
