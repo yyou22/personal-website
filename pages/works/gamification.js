@@ -28,7 +28,15 @@ const Work = () => {
           The study focuses on integrating LLMs into Explainable AI (XAI) visualization frameworks, aiming to improve non-technical users&apos; understanding of AI concepts, and addressing the gap of existing XAI methods being too techno-centric.
           Our prototype introduces LLM-driven conversational NPCs that guide users through complex AI concepts and XAI visual encodings, helping them understand things like model prediction process and decision boundaries in a more intuitive way.
         </P>
-        <br/>
+        <UnorderedList my={4}>
+          <Meta>Links: {' '}</Meta>
+          <ListItem>
+            Video Demo: {' '}
+            <Link href="https://youtu.be/P4zJqP6N1Fw" target="_blank" rel="noopener noreferrer">
+            https://youtu.be/P4zJqP6N1Fw <ExternalLinkIcon mx="2px" />
+            </Link>
+          </ListItem>
+        </UnorderedList>
         <WorkImage src="/images/works/gamification/gamification1.gif" alt="gamification" />
         <WorkImage src="/images/works/gamification/gamification6.gif" alt="gamification" />
         <WorkImage src="/images/works/gamification/gamification5.gif" alt="gamification" />
