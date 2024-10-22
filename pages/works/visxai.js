@@ -29,10 +29,17 @@ const Work = () => {
           The guide allows users to explore the impact of these adversarial attacks on model behavior by comparing clean and perturbed data points, as well as two different ResNet-34 models trained with standard and adversarial methods.
         </P>
         <UnorderedList my={4}>
-          <Meta>Link to Explainable: {' '}</Meta>
+          <Meta>Links: {' '}</Meta>
           <ListItem>
+            Explainable: {' '}
             <Link href="https://visxai-aml.vercel.app/" target="_blank" rel="noopener noreferrer">
               https://visxai-aml.vercel.app/ <ExternalLinkIcon mx="2px" />
+            </Link>
+          </ListItem>
+          <ListItem>
+            Video Demo: {' '}
+            <Link href="https://youtu.be/ASEd4f5gMvA" target="_blank" rel="noopener noreferrer">
+            https://youtu.be/ASEd4f5gMvA <ExternalLinkIcon mx="2px" />
             </Link>
           </ListItem>
         </UnorderedList>

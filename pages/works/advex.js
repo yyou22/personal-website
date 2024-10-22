@@ -18,6 +18,15 @@ const Work = () => (
         model architecture, and training methods.
       </P>
       <UnorderedList my={4}>
+          <Meta>Links: {' '}</Meta>
+          <ListItem>
+            Video Demo: {' '}
+            <Link href="https://youtu.be/q9xcfDoCNhs" target="_blank" rel="noopener noreferrer">
+            https://youtu.be/q9xcfDoCNhs <ExternalLinkIcon mx="2px" />
+            </Link>
+          </ListItem>
+      </UnorderedList>
+      <UnorderedList my={4}>
         <Meta>Recognition & Outreach</Meta>
         <ListItem>
         In submission to ACM Transactions on Interactive Intelligent System journal.
