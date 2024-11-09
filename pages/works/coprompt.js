@@ -41,6 +41,15 @@ const Work = () => (
         allowFullScreen
         style={{ maxWidth: '600px' }}
       ></iframe>
+      <iframe
+        width="100%"
+        height="315"
+        src="https://www.youtube.com/embed/BiToRaCrnHg?si=QH4xBRllEmPblA-0"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        style={{ maxWidth: '600px' }}
+      ></iframe>
       <UnorderedList my={4}>
         <Meta>Core Features</Meta>
         <ListItem>Seamless collaboration through sharing, referring, linking, and requesting prompts</ListItem>

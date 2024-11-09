@@ -25,6 +25,12 @@ const Work = () => (
             https://youtu.be/q9xcfDoCNhs <ExternalLinkIcon mx="2px" />
             </Link>
           </ListItem>
+          <ListItem>
+            CPI Winner Announcement: {' '}
+            <Link href="https://uwaterloo.ca/cybersecurity-privacy-institute/news/cpi-congratulates-our-top-3-winners-cpi-annual-conference" target="_blank" rel="noopener noreferrer">
+            CPI Congratulates our Top 3 Winners in the CPI Annual Conference Poster Competition <ExternalLinkIcon mx="2px" />
+            </Link>
+          </ListItem>
       </UnorderedList>
       <UnorderedList my={4}>
         <Meta>Recognition & Outreach</Meta>
