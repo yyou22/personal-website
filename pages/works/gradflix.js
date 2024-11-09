@@ -13,8 +13,8 @@ const Work = () => (
       <P>
         My GRADflix project is a playful 8-bit pixel-style video game, designed to present my research on visualizing adversarial machine learning (AML) in an accessible and creative way. 
         I developed the game using a game engine for the underlying logic and interactivity, and hand-drew all the artwork from scratch using Procreate on my iPad. 
-        The game is set to autoplay, and I recorded a playthrough to demonstrate how I combine my programming and design skills to make complex AI concepts more understandable to a wider audience. 
-        The goal of this project is to highlight my MMath research and emphasize the value of visualizations in explaining AI safety and AML, making technical topics more engaging and easier to grasp.
+        The game is set to autoplay, and I recorded a playthrough to demonstrate how I can combine my programming and design skills to make complex AI concepts more understandable to a wider audience. 
+        The goal of this project is to highlight my MMath research and emphasize the value of visualizations in explaining AI safety and AML, as well as making technical topics more engaging and easier for non-technical audience to grasp.
       </P>
       <UnorderedList my={4}>
         <Meta>Recognition & Outreach</Meta>

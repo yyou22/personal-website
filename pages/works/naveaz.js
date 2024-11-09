@@ -19,6 +19,7 @@ const Work = () => (
       </P>
       <UnorderedList my={4}>
         <Meta>Recognition & Outreach</Meta>
+        <ListItem>Selected to be presented at Transport Canada/NRC Community of Practice (CoP) workshop, Oct 2024.</ListItem>
         <ListItem>Received an Innovation Design Award from ICACHI (5,000 RMB).</ListItem>
       </UnorderedList>
       <WorkImage src="/images/works/naveaz1.png" alt="naveaz" />
