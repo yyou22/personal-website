@@ -24,6 +24,7 @@ import thumbGamification from '../public/images/works/gamification/gamification3
 import thumbGamification2 from '../public/images/works/gamification/gamification4_thumbnail.png'
 import thumbVATRA from '../public/images/works/vatra/vatra1_thumbnail_.gif'
 import thumbVATRA2 from '../public/images/works/vatra/vatra2_thumbnail.png'
+import thumbArt from '../public/images/works/art/art_thumbnail.png'
 
 const Works = () => (
 
@@ -119,7 +120,7 @@ const Works = () => (
             A Point Cloud-based Application that Uses Ray-casting to Compute Visbility of POIs
           </WorkGridItem>
         </Section>
-        </SimpleGrid>
+      </SimpleGrid>
 
         <Section delay={0.4}>
         <Divider my={6} />
@@ -128,7 +129,7 @@ const Works = () => (
           </Heading>
         </Section>
 
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+      <SimpleGrid columns={[1, 1, 2]} gap={6}>
 
         <Section delay={0.4}>
           <WorkGridItem
@@ -227,6 +228,27 @@ const Works = () => (
         </Section>
         */}
 
+      </SimpleGrid>
+
+      <Section delay={0.5}>
+        <Divider my={6} />
+          <Heading as="h3" fontSize={20} mb={4}>
+            Other Skills
+          </Heading>
+      </Section>
+
+      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+
+        <Section delay={0.5}>
+          <WorkGridItem
+            id="art"
+            title="Art & Illustration"
+            thumbnail={thumbArt}
+          >
+            Explore My Paintings, Drawings, and Illustrations
+          </WorkGridItem>
+        </Section>
+      
       </SimpleGrid>
 
     </Container>
