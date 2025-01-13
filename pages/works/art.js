@@ -31,7 +31,7 @@ const Work = () => {
           Three artworks exhibited at Rhode Island School of Design (RISD) Exhibition in 2015
         </ListItem>
         <ListItem>
-          Six artworks featured in University of Michigan's Blueprint Literary Magazine (2018&ndash;2019)
+          Six artworks featured in University of Michigan&apos;s Blueprint Literary Magazine (2018&ndash;2019)
         </ListItem>
         </UnorderedList>
         <WorkImage src="/images/works/art/art1.png" alt="art" />
