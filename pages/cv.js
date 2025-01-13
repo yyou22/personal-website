@@ -301,7 +301,7 @@ const CV = () => (
             <Box>
               <Text fontSize="md">
                 <Link color="#6b93a2" href="https://uwaterloo.ca/cybersecurity-privacy-institute/news/cpi-congratulates-our-top-3-winners-cpi-annual-conference" isExternal>
-                  "CPI Congratulates our Top 3 Winners in the CPI Annual Conference Poster Competition."<ExternalLinkIcon mx="2px" />
+                &quot;CPI Congratulates our Top 3 Winners in the CPI Annual Conference Poster Competition.&quot;<ExternalLinkIcon mx="2px" />
                 </Link> Cybersecurity and Privacy Institute, University of Waterloo, Oct 2024.
               </Text>
             </Box>
@@ -309,7 +309,7 @@ const CV = () => (
             <Box>
               <Text fontSize="md">
                 <Link color="#6b93a2" href="https://uwaterloo.ca/current-graduate-students/news/meet-gradflix-finalist-who-combined-art-and-programming" isExternal>
-                  "Meet the GRADflix finalist who combined art and programming to share her research."<ExternalLinkIcon mx="2px" />
+                &quot;Meet the GRADflix finalist who combined art and programming to share her research.&quot;<ExternalLinkIcon mx="2px" />
                 </Link> Graduate Studies and Postdoctoral Affairs, University of Waterloo, May 2023.
               </Text>
             </Box>
@@ -317,7 +317,7 @@ const CV = () => (
             <Box>
               <Text fontSize="md">
                 <Link color="#6b93a2" href="https://cs.uwaterloo.ca/news/cheriton-students-among-winners-at-waterloo-ai-data-challenge" isExternal>
-                  "Cheriton School of Computer Science undergrads and grads among winners at Waterloo.AI’s Data Challenge."<ExternalLinkIcon mx="2px" />
+                &quot;Cheriton School of Computer Science undergrads and grads among winners at Waterloo.AI’s Data Challenge.&quot;<ExternalLinkIcon mx="2px" />
                 </Link> Cheriton School of Computer Science, University of Waterloo, Nov 2022.
               </Text>
             </Box>
