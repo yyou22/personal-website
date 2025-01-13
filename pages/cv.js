@@ -1,7 +1,7 @@
 import { Container, Heading, Divider, Text, Box, VStack, HStack, Icon, Link, } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import { FaGraduationCap, FaBook, FaBriefcase, FaAward, FaChalkboardTeacher, FaHandsHelping } from 'react-icons/fa'
+import { FaGraduationCap, FaBook, FaBriefcase, FaAward, FaChalkboardTeacher, FaHandsHelping, FaNewspaper, FaMicrophone } from 'react-icons/fa'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { BioSection, BioYear } from '../components/bio'
 
@@ -283,6 +283,80 @@ const CV = () => (
             <Box>
               <Text>Student host for Prof. John Stasko&apos;s Distinguished Lecture on Visualization </Text>
               <Text color="#6d758e">May 2024</Text>
+            </Box>
+          </VStack>
+        </Box>
+      </Section>
+
+      {/* Press Section */}
+      <Section delay={0.8}>
+        <Box p={6} boxShadow="3px 4px 16px rgba(0, 0, 0, 0.5)" borderRadius="md" mb={8}>
+          <HStack spacing={3} align="center">
+            <Icon as={FaNewspaper} boxSize={6} color="teal.500" />
+            <Heading as="h3" variant="section-title" color="teal.600">
+              Press & Media Coverage
+            </Heading>
+          </HStack>
+          <VStack align="start" spacing={6} mt={4}>
+            <Box>
+              <Text fontSize="md">
+                <Link color="#6b93a2" href="https://uwaterloo.ca/cybersecurity-privacy-institute/news/cpi-congratulates-our-top-3-winners-cpi-annual-conference" isExternal>
+                  "CPI Congratulates our Top 3 Winners in the CPI Annual Conference Poster Competition."<ExternalLinkIcon mx="2px" />
+                </Link> Cybersecurity and Privacy Institute, University of Waterloo, Oct 2024.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                <Link color="#6b93a2" href="https://uwaterloo.ca/current-graduate-students/news/meet-gradflix-finalist-who-combined-art-and-programming" isExternal>
+                  "Meet the GRADflix finalist who combined art and programming to share her research."<ExternalLinkIcon mx="2px" />
+                </Link> Graduate Studies and Postdoctoral Affairs, University of Waterloo, May 2023.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                <Link color="#6b93a2" href="https://cs.uwaterloo.ca/news/cheriton-students-among-winners-at-waterloo-ai-data-challenge" isExternal>
+                  "Cheriton School of Computer Science undergrads and grads among winners at Waterloo.AI’s Data Challenge."<ExternalLinkIcon mx="2px" />
+                </Link> Cheriton School of Computer Science, University of Waterloo, Nov 2022.
+              </Text>
+            </Box>
+          </VStack>
+        </Box>
+      </Section>
+
+      {/* Presentations & Invited Talks Section */}
+      <Section delay={0.9}>
+        <Box p={6} boxShadow="3px 4px 16px rgba(0, 0, 0, 0.5)" borderRadius="md" mb={8}>
+          <HStack spacing={3} align="center">
+            <Icon as={FaMicrophone} boxSize={6} color="teal.500" />
+            <Heading as="h3" variant="section-title" color="teal.600">
+              Presentations & Invited Talks
+            </Heading>
+          </HStack>
+          <VStack align="start" spacing={6} mt={4}>
+            <Box>
+              <Text fontSize="md">
+                <strong>NavEaz: An AI-based Smartwatch Application for Driver Impairment Detection & Predictive Analysis.</strong> Oral Presentation, Transport Canada/NRC Community of Practice (CoP) workshop, Oct 2024.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                <strong>Panda or Gibbon? A Beginner’s Introduction to Adversarial Attacks.</strong> Oral Presentation, IEEE VIS, Oct 2024.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                <strong>AdvEx: Understanding Adversarial Attacks with Interactive Visualizations.</strong> Poster Presentation, Cybersecurity and Privacy Institute Annual Conference, University of Waterloo, Oct 2024.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                <strong>AdvEx: Interactive Visual Explorations of Adversarial Attacks.</strong> Oral and Poster Presentations, Math and Computing Research Discovery Days, University of Waterloo, Jun 2023.
+              </Text>
             </Box>
           </VStack>
         </Box>
