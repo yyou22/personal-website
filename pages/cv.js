@@ -1,7 +1,7 @@
 import { Container, Heading, Divider, Text, Box, VStack, HStack, Icon, Link, } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import { FaGraduationCap, FaBook, FaBriefcase, FaAward, FaChalkboardTeacher, FaHandsHelping, FaNewspaper, FaMicrophone } from 'react-icons/fa'
+import { FaGraduationCap, FaScroll, FaBook, FaBriefcase, FaAward, FaChalkboardTeacher, FaHandsHelping, FaNewspaper, FaMicrophone } from 'react-icons/fa'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { BioSection, BioYear } from '../components/bio'
 
@@ -60,6 +60,18 @@ const CV = () => (
           <VStack align="start" spacing={6} mt={4}>
             <Box>
               <Text fontSize="md">
+                <strong>Yuzhe You</strong>, Jarvis Tse, and Jian Zhao. <Link color="#6b93a2" href="https://dl.acm.org/doi/10.1145/3725739" isExternal>Panda or not Panda? Understanding Adversarial Attacks with Interactive Visualization.<ExternalLinkIcon mx="2px" /></Link>. ACM Transactions on Interactive Intelligent Systems, 2025 (In Press).
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                <strong>Yuzhe You</strong>, Helen Weixu Chen, and Jian Zhao. <Link color="#6b93a2" href="https://doi.org/10.1145/3706599.3719795" isExternal>Enhancing AI Explainability for Non-technical Users with LLM-Driven Narrative Gamification.<ExternalLinkIcon mx="2px" /></Link>. Extended Abstracts of the CHI Conference on Human Factors in Computing Systems, 2025 (In Press).
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
                 <strong>Yuzhe You</strong> and Jian Zhao. <Link color="#6b93a2" href="https://visxai-aml.vercel.app/" isExternal>Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks<ExternalLinkIcon mx="2px" /></Link>. In <i>7th Workshop on Visualization for AI Explainability (VISxAI)</i>, IEEE VIS 2024.
               </Text>
             </Box>
@@ -69,7 +81,19 @@ const CV = () => (
                 Li Feng, Ryan Yen, <strong>Yuzhe You</strong>, Mingming Fan, Jian Zhao, and Zhicong Lu. <Link color="#6b93a2" href="https://arxiv.org/abs/2310.09235" isExternal>CoPrompt: Supporting Prompt Sharing and Referring in Collaborative Natural Language Programming<ExternalLinkIcon mx="2px" /></Link>. In <i>Proceedings of the CHI Conference on Human Factors in Computing Systems</i>, CHI 2024.
               </Text>
             </Box>
-            <Divider />
+          </VStack>
+        </Box>
+      </Section>
+
+      <Section delay={0.2}>
+        <Box p={6} boxShadow="3px 4px 16px rgba(0, 0, 0, 0.5)" borderRadius="md" mb={8}>
+          <HStack spacing={3} align="center">
+            <Icon as={FaScroll} boxSize={6} color="teal.500" />
+            <Heading as="h3" variant="section-title" color="teal.600">
+              Thesis
+            </Heading>
+          </HStack>
+          <VStack align="start" spacing={6} mt={4}>
             <Box>
               <Text fontSize="md">
                 <strong>Yuzhe You</strong>. <Link color="#6b93a2" href="https://uwspace.uwaterloo.ca/items/33b531b9-3fe0-436d-97c6-0da4547a4af9" isExternal>AdvEx: Interactive Visual Explorations of Adversarial Evasion Attacks<ExternalLinkIcon mx="2px" /></Link>. <i>Master&apos;s thesis</i>, University of Waterloo, 2023.
@@ -89,17 +113,28 @@ const CV = () => (
             </Heading>
           </HStack>
           <VStack align="start" spacing={4} mt={4}>
+          <Box>
+              <Text fontSize="lg" fontWeight="bold">Microsoft UK</Text>
+              <Text>Incoming Research Intern</Text>
+              <Text color="#6d758e">Cambridge, UK</Text>
+            </Box>
+            <Divider />
             <Box>
-              <Text fontSize="lg" fontWeight="bold">WatVis Research Group</Text>
+              <Text fontSize="lg" fontWeight="bold">University of Waterloo, WVisdom &amp; iTSS Research Labs</Text>
               <Text>Researcher</Text>
               <Text color="#6d758e">Waterloo, ON | Jun 2022 - Present</Text>
+            </Box>
+            {/*<Box>
+              <Text fontSize="lg" fontWeight="bold">WatVis Research Group (formerly WVisdom)</Text>
+              <Text>Researcher</Text>
+              <Text color="#6d758e">University of Waterloo, Waterloo, ON | Jun 2022 - Present</Text>
             </Box>
             <Divider />
             <Box>
               <Text fontSize="lg" fontWeight="bold">iTSS Lab</Text>
               <Text>Researcher</Text>
-              <Text color="#6d758e">Waterloo, ON | Jun 2022 - Present</Text>
-            </Box>
+              <Text color="#6d758e">University of Waterloo, Waterloo, ON | Jun 2022 - Present</Text>
+            </Box>*/}
             <Divider />
             <Box>
               <Text fontSize="lg" fontWeight="bold">Blackberry Labs</Text>
@@ -108,7 +143,7 @@ const CV = () => (
             </Box>
             <Divider />
             <Box>
-              <Text fontSize="lg" fontWeight="bold">SOCR Research Team</Text>
+              <Text fontSize="lg" fontWeight="bold">University of Michigan, SOCR Research Team</Text>
               <Text>Research Assistant</Text>
               <Text color="#6d758e">Ann Arbor, MI | Jan 2019 - Jan 2020</Text>
             </Box>
