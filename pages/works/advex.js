@@ -20,9 +20,21 @@ const Work = () => (
       <UnorderedList my={4}>
           <Meta>Links: {' '}</Meta>
           <ListItem>
+            Paper Link: {' '}
+            <Link href="https://dl.acm.org/doi/10.1145/3725739" target="_blank" rel="noopener noreferrer">
+            dl.acm.org/doi/10.1145/3725739 <ExternalLinkIcon mx="2px" />
+            </Link>
+          </ListItem>
+          <ListItem>
+            Video Figure: {' '}
+            <Link href="https://youtu.be/h5JMTz7PoKQ?si=Lw7Ab2-ADXOBKhhU" target="_blank" rel="noopener noreferrer">
+            Youtube Link <ExternalLinkIcon mx="2px" />
+            </Link>
+          </ListItem>
+          <ListItem>
             Video Demo: {' '}
             <Link href="https://youtu.be/q9xcfDoCNhs" target="_blank" rel="noopener noreferrer">
-            https://youtu.be/q9xcfDoCNhs <ExternalLinkIcon mx="2px" />
+            Youtube Link <ExternalLinkIcon mx="2px" />
             </Link>
           </ListItem>
           <ListItem>
@@ -35,7 +47,7 @@ const Work = () => (
       <UnorderedList my={4}>
         <Meta>Recognition & Outreach</Meta>
         <ListItem>
-        In submission to ACM Transactions on Interactive Intelligent System journal.
+        Accepted by ACM Transactions on Interactive Intelligent System journal!
         </ListItem>
         <ListItem>Received 3rd place best poster award (300 CAD) at the 2024 Cybersecurity and Privacy Institute Annual Conference, University of Waterloo.</ListItem>
         <ListItem>
@@ -46,6 +58,15 @@ const Work = () => (
       <WorkImage src="/images/works/advex/advex2.gif" alt="fgsm" />
       <WorkImage src="/images/works/advex/advex3.gif" alt="fgsm" />
       <WorkImage src="/images/works/advex/advex5.png" alt="fgsm" />
+      <iframe
+        width="100%"
+        height="315"
+        src="https://www.youtube.com/embed/h5JMTz7PoKQ?si=AefDTdUdqGgzbzj1"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        style={{ maxWidth: '600px' }}
+      ></iframe>
       <UnorderedList my={4}>
         <Meta>Core Features</Meta>
         <ListItem>Interactive Visualization of Adversarial Evasion Attacks (e.g., FGSM, PGD, ZOO attacks)</ListItem>
@@ -63,7 +84,7 @@ const Work = () => (
         </ListItem>
         <ListItem>
           <Meta>Paper Link</Meta>
-          <Link href="https://arxiv.org/abs/2311.13656" target="_blank" rel="noopener noreferrer">
+          <Link href="https://dl.acm.org/doi/10.1145/3725739" target="_blank" rel="noopener noreferrer">
           Panda or not Panda? Understanding Adversarial Attacks with Interactive Visualization <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>

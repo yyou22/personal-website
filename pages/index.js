@@ -46,7 +46,7 @@ const Home = () => (
           <Heading as="h2" variant="page-title">
             Yuzhe Y.
           </Heading>
-          <p> Researcher / Developer / Artist / Designer</p>
+          <p> CS Researcher / Developer / Artist + Designer / Student Pilot </p>
         </Box>
         <Box
           flexShrink={0}
@@ -65,7 +65,7 @@ const Home = () => (
             overflow="hidden"
           >
             <ProfileImage
-              src="/images/pfp.jpg"
+              src="/images/photo1.png"
               alt="Profile image"
               borderRadius="full"
               width="100%"
@@ -88,20 +88,20 @@ const Home = () => (
           </Link>
           &nbsp;at University of Michigan-Ann Arbor, and now I am a member of {' '}
           <Link href="https://www.jeffjianzhao.com/" target="_blank" rel="noopener noreferrer">
-            WatVis Research Group
+            WVisdom Research Group (formerly WatVis)
           </Link>
           &nbsp;and {' '}
           <Link href="https://www.civil.uwaterloo.ca/itss/index.htm" target="_blank" rel="noopener noreferrer">
             iTSS Lab
           </Link>
           &nbsp;at the University of Waterloo.
-          My primary research interest is InfoVis for Explainable AI, with a focus on visualizing AI models under adversarial attacks. 
+          My primary research interest is InfoVis for Explainable AI, with a focus on visualizing AI models under adversarial attacks and making XAI visualizations more meaningful for non-experts. 
           I also conduct research on applying machine learning to develop intelligent transportation solutions.
           My other academic interests include Computer Vision,
-          Machine Learning, Data Science, and more.
+          Machine Learning, and more.
         </Paragraph>
         <Paragraph>
-          During my spare time, I enjoy working on my personal projects. I am also a digital artist and graphic designer.
+          During my spare time, I enjoy working on my personal projects. I am also a digital artist and graphic designer, and a self-paced student pilot.
         </Paragraph>
       </Section>
 
@@ -110,7 +110,7 @@ const Home = () => (
           I ♥
         </Heading>
         <Paragraph>
-          Visualization, Explainable AI, Machine Learning, Computer Vision, Coding, Digital Art, Graphic Design, UI/UX Design, Cockatoos
+          Visualization, Explainable AI, Machine Learning, Computer Vision, Coding, Digital Art, Graphic Design, UI/UX Design, Aviation, Cockatoos
         </Paragraph>
       </Section>
 
@@ -118,6 +118,25 @@ const Home = () => (
         <Heading as="h3" variant="section-title">
           Recent News
         </Heading>
+        <BioSection>
+          <BioYear>Apr 2025</BioYear>
+          I am joining 
+          <Link href="https://www.microsoft.com/en-gb/about/" target="_blank" rel="noopener noreferrer">
+          &nbsp;Microsoft UK&nbsp; 
+          </Link>
+          as a research intern this spring!
+        </BioSection>
+        <BioSection>
+          <BioYear>Mar 2025</BioYear>
+          1 CHI'25 LBW paper + 1 ACM TiiS Journal Paper accepted!
+        </BioSection>
+        <BioSection>
+          <BioYear>Jan 2025</BioYear>
+          I have joined &nbsp;
+          <Link href="https://wwfc.ca/" target="_blank" rel="noopener noreferrer">
+           Waterloo Wellington Flight Centre (WWFC)
+          </Link> as a self-paced student pilot to receive my PPL training!
+        </BioSection>
         <BioSection>
           <BioYear>Oct 2024</BioYear>
           Interactive explainable {' '}
@@ -139,6 +158,7 @@ const Home = () => (
           </Link> on collaborative natural language programming
            accepted at CHI 2024.
         </BioSection>
+        {/*
         <BioSection>
           <BioYear>Mar 2024</BioYear>
           Received &quot;Business Incubation Award&quot; (3rd Place) in a Hackathon 
@@ -149,7 +169,7 @@ const Home = () => (
           Received &quot;Innovation Design Award&quot; in a Smart Mobility Innovation Contest
           hosted by ICACHI (5,000 RMB).
         </BioSection>
-        {/*<BioSection>
+        <BioSection>
           <BioYear>May 2023</BioYear>
           Recipient of GO-Bell Scholarship (24,000 CAD).
         </BioSection>*/}
