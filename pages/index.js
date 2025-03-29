@@ -128,7 +128,7 @@ const Home = () => (
         </BioSection>
         <BioSection>
           <BioYear>Mar 2025</BioYear>
-          1 CHI'25 LBW paper + 1 ACM TiiS Journal Paper accepted!
+          1 CHI&apos;25 LBW paper + 1 ACM TiiS Journal Paper accepted!
         </BioSection>
         <BioSection>
           <BioYear>Jan 2025</BioYear>
