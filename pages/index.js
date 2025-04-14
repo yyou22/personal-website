@@ -120,7 +120,7 @@ const Home = () => (
         </Heading>
         <BioSection>
           <BioYear>Apr 2025</BioYear>
-          1 GI'25 paper accepted!
+          1 GI&apos;25 paper accepted!
         </BioSection>
         <BioSection>
           <BioYear>Apr 2025</BioYear>
