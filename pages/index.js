@@ -120,11 +120,23 @@ const Home = () => (
         </Heading>
         <BioSection>
           <BioYear>Apr 2025</BioYear>
+          1 GI'25 paper accepted!
+        </BioSection>
+        <BioSection>
+          <BioYear>Apr 2025</BioYear>
           I am joining 
           <Link href="https://www.microsoft.com/en-gb/about/" target="_blank" rel="noopener noreferrer">
           &nbsp;Microsoft UK&nbsp; 
           </Link>
           as a research intern this spring!
+        </BioSection>
+        <BioSection>
+          <BioYear>Apr 2025</BioYear>
+          I have begun my flight training at the
+          <Link href="https://www.iwm.org.uk/visits/iwm-duxford" target="_blank" rel="noopener noreferrer">
+          &nbsp;Imperial War Museum Duxford&nbsp; 
+          </Link>
+          in the UK!
         </BioSection>
         <BioSection>
           <BioYear>Mar 2025</BioYear>
@@ -144,6 +156,7 @@ const Home = () => (
           &quot;Panda or Gibbon?&quot;
           </Link> on adversarial attacks accepted at the 7th VISxAI workshop at IEEE VIS 2024.
         </BioSection>
+        {/*
         <BioSection>
           <BioYear>Oct 2024</BioYear>
           <Link href="works/advex">
@@ -158,7 +171,6 @@ const Home = () => (
           </Link> on collaborative natural language programming
            accepted at CHI 2024.
         </BioSection>
-        {/*
         <BioSection>
           <BioYear>Mar 2024</BioYear>
           Received &quot;Business Incubation Award&quot; (3rd Place) in a Hackathon 
