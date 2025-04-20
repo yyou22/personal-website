@@ -114,15 +114,21 @@ const CV = () => (
           </HStack>
           <VStack align="start" spacing={4} mt={4}>
           <Box>
-              <Text fontSize="lg" fontWeight="bold">Microsoft UK</Text>
+              <Text fontSize="lg" fontWeight="bold">Microsoft</Text>
               <Text>Incoming Research Intern</Text>
               <Text color="#6d758e">Cambridge, UK</Text>
             </Box>
             <Divider />
             <Box>
-              <Text fontSize="lg" fontWeight="bold">University of Waterloo, WVisdom &amp; iTSS Research Labs</Text>
+              <Text fontSize="lg" fontWeight="bold">University of Waterloo, WVisdom Research Lab</Text>
               <Text>Researcher</Text>
               <Text color="#6d758e">Waterloo, ON | Jun 2022 - Present</Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="lg" fontWeight="bold">University of Waterloo, iTSS Lab</Text>
+              <Text>Researcher</Text>
+              <Text color="#6d758e">Waterloo, ON | Jun 2022 - April 2025</Text>
             </Box>
             {/*<Box>
               <Text fontSize="lg" fontWeight="bold">WatVis Research Group (formerly WVisdom)</Text>
@@ -164,7 +170,15 @@ const CV = () => (
             <Box>
             <Text fontSize="lg" fontWeight="bold">Graduate</Text>
               <VStack align="start" spacing={2} mt={2}>
-              <BioSection>
+                <BioSection>
+                  <BioYear>
+                  <Text as="span" color="#6d758e" fontWeight="normal">
+                    Apr 2025
+                  </Text>
+                  </BioYear> 
+                  Computer Science PhD Student Award (3,000 CAD)
+                </BioSection>
+                <BioSection>
                   <BioYear>
                   <Text as="span" color="#6d758e" fontWeight="normal">
                     Oct 2024
@@ -276,7 +290,7 @@ const CV = () => (
           <Box>
             <Text fontSize="lg" fontWeight="bold">University of Waterloo</Text>
             <Text>TA for CS486/686: Intro to Artificial Intelligence</Text>
-            <Text color="#6d758e">Fall 2024 - Present</Text>
+            <Text color="#6d758e">Fall 2024</Text>
           </Box>
           <Box>
             <Text>TA / Lecturer for CS 449/649: Human-Computer Interaction</Text>
@@ -284,7 +298,7 @@ const CV = () => (
           </Box>
           <Box>
             <Text>TA for CS 349: User Interfaces</Text>
-            <Text color="#6d758e">Winter 2024</Text>
+            <Text color="#6d758e">Winter 2024; Winter 2025</Text>
           </Box>
           <Box>
             <Text>TA for CS 135: Designing Functional Programs</Text>
