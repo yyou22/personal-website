@@ -1,7 +1,7 @@
 import { Container, Heading, Divider, Text, Box, VStack, HStack, Icon, Link, } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import { FaGraduationCap, FaScroll, FaBook, FaBriefcase, FaAward, FaChalkboardTeacher, FaHandsHelping, FaNewspaper, FaMicrophone } from 'react-icons/fa'
+import { FaGraduationCap, FaBook, FaBriefcase, FaAward, FaChalkboardTeacher, FaHandsHelping, FaNewspaper, FaMicrophone } from 'react-icons/fa' //fixme: add FaScroll back
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { BioSection, BioYear } from '../components/bio'
 
