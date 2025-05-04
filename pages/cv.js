@@ -69,12 +69,12 @@ const CV = () => (
                 <strong>Yuzhe You</strong>, Helen Weixu Chen, and Jian Zhao. <Link color="#6b93a2" href="https://doi.org/10.1145/3706599.3719795" isExternal>Enhancing AI Explainability for Non-technical Users with LLM-Driven Narrative Gamification.<ExternalLinkIcon mx="2px" /></Link>. Extended Abstracts of the CHI Conference on Human Factors in Computing Systems, 2025 (In Press).
               </Text>
             </Box>
-            <Divider />
+            {/*<Divider />
             <Box>
               <Text fontSize="md">
                 <strong>Yuzhe You</strong> and Jian Zhao. <Link color="#6b93a2" href="https://visxai-aml.vercel.app/" isExternal>Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks<ExternalLinkIcon mx="2px" /></Link>. In <i>7th Workshop on Visualization for AI Explainability (VISxAI)</i>, IEEE VIS 2024.
               </Text>
-            </Box>
+            </Box>*/}
             <Divider />
             <Box>
               <Text fontSize="md">
@@ -85,7 +85,7 @@ const CV = () => (
         </Box>
       </Section>
 
-      <Section delay={0.2}>
+      {/*<Section delay={0.2}>
         <Box p={6} boxShadow="3px 4px 16px rgba(0, 0, 0, 0.5)" borderRadius="md" mb={8}>
           <HStack spacing={3} align="center">
             <Icon as={FaScroll} boxSize={6} color="teal.500" />
@@ -101,7 +101,7 @@ const CV = () => (
             </Box>
           </VStack>
         </Box>
-      </Section>
+      </Section>*/}
 
       {/* Professional Experience Section */}
       <Section delay={0.3}>
@@ -141,12 +141,12 @@ const CV = () => (
               <Text>Researcher</Text>
               <Text color="#6d758e">University of Waterloo, Waterloo, ON | Jun 2022 - Present</Text>
             </Box>*/}
-            <Divider />
+            {/*<<Divider />
             <Box>
               <Text fontSize="lg" fontWeight="bold">Blackberry Labs</Text>
               <Text>Research Intern</Text>
               <Text color="#6d758e">Waterloo, ON | Sep 2023 - Feb 2024</Text>
-            </Box>
+            </Box>*/}
             <Divider />
             <Box>
               <Text fontSize="lg" fontWeight="bold">University of Michigan, SOCR Research Team</Text>
