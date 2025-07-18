@@ -21,7 +21,8 @@ import { WorkGridItem } from '../components/grid-item'
 import thumbFGSM from '../public/images/works/advex/advex1_thumbnail.gif'
 import thumbFGSM2 from '../public/images/works/advex/advex1_thumbnail.png'
 import thumbNavEaz from '../public/images/works/naveaz/naveaz1_thumbnail.png'
-import { IoLogoTwitter, IoLogoLinkedin} from 'react-icons/io5'
+import { IoLogoTwitter} from 'react-icons/io5'
+//import { IoLogoTwitter, IoLogoLinkedin} from 'react-icons/io5'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -202,7 +203,7 @@ const Home = () => (
           Connect with Me
         </Heading>
         <HStack spacing={4}>
-          <Link href="https://www.linkedin.com/in/yuzheyou/" target="_blank">
+          {/*<Link href="https://www.linkedin.com/in/yuzheyou/" target="_blank">
             <Button
               variant="ghost"
               colorScheme="teal"
@@ -210,7 +211,7 @@ const Home = () => (
             >
               @yuzheyou
             </Button>
-          </Link>
+          </Link>*/}
           <Link href="https://x.com/yuzhe_you" target="_blank">
             <Button
               variant="ghost"
