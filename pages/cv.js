@@ -69,12 +69,12 @@ const CV = () => (
                 <strong>Yuzhe You</strong>, Helen Weixu Chen, and Jian Zhao. <Link color="#6b93a2" href="https://doi.org/10.1145/3706599.3719795" isExternal>Enhancing AI Explainability for Non-technical Users with LLM-Driven Narrative Gamification.<ExternalLinkIcon mx="2px" /></Link>. Extended Abstracts of the CHI Conference on Human Factors in Computing Systems, 2025 (In Press).
               </Text>
             </Box>
-            {/*<Divider />
+            <Divider />
             <Box>
               <Text fontSize="md">
                 <strong>Yuzhe You</strong> and Jian Zhao. <Link color="#6b93a2" href="https://visxai-aml.vercel.app/" isExternal>Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks<ExternalLinkIcon mx="2px" /></Link>. In <i>7th Workshop on Visualization for AI Explainability (VISxAI)</i>, IEEE VIS 2024.
               </Text>
-            </Box>*/}
+            </Box>
             <Divider />
             <Box>
               <Text fontSize="md">
