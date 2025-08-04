@@ -169,7 +169,7 @@ const Home = () => (
                 I have been awarded <Link href="https://www.nserc-crsng.gc.ca/Students-Etudiants/PG-CS/cgrsd-besrd_eng.asp" target="_blank" rel="noopener noreferrer">
                 &nbsp;NSERC Canada Graduate Scholarship&nbsp; 
                 </Link> ($120,000 CAD), <Link href="https://osap.gov.on.ca/OSAPPortal/en/A-ZListofAid/PRDR019245.html" target="_blank" rel="noopener noreferrer">
-                &nbsp;Ontario Graudate Scholarship&nbsp; 
+                &nbsp;Ontario Graduate Scholarship&nbsp; 
                 </Link> ($15,000 CAD), and UWaterloo<Link href="https://uwaterloo.ca/current-graduate-students/awards-and-funding/internal-awards/presidents-graduate-scholarship-pgs" target="_blank" rel="noopener noreferrer">
                 &nbsp;President&apos;s Graduate Scholarship&nbsp; 
                 </Link> ($10,000 CAD)!
