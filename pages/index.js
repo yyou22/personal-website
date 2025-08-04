@@ -21,8 +21,9 @@ import { WorkGridItem } from '../components/grid-item'
 import thumbFGSM from '../public/images/works/advex/advex1_thumbnail.gif'
 import thumbFGSM2 from '../public/images/works/advex/advex1_thumbnail.png'
 import thumbNavEaz from '../public/images/works/naveaz/naveaz1_thumbnail.png'
-import { IoLogoTwitter} from 'react-icons/io5'
-//import { IoLogoTwitter, IoLogoLinkedin} from 'react-icons/io5'
+//import { IoLogoTwitter} from 'react-icons/io5'
+import { IoLogoTwitter, IoLogoLinkedin} from 'react-icons/io5'
+//import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -81,7 +82,7 @@ const Home = () => (
           About Me
         </Heading>
         <Paragraph>
-          Hello, my name is Yuzhe and I am a PhD student in Computer Science.
+          Hello, my name is Yuzhe and I am a fully-funded PhD student in Computer Science.
           I was a research member of
           the {' '}
           <Link href="https://www.socr.umich.edu/" target="_blank" rel="noopener noreferrer">
@@ -89,19 +90,24 @@ const Home = () => (
           </Link>
           &nbsp;at University of Michigan-Ann Arbor, and now I am a member of {' '}
           <Link href="https://www.jeffjianzhao.com/" target="_blank" rel="noopener noreferrer">
-            WVisdom Research Group (formerly WatVis)
+            WVisdom Research Group
           </Link>
-          &nbsp;and {' '}
+          &nbsp;(formerly WatVis) and {' '}
           <Link href="https://www.civil.uwaterloo.ca/itss/index.htm" target="_blank" rel="noopener noreferrer">
             iTSS Lab
           </Link>
           &nbsp;at the University of Waterloo.
-          My primary research interest is InfoVis for Explainable AI, with a focus on visualizing AI models under adversarial attacks and making XAI visualizations more meaningful for non-experts. 
-          I also conduct research on applying machine learning to develop intelligent transportation solutions.
-          My other academic interests include Computer Vision,
-          Machine Learning, and more.
         </Paragraph>
         <Paragraph>
+          My primary research interest is InfoVis for Explainable AI, with a focus on visualizing AI models under adversarial attacks and making XAI visualizations more meaningful for non-experts. 
+          I also conduct research on applying machine learning to develop intelligent transportation solutions.
+        </Paragraph>
+        <Paragraph>
+          I was previously a research intern at<Link href="https://www.microsoft.com/en-gb/about/" target="_blank" rel="noopener noreferrer">
+          &nbsp;Microsoft UK 
+          </Link>. I am currently interning with<Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
+          &nbsp;Adobe Research&nbsp; 
+          </Link>in San Jose, California.
           During my spare time, I enjoy working on my personal projects. I am also a digital artist and graphic designer, and a self-paced student pilot.
         </Paragraph>
       </Section>
@@ -119,73 +125,99 @@ const Home = () => (
         <Heading as="h3" variant="section-title">
           Recent News
         </Heading>
-        <BioSection>
-          <BioYear>Apr 2025</BioYear>
-          1 GI&apos;25 paper accepted!
-        </BioSection>
-        <BioSection>
-          <BioYear>Apr 2025</BioYear>
-          I am joining 
-          <Link href="https://www.microsoft.com/en-gb/about/" target="_blank" rel="noopener noreferrer">
-          &nbsp;Microsoft UK&nbsp; 
-          </Link>
-          as a research intern this spring!
-        </BioSection>
-        <BioSection>
-          <BioYear>Apr 2025</BioYear>
-          I have begun my flight training at the
-          <Link href="https://www.iwm.org.uk/visits/iwm-duxford" target="_blank" rel="noopener noreferrer">
-          &nbsp;Imperial War Museum Duxford&nbsp; 
-          </Link>
-          in the UK!
-        </BioSection>
-        <BioSection>
-          <BioYear>Mar 2025</BioYear>
-          1 CHI&apos;25 LBW paper + 1 ACM TiiS Journal Paper accepted!
-        </BioSection>
-        <BioSection>
-          <BioYear>Jan 2025</BioYear>
-          I have joined &nbsp;
-          <Link href="https://wwfc.ca/" target="_blank" rel="noopener noreferrer">
-           Waterloo Wellington Flight Centre (WWFC)
-          </Link> as a self-paced student pilot to receive my PPL training!
-        </BioSection>
-        <BioSection>
-          <BioYear>Oct 2024</BioYear>
-          Interactive explainable {' '}
-          <Link href="https://visxai-aml.vercel.app/" target="_blank" rel="noopener noreferrer">
-          &quot;Panda or Gibbon?&quot;
-          </Link> on adversarial attacks accepted at the 7th VISxAI workshop at IEEE VIS 2024.
-        </BioSection>
-        {/*
-        <BioSection>
-          <BioYear>Oct 2024</BioYear>
-          <Link href="works/advex">
-          AdvEx
-          </Link> received 3rd place best poster award (300 CAD) at UWaterloo&apos;s 2024 CPI Conference.
-        </BioSection>
-        <BioSection>
-          <BioYear>Apr 2024</BioYear>
-          Co-authored paper {' '}
-          <Link href="https://dl.acm.org/doi/10.1145/3613904.3642212" target="_blank" rel="noopener noreferrer">
-          &quot;CoPrompt&quot;
-          </Link> on collaborative natural language programming
-           accepted at CHI 2024.
-        </BioSection>
-        <BioSection>
-          <BioYear>Mar 2024</BioYear>
-          Received &quot;Business Incubation Award&quot; (3rd Place) in a Hackathon 
-          hosted by Dynamic Map Platform Co. (50,000 JPY).
-        </BioSection>
-        <BioSection>
-          <BioYear>Sep 2023</BioYear>
-          Received &quot;Innovation Design Award&quot; in a Smart Mobility Innovation Contest
-          hosted by ICACHI (5,000 RMB).
-        </BioSection>
-        <BioSection>
-          <BioYear>May 2023</BioYear>
-          Recipient of GO-Bell Scholarship (24,000 CAD).
-        </BioSection>*/}
+        <Box>
+          <BioSection>
+            <Box display="flex" alignItems="flex-start">
+              <Box width="90px" flexShrink={0}>
+                <BioYear>Aug 2025</BioYear>
+              </Box>
+              <Box flex={1}>
+                I am joining 
+                <Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
+                &nbsp;Adobe&nbsp; 
+                </Link>
+                as a research intern this fall!
+              </Box>
+            </Box>
+          </BioSection>
+          <BioSection>
+            <Box display="flex" alignItems="flex-start">
+              <Box width="90px" flexShrink={0}>
+                <BioYear>Jul 2025</BioYear>
+              </Box>
+              <Box flex={1}>
+                1 co-authored UIST&apos;25 paper accepted!
+              </Box>
+            </Box>
+          </BioSection>
+          <BioSection>
+            <Box display="flex" alignItems="flex-start">
+              <Box width="90px" flexShrink={0}>
+                <BioYear>Jul 2025</BioYear>
+              </Box>
+              <Box flex={1}>
+                Received my ROC-A (Aeronautical Radio Operator Certificate), Student Pilot Permit for Aeroplane, and Student Pilot Permit for Ultralight!
+              </Box>
+            </Box>
+          </BioSection>
+          <BioSection>
+            <Box display="flex" alignItems="flex-start">
+              <Box width="90px" flexShrink={0}>
+                <BioYear>Jul 2025</BioYear>
+              </Box>
+              <Box flex={1} >
+                I have been awarded <Link href="https://www.nserc-crsng.gc.ca/Students-Etudiants/PG-CS/cgrsd-besrd_eng.asp" target="_blank" rel="noopener noreferrer">
+                &nbsp;NSERC Canada Graduate Scholarship&nbsp; 
+                </Link> ($120,000 CAD), <Link href="https://osap.gov.on.ca/OSAPPortal/en/A-ZListofAid/PRDR019245.html" target="_blank" rel="noopener noreferrer">
+                &nbsp;Ontario Graduate Scholarship&nbsp; 
+                </Link> ($15,000 CAD), and UWaterloo<Link href="https://uwaterloo.ca/current-graduate-students/awards-and-funding/internal-awards/presidents-graduate-scholarship-pgs" target="_blank" rel="noopener noreferrer">
+                &nbsp;President&apos;s Graduate Scholarship&nbsp; 
+                </Link> ($10,000 CAD)!
+              </Box>
+            </Box>
+          </BioSection>
+          <BioSection>
+            <Box display="flex" alignItems="flex-start">
+              <Box width="90px" flexShrink={0}>
+                <BioYear>Apr 2025</BioYear>
+              </Box>
+              <Box flex={1} >
+                1 GI&apos;25 paper accepted + received <Link href="https://cs.uwaterloo.ca/news/yuzhe-you-wins-best-student-paper-award-gi-2025-novel" target="_blank" rel="noopener noreferrer">Best Paper Award
+                </Link>!
+              </Box>
+            </Box>
+          </BioSection>
+          <BioSection>
+            <Box display="flex" alignItems="flex-start">
+              <Box width="90px" flexShrink={0}>
+                <BioYear>Apr 2025</BioYear>
+              </Box>
+              <Box flex={1}>
+                I am joining 
+                <Link href="https://www.microsoft.com/en-gb/about/" target="_blank" rel="noopener noreferrer">
+                &nbsp;Microsoft UK&nbsp; 
+                </Link>
+                as a research intern this spring!
+              </Box>
+            </Box>
+          </BioSection>
+          <BioSection>
+            <Box display="flex" alignItems="flex-start">
+              <Box width="90px" flexShrink={0}>
+                <BioYear>Mar 2025</BioYear>
+              </Box>
+              <Box flex={1}>
+                I have begun my flight training with<Link href="https://www.classic-wings.co.uk/" target="_blank" rel="noopener noreferrer">
+                &nbsp;Classic Wings&nbsp; 
+                </Link>at the
+                <Link href="https://www.iwm.org.uk/visits/iwm-duxford" target="_blank" rel="noopener noreferrer">
+                &nbsp;Imperial War Museum Duxford&nbsp; 
+                </Link>
+                in the UK!
+              </Box>
+            </Box>
+          </BioSection>
+        </Box>
       </Section>
 
       <Section delay={0.2}>
@@ -203,7 +235,7 @@ const Home = () => (
           Connect with Me
         </Heading>
         <HStack spacing={4}>
-          {/*<Link href="https://www.linkedin.com/in/yuzheyou/" target="_blank">
+          <Link href="https://www.linkedin.com/in/yuzheyou/" target="_blank">
             <Button
               variant="ghost"
               colorScheme="teal"
@@ -211,7 +243,7 @@ const Home = () => (
             >
               @yuzheyou
             </Button>
-          </Link>*/}
+          </Link>
           <Link href="https://x.com/yuzhe_you" target="_blank">
             <Button
               variant="ghost"
