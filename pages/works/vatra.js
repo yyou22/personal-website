@@ -29,7 +29,7 @@ const Work = () => {
         <UnorderedList my={4}>
         <Meta>Recognition & Outreach</Meta>
         <ListItem>
-        In submission to CHI 2025.
+        Accepted by Graphics Interface 2025 and received Best Paper Award.
         </ListItem>
       </UnorderedList>
         <WorkImage src="/images/works/vatra/vatra3.png" alt="VATRA" />

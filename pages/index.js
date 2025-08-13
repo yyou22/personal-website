@@ -108,7 +108,7 @@ const Home = () => (
           </Link>. I am currently interning with<Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
           &nbsp;Adobe Research&nbsp; 
           </Link>in San Jose, California.
-          During my spare time, I enjoy working on my personal projects. I am also a digital artist and graphic designer, and a self-paced student pilot.
+          During my spare time, I enjoy working on my personal projects. I am also a digital artist and graphic designer, and a student pilot.
         </Paragraph>
       </Section>
 
