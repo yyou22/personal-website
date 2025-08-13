@@ -25,12 +25,12 @@ const CV = () => (
               <Text>PhD in Computer Science</Text>
               <Text color="#6d758e">Waterloo, ON | Sep 2023 - Present</Text>
               <Text>Advisor: Dr. Jian Zhao</Text>
-              <Text fontWeight="medium">GPA: 96.5/100</Text>
+              <Text fontWeight="medium">Grade: 96.5/100</Text>
               <br />
               <Text>Master of Mathematics (MMath) in Computer Science</Text>
               <Text color="#6d758e">Waterloo, ON | Sep 2021 - Aug 2023</Text>
               <Text>Advisor: Dr. Jian Zhao</Text>
-              <Text fontWeight="medium">GPA: 93.75/100</Text>
+              <Text fontWeight="medium">Grade: 93.75/100</Text>
             </Box>
             <Divider />
             <Box>
