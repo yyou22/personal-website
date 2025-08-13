@@ -1,7 +1,8 @@
 import { Container, Heading, Divider, Text, Box, VStack, HStack, Icon, Link, } from '@chakra-ui/react'
+import Image from 'next/image'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import { FaGraduationCap, FaBook, FaBriefcase, FaAward, FaChalkboardTeacher, FaHandsHelping, FaNewspaper, FaMicrophone, FaScroll } from 'react-icons/fa' //fixme: add FaScroll back
+import { FaGraduationCap, FaBook, FaBriefcase, FaAward, FaChalkboardTeacher, FaHandsHelping, FaNewspaper, FaMicrophone, /* FaScroll, */ FaTrophy } from 'react-icons/fa'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { BioSection, BioYear } from '../components/bio'
 
@@ -60,6 +61,22 @@ const CV = () => (
           <VStack align="start" spacing={6} mt={4}>
             <Box>
               <Text fontSize="md">
+                Xuye Liu, <strong>Yuzhe You</strong>, Tengfei Ma, Jian Zhao. <Text as="span" color="#6b93a2">MACEDON: Supporting Programmers with Real-Time Multi-Dimensional Code Evaluation and Optimization</Text>. Proceedings of ACM Symposium on User Interface Software and Technology, 2025 (In Press).
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                <strong>Yuzhe You</strong>, Jian Zhao. <Text as="span" color="#6b93a2">Exploring Comparative Visual Approaches for Understanding Model Trade-offs in Adversarial Machine Learning</Text>. Proceedings of the Graphics Interface Conference, 2025 (In Press).
+              </Text>
+              <HStack mt={1} color="#FFB347">
+                <Icon as={FaTrophy} />
+                <Text fontSize="sm">Best Paper Award</Text>
+              </HStack>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
                 <strong>Yuzhe You</strong>, Jarvis Tse, and Jian Zhao. <Link color="#6b93a2" href="https://dl.acm.org/doi/10.1145/3725739" isExternal>Panda or not Panda? Understanding Adversarial Attacks with Interactive Visualization.<ExternalLinkIcon mx="2px" /></Link>. ACM Transactions on Interactive Intelligent Systems, 2025.
               </Text>
             </Box>
@@ -72,19 +89,20 @@ const CV = () => (
             <Divider />
             <Box>
               <Text fontSize="md">
-                <strong>Yuzhe You</strong> and Jian Zhao. <Link color="#6b93a2" href="https://visxai-aml.vercel.app/" isExternal>Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks<ExternalLinkIcon mx="2px" /></Link>. In <i>7th Workshop on Visualization for AI Explainability (VISxAI)</i>, IEEE VIS 2024.
+                <strong>Yuzhe You</strong> and Jian Zhao. <Link color="#6b93a2" href="https://visxai-aml.vercel.app/" isExternal>Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks<ExternalLinkIcon mx="2px" /></Link>. In 7th Workshop on Visualization for AI Explainability (VISxAI), IEEE VIS 2024.
               </Text>
             </Box>
             <Divider />
             <Box>
               <Text fontSize="md">
-                Li Feng, Ryan Yen, <strong>Yuzhe You</strong>, Mingming Fan, Jian Zhao, and Zhicong Lu. <Link color="#6b93a2" href="https://arxiv.org/abs/2310.09235" isExternal>CoPrompt: Supporting Prompt Sharing and Referring in Collaborative Natural Language Programming<ExternalLinkIcon mx="2px" /></Link>. In <i>Proceedings of the CHI Conference on Human Factors in Computing Systems</i>, CHI 2024.
+                Li Feng, Ryan Yen, <strong>Yuzhe You</strong>, Mingming Fan, Jian Zhao, and Zhicong Lu. <Link color="#6b93a2" href="https://arxiv.org/abs/2310.09235" isExternal>CoPrompt: Supporting Prompt Sharing and Referring in Collaborative Natural Language Programming<ExternalLinkIcon mx="2px" /></Link>. In Proceedings of the CHI Conference on Human Factors in Computing Systems, CHI 2024.
               </Text>
             </Box>
           </VStack>
         </Box>
       </Section>
 
+      {/* Thesis Section - Commented Out
       <Section delay={0.2}>
         <Box p={6} boxShadow="3px 4px 16px rgba(0, 0, 0, 0.5)" borderRadius="md" mb={8}>
           <HStack spacing={3} align="center">
@@ -102,6 +120,7 @@ const CV = () => (
           </VStack>
         </Box>
       </Section>
+      */}
 
       {/* Professional Experience Section */}
       <Section delay={0.3}>
@@ -114,31 +133,55 @@ const CV = () => (
           </HStack>
           <VStack align="start" spacing={4} mt={4}>
             <Box>
-              <Text fontSize="lg" fontWeight="bold">Adobe</Text>
+              <HStack>
+                <Image 
+                  src="/images/adobe.png"
+                  alt="Adobe Logo"
+                  width={24}
+                  height={24}
+                />
+                <Text fontSize="lg" fontWeight="bold">Adobe</Text>
+              </HStack>
               <Text>Research Intern</Text>
               <Text color="#6d758e">San Jose, USA | Aug 2025 - Present</Text>
             </Box>
             <Divider />
             <Box>
-              <Text fontSize="lg" fontWeight="bold">WVisdom Research Lab <Text as="span" fontSize="sm" fontWeight="normal"> (University of Waterloo)</Text></Text>
+              <Text fontSize="lg" fontWeight="bold">University of Waterloo </Text>
               <Text>Researcher</Text>
               <Text color="#6d758e">Waterloo, ON | Jun 2022 - Present</Text>
             </Box>
             <Divider />
             <Box>
-              <Text fontSize="lg" fontWeight="bold">Microsoft</Text>
+              <HStack>
+                <Image 
+                  src="/images/microsoft.png"
+                  alt="Microsoft Logo"
+                  width={24}
+                  height={24}
+                />
+                <Text fontSize="lg" fontWeight="bold">Microsoft</Text>
+              </HStack>
               <Text>Research Intern</Text>
               <Text color="#6d758e">Cambridge, UK | Apr 2025 - Jun 2025</Text>
             </Box>
             <Divider />
-            <Box>
+            {/*<Box>
               <Text fontSize="lg" fontWeight="bold">iTSS Lab <Text as="span" fontSize="sm" fontWeight="normal"> (University of Waterloo)</Text></Text>
               <Text>Researcher</Text>
               <Text color="#6d758e">Waterloo, ON | Jun 2022 - April 2025</Text>
             </Box>
-            <Divider />
+            <Divider />*/}
             <Box>
-              <Text fontSize="lg" fontWeight="bold">Blackberry</Text>
+              <HStack>
+                <Image 
+                  src="/images/blackberry.png"
+                  alt="Blackberry Logo"
+                  width={24}
+                  height={18}
+                />
+                <Text fontSize="lg" fontWeight="bold">Blackberry</Text>
+              </HStack>
               <Text>Research Intern</Text>
               <Text color="#6d758e">Waterloo, ON | Sep 2023 - Feb 2024</Text>
             </Box>
