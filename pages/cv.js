@@ -211,10 +211,42 @@ const CV = () => (
                 <BioSection>
                   <BioYear>
                   <Text as="span" color="#6d758e" fontWeight="normal">
+                    May 2025
+                  </Text>
+                  </BioYear> 
+                  Best Student Paper in HCI (Michael A. J. Sweeney Award)
+                </BioSection>
+                <BioSection>
+                  <BioYear>
+                  <Text as="span" color="#6d758e" fontWeight="normal">
+                    May 2025
+                  </Text>
+                  </BioYear>   
+                  <Text>Ontario Graduate Scholarship ($15,000 CAD) <br/><Text as="span" fontSize="sm" color="#6d758e" display="inline">[had to decline due to already holding NSERC CGS-D]</Text></Text>
+                </BioSection>
+                <BioSection>
+                  <BioYear>
+                  <Text as="span" color="#6d758e" fontWeight="normal">
+                    Apr 2025
+                  </Text>
+                  </BioYear>   
+                  NSERC Canada Graduate Scholarship - Doctoral ($120,000 CAD)
+                </BioSection>
+                <BioSection>
+                  <BioYear>
+                  <Text as="span" color="#6d758e" fontWeight="normal">
+                    Apr 2025
+                  </Text>
+                  </BioYear>   
+                  UWaterloo President&apos;s Graduate Scholarship ($10,000 CAD)
+                </BioSection>
+                <BioSection>
+                  <BioYear>
+                  <Text as="span" color="#6d758e" fontWeight="normal">
                     Apr 2025
                   </Text>
                   </BioYear> 
-                  Computer Science PhD Student Award (3,000 CAD)
+                  Computer Science PhD Student Award ($3,000 CAD)
                 </BioSection>
                 <BioSection>
                   <BioYear>
@@ -222,7 +254,7 @@ const CV = () => (
                     Oct 2024
                   </Text>
                   </BioYear>
-                  3rd Place Best Poster Award (300 CAD) in UWaterloo CPI Conference
+                  3rd Place Best Poster Award ($300 CAD) in UWaterloo CPI Conference
                 </BioSection>
                 <BioSection>
                   <BioYear>
@@ -247,7 +279,7 @@ const CV = () => (
                       May 2023
                     </Text>
                   </BioYear>
-                  GO-Bell Scholarship (24,000 CAD)
+                  GO-Bell Scholarship ($24,000 CAD)
                 </BioSection>
 
                 <BioSection>
@@ -256,7 +288,7 @@ const CV = () => (
                       Feb 2023
                     </Text>
                   </BioYear>
-                  Provost Doctoral Entrance Award for Women (5,000 CAD)
+                  Provost Doctoral Entrance Award for Women ($5,000 CAD)
                 </BioSection>
 
                 <BioSection>
@@ -274,7 +306,7 @@ const CV = () => (
                       Nov 2022
                     </Text>
                   </BioYear>
-                  2nd Place Winner in Waterloo.AI Data Challenge (1,000 CAD)
+                  2nd Place Winner in Waterloo.AI Data Challenge ($1,000 CAD)
                 </BioSection>
 
                 <BioSection>
@@ -430,7 +462,7 @@ const CV = () => (
             <Divider />
             <Box>
               <Text fontSize="md">
-                <strong>Panda or Gibbon? A Beginner’s Introduction to Adversarial Attacks.</strong> Oral Presentation, IEEE VIS, Oct 2024.
+                <strong>Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks.</strong> Oral Presentation, IEEE VIS, Oct 2024.
               </Text>
             </Box>
             <Divider />
