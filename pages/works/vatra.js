@@ -17,7 +17,7 @@ const Work = () => {
     <Layout title="VATRA">
       <Container>
         <Title>
-          VATRA <Badge>2024</Badge>
+          VATRA <Badge>2025</Badge>
         </Title>
         <P>
           &quot;Exploring Comparative Visual Approaches for Understanding Model Trade-offs in Adversarial Machine Learning&quot;
