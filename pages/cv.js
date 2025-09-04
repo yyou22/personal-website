@@ -419,6 +419,22 @@ const CV = () => (
           <VStack align="start" spacing={6} mt={4}>
             <Box>
               <Text fontSize="md">
+                <Link color="#6b93a2" href="https://uwaterloo.ca/computer-science/news/gamifying-ai" isExternal>
+                &quot;Gamifying AI: PhD student received $145k to make XAI more accessible and understandable via gamification.&quot;<ExternalLinkIcon mx="2px" />
+                </Link> Cheriton School of Computer Science, University of Waterloo, Sep 2025.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                <Link color="#6b93a2" href="https://uwaterloo.ca/computer-science/news/yuzhe-you-wins-best-student-paper-award-gi-2025-novel" isExternal>
+                &quot;Yuzhe You wins best student paper award at GI 2025 for novel cybersecurity tool.&quot;<ExternalLinkIcon mx="2px" />
+                </Link> Cheriton School of Computer Science, University of Waterloo, Jun 2025.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
                 <Link color="#6b93a2" href="https://uwaterloo.ca/cybersecurity-privacy-institute/news/cpi-congratulates-our-top-3-winners-cpi-annual-conference" isExternal>
                 &quot;CPI Congratulates our Top 3 Winners in the CPI Annual Conference Poster Competition.&quot;<ExternalLinkIcon mx="2px" />
                 </Link> Cybersecurity and Privacy Institute, University of Waterloo, Oct 2024.

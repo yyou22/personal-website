@@ -48,7 +48,28 @@ const Home = () => (
           <Heading as="h2" variant="page-title">
             Yuzhe Y.
           </Heading>
-          <p> CS Researcher / Developer / Artist + Designer / Student Pilot </p>
+          <p> CS Researcher / Developer / Artist + Designer / Student Pilot / Research Intern @&nbsp;&nbsp;
+            <HStack as="span" display="inline-flex" alignItems="center" spacing={1} style={{ position: 'relative', top: '3px' }}>
+              <Image 
+                src="/images/adobe.png"
+                alt="Adobe Logo"
+                width={16}
+                height={16}
+                style={{ marginTop: '2px' }}
+              />
+              <span>Adobe</span>
+            </HStack> / Prev. @&nbsp;&nbsp;
+            <HStack as="span" display="inline-flex" alignItems="center" spacing={1} style={{ position: 'relative', top: '3px' }}>
+              <Image 
+                src="/images/microsoft.png"
+                alt="Microsoft Logo"
+                width={16}
+                height={16}
+                style={{ marginTop: '2px' }}
+              />
+              <span>Microsoft</span>
+            </HStack>
+          </p>
         </Box>
         <Box
           flexShrink={0}
@@ -117,7 +138,7 @@ const Home = () => (
           I ♥
         </Heading>
         <Paragraph>
-          Visualization, Explainable AI, Machine Learning, Computer Vision, Coding, Digital Art, Graphic Design, UI/UX Design, Aviation, Cockatoos
+          Visualization, Explainable AI, Machine Learning, Computer Vision, Coding, Traditional & Digital Art, Graphic Design, UI/UX Design, Table Tennis, Aviation, Cockatoos
         </Paragraph>
       </Section>
 
