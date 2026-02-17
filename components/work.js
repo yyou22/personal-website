@@ -1,5 +1,5 @@
 import NextLink from 'next/link'
-import { Heading, Box, Image, Link, Badge, Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, useDisclosure } from '@chakra-ui/react'
+import { Heading, Box, Image, Link, Badge, Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, useDisclosure, Text } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
 export const Title = ({ children }) => (
@@ -17,23 +17,34 @@ export const Title = ({ children }) => (
   </Box>
 )
 
-export const WorkImage = ({ src, alt }) => {
+export const WorkImage = ({ src, alt, caption }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   
   return (
     <>
-      <Image 
-        borderRadius="lg" 
-        w="full" 
-        h="auto" 
-        maxW="600px" 
-        src={src} 
-        alt={alt} 
-        mb={4} 
-        cursor="pointer" 
-        objectFit="contain" 
-        onClick={onOpen} 
-      />
+      <Box mb={caption ? 2 : 4}>
+        <Image 
+          borderRadius="lg" 
+          w="full" 
+          h="auto" 
+          maxW="600px" 
+          src={src} 
+          alt={alt} 
+          cursor="pointer" 
+          objectFit="contain" 
+          onClick={onOpen} 
+        />
+        {caption && (
+          <Text
+            mt={2}
+            fontSize="sm"
+            color="gray.500"
+            textAlign="center"
+          >
+            {caption}
+          </Text>
+        )}
+      </Box>
       
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
