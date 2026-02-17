@@ -9,6 +9,9 @@ import {
   useColorModeValue,
   chakra,
   HStack,
+  Wrap,
+  WrapItem,
+  Tag,
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
@@ -103,17 +106,15 @@ const Home = () => (
           About Me
         </Heading>
         <Paragraph>
-          Hello, my name is Yuzhe and I am a fully-funded PhD student in Computer Science.
-          I was a research member of
-          the {' '}
-          <Link href="https://www.socr.umich.edu/" target="_blank" rel="noopener noreferrer">
-            SOCR Big Data & Predictive Analytics
-          </Link>
-          &nbsp;at University of Michigan-Ann Arbor, and now I am a member of {' '}
+          Hello, my name is Yuzhe. I am a fully funded PhD student in Computer Science at the University of Waterloo, where I am currently a member of the {' '}
           <Link href="https://www.jeffjianzhao.com/" target="_blank" rel="noopener noreferrer">
             WVisdom Research Group
           </Link>
-          &nbsp;(formerly WatVis) and {' '}
+          &nbsp;(formerly WatVis). Prior to this, I was a research member of the {' '}
+          <Link href="https://www.socr.umich.edu/" target="_blank" rel="noopener noreferrer">
+            SOCR Big Data & Predictive Analytics
+          </Link>
+          &nbsp;at the University of Michigan-Ann Arbor, and was also affiliated with the {' '}
           <Link href="https://www.civil.uwaterloo.ca/itss/index.htm" target="_blank" rel="noopener noreferrer">
             iTSS Lab
           </Link>
@@ -121,15 +122,16 @@ const Home = () => (
         </Paragraph>
         <Paragraph>
           My primary research interest is InfoVis for Explainable AI, with a focus on visualizing AI models under adversarial attacks and making XAI visualizations more meaningful for non-experts. 
-          I also conduct research on applying machine learning to develop intelligent transportation solutions.
+          I also conducted research on applying machine learning to develop intelligent transportation solutions.
         </Paragraph>
         <Paragraph>
-          I was previously a research intern at<Link href="https://www.microsoft.com/en-gb/about/" target="_blank" rel="noopener noreferrer">
-          &nbsp;Microsoft UK 
-          </Link>. I am currently interning with<Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
-          &nbsp;Adobe Research&nbsp; 
-          </Link>in San Jose, California.
-          During my spare time, I enjoy working on my personal projects. I am also a digital artist and graphic designer, and a student pilot.
+          I previously interned at&nbsp;<Link href="https://www.microsoft.com/en-gb/about/" target="_blank" rel="noopener noreferrer">
+          Microsoft UK 
+          </Link> and later at&nbsp;<Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
+          Adobe
+          </Link>&nbsp;in San Jose, California. I am now returning to&nbsp;<Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
+          Adobe Research 
+          </Link>&nbsp;as a research intern. In my spare time, I enjoy working on personal projects. I am also a digital artist and graphic designer, and a student pilot.
         </Paragraph>
       </Section>
 
@@ -137,9 +139,38 @@ const Home = () => (
         <Heading as="h3" variant="section-title">
           I ♥
         </Heading>
-        <Paragraph>
-          Visualization, Explainable AI, Machine Learning, Computer Vision, Coding, Traditional & Digital Art, Graphic Design, UI/UX Design, Table Tennis, Aviation, Cockatoos
-        </Paragraph>
+        <Wrap spacing={2}>
+          {[
+            'Visualization',
+            'Explainable AI',
+            'Human-Computer Interaction',
+            'Machine Learning',
+            'Computer Vision',
+            'Coding',
+            'Traditional & Digital Art',
+            'Graphic Design',
+            'UI/UX Design',
+            'Kendo',
+            'Target Shooting',
+            'Table Tennis',
+            'Piano',
+            'Aviation',
+            'Cockatoos'
+          ].map(item => (
+            <WrapItem key={item}>
+              <Tag
+                size="md"
+                variant="subtle"
+                colorScheme="teal"
+                borderRadius="full"
+                px={4}
+                py={1}
+              >
+                {item}
+              </Tag>
+            </WrapItem>
+          ))}
+        </Wrap>
       </Section>
 
       <Section delay={0.2}>
@@ -147,6 +178,30 @@ const Home = () => (
           Recent News
         </Heading>
         <Box>
+          <BioSection>
+            <Box display="flex" alignItems="flex-start">
+              <Box width="90px" flexShrink={0}>
+                <BioYear>Feb 2026</BioYear>
+              </Box>
+              <Box flex={1}>
+                I am returning to 
+                <Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
+                &nbsp;Adobe&nbsp; 
+                </Link>
+                as a research intern this winter!
+              </Box>
+            </Box>
+          </BioSection>
+          <BioSection>
+            <Box display="flex" alignItems="flex-start">
+              <Box width="90px" flexShrink={0}>
+                <BioYear>Jan 2026</BioYear>
+              </Box>
+              <Box flex={1}>
+                1 co-authored paper accepted to <i>Artificial Intelligence for Transportation</i> and 1 co-authored CHI&apos;26 paper accepted.
+              </Box>
+            </Box>
+          </BioSection>
           <BioSection>
             <Box display="flex" alignItems="flex-start">
               <Box width="90px" flexShrink={0}>
