@@ -25,7 +25,7 @@ const Work = () => {
           <Link href="https://visxai-aml.vercel.app/" target="_blank" rel="noopener noreferrer">
           Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks <ExternalLinkIcon mx="2px" />
           </Link>{' '}
-          is an interactive, beginner-friendly visualization that introduces how machine-learning models can be fooled by malicious adversarial attacks. Built primarily with D3.js and Idyll, the guide focuses on the Fast Gradient Sign Method (FGSM) and shows how tiny, human-imperceptible tweaks to an image can push a ResNet-34 model into making confident mistakes. With our dynamic visuals and animations, users can compare clean and subtly perturbed images, explore how these attacks shift model behavior, and examine two versions of ResNet-34, one trained normally and one trained with adversarial methods, to see how they respond differently.
+          is an interactive, beginner-friendly visualization that introduces how machine-learning models can be fooled by malicious adversarial attacks. Built primarily with D3.js and Idyll, the guide focuses on the Fast Gradient Sign Method (FGSM) and shows how tiny, human-imperceptible tweaks to an image can push a ResNet-34 model into making confident mistakes. With dynamic visuals and animations, users can compare clean and subtly perturbed images, explore how these attacks shift model behavior, and examine two versions of ResNet-34, one trained normally and one trained with adversarial methods, to see how they respond differently.
         </P>
         <UnorderedList my={4}>
           <Meta>Links: {' '}</Meta>
