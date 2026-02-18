@@ -10,12 +10,7 @@ const Work = () => (
         NavEaz <Badge>2024</Badge>
       </Title>
       <P>
-      NavEaz is a novel AI-powered smartwatch app designed to enhance driver safety by monitoring and predicting driver impairment in real time. 
-      Using advanced machine learning algorithms that combines CNNs and LSTMs, developed and tested by our team, 
-      NavEaz analyzes physiological signals like heart rate and electrodermal activity to detect fatigue, drowsiness, 
-      and other impairments with high accuracy. 
-      Our smart AI allows NavEaz to predict when a driver is about to lose focus in the next 5 to 15 minutes, 
-      ensuring that they correct their attention before danger arises.
+      NavEaz is our novel AI-powered smartwatch app built to help drivers stay focused behind the wheel. It tracks physiological signals like heart rate and electrodermal activity in real time and uses a machine-learning model that combines CNNs and LSTMs, developed and tested by our team, to detect signs of fatigue, drowsiness, and other forms of impairment. Instead of only reacting once attention drops, NavEaz looks for patterns that suggest a driver’s focus may slip in the next 5 to 15 minutes, giving them an early nudge to refocus before the situation becomes risky.
       </P>
       <UnorderedList my={4}>
         <Meta>Recognition & Outreach</Meta>

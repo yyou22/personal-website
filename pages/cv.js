@@ -143,13 +143,27 @@ const CV = () => (
                 <Text fontSize="lg" fontWeight="bold">Adobe</Text>
               </HStack>
               <Text>Research Intern</Text>
-              <Text color="#6d758e">San Jose, USA | Aug 2025 - Present</Text>
+              <Text color="#6d758e">Toronto, Canada | Feb 2026 - Present</Text>
             </Box>
             <Divider />
             <Box>
               <Text fontSize="lg" fontWeight="bold">University of Waterloo </Text>
               <Text>Researcher</Text>
               <Text color="#6d758e">Waterloo, ON | Jun 2022 - Present</Text>
+            </Box>
+            <Divider />
+            <Box>
+              <HStack>
+                <Image 
+                  src="/images/adobe.png"
+                  alt="Adobe Logo"
+                  width={24}
+                  height={24}
+                />
+                <Text fontSize="lg" fontWeight="bold">Adobe</Text>
+              </HStack>
+              <Text>Research Intern</Text>
+              <Text color="#6d758e">San Jose, USA | Aug 2025 - Oct 2025</Text>
             </Box>
             <Divider />
             <Box>

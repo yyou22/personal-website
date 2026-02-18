@@ -21,12 +21,11 @@ const Work = () => {
           Panda or Gibbon? <Badge>2024</Badge>
         </Title>
         <P>
+          Think you can spot the difference? The AI can&apos;t.{' '}
           <Link href="https://visxai-aml.vercel.app/" target="_blank" rel="noopener noreferrer">
-          &quot;Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks&quot; <ExternalLinkIcon mx="2px" />
-          </Link> is an interactive beginner-friendly visualization guide designed to introduce AI learners to adversarial attacks in machine learning, 
-          specifically focusing on the Fast Gradient Sign Method (FGSM) attack. Created primarily with D3.js and Idyll-lang, our interactive explainable uses dynamic visualizations and animations to show how subtle, 
-          human-imperceptible perturbations can fool image classification models like ResNet-34 into making incorrect predictions. 
-          The guide allows users to explore the impact of these adversarial attacks on model behavior by comparing clean and perturbed data points, as well as two different ResNet-34 models trained with standard and adversarial methods.
+          Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks <ExternalLinkIcon mx="2px" />
+          </Link>{' '}
+          is an interactive, beginner-friendly visualization that introduces how machine-learning models can be fooled by malicious adversarial attacks. Built primarily with D3.js and Idyll, the guide focuses on the Fast Gradient Sign Method (FGSM) and shows how tiny, human-imperceptible tweaks to an image can push a ResNet-34 model into making confident mistakes. With dynamic visuals and animations, users can compare clean and subtly perturbed images, explore how these attacks shift model behavior, and examine two versions of ResNet-34, one trained normally and one trained with adversarial methods, to see how they respond differently.
         </P>
         <UnorderedList my={4}>
           <Meta>Links: {' '}</Meta>
@@ -53,7 +52,11 @@ const Work = () => {
         </UnorderedList>
         <WorkImage src="/images/works/visxai/visxai2.gif" alt="visxai" />
         <WorkImage src="/images/works/visxai/visxai4.gif" alt="visxai" />
-        <WorkImage src="/images/works/visxai/visxai7.PNG" alt="visxai" />
+        <WorkImage
+          src="/images/works/visxai/visxai7.PNG"
+          alt="visxai"
+          caption="Presentation at the VISxAI Workshop"
+        />
         <WorkImage src="/images/works/visxai/visxai6.jpg" alt="visxai" />
         <UnorderedList my={4}>
           <Meta>Core Features</Meta>
