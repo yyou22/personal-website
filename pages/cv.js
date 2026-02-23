@@ -73,7 +73,7 @@ const CV = () => (
             <Divider />
             <Box>
               <Text fontSize="md">
-                Xuye Liu, <strong>Yuzhe You</strong>, Tengfei Ma, Jian Zhao. <Link color="#6b93a2" href="https://dl.acm.org/doi/full/10.1145/3746059.3747655" isExternal>MACEDON: Supporting Programmers with Real-Time Multi-Dimensional Code Evaluation and Optimization<ExternalLinkIcon mx="2px" /></Link>. Proceedings of ACM Symposium on User Interface Software and Technology, 2025 (In Press).
+                Xuye Liu, <strong>Yuzhe You</strong>, Tengfei Ma, Jian Zhao. <Link color="#6b93a2" href="https://dl.acm.org/doi/full/10.1145/3746059.3747655" isExternal>MACEDON: Supporting Programmers with Real-Time Multi-Dimensional Code Evaluation and Optimization<ExternalLinkIcon mx="2px" /></Link>. Proceedings of ACM Symposium on User Interface Software and Technology, 2025.
               </Text>
             </Box>
             <Divider />
@@ -158,12 +158,12 @@ const CV = () => (
               <Text color="#6d758e">Toronto, Canada | Feb 2026 - Present</Text>
             </Box>
             <Divider />
-            <Box>
+            {/* <Box>
               <Text fontSize="lg" fontWeight="bold">University of Waterloo </Text>
               <Text>Researcher</Text>
               <Text color="#6d758e">Waterloo, ON | Jun 2022 - Present</Text>
             </Box>
-            <Divider />
+            <Divider /> */}
             <Box>
               <HStack>
                 <Image 
