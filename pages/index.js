@@ -12,6 +12,8 @@ import {
   Wrap,
   WrapItem,
   Tag,
+  VStack,
+  Text,
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
@@ -105,34 +107,49 @@ const Home = () => (
         <Heading as="h3" variant="section-title">
           About Me
         </Heading>
-        <Paragraph>
-          Hello, my name is Yuzhe. I am a fully funded PhD student in Computer Science at the University of Waterloo, where I am currently a member of the {' '}
-          <Link href="https://www.jeffjianzhao.com/" target="_blank" rel="noopener noreferrer">
-            WVisdom Research Group
-          </Link>
-          &nbsp;(formerly WatVis). Prior to this, I was a research member of the {' '}
-          <Link href="https://www.socr.umich.edu/" target="_blank" rel="noopener noreferrer">
-            SOCR Big Data & Predictive Analytics
-          </Link>
-          &nbsp;at the University of Michigan-Ann Arbor, and was also affiliated with the {' '}
-          <Link href="https://www.civil.uwaterloo.ca/itss/index.htm" target="_blank" rel="noopener noreferrer">
-            iTSS Lab
-          </Link>
-          &nbsp;at the University of Waterloo.
-        </Paragraph>
-        <Paragraph>
-          My primary research interest is InfoVis for Explainable AI, with a focus on visualizing AI models under adversarial attacks and making XAI visualizations more meaningful for non-experts. 
-          I also conducted research on applying machine learning to develop intelligent transportation solutions.
-        </Paragraph>
-        <Paragraph>
-          I previously interned at&nbsp;<Link href="https://www.microsoft.com/en-gb/about/" target="_blank" rel="noopener noreferrer">
-          Microsoft UK 
-          </Link> and later at&nbsp;<Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
-          Adobe
-          </Link>&nbsp;in San Jose, California. I am now returning to&nbsp;<Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
-          Adobe Research 
-          </Link>&nbsp;as a research intern. In my spare time, I enjoy working on personal projects. I am also a digital artist and graphic designer, and a student pilot.
-        </Paragraph>
+        <VStack align="stretch" spacing={5} mt={2}>
+          <Box>
+            <Paragraph>
+              Hello, my name is Yuzhe. I am a fully funded PhD student in Computer Science at the University of Waterloo, where I am currently a member of the {' '}
+              <Link href="https://www.jeffjianzhao.com/" target="_blank" rel="noopener noreferrer">
+                WVisdom Research Group
+              </Link>
+              &nbsp;(formerly WatVis). Prior to this, I was a research member of the {' '}
+              <Link href="https://www.socr.umich.edu/" target="_blank" rel="noopener noreferrer">
+                SOCR Big Data & Predictive Analytics
+              </Link>
+              &nbsp;at the University of Michigan - Ann Arbor, and was also affiliated with the {' '}
+              <Link href="https://www.civil.uwaterloo.ca/itss/index.htm" target="_blank" rel="noopener noreferrer">
+                iTSS Lab
+              </Link>
+              &nbsp;at the University of Waterloo.
+            </Paragraph>
+          </Box>
+          <Box>
+            <Text as="span" fontWeight="semibold" fontSize="sm" color={useColorModeValue('teal.600', 'teal.300')} textTransform="uppercase" letterSpacing="wider" mb={2} display="block">
+              Research
+            </Text>
+            <Paragraph>
+              My primary research interest is InfoVis for Explainable AI, with a focus on visualizing AI models under adversarial attacks and making XAI visualizations more meaningful for non-experts. I have also conducted research on applying machine learning to develop intelligent transportation solutions. In addition, I work on agent-supported interaction for creative design, which is an area I have been extensively involved in through my collaboration with&nbsp;<Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
+              Adobe
+              </Link>.
+            </Paragraph>
+          </Box>
+          <Box>
+            <Text as="span" fontWeight="semibold" fontSize="sm" color={useColorModeValue('teal.600', 'teal.300')} textTransform="uppercase" letterSpacing="wider" mb={2} display="block">
+              Experience & interests
+            </Text>
+            <Paragraph>
+              I previously interned at&nbsp;<Link href="https://www.microsoft.com/en-gb/about/" target="_blank" rel="noopener noreferrer">
+              Microsoft UK
+              </Link> and later at&nbsp;<Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
+              Adobe
+              </Link>&nbsp;in San Jose, California. I am now returning to&nbsp;<Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
+              Adobe
+              </Link>&nbsp;as a research intern. In my spare time, I enjoy working on personal projects. I am also a digital artist and graphic designer, and a student pilot.
+            </Paragraph>
+          </Box>
+        </VStack>
       </Section>
 
       <Section delay={0.2}>
@@ -277,7 +294,7 @@ const Home = () => (
               </Box>
             </Box>
           </BioSection>
-          <BioSection>
+          {/* <BioSection>
             <Box display="flex" alignItems="flex-start">
               <Box width="90px" flexShrink={0}>
                 <BioYear>Mar 2025</BioYear>
@@ -292,7 +309,7 @@ const Home = () => (
                 in the UK!
               </Box>
             </Box>
-          </BioSection>
+          </BioSection> */}
         </Box>
       </Section>
 

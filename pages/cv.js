@@ -61,13 +61,25 @@ const CV = () => (
           <VStack align="start" spacing={6} mt={4}>
             <Box>
               <Text fontSize="md">
-                Xuye Liu, <strong>Yuzhe You</strong>, Tengfei Ma, Jian Zhao. <Text as="span" color="#6b93a2">MACEDON: Supporting Programmers with Real-Time Multi-Dimensional Code Evaluation and Optimization</Text>. Proceedings of ACM Symposium on User Interface Software and Technology, 2025 (In Press).
+                Anja Thieme, Rita Faia Marques, Martin Grayson, Sidhika Balachandar, Cameron Tyler Cassidy, Madiha Zahrah Choksi, Camilla Longden, Reeda Shimaz Huda, Nicholas Ileve Kalovwe, Christina Mallon, Courtney Mansperger, Daniela Massiceti, Bhaskar Mitra, Ruth Mueni Nzioka, Ioana Tanase, <strong>Yuzhe You</strong>, Cecily Morrison. <Link color="#6b93a2" href="https://www.microsoft.com/en-us/research/publication/engaging-communities-meaningfully-in-defining-disability-representation-for-ai-image-generation/" isExternal>Engaging Communities Meaningfully in Defining Disability Representation for AI Image Generation<ExternalLinkIcon mx="2px" /></Link>. Proceedings of the CHI Conference on Human Factors in Computing Systems, 2026.
               </Text>
             </Box>
             <Divider />
             <Box>
               <Text fontSize="md">
-                <strong>Yuzhe You</strong>, Jian Zhao. <Text as="span" color="#6b93a2">Exploring Comparative Visual Approaches for Understanding Model Trade-offs in Adversarial Machine Learning</Text>. Proceedings of the Graphics Interface Conference, 2025 (In Press).
+                Ce Zhang, <strong>Yuzhe You</strong>, Guangyuan Pan, Matthew I. Muresan, Liping Fu. <Link color="#6b93a2" href="https://doi.org/10.1016/j.ait.2026.100046" isExternal>Real-time traffic turning flow forecasting under few-shot and zero-shot scenarios by decoder-only model<ExternalLinkIcon mx="2px" /></Link>. Artificial Intelligence for Transportation, Volume 5, 2026, 100046.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                Xuye Liu, <strong>Yuzhe You</strong>, Tengfei Ma, Jian Zhao. <Link color="#6b93a2" href="https://dl.acm.org/doi/full/10.1145/3746059.3747655" isExternal>MACEDON: Supporting Programmers with Real-Time Multi-Dimensional Code Evaluation and Optimization<ExternalLinkIcon mx="2px" /></Link>. Proceedings of ACM Symposium on User Interface Software and Technology, 2025 (In Press).
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                <strong>Yuzhe You</strong>, Jian Zhao. <Link color="#6b93a2" href="https://www.jeffjianzhao.com/papers/vatra.pdf" isExternal>Exploring Comparative Visual Approaches for Understanding Model Trade-offs in Adversarial Machine Learning<ExternalLinkIcon mx="2px" /></Link>. Proceedings of the Graphics Interface Conference, 2025 (In Press).
               </Text>
               <HStack mt={1} color="#FFB347">
                 <Icon as={FaTrophy} />
