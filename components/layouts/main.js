@@ -10,6 +10,8 @@ const LazyVoxelDog = dynamic(() => import('../voxel-dog'), {
   loading: () => <VoxelDogLoader />
 })
 
+const LazyObjViewer = dynamic(() => import('../obj-viewer'), { ssr: false })
+
 const Main = ({ children, router }) => {
   return (
     <Box as="main" pb={8}>
@@ -41,6 +43,11 @@ const Main = ({ children, router }) => {
 
         <Footer />
       </Container>
+
+      <LazyObjViewer
+        modelPath="/Cockatoo.obj"
+        texturePath="/Textures/T_Base_D.png"
+      />
     </Box>
   )
 }
