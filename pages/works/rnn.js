@@ -5,13 +5,25 @@ import {
   List,
   ListItem,
   UnorderedList,
+  Box,
+  VStack,
+  Text,
+  useColorModeValue,
+  Wrap,
+  WrapItem,
+  Tag,
 } from '@chakra-ui/react'
 import Layout from '../../components/layouts/article'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 
-const Work = () => (
+const Work = () => {
+  const linkColor = useColorModeValue('pink.600', 'teal.300')
+  const borderColor = useColorModeValue('teal.500', 'teal.600')
+  const metaColor = useColorModeValue('green.800', undefined)
+
+  return (
   <Layout title="Melody AI">
     <Container>
       <Title>
@@ -29,40 +41,67 @@ const Work = () => (
         starting sequences. Model performance is evaluated via note prediction accuracy
         and user survey on generated melodies.
       </P>
-      <UnorderedList my={4}>
-        <Meta>Core Features</Meta>
-        <ListItem>Takes MIDI files as network inputs</ListItem>
-        <ListItem>Includes 3 RNN variant models (vanilla RNN, LSTM & GRU)</ListItem>
-        <ListItem>Generates novel melodies based on provided starting sequences</ListItem>
-      </UnorderedList>
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
+          <Meta>Core Features</Meta>
+        </Box>
+        <UnorderedList mt={2} pl={6}>
+          <ListItem>Takes MIDI files as network inputs.</ListItem>
+          <ListItem>Includes 3 RNN variant models (vanilla RNN, LSTM & GRU).</ListItem>
+          <ListItem>Generates novel melodies based on provided starting sequences.</ListItem>
+        </UnorderedList>
+      </Box>
+
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
+          <Meta>Links</Meta>
+        </Box>
+        <VStack align="stretch" spacing={2} mt={2} pl={2} borderLeftWidth="2px" borderColor={borderColor}>
+          <Box>
+            <Text as="span" fontWeight="medium" color="gray.500">Playlist: </Text>
+            <Link href="https://soundcloud.com/yyou22/sets/melody-ai" target="_blank" rel="noopener noreferrer" color={linkColor}>
+              Listen on SoundCloud <ExternalLinkIcon mx="2px" />
+            </Link>
+          </Box>
+          <Box>
+            <Text as="span" fontWeight="medium" color="gray.500">Code: </Text>
+            <Link href="https://github.com/yyou22/RNN-Melody-Generator" target="_blank" rel="noopener noreferrer" color={linkColor}>
+              GitHub – RNN Melody Generator <ExternalLinkIcon mx="2px" />
+            </Link>
+          </Box>
+        </VStack>
+      </Box>
 
       <iframe width="100%" height="300" scrolling="no" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1429623169&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 
-      <List ml={4} my={4}>
-        <ListItem>
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
           <Meta>Skills</Meta>
-          <span>Python3, Keras Tensorflow, Machine Learning, Logic Pro</span>
-        </ListItem>
-        <ListItem>
-          <Meta>Playlist</Meta>
-          <Link href="https://soundcloud.com/yyou22/sets/melody-ai">
-            soundcloud.com/yyou22/sets/melody-ai <ExternalLinkIcon mx="2px" />
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Meta>Source</Meta>
-          <Link href="https://github.com/yyou22/RNN-Melody-Generator">
-            github.com/yyou22/RNN-Melody-Generator <ExternalLinkIcon mx="2px" />
-          </Link>
-        </ListItem>
-        <ListItem>
+        </Box>
+        <Wrap spacing={2} mt={2}>
+          {['Python3', 'Keras Tensorflow', 'Machine Learning', 'Logic Pro'].map(item => (
+            <WrapItem key={item}>
+              <Tag size="md" variant="subtle" colorScheme="teal" borderRadius="full" px={4} py={1}>{item}</Tag>
+            </WrapItem>
+          ))}
+        </Wrap>
+      </Box>
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
           <Meta>Keywords</Meta>
-          <span>Recurrent Neural Network, Artificial Intelligence</span>
-        </ListItem>
-      </List>
+        </Box>
+        <Wrap spacing={2} mt={2}>
+          {['Recurrent Neural Network', 'Artificial Intelligence'].map(item => (
+            <WrapItem key={item}>
+              <Tag size="md" variant="subtle" colorScheme="teal" borderRadius="full" px={4} py={1}>{item}</Tag>
+            </WrapItem>
+          ))}
+        </Wrap>
+      </Box>
     </Container>
   </Layout>
-)
+  )
+}
 
 export default Work
 export { getServerSideProps } from '../../components/chakra'

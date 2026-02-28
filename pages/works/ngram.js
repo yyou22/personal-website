@@ -27,9 +27,9 @@ const Work = () => (
       </P>
       <UnorderedList my={4}>
         <Meta>Core Features</Meta>
-        <ListItem>Generates novel note sequences and combines them with drum beats and bass tunes</ListItem>
-        <ListItem>Includes 3 N-gram variant models (Unigram, Bigram & Trigram)</ListItem>
-        <ListItem>Comes with a Reddit Bot that responds to user requests for new music & lyrics</ListItem>
+        <ListItem>Generates novel note sequences and combines them with drum beats and bass tunes.</ListItem>
+        <ListItem>Includes 3 N-gram variant models (Unigram, Bigram & Trigram).</ListItem>
+        <ListItem>Comes with a Reddit Bot that responds to user requests for new music & lyrics.</ListItem>
       </UnorderedList>
 
       <iframe width="100%" height="300" scrolling="no" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1437817255&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>

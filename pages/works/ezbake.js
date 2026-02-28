@@ -23,9 +23,9 @@ const Work = () => (
 
       <UnorderedList my={4}>
         <Meta>Core Features</Meta>
-        <ListItem>Automate and simplify camera lenses quality testing</ListItem>
-        <ListItem>Communicate with the testing chamber via Modbus Protocol</ListItem>
-        <ListItem>Generate data visualizations that are easy to comprehend</ListItem>
+        <ListItem>Automate and simplify camera lenses quality testing.</ListItem>
+        <ListItem>Communicate with the testing chamber via Modbus Protocol.</ListItem>
+        <ListItem>Generate data visualizations that are easy to comprehend.</ListItem>
       </UnorderedList>
 
       <List ml={4} my={4}>
