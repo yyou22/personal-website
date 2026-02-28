@@ -1,10 +1,15 @@
-import { Container, Badge, Link, List, ListItem, UnorderedList, } from '@chakra-ui/react'
+import { Container, Badge, Link, ListItem, UnorderedList, Box, VStack, Text, useColorModeValue, Wrap, WrapItem, Tag } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 
-const Work = () => (
+const Work = () => {
+  const linkColor = useColorModeValue('pink.600', 'teal.300')
+  const borderColor = useColorModeValue('teal.500', 'teal.600')
+  const metaColor = useColorModeValue('green.800', undefined)
+
+  return (
   <Layout title="softtriple">
     <Container>
       <Title>
@@ -41,35 +46,60 @@ const Work = () => (
         the resulting weights of each centroid from the same class, which is then fed through a
         SoftMax function to finalize the probability for each class.
       </P>
-      <UnorderedList my={4}>
-        <Meta>Core Features</Meta>
-        <ListItem>Incorporates SoftTriple loss into existing distance metric learning techniques</ListItem>
-        <ListItem>Trained a feature extractor and a classifier from scratch and fine-tuned the model with support set</ListItem>
-        <ListItem> Evaluated model performance in image classification and cross-domain character recognition</ListItem>
-        <ListItem>Reproduced and re-evaluated the experimental results of Baseline++</ListItem>
-        <ListItem>Investigated an alternative model that performed few-shot classification based on SoftTriple loss only</ListItem>
-      </UnorderedList>
-      <List ml={4} my={4}>
-        <ListItem>
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
+          <Meta>Links</Meta>
+        </Box>
+        <VStack align="stretch" spacing={2} mt={2} pl={2} borderLeftWidth="2px" borderColor={borderColor}>
+          <Box>
+            <Text as="span" fontWeight="medium" color="gray.500">Code: </Text>
+            <Link href="https://github.com/yyou22/FewShotSoftTriple" target="_blank" rel="noopener noreferrer" color={linkColor}>
+              GitHub – FewShotSoftTriple <ExternalLinkIcon mx="2px" />
+            </Link>
+          </Box>
+        </VStack>
+      </Box>
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
+          <Meta>Core Features</Meta>
+        </Box>
+        <UnorderedList mt={2} pl={6}>
+          <ListItem>Incorporates SoftTriple loss into existing distance metric learning techniques.</ListItem>
+          <ListItem>Trained a feature extractor and a classifier from scratch and fine-tuned the model with support set.</ListItem>
+          <ListItem>Evaluated model performance in image classification and cross-domain character recognition.</ListItem>
+          <ListItem>Reproduced and re-evaluated the experimental results of Baseline++.</ListItem>
+          <ListItem>Investigated an alternative model that performed few-shot classification based on SoftTriple loss only.</ListItem>
+        </UnorderedList>
+      </Box>
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
           <Meta>Skills</Meta>
-          <span>Python3, Pytorch, Machine Learning</span>
-        </ListItem>
-        <ListItem>
-          <Meta>Source</Meta>
-          <Link href="https://github.com/yyou22/FewShotSoftTriple">
-            github.com/yyou22/FewShotSoftTriple <ExternalLinkIcon mx="2px" />
-          </Link>
-        </ListItem>
-        <ListItem>
+        </Box>
+        <Wrap spacing={2} mt={2}>
+          {['Python3', 'Pytorch', 'Machine Learning'].map(item => (
+            <WrapItem key={item}>
+              <Tag size="md" variant="subtle" colorScheme="teal" borderRadius="full" px={4} py={1}>{item}</Tag>
+            </WrapItem>
+          ))}
+        </Wrap>
+      </Box>
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
           <Meta>Keywords</Meta>
-          <span>Image Classification, Few-shot Classification, Distance Metric Learning,
-          Convolution Network, Cross-Domain Character Recognition</span>
-        </ListItem>
-      </List>
+        </Box>
+        <Wrap spacing={2} mt={2}>
+          {['Image Classification', 'Few-shot Classification', 'Distance Metric Learning', 'Convolution Network', 'Cross-Domain Character Recognition'].map(item => (
+            <WrapItem key={item}>
+              <Tag size="md" variant="subtle" colorScheme="teal" borderRadius="full" px={4} py={1}>{item}</Tag>
+            </WrapItem>
+          ))}
+        </Wrap>
+      </Box>
 
     </Container>
   </Layout>
-)
+  )
+}
 
 export default Work
 export { getServerSideProps } from '../../components/chakra'

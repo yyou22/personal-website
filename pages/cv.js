@@ -49,93 +49,8 @@ const CV = () => (
         </Box>
       </Section>
 
-      {/* Publications Section */}
-      <Section delay={0.2}>
-        <Box p={6, 8} boxShadow="3px 4px 16px rgba(0, 0, 0, 0.5)" borderRadius="md" mb={8}>
-          <HStack spacing={3} align="center">
-            <Icon as={FaBook} boxSize={6} color="teal.500" />
-            <Heading as="h3" variant="section-title" color="teal.600">
-              Publications
-            </Heading>
-          </HStack>
-          <VStack align="start" spacing={6} mt={4}>
-            <Box>
-              <Text fontSize="md">
-                Anja Thieme, Rita Faia Marques, Martin Grayson, Sidhika Balachandar, Cameron Tyler Cassidy, Madiha Zahrah Choksi, Camilla Longden, Reeda Shimaz Huda, Nicholas Ileve Kalovwe, Christina Mallon, Courtney Mansperger, Daniela Massiceti, Bhaskar Mitra, Ruth Mueni Nzioka, Ioana Tanase, <strong>Yuzhe You</strong>, Cecily Morrison. <Link color="#6b93a2" href="https://www.microsoft.com/en-us/research/publication/engaging-communities-meaningfully-in-defining-disability-representation-for-ai-image-generation/" isExternal>Engaging Communities Meaningfully in Defining Disability Representation for AI Image Generation<ExternalLinkIcon mx="2px" /></Link>. Proceedings of the CHI Conference on Human Factors in Computing Systems, 2026.
-              </Text>
-            </Box>
-            <Divider />
-            <Box>
-              <Text fontSize="md">
-                Ce Zhang, <strong>Yuzhe You</strong>, Guangyuan Pan, Matthew I. Muresan, Liping Fu. <Link color="#6b93a2" href="https://doi.org/10.1016/j.ait.2026.100046" isExternal>Real-time traffic turning flow forecasting under few-shot and zero-shot scenarios by decoder-only model<ExternalLinkIcon mx="2px" /></Link>. Artificial Intelligence for Transportation, Volume 5, 2026, 100046.
-              </Text>
-            </Box>
-            <Divider />
-            <Box>
-              <Text fontSize="md">
-                Xuye Liu, <strong>Yuzhe You</strong>, Tengfei Ma, Jian Zhao. <Link color="#6b93a2" href="https://dl.acm.org/doi/full/10.1145/3746059.3747655" isExternal>MACEDON: Supporting Programmers with Real-Time Multi-Dimensional Code Evaluation and Optimization<ExternalLinkIcon mx="2px" /></Link>. Proceedings of ACM Symposium on User Interface Software and Technology, 2025.
-              </Text>
-            </Box>
-            <Divider />
-            <Box>
-              <Text fontSize="md">
-                <strong>Yuzhe You</strong>, Jian Zhao. <Link color="#6b93a2" href="https://www.jeffjianzhao.com/papers/vatra.pdf" isExternal>Exploring Comparative Visual Approaches for Understanding Model Trade-offs in Adversarial Machine Learning<ExternalLinkIcon mx="2px" /></Link>. Proceedings of the Graphics Interface Conference, 2025 (In Press).
-              </Text>
-              <HStack mt={1} color="#FFB347">
-                <Icon as={FaTrophy} />
-                <Text fontSize="sm">Best Paper Award</Text>
-              </HStack>
-            </Box>
-            <Divider />
-            <Box>
-              <Text fontSize="md">
-                <strong>Yuzhe You</strong>, Jarvis Tse, and Jian Zhao. <Link color="#6b93a2" href="https://dl.acm.org/doi/10.1145/3725739" isExternal>Panda or not Panda? Understanding Adversarial Attacks with Interactive Visualization.<ExternalLinkIcon mx="2px" /></Link>. ACM Transactions on Interactive Intelligent Systems, 2025.
-              </Text>
-            </Box>
-            <Divider />
-            <Box>
-              <Text fontSize="md">
-                <strong>Yuzhe You</strong>, Helen Weixu Chen, and Jian Zhao. <Link color="#6b93a2" href="https://doi.org/10.1145/3706599.3719795" isExternal>Enhancing AI Explainability for Non-technical Users with LLM-Driven Narrative Gamification.<ExternalLinkIcon mx="2px" /></Link>. Extended Abstracts of the CHI Conference on Human Factors in Computing Systems, 2025.
-              </Text>
-            </Box>
-            <Divider />
-            <Box>
-              <Text fontSize="md">
-                <strong>Yuzhe You</strong> and Jian Zhao. <Link color="#6b93a2" href="https://visxai-aml.vercel.app/" isExternal>Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks<ExternalLinkIcon mx="2px" /></Link>. In 7th Workshop on Visualization for AI Explainability (VISxAI), IEEE VIS 2024.
-              </Text>
-            </Box>
-            <Divider />
-            <Box>
-              <Text fontSize="md">
-                Li Feng, Ryan Yen, <strong>Yuzhe You</strong>, Mingming Fan, Jian Zhao, and Zhicong Lu. <Link color="#6b93a2" href="https://arxiv.org/abs/2310.09235" isExternal>CoPrompt: Supporting Prompt Sharing and Referring in Collaborative Natural Language Programming<ExternalLinkIcon mx="2px" /></Link>. In Proceedings of the CHI Conference on Human Factors in Computing Systems, CHI 2024.
-              </Text>
-            </Box>
-          </VStack>
-        </Box>
-      </Section>
-
-      {/* Thesis Section - Commented Out
-      <Section delay={0.2}>
-        <Box p={6} boxShadow="3px 4px 16px rgba(0, 0, 0, 0.5)" borderRadius="md" mb={8}>
-          <HStack spacing={3} align="center">
-            <Icon as={FaScroll} boxSize={6} color="teal.500" />
-            <Heading as="h3" variant="section-title" color="teal.600">
-              Thesis
-            </Heading>
-          </HStack>
-          <VStack align="start" spacing={6} mt={4}>
-            <Box>
-              <Text fontSize="md">
-                <strong>Yuzhe You</strong>. <Link color="#6b93a2" href="https://uwspace.uwaterloo.ca/items/33b531b9-3fe0-436d-97c6-0da4547a4af9" isExternal>AdvEx: Interactive Visual Explorations of Adversarial Evasion Attacks<ExternalLinkIcon mx="2px" /></Link>. <i>Master&apos;s thesis</i>, University of Waterloo, 2023.
-              </Text>
-            </Box>
-          </VStack>
-        </Box>
-      </Section>
-      */}
-
       {/* Professional Experience Section */}
-      <Section delay={0.3}>
+      <Section delay={0.2}>
         <Box p={6} boxShadow="3px 4px 16px rgba(0, 0, 0, 0.5)" borderRadius="md" mb={8}>
           <HStack spacing={3} align="center">
             <Icon as={FaBriefcase} boxSize={6} color="teal.500" />
@@ -217,6 +132,71 @@ const CV = () => (
               <Text>Research Assistant</Text>
               <Text color="#6d758e">Ann Arbor, MI | Jan 2019 - Jan 2020</Text>
             </Box>*/}
+          </VStack>
+        </Box>
+      </Section>
+
+      {/* Publications Section */}
+      <Section delay={0.3}>
+        <Box p={[6, 8]} boxShadow="3px 4px 16px rgba(0, 0, 0, 0.5)" borderRadius="md" mb={8}>
+          <HStack spacing={3} align="center">
+            <Icon as={FaBook} boxSize={6} color="teal.500" />
+            <Heading as="h3" variant="section-title" color="teal.600">
+              Publications
+            </Heading>
+          </HStack>
+          <VStack align="start" spacing={6} mt={4}>
+            <Box>
+              <Text fontSize="md">
+                Anja Thieme, Rita Faia Marques, Martin Grayson, Sidhika Balachandar, Cameron Tyler Cassidy, Madiha Zahrah Choksi, Camilla Longden, Reeda Shimaz Huda, Nicholas Ileve Kalovwe, Christina Mallon, Courtney Mansperger, Daniela Massiceti, Bhaskar Mitra, Ruth Mueni Nzioka, Ioana Tanase, <strong>Yuzhe You</strong>, Cecily Morrison. <Link color="#6b93a2" href="https://www.microsoft.com/en-us/research/publication/engaging-communities-meaningfully-in-defining-disability-representation-for-ai-image-generation/" isExternal>Engaging Communities Meaningfully in Defining Disability Representation for AI Image Generation<ExternalLinkIcon mx="2px" /></Link>. Proceedings of the CHI Conference on Human Factors in Computing Systems, 2026.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                Ce Zhang, <strong>Yuzhe You</strong>, Guangyuan Pan, Matthew I. Muresan, Liping Fu. <Link color="#6b93a2" href="https://doi.org/10.1016/j.ait.2026.100046" isExternal>Real-time traffic turning flow forecasting under few-shot and zero-shot scenarios by decoder-only model<ExternalLinkIcon mx="2px" /></Link>. Artificial Intelligence for Transportation, Volume 5, 2026, 100046.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                Xuye Liu, <strong>Yuzhe You</strong>, Tengfei Ma, Jian Zhao. <Link color="#6b93a2" href="https://dl.acm.org/doi/full/10.1145/3746059.3747655" isExternal>MACEDON: Supporting Programmers with Real-Time Multi-Dimensional Code Evaluation and Optimization<ExternalLinkIcon mx="2px" /></Link>. Proceedings of ACM Symposium on User Interface Software and Technology, 2025.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                <strong>Yuzhe You</strong>, Jian Zhao. <Link color="#6b93a2" href="https://www.jeffjianzhao.com/papers/vatra.pdf" isExternal>Exploring Comparative Visual Approaches for Understanding Model Trade-offs in Adversarial Machine Learning<ExternalLinkIcon mx="2px" /></Link>. Proceedings of the Graphics Interface Conference, 2025 (In Press).
+              </Text>
+              <HStack mt={1} color="#FFB347">
+                <Icon as={FaTrophy} />
+                <Text fontSize="sm">Best Paper Award</Text>
+              </HStack>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                <strong>Yuzhe You</strong>, Jarvis Tse, and Jian Zhao. <Link color="#6b93a2" href="https://dl.acm.org/doi/10.1145/3725739" isExternal>Panda or not Panda? Understanding Adversarial Attacks with Interactive Visualization.<ExternalLinkIcon mx="2px" /></Link>. ACM Transactions on Interactive Intelligent Systems, 2025.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                <strong>Yuzhe You</strong>, Helen Weixu Chen, and Jian Zhao. <Link color="#6b93a2" href="https://doi.org/10.1145/3706599.3719795" isExternal>Enhancing AI Explainability for Non-technical Users with LLM-Driven Narrative Gamification.<ExternalLinkIcon mx="2px" /></Link>. Extended Abstracts of the CHI Conference on Human Factors in Computing Systems, 2025.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                <strong>Yuzhe You</strong> and Jian Zhao. <Link color="#6b93a2" href="https://visxai-aml.vercel.app/" isExternal>Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks<ExternalLinkIcon mx="2px" /></Link>. In 7th Workshop on Visualization for AI Explainability (VISxAI), IEEE VIS 2024.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                Li Feng, Ryan Yen, <strong>Yuzhe You</strong>, Mingming Fan, Jian Zhao, and Zhicong Lu. <Link color="#6b93a2" href="https://arxiv.org/abs/2310.09235" isExternal>CoPrompt: Supporting Prompt Sharing and Referring in Collaborative Natural Language Programming<ExternalLinkIcon mx="2px" /></Link>. In Proceedings of the CHI Conference on Human Factors in Computing Systems, CHI 2024.
+              </Text>
+            </Box>
           </VStack>
         </Box>
       </Section>

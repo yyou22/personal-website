@@ -1,10 +1,15 @@
-import { Container, Badge, Link, List, ListItem, UnorderedList, } from '@chakra-ui/react'
+import { Container, Badge, Link, ListItem, UnorderedList, Box, VStack, Text, useColorModeValue, Wrap, WrapItem, Tag } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 
-const Work = () => (
+const Work = () => {
+  const linkColor = useColorModeValue('pink.600', 'teal.300')
+  const borderColor = useColorModeValue('teal.500', 'teal.600')
+  const metaColor = useColorModeValue('green.800', undefined)
+
+  return (
   <Layout title="robust">
     <Container>
       <Title>
@@ -28,32 +33,58 @@ const Work = () => (
         incorporating self-supervised learning methods into the pre-training stage of a model to
         further enhance its robustness against adversarial examples.
       </P>
-      <UnorderedList my={4}>
-        <Meta>Core Features</Meta>
-        <ListItem>Gradient-based iterative approach</ListItem>
-        <ListItem>Evasion attack designed to fool state-of-the-art classifier</ListItem>
-        <ListItem>Investigation of self-supervised learning methods to enhance robustness</ListItem>
-      </UnorderedList>
-      <List ml={4} my={4}>
-        <ListItem>
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
+          <Meta>Links</Meta>
+        </Box>
+        <VStack align="stretch" spacing={2} mt={2} pl={2} borderLeftWidth="2px" borderColor={borderColor}>
+          <Box>
+            <Text as="span" fontWeight="medium" color="gray.500">Code: </Text>
+            <Link href="https://github.com/yyou22/TRADES" target="_blank" rel="noopener noreferrer" color={linkColor}>
+              GitHub – TRADES <ExternalLinkIcon mx="2px" />
+            </Link>
+          </Box>
+        </VStack>
+      </Box>
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
+          <Meta>Core Features</Meta>
+        </Box>
+        <UnorderedList mt={2} pl={6}>
+          <ListItem>Gradient-based iterative approach.</ListItem>
+          <ListItem>Evasion attack designed to fool state-of-the-art classifier.</ListItem>
+          <ListItem>Investigation of self-supervised learning methods to enhance robustness.</ListItem>
+        </UnorderedList>
+      </Box>
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
           <Meta>Skills</Meta>
-          <span>Python3, Pytorch, Adversarial Machine Learning, Evasion Attack</span>
-        </ListItem>
-        <ListItem>
-          <Meta>Source</Meta>
-          <Link href="https://github.com/yyou22/TRADES">
-            github.com/yyou22/TRADES <ExternalLinkIcon mx="2px" />
-          </Link>
-        </ListItem>
-        <ListItem>
+        </Box>
+        <Wrap spacing={2} mt={2}>
+          {['Python3', 'Pytorch', 'Adversarial Machine Learning', 'Evasion Attack'].map(item => (
+            <WrapItem key={item}>
+              <Tag size="md" variant="subtle" colorScheme="teal" borderRadius="full" px={4} py={1}>{item}</Tag>
+            </WrapItem>
+          ))}
+        </Wrap>
+      </Box>
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
           <Meta>Keywords</Meta>
-          <span>Machine Learning, Adversarial Attack, Self-supervised Learning</span>
-        </ListItem>
-      </List>
+        </Box>
+        <Wrap spacing={2} mt={2}>
+          {['Machine Learning', 'Adversarial Attack', 'Self-supervised Learning'].map(item => (
+            <WrapItem key={item}>
+              <Tag size="md" variant="subtle" colorScheme="teal" borderRadius="full" px={4} py={1}>{item}</Tag>
+            </WrapItem>
+          ))}
+        </Wrap>
+      </Box>
 
     </Container>
   </Layout>
-)
+  )
+}
 
 export default Work
 export { getServerSideProps } from '../../components/chakra'

@@ -1,10 +1,15 @@
-import { Container, Badge, Link, List, ListItem } from '@chakra-ui/react'
+import { Container, Badge, Link, Box, VStack, Text, useColorModeValue, Wrap, WrapItem, Tag } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 
-const Work = () => (
+const Work = () => {
+  const linkColor = useColorModeValue('pink.600', 'teal.300')
+  const borderColor = useColorModeValue('teal.500', 'teal.600')
+  const metaColor = useColorModeValue('green.800', undefined)
+
+  return (
   <Layout title="infovis">
     <Container>
       <Title>
@@ -47,38 +52,60 @@ const Work = () => (
       </P>
       <br />
       <WorkImage src="/images/works/infovis1.png" alt="infovis" />
-      <List ml={4} my={4}>
-        <ListItem>
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
+          <Meta>Links</Meta>
+        </Box>
+        <VStack align="stretch" spacing={2} mt={2} pl={2} borderLeftWidth="2px" borderColor={borderColor}>
+          <Box>
+            <Text as="span" fontWeight="medium" color="gray.500">VD1 (Linked Graph): </Text>
+            <Link href="https://github.com/yyou22/D3-Linked-Graph" target="_blank" rel="noopener noreferrer" color={linkColor}>
+              GitHub <ExternalLinkIcon mx="2px" />
+            </Link>
+          </Box>
+          <Box>
+            <Text as="span" fontWeight="medium" color="gray.500">VD2 (Dimensionality Reduction): </Text>
+            <Link href="https://github.com/yyou22/D3-Dimensionality-Reduction" target="_blank" rel="noopener noreferrer" color={linkColor}>
+              GitHub <ExternalLinkIcon mx="2px" />
+            </Link>
+          </Box>
+          <Box>
+            <Text as="span" fontWeight="medium" color="gray.500">VD3 (Animated Transition): </Text>
+            <Link href="https://github.com/yyou22/D3-Animated-Transition" target="_blank" rel="noopener noreferrer" color={linkColor}>
+              GitHub <ExternalLinkIcon mx="2px" />
+            </Link>
+          </Box>
+        </VStack>
+      </Box>
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
           <Meta>Skills</Meta>
-          <span>HTML, JavaScript, D3, NodeJS, sklearn, pytorch</span>
-        </ListItem>
-        <ListItem>
-          <Meta>Source VD1</Meta>
-          <Link href="https://github.com/yyou22/D3-Linked-Graph">
-            github.com/yyou22/D3-Linked-Graph <ExternalLinkIcon mx="2px" />
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Meta>Source VD2</Meta>
-          <Link href="https://github.com/yyou22/D3-Dimensionality-Reduction">
-            github.com/yyou22/D3-Dimensionality-Reduction <ExternalLinkIcon mx="2px" />
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Meta>Source VD3</Meta>
-          <Link href="https://github.com/yyou22/D3-Animated-Transition">
-            github.com/yyou22/D3-Animated-Transition <ExternalLinkIcon mx="2px" />
-          </Link>
-        </ListItem>
-        <ListItem>
+        </Box>
+        <Wrap spacing={2} mt={2}>
+          {['HTML', 'JavaScript', 'D3', 'NodeJS', 'sklearn', 'pytorch'].map(item => (
+            <WrapItem key={item}>
+              <Tag size="md" variant="subtle" colorScheme="teal" borderRadius="full" px={4} py={1}>{item}</Tag>
+            </WrapItem>
+          ))}
+        </Wrap>
+      </Box>
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
           <Meta>Keywords</Meta>
-          <span>HCI, Data Visualization, AI Explainability, Machine Learning</span>
-        </ListItem>
-      </List>
+        </Box>
+        <Wrap spacing={2} mt={2}>
+          {['HCI', 'Data Visualization', 'AI Explainability', 'Machine Learning'].map(item => (
+            <WrapItem key={item}>
+              <Tag size="md" variant="subtle" colorScheme="teal" borderRadius="full" px={4} py={1}>{item}</Tag>
+            </WrapItem>
+          ))}
+        </Wrap>
+      </Box>
 
     </Container>
   </Layout>
-)
+  )
+}
 
 export default Work
 export { getServerSideProps } from '../../components/chakra'

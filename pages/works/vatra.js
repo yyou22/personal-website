@@ -1,10 +1,12 @@
 import { useEffect } from 'react'
-import { Container, Badge, List, ListItem, UnorderedList, } from '@chakra-ui/react'
+import { Container, Badge, ListItem, UnorderedList, Box, Text, useColorModeValue, Wrap, WrapItem, Tag } from '@chakra-ui/react'
 import { Title, Meta, WorkImage } from '../../components/work'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 
 const Work = () => {
+  const metaColor = useColorModeValue('green.800', undefined)
+
   useEffect(() => {
     // Load any necessary scripts for external components
     const script = document.createElement('script')
@@ -26,37 +28,59 @@ const Work = () => {
           The project identifies and presents effective visualization techniques for understanding AML trade-offs at different levels of detail.
           Based on insights gathered from an iterative design process, we designed VATRA, a design probe that supports multi-level comparative visualizations and enables machine learning practitioners to analyze trade-offs in adversarial training (AT) methods, which often come at the cost of reduced model accuracy and fairness.
         </P>
-        <UnorderedList my={4}>
-        <Meta>Recognition & Outreach</Meta>
-        <ListItem>
-        Accepted by Graphics Interface 2025 and received Best Paper Award.
-        </ListItem>
-      </UnorderedList>
+        <Box my={4}>
+          <Box as="span" color={metaColor}>
+            <Meta>Recognition & Outreach</Meta>
+          </Box>
+          <UnorderedList mt={2} pl={6}>
+            <ListItem>Accepted by Graphics Interface 2025 and received Best Paper Award.</ListItem>
+          </UnorderedList>
+        </Box>
         <WorkImage src="/images/works/vatra/vatra3.png" alt="VATRA" />
         <WorkImage src="/images/works/vatra/vatra4.png" alt="VATRA" />
         <WorkImage src="/images/works/vatra/vatra5.png" alt="VATRA" />
         <WorkImage src="/images/works/vatra/vatra7.gif" alt="VATRA" />
         <WorkImage src="/images/works/vatra/vatra1.gif" alt="VATRA" />
-        <UnorderedList my={4}>
-          <Meta>Core Features</Meta>
-          <ListItem>Exploration of comparative visual designs for model trade-off analysis in standard and adversarial conditions.</ListItem>
-          <ListItem>Multi-level comparative visual analytics: from instance-level, embedding-level, to model-level comparisons.</ListItem>
-          <ListItem>Empirical insights into design considerations for using comparative visualizations in AML trade-off analysis.</ListItem>
-        </UnorderedList>
-        <List ml={4} my={4}>
-          <ListItem>
+        <Box my={4}>
+          <Box as="span" color={metaColor}>
+            <Meta>Core Features</Meta>
+          </Box>
+          <UnorderedList mt={2} pl={6}>
+            <ListItem>Exploration of comparative visual designs for model trade-off analysis in standard and adversarial conditions.</ListItem>
+            <ListItem>Multi-level comparative visual analytics: from instance-level, embedding-level, to model-level comparisons.</ListItem>
+            <ListItem>Empirical insights into design considerations for using comparative visualizations in AML trade-off analysis.</ListItem>
+          </UnorderedList>
+        </Box>
+        <Box my={4}>
+          <Box as="span" color={metaColor}>
             <Meta>Skills</Meta>
-            <span>Python, PyTorch, Grad-CAM, Visualization Design, Machine Learning, Evasion Attacks, D3.js, JavaScript</span>
-          </ListItem>
-          <ListItem>
-            <Meta>Authors</Meta>
-            Yuzhe You, Jian Zhao
-          </ListItem>
-          <ListItem>
+          </Box>
+          <Wrap spacing={2} mt={2}>
+            {['Python', 'PyTorch', 'Grad-CAM', 'Visualization Design', 'Machine Learning', 'Evasion Attacks', 'D3.js', 'JavaScript'].map(item => (
+              <WrapItem key={item}>
+                <Tag size="md" variant="subtle" colorScheme="teal" borderRadius="full" px={4} py={1}>{item}</Tag>
+              </WrapItem>
+            ))}
+          </Wrap>
+        </Box>
+        <Box my={4}>
+          <Box as="span" color={metaColor}>
             <Meta>Keywords</Meta>
-            <span>Adversarial Machine Learning, Adversarial Training, Visualization, Model Robustness, Accuracy-Robustness Trade-offs</span>
-          </ListItem>
-        </List>
+          </Box>
+          <Wrap spacing={2} mt={2}>
+            {['Adversarial Machine Learning', 'Adversarial Training', 'Visualization', 'Model Robustness', 'Accuracy-Robustness Trade-offs'].map(item => (
+              <WrapItem key={item}>
+                <Tag size="md" variant="subtle" colorScheme="teal" borderRadius="full" px={4} py={1}>{item}</Tag>
+              </WrapItem>
+            ))}
+          </Wrap>
+        </Box>
+        <Box my={4}>
+          <Box as="span" color={metaColor}>
+            <Meta>Authors</Meta>
+          </Box>
+          <Text mt={2}>Yuzhe You, Jian Zhao</Text>
+        </Box>
       </Container>
     </Layout>
   )
