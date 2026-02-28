@@ -1,10 +1,12 @@
 import { useEffect } from 'react'
-import { Container, List, ListItem, UnorderedList } from '@chakra-ui/react'
+import { Container, ListItem, UnorderedList, Box, useColorModeValue, Wrap, WrapItem, Tag } from '@chakra-ui/react'
 import { Title, Meta, WorkImage } from '../../components/work'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 
 const Work = () => {
+  const metaColor = useColorModeValue('green.800', undefined)
+
   useEffect(() => {
     // Load any necessary scripts for external components
     const script = document.createElement('script')
@@ -25,26 +27,32 @@ const Work = () => {
         Recently, I&apos;ve shifted my focus to digital art, graphic design, and UI/UX design, combining my artistic foundation with modern tools. 
         While my coding and research projects don&apos;t explicitly showcase my art, you can still see the impact of my design background in how I approach and present my work.
         </P>
-        <UnorderedList my={4}>
-        <Meta>Recognition & Outreach</Meta>
-        <ListItem>
-          Three artworks exhibited at Rhode Island School of Design (RISD) Exhibition in 2015
-        </ListItem>
-        <ListItem>
-          Six artworks featured in University of Michigan&apos;s Blueprint Literary Magazine (2018&ndash;2019)
-        </ListItem>
-        </UnorderedList>
+        <Box my={4}>
+          <Box as="span" color={metaColor}>
+            <Meta>Recognition & Outreach</Meta>
+          </Box>
+          <UnorderedList mt={2} pl={6}>
+            <ListItem>Three artworks exhibited at Rhode Island School of Design (RISD) Exhibition in 2015.</ListItem>
+            <ListItem>Six artworks featured in University of Michigan&apos;s Blueprint Literary Magazine (2018&ndash;2019).</ListItem>
+          </UnorderedList>
+        </Box>
         <WorkImage src="/images/works/art/art1.png" alt="art" />
         <WorkImage src="/images/works/art/art3.png" alt="art" />
         <WorkImage src="/images/works/art/art2.png" alt="art" />
         <WorkImage src="/images/works/art/art4.png" alt="art" />
         <WorkImage src="/images/works/art/art5.png" alt="art" />
-        <List ml={4} my={4}>
-          <ListItem>
+        <Box my={4}>
+          <Box as="span" color={metaColor}>
             <Meta>Skills</Meta>
-            <span>Painting, Drawing, Art, Illustration, Watercolor, Charcoal</span>
-          </ListItem>
-        </List>
+          </Box>
+          <Wrap spacing={2} mt={2}>
+            {['Painting', 'Drawing', 'Art', 'Illustration', 'Watercolor', 'Charcoal'].map(item => (
+              <WrapItem key={item}>
+                <Tag size="md" variant="subtle" colorScheme="teal" borderRadius="full" px={4} py={1}>{item}</Tag>
+              </WrapItem>
+            ))}
+          </Wrap>
+        </Box>
       </Container>
     </Layout>
   )
