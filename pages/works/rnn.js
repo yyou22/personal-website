@@ -2,7 +2,6 @@ import {
   Container,
   Badge,
   Link,
-  List,
   ListItem,
   UnorderedList,
   Box,
