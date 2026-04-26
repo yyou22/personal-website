@@ -16,43 +16,81 @@ const Work = () => {
         AdvEx <Badge>2024</Badge>
       </Title>
       <P>
-        AdvEx is an interactive multi-level visualization system designed to help novice machine learning learners understand adversarial evasion attacks in image classification models. 
+        AdvEx is an interactive multi-level visualization designed to help novice machine learning learners understand adversarial evasion attacks in image classification models. 
         The system visualizes subtle, human-imperceptible perturbations used in attacks and allows users to explore their impact across different classifiers, 
         attack methods, and individual images. 
         By supporting multi-level visual exploration — both instance-level and dataset-level — AdvEx highlights how adversarial attacks affect models differently depending on the data, 
         model architecture, and training methods.
       </P>
-      <Box my={4}>
-          <Box as="span" color={metaColor}>
-            <Meta>Links</Meta>
-          </Box>
-          <VStack align="stretch" spacing={2} mt={2} pl={2} borderLeftWidth="2px" borderColor={borderColor}>
-            <Box>
-              <Text as="span" fontWeight="medium" color="gray.500">Paper: </Text>
-              <Link href="https://dl.acm.org/doi/10.1145/3725739" target="_blank" rel="noopener noreferrer" color={linkColor}>
-                ACM Digital Library <ExternalLinkIcon mx="2px" />
-              </Link>
-            </Box>
-            <Box>
-              <Text as="span" fontWeight="medium" color="gray.500">Video figure: </Text>
-              <Link href="https://youtu.be/h5JMTz7PoKQ?si=Lw7Ab2-ADXOBKhhU" target="_blank" rel="noopener noreferrer" color={linkColor}>
-                Watch on YouTube <ExternalLinkIcon mx="2px" />
-              </Link>
-            </Box>
-            <Box>
-              <Text as="span" fontWeight="medium" color="gray.500">Video demo: </Text>
-              <Link href="https://youtu.be/q9xcfDoCNhs" target="_blank" rel="noopener noreferrer" color={linkColor}>
-                Watch on YouTube <ExternalLinkIcon mx="2px" />
-              </Link>
-            </Box>
-            <Box>
-              <Text as="span" fontWeight="medium" color="gray.500">CPI winner announcement: </Text>
-              <Link href="https://uwaterloo.ca/cybersecurity-privacy-institute/news/cpi-congratulates-our-top-3-winners-cpi-annual-conference" target="_blank" rel="noopener noreferrer" color={linkColor}>
-                CPI Top 3 Winners <ExternalLinkIcon mx="2px" />
-              </Link>
-            </Box>
-          </VStack>
-        </Box>
+      <Box
+  my={4}
+  p={3}
+  borderWidth="1px"
+  borderColor={borderColor}
+  borderRadius="md"
+>
+  <VStack align="stretch" spacing={2}>
+    <Box>
+      <Link
+        href="https://dl.acm.org/doi/10.1145/3725739"
+        target="_blank"
+        rel="noopener noreferrer"
+        color={linkColor}
+        fontWeight="semibold"
+      >
+        Paper Link <ExternalLinkIcon mx="1px" />
+      </Link>
+      <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+        View on ACM Digital Library.
+      </Text>
+    </Box>
+
+    <Box>
+      <Link
+        href="https://youtu.be/h5JMTz7PoKQ?si=Lw7Ab2-ADXOBKhhU"
+        target="_blank"
+        rel="noopener noreferrer"
+        color={linkColor}
+        fontWeight="semibold"
+      >
+        Video figure <ExternalLinkIcon mx="1px" />
+      </Link>
+      <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+        Short visual overview of the system.
+      </Text>
+    </Box>
+
+    <Box>
+      <Link
+        href="https://youtu.be/q9xcfDoCNhs"
+        target="_blank"
+        rel="noopener noreferrer"
+        color={linkColor}
+        fontWeight="semibold"
+      >
+        Video demo <ExternalLinkIcon mx="1px" />
+      </Link>
+      <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+        Full walkthrough of the interaction design.
+      </Text>
+    </Box>
+
+    <Box>
+      <Link
+        href="https://uwaterloo.ca/cybersecurity-privacy-institute/news/cpi-congratulates-our-top-3-winners-cpi-annual-conference"
+        target="_blank"
+        rel="noopener noreferrer"
+        color={linkColor}
+        fontWeight="semibold"
+      >
+        CPI winner announcement <ExternalLinkIcon mx="1px" />
+      </Link>
+      <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+        Recognized as a top 3 project at the CPI annual conference.
+      </Text>
+    </Box>
+  </VStack>
+</Box>
       <Box my={4}>
         <Box as="span" color={metaColor}>
           <Meta>Recognition & Outreach</Meta>
