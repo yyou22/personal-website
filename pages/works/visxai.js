@@ -93,7 +93,15 @@ const Work = () => {
           alt="visxai"
           caption="Presentation at the VISxAI Workshop"
         />
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/UUkftG2KH5o?si=fMe0QTaigj2GuP6T&amp;start=5444" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+        <iframe
+          width="100%"
+          height="315"
+          src="https://www.youtube.com/embed/UUkftG2KH5o?si=fMe0QTaigj2GuP6T&amp;start=5444"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          style={{ maxWidth: '600px' }}
+        ></iframe>
         <Text mt={2} fontSize="sm" color="gray.500" textAlign="center">
           Video of my presentation at the 7th VISxAI workshop (starts from 1:30:44)
         </Text>
