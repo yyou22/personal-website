@@ -22,83 +22,36 @@ const Work = () => {
         By supporting multi-level visual exploration — both instance-level and dataset-level — AdvEx highlights how adversarial attacks affect models differently depending on the data, 
         model architecture, and training methods.
       </P>
-      <Box
-  my={4}
-  p={3}
-  borderWidth="1px"
-  borderColor={borderColor}
-  borderRadius="md"
->
-  <VStack align="stretch" spacing={2}>
-    <Box>
-      <Link
-        href="https://dl.acm.org/doi/10.1145/3725739"
-        target="_blank"
-        rel="noopener noreferrer"
-        color={linkColor}
-        fontWeight="semibold"
-      >
-        Paper Link <ExternalLinkIcon mx="1px" />
-      </Link>
-      <Text fontSize="xs" color="gray.500" lineHeight="1.2">
-        View on ACM Digital Library.
-      </Text>
-    </Box>
-
-    <Box>
-      <Link
-        href="https://youtu.be/h5JMTz7PoKQ?si=Lw7Ab2-ADXOBKhhU"
-        target="_blank"
-        rel="noopener noreferrer"
-        color={linkColor}
-        fontWeight="semibold"
-      >
-        Video figure <ExternalLinkIcon mx="1px" />
-      </Link>
-      <Text fontSize="xs" color="gray.500" lineHeight="1.2">
-        Short visual overview of the system.
-      </Text>
-    </Box>
-
-    <Box>
-      <Link
-        href="https://youtu.be/q9xcfDoCNhs"
-        target="_blank"
-        rel="noopener noreferrer"
-        color={linkColor}
-        fontWeight="semibold"
-      >
-        Video demo <ExternalLinkIcon mx="1px" />
-      </Link>
-      <Text fontSize="xs" color="gray.500" lineHeight="1.2">
-        Full walkthrough of the interaction design.
-      </Text>
-    </Box>
-
-    <Box>
-      <Link
-        href="https://uwaterloo.ca/cybersecurity-privacy-institute/news/cpi-congratulates-our-top-3-winners-cpi-annual-conference"
-        target="_blank"
-        rel="noopener noreferrer"
-        color={linkColor}
-        fontWeight="semibold"
-      >
-        CPI winner announcement <ExternalLinkIcon mx="1px" />
-      </Link>
-      <Text fontSize="xs" color="gray.500" lineHeight="1.2">
-        Recognized as a top 3 project at the CPI annual conference.
-      </Text>
-    </Box>
-  </VStack>
-</Box>
       <Box my={4}>
         <Box as="span" color={metaColor}>
           <Meta>Recognition & Outreach</Meta>
         </Box>
         <UnorderedList mt={2} pl={6}>
-          <ListItem>Accepted by ACM Transactions on Interactive Intelligent System journal!</ListItem>
-          <ListItem>Received 3rd place best poster award (300 CAD) at the 2024 Cybersecurity and Privacy Institute Annual Conference, University of Waterloo.</ListItem>
+          <ListItem>
+            Accepted by ACM Transactions on Interactive Intelligent System journal:{' '}
+            <Link href="https://dl.acm.org/doi/10.1145/3725739" target="_blank" rel="noopener noreferrer">
+              Paper Link <ExternalLinkIcon mx="2px" />
+            </Link>
+            .
+          </ListItem>
+          <ListItem>
+            Received 3rd place best poster award (300 CAD) at the 2024 Cybersecurity and Privacy Institute Annual Conference, University of Waterloo:{' '}
+            <Link href="https://uwaterloo.ca/cybersecurity-privacy-institute/news/cpi-congratulates-our-top-3-winners-cpi-annual-conference" target="_blank" rel="noopener noreferrer">
+              CPI Announcement <ExternalLinkIcon mx="2px" />
+            </Link>
+            .
+          </ListItem>
           <ListItem>Delivered an oral and poster presentation at the 2023 Math and Computing Research Discovery Days, University of Waterloo.</ListItem>
+        </UnorderedList>
+      </Box>
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
+          <Meta>Core Features</Meta>
+        </Box>
+        <UnorderedList mt={2} pl={6}>
+          <ListItem>Interactive Visualization of Adversarial Evasion Attacks (e.g., FGSM, PGD, ZOO attacks).</ListItem>
+          <ListItem>Real-time data analytics and model performance evaluation.</ListItem>
+          <ListItem>Illustrates the logic and impact of adversarial attacks through dynamic and interactive visualizations.</ListItem>
         </UnorderedList>
       </Box>
       <WorkImage src="/images/works/advex/advex1.gif" alt="fgsm" />
@@ -114,15 +67,75 @@ const Work = () => {
         allowFullScreen
         style={{ maxWidth: '600px' }}
       ></iframe>
-      <Box my={4}>
-        <Box as="span" color={metaColor}>
-          <Meta>Core Features</Meta>
-        </Box>
-        <UnorderedList mt={2} pl={6}>
-          <ListItem>Interactive Visualization of Adversarial Evasion Attacks (e.g., FGSM, PGD, ZOO attacks).</ListItem>
-          <ListItem>Real-time data analytics and model performance evaluation.</ListItem>
-          <ListItem>Illustrates the logic and impact of adversarial attacks through dynamic and interactive visualizations.</ListItem>
-        </UnorderedList>
+      <Box
+        my={4}
+        p={3}
+        borderWidth="1px"
+        borderColor={borderColor}
+        borderRadius="md"
+      >
+        <Meta>Links</Meta>
+        <VStack align="stretch" spacing={2} mt={2}>
+          <Box>
+            <Link
+              href="https://dl.acm.org/doi/10.1145/3725739"
+              target="_blank"
+              rel="noopener noreferrer"
+              color={linkColor}
+              fontWeight="semibold"
+            >
+              Paper Link <ExternalLinkIcon mx="1px" />
+            </Link>
+            <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+              View on ACM Digital Library.
+            </Text>
+          </Box>
+
+          <Box>
+            <Link
+              href="https://youtu.be/h5JMTz7PoKQ?si=Lw7Ab2-ADXOBKhhU"
+              target="_blank"
+              rel="noopener noreferrer"
+              color={linkColor}
+              fontWeight="semibold"
+            >
+              Video figure <ExternalLinkIcon mx="1px" />
+            </Link>
+            <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+              Short visual overview of the system.
+            </Text>
+          </Box>
+
+          <Box>
+            <Link
+              href="https://youtu.be/q9xcfDoCNhs"
+              target="_blank"
+              rel="noopener noreferrer"
+              color={linkColor}
+              fontWeight="semibold"
+            >
+              Video demo <ExternalLinkIcon mx="1px" />
+            </Link>
+            <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+              Full walkthrough of the interaction design.
+            </Text>
+          </Box>
+
+          <Box>
+            <Link
+              href="https://uwaterloo.ca/cybersecurity-privacy-institute/news/cpi-congratulates-our-top-3-winners-cpi-annual-conference"
+              target="_blank"
+              rel="noopener noreferrer"
+              color={linkColor}
+              fontWeight="semibold"
+            >
+              CPI winner announcement <ExternalLinkIcon mx="1px" />
+            </Link>
+            <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+              Recognized as a top 3 project at the CPI annual conference.
+            </Text>
+          </Box>
+        </VStack>
       </Box>
       <Box my={4}>
         <Box as="span" color={metaColor}>
@@ -153,16 +166,6 @@ const Work = () => {
           <Meta>Team Members</Meta>
         </Box>
         <Text mt={2}>Yuzhe You, Jarvis Tse, Jian Zhao</Text>
-      </Box>
-      <Box my={4}>
-        <Box as="span" color={metaColor}>
-          <Meta>Paper Link</Meta>
-        </Box>
-        <Text mt={2}>
-          <Link href="https://dl.acm.org/doi/10.1145/3725739" target="_blank" rel="noopener noreferrer" color={linkColor}>
-            Panda or not Panda? Understanding Adversarial Attacks with Interactive Visualization <ExternalLinkIcon mx="2px" />
-          </Link>
-        </Text>
       </Box>
 
     </Container>

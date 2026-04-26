@@ -35,6 +35,49 @@ const Work = () => {
           explore how these attacks shift model behavior, and examine two versions of ResNet-34, one trained normally and one trained with adversarial methods, 
           to see how they respond differently.
         </P>
+        <Box my={4}>
+          <Box as="span" color={metaColor}>
+            <Meta>Recognition & Outreach</Meta>
+          </Box>
+          <UnorderedList mt={2} pl={6}>
+            <ListItem>Accepted and presented at the 7th VISxAI Workshop at IEEE VIS24: {' '}
+            <Link href="https://visxai.io/" target="_blank" rel="noopener noreferrer">
+              VISxAI Workshop Program Info <ExternalLinkIcon mx="2px" />
+            </Link>
+            </ListItem>
+          </UnorderedList>
+        </Box>
+        <Box my={4}>
+          <Box as="span" color={metaColor}>
+            <Meta>Core Features</Meta>
+          </Box>
+          <UnorderedList mt={2} pl={6}>
+            <ListItem>Explains adversarial attacks using beginner-friendly interactive visualizations.</ListItem>
+            <ListItem>Explores the FGSM attack&apos;s impact on ResNet-34 models, with insights into both natural and adversarial images, as well as standard and adversarial trainings.</ListItem>
+            <ListItem>Includes embedding-level and instance-level analysis to show how adversarial perturbations affect models.</ListItem>
+          </UnorderedList>
+        </Box>
+        <br/>
+        <WorkImage src="/images/works/visxai/visxai2.gif" alt="visxai" />
+        <WorkImage src="/images/works/visxai/visxai4.gif" alt="visxai" />
+        <WorkImage
+          src="/images/works/visxai/visxai7.PNG"
+          alt="visxai"
+          caption="Presentation at the VISxAI Workshop"
+        />
+        <iframe
+          width="100%"
+          height="315"
+          src="https://www.youtube.com/embed/UUkftG2KH5o?si=fMe0QTaigj2GuP6T&amp;start=5444"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          style={{ maxWidth: '600px' }}
+        ></iframe>
+        <Text mt={2} fontSize="sm" color="gray.500" textAlign="center">
+          Video of my presentation at the 7th VISxAI workshop (starts from 1:30:44)
+        </Text>
+        {/* <WorkImage src="/images/works/visxai/visxai6.jpg" alt="visxai" /> */}
         <Box
   my={4}
   p={3}
@@ -42,7 +85,8 @@ const Work = () => {
   borderColor={borderColor}
   borderRadius="md"
 >
-  <VStack align="stretch" spacing={2}>
+<Meta>Links</Meta>
+<VStack align="stretch" spacing={2} mt={2}>
     <Box>
       <Link
         href="https://visxai-aml.vercel.app/"
@@ -76,52 +120,10 @@ const Work = () => {
 </Box>
         <Box my={4}>
           <Box as="span" color={metaColor}>
-            <Meta>Recognition & Outreach</Meta>
-          </Box>
-          <UnorderedList mt={2} pl={6}>
-            <ListItem>Accepted and presented at the 7th VISxAI Workshop at IEEE VIS24: {' '}
-            <Link href="https://visxai.io/" target="_blank" rel="noopener noreferrer">
-              VISxAI Workshop Program Info <ExternalLinkIcon mx="2px" />
-            </Link>
-            </ListItem>
-          </UnorderedList>
-        </Box>
-        <WorkImage src="/images/works/visxai/visxai2.gif" alt="visxai" />
-        <WorkImage src="/images/works/visxai/visxai4.gif" alt="visxai" />
-        <WorkImage
-          src="/images/works/visxai/visxai7.PNG"
-          alt="visxai"
-          caption="Presentation at the VISxAI Workshop"
-        />
-        <iframe
-          width="100%"
-          height="315"
-          src="https://www.youtube.com/embed/UUkftG2KH5o?si=fMe0QTaigj2GuP6T&amp;start=5444"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          style={{ maxWidth: '600px' }}
-        ></iframe>
-        <Text mt={2} fontSize="sm" color="gray.500" textAlign="center">
-          Video of my presentation at the 7th VISxAI workshop (starts from 1:30:44)
-        </Text>
-        {/* <WorkImage src="/images/works/visxai/visxai6.jpg" alt="visxai" /> */}
-        <Box my={4}>
-          <Box as="span" color={metaColor}>
-            <Meta>Core Features</Meta>
-          </Box>
-          <UnorderedList mt={2} pl={6}>
-            <ListItem>Explains adversarial attacks using beginner-friendly interactive visualizations.</ListItem>
-            <ListItem>Explores the FGSM attack&apos;s impact on ResNet-34 models, with insights into both natural and adversarial images, as well as standard and adversarial trainings.</ListItem>
-            <ListItem>Includes embedding-level and instance-level analysis to show how adversarial perturbations affect models.</ListItem>
-          </UnorderedList>
-        </Box>
-        <Box my={4}>
-          <Box as="span" color={metaColor}>
             <Meta>Skills</Meta>
           </Box>
           <Wrap spacing={2} mt={2}>
-            {['Python', 'PyTorch', 't-SNE', 'Adversarial Machine Learning', 'XAI Visualization', 'D3.js', 'Idyll-lang'].map(item => (
+            {['Python', 'PyTorch', 't-SNE', 'Machine Learning', 'Computer Vision', 'Adversarial Machine Learning', 'XAI Visualization', 'D3.js', 'Idyll-lang'].map(item => (
               <WrapItem key={item}>
                 <Tag size="md" variant="subtle" colorScheme="teal" borderRadius="full" px={4} py={1}>
                   {item}

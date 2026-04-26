@@ -28,12 +28,6 @@ const Work = () => {
           <ListItem>Received an Innovation Design Award from ICACHI (5,000 RMB).</ListItem>
         </UnorderedList>
       </Box>
-      <WorkImage src="/images/works/naveaz1.png" alt="naveaz" />
-      <WorkImage src="/images/works/naveaz4.png" alt="naveaz" />
-      <WorkImage src="/images/works/naveaz5.png" alt="naveaz" />
-      <WorkImage src="/images/works/naveaz2.png" alt="naveaz" />
-      <WorkImage src="/images/works/naveaz3.png" alt="naveaz" />
-      <WorkImage src="/images/works/naveaz6.png" alt="naveaz" />
       <Box my={4}>
         <Box as="span" color={metaColor}>
           <Meta>Core Features</Meta>
@@ -44,6 +38,12 @@ const Work = () => {
           <ListItem>Generative AI dynamically tailors responses, such as suggesting rest breaks or playing music.</ListItem>
         </UnorderedList>
       </Box>
+      <WorkImage src="/images/works/naveaz1.png" alt="naveaz" />
+      <WorkImage src="/images/works/naveaz4.png" alt="naveaz" />
+      <WorkImage src="/images/works/naveaz5.png" alt="naveaz" />
+      <WorkImage src="/images/works/naveaz2.png" alt="naveaz" />
+      <WorkImage src="/images/works/naveaz3.png" alt="naveaz" />
+      <WorkImage src="/images/works/naveaz6.png" alt="naveaz" />
       <Box my={4}>
         <Box as="span" color={metaColor}>
           <Meta>Skills</Meta>

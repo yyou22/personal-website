@@ -32,33 +32,20 @@ const Work = () => {
           Our solution uses a combination of pre-trained Convolutional Neural Networks (CNNs), specifically ResNet-101 for robust feature extraction, and unsupervised clustering methods like k-Means to segment and detect human figures. 
           This ensemble approach achieves efficient detection and monitoring in dynamic workplace environments, leading to both accuracy and computational efficiency.
         </P>
-        <UnorderedList my={4}>
-        <Meta>Recognition & Outreach</Meta>
-        <ListItem>
-          2nd Place Winner in Waterloo.AI Data Challenge (1,000 CAD Award)
-        </ListItem>
-        </UnorderedList>
         <Box my={4}>
           <Box as="span" color={metaColor}>
-            <Meta>Links</Meta>
+            <Meta>Recognition & Outreach</Meta>
           </Box>
-          <VStack align="stretch" spacing={2} mt={2} pl={2} borderLeftWidth="2px" borderColor={borderColor}>
-            <Box>
-              <Text as="span" fontWeight="medium" color="gray.500">UWaterloo SCS News: </Text>
-              <Link href="https://cs.uwaterloo.ca/news/cheriton-students-among-winners-at-waterloo-ai-data-challenge" target="_blank" rel="noopener noreferrer" color={linkColor}>
-                Cheriton students among winners at Waterloo.AI Data Challenge <ExternalLinkIcon mx="2px" />
+          <UnorderedList mt={2} pl={6}>
+            <ListItem>
+              2nd Place Winner in Waterloo.AI Data Challenge (1,000 CAD Award):{' '}
+              <Link href="https://cs.uwaterloo.ca/news/cheriton-students-among-winners-at-waterloo-ai-data-challenge" target="_blank" rel="noopener noreferrer">
+                UWaterloo News <ExternalLinkIcon mx="2px" />
               </Link>
-            </Box>
-            <Box>
-              <Text as="span" fontWeight="medium" color="gray.500">Waterloo.AI News: </Text>
-              <Link href="https://uwaterloo.ca/artificial-intelligence-institute/news/cheriton-school-computer-science-undergrads-and-grads-among" target="_blank" rel="noopener noreferrer" color={linkColor}>
-                Cheriton undergrads and grads among winners <ExternalLinkIcon mx="2px" />
-              </Link>
-            </Box>
-          </VStack>
+              .
+            </ListItem>
+          </UnorderedList>
         </Box>
-        <WorkImage src="/images/works/musashi/musashi5.png" alt="musashi" />
-        <WorkImage src="/images/works/musashi/musashi3.jpeg" alt="musashi" />
         <Box my={4}>
           <Box as="span" color={metaColor}>
             <Meta>Core Features</Meta>
@@ -68,6 +55,41 @@ const Work = () => {
             <ListItem>Applies k-Means clustering to group data points and identify human figures in the ROIs.</ListItem>
             <ListItem>Explores multiple approaches including CNN fine-tuning and linear classifiers to improve detection accuracy.</ListItem>
           </UnorderedList>
+        </Box>
+        <WorkImage src="/images/works/musashi/musashi5.png" alt="musashi" />
+        <WorkImage src="/images/works/musashi/musashi3.jpeg" alt="musashi" />
+        <Box my={4} p={3} borderWidth="1px" borderColor={borderColor} borderRadius="md">
+          <Meta>Links</Meta>
+          <VStack align="stretch" spacing={2} mt={2}>
+            <Box>
+              <Link
+                href="https://cs.uwaterloo.ca/news/cheriton-students-among-winners-at-waterloo-ai-data-challenge"
+                target="_blank"
+                rel="noopener noreferrer"
+                color={linkColor}
+                fontWeight="semibold"
+              >
+                UWaterloo SCS News <ExternalLinkIcon mx="1px" />
+              </Link>
+              <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+                Cheriton students among winners at Waterloo.AI Data Challenge.
+              </Text>
+            </Box>
+            <Box>
+              <Link
+                href="https://uwaterloo.ca/artificial-intelligence-institute/news/cheriton-school-computer-science-undergrads-and-grads-among"
+                target="_blank"
+                rel="noopener noreferrer"
+                color={linkColor}
+                fontWeight="semibold"
+              >
+                Waterloo.AI News <ExternalLinkIcon mx="1px" />
+              </Link>
+              <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+                Cheriton undergrads and grads among winners.
+              </Text>
+            </Box>
+          </VStack>
         </Box>
         <Box my={4}>
           <Box as="span" color={metaColor}>

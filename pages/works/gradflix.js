@@ -21,37 +21,30 @@ const Work = () => {
         The game is set to autoplay, and I recorded a playthrough to demonstrate how I can combine my programming and design skills to make complex AI concepts more understandable to a wider audience. 
         The goal of this project is to highlight my research and emphasize the value of visualizations in explaining AI safety, as well as making technical topics more engaging for non-technical audience to grasp.
       </P>
-      <Box
-  my={4}
-  p={3}
-  borderWidth="1px"
-  borderColor={borderColor}
-  borderRadius="md"
->
-  <VStack align="stretch" spacing={2}>
-    <Box>
-      <Link
-        href="https://uwaterloo.ca/current-graduate-students/news/meet-gradflix-finalist-who-combined-art-and-programming"
-        target="_blank"
-        rel="noopener noreferrer"
-        color={linkColor}
-        fontWeight="semibold"
-      >
-        School News <ExternalLinkIcon mx="1px" />
-      </Link>
-      <Text fontSize="xs" color="gray.500" lineHeight="1.2">
-        Meet the GRADflix finalist who combined art and programming.
-      </Text>
-    </Box>
-  </VStack>
-</Box>
       <Box my={4}>
         <Box as="span" color={metaColor}>
           <Meta>Recognition & Outreach</Meta>
         </Box>
         <UnorderedList mt={2} pl={6}>
           <ListItem>Selected as a finalist in the 2023 University of Waterloo GRADflix competition.</ListItem>
-          <ListItem>UWaterloo covered the project (see Links above).</ListItem>
+          <ListItem>
+            UWaterloo News:{' '}
+            <Link href="https://uwaterloo.ca/current-graduate-students/news/meet-gradflix-finalist-who-combined-art-and-programming" target="_blank" rel="noopener noreferrer">
+              Meet the GRADflix finalist who combined art and programming <ExternalLinkIcon mx="2px" />
+            </Link>
+            .
+          </ListItem>
+        </UnorderedList>
+      </Box>
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
+          <Meta>Core Features</Meta>
+        </Box>
+        <UnorderedList mt={2} pl={6}>
+          <ListItem>A 8-bit pixel animation combining art and programming.</ListItem>
+          <ListItem>Custom game engine scripting and programming for seamless animations and interactions.</ListItem>
+          <ListItem>Interactive video game elements used to explain adversarial machine learning and XAI visualization research.</ListItem>
+          <ListItem>Created a fully functional game, set to autoplay and recorded as a screencast.</ListItem>
         </UnorderedList>
       </Box>
       <WorkImage src="/images/works/gradflix/gradflix3.png" alt="GRADflix" />
@@ -67,23 +60,31 @@ const Work = () => {
         allowFullScreen
         style={{ maxWidth: '600px' }}
       ></iframe>
-      <Box my={4}>
-        <Box as="span" color={metaColor}>
-          <Meta>Core Features</Meta>
-        </Box>
-        <UnorderedList mt={2} pl={6}>
-          <ListItem>A 8-bit pixel animation combining art and programming.</ListItem>
-          <ListItem>Custom game engine scripting and programming for seamless animations and interactions.</ListItem>
-          <ListItem>Interactive video game elements used to explain adversarial machine learning and XAI visualization research.</ListItem>
-          <ListItem>Created a fully functional game, set to autoplay and recorded as a screencast.</ListItem>
-        </UnorderedList>
+      <Box my={4} p={3} borderWidth="1px" borderColor={borderColor} borderRadius="md">
+        <Meta>Links</Meta>
+        <VStack align="stretch" spacing={2} mt={2}>
+          <Box>
+            <Link
+              href="https://uwaterloo.ca/current-graduate-students/news/meet-gradflix-finalist-who-combined-art-and-programming"
+              target="_blank"
+              rel="noopener noreferrer"
+              color={linkColor}
+              fontWeight="semibold"
+            >
+              School News <ExternalLinkIcon mx="1px" />
+            </Link>
+            <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+              Meet the GRADflix finalist who combined art and programming.
+            </Text>
+          </Box>
+        </VStack>
       </Box>
       <Box my={4}>
         <Box as="span" color={metaColor}>
           <Meta>Skills</Meta>
         </Box>
         <Wrap spacing={2} mt={2}>
-          {['Pixel Art', 'Game Development', 'AI Interpretability', 'Procreate', 'Game Engine Programming'].map(item => (
+          {['Pixel Art', 'Game Development', 'Game Design', 'AI Interpretability', 'Procreate', 'Game Engine Programming'].map(item => (
             <WrapItem key={item}>
               <Tag size="md" variant="subtle" colorScheme="teal" borderRadius="full" px={4} py={1}>{item}</Tag>
             </WrapItem>
