@@ -27,42 +27,70 @@ const Work = () => {
         <P>
         <Link href="https://dl.acm.org/doi/10.1145/3706599.3719795" target="_blank" rel="noopener noreferrer">
           &quot;Enhancing AI Explainability for Non-technical Users with LLM-Driven Narrative Gamification&quot; <ExternalLinkIcon mx="2px" />
-        </Link> is a  
-          project that explores how gamification and narrative-driven interactions, powered by Large Language Models (LLMs), can enhance AI explainability for non-technical users. 
-          The study focuses on integrating LLMs into Explainable AI (XAI) visualization technique with the goal to improve XAI visualizations&apos; meaningfulness and relatedness for non-technical users. 
-          Our prototype introduces LLM-driven conversational NPCs that guide users through complex AI concepts and XAI visual encodings, helping them understand things like model prediction process and decision boundaries in a more intuitive way.
+        </Link> explores how gamification and narrative-driven interactions, powered by Large Language Models (LLMs), can enhance AI explainability for non-technical users. 
+          Our study focuses on integrating LLMs into Explainable AI (XAI) visualization technique with the goal to improve XAI visualizations&apos; meaningfulness and relatedness for non-technical users. 
+          This prototype introduces LLM-driven conversational NPCs that guide users through complex AI concepts and XAI visual encodings, helping them understand things like model prediction process and decision boundaries in a more intuitive way.
         </P>
-        <Box my={4}>
-          <Box as="span" color={metaColor}>
-            <Meta>Links</Meta>
-          </Box>
-          <VStack align="stretch" spacing={2} mt={2} pl={2} borderLeftWidth="2px" borderColor={borderColor}>
-            <Box>
-              <Text as="span" fontWeight="medium" color="gray.500">Paper: </Text>
-              <Link href="https://dl.acm.org/doi/10.1145/3706599.3719795" target="_blank" rel="noopener noreferrer" color={linkColor}>
-                Enhancing AI Explainability for Non-technical Users with LLM-Driven Narrative Gamification (ACM Digital Library) <ExternalLinkIcon mx="2px" />
-              </Link>
-            </Box>
-            <Box>
-              <Text as="span" fontWeight="medium" color="gray.500">Video figure: </Text>
-              <Link href="https://youtu.be/yDacHXX2EZw?si=c3jDQXC-u17YAjWz" target="_blank" rel="noopener noreferrer" color={linkColor}>
-                Watch on YouTube <ExternalLinkIcon mx="2px" />
-              </Link>
-            </Box>
-            <Box>
-              <Text as="span" fontWeight="medium" color="gray.500">Video demo: </Text>
-              <Link href="https://youtu.be/P4zJqP6N1Fw" target="_blank" rel="noopener noreferrer" color={linkColor}>
-                Watch on YouTube <ExternalLinkIcon mx="2px" />
-              </Link>
-            </Box>
-          </VStack>
-        </Box>
+        <Box
+  my={4}
+  p={3}
+  borderWidth="1px"
+  borderColor={borderColor}
+  borderRadius="md"
+>
+  <VStack align="stretch" spacing={2}>
+    <Box>
+      <Link
+        href="https://dl.acm.org/doi/10.1145/3706599.3719795"
+        target="_blank"
+        rel="noopener noreferrer"
+        color={linkColor}
+        fontWeight="semibold"
+      >
+        Paper Link <ExternalLinkIcon mx="1px" />
+      </Link>
+      <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+        Enhancing AI Explainability for Non-technical Users with LLM-Driven Narrative Gamification (ACM DL).
+      </Text>
+    </Box>
+
+    <Box>
+      <Link
+        href="https://youtu.be/yDacHXX2EZw?si=c3jDQXC-u17YAjWz"
+        target="_blank"
+        rel="noopener noreferrer"
+        color={linkColor}
+        fontWeight="semibold"
+      >
+        Video figure <ExternalLinkIcon mx="1px" />
+      </Link>
+      <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+        Short visual overview of the system.
+      </Text>
+    </Box>
+
+    <Box>
+      <Link
+        href="https://youtu.be/P4zJqP6N1Fw"
+        target="_blank"
+        rel="noopener noreferrer"
+        color={linkColor}
+        fontWeight="semibold"
+      >
+        Video demo <ExternalLinkIcon mx="1px" />
+      </Link>
+      <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+        Full walkthrough of the interaction design.
+      </Text>
+    </Box>
+  </VStack>
+</Box>
         <Box my={4}>
           <Box as="span" color={metaColor}>
             <Meta>Recognition & Outreach</Meta>
           </Box>
           <UnorderedList mt={2} pl={6}>
-            <ListItem>Accepted by CHI&apos;25 as a LBW paper!</ListItem>
+            <ListItem>Accepted by CHI&apos;25 as a Late-Breaking Work paper!</ListItem>
           </UnorderedList>
         </Box>
         <WorkImage src="/images/works/gamification/gamification1.gif" alt="gamification" />
@@ -117,16 +145,6 @@ const Work = () => {
             <Meta>Authors</Meta>
           </Box>
           <Text mt={2}>Yuzhe You, Jian Zhao</Text>
-        </Box>
-        <Box my={4}>
-          <Box as="span" color={metaColor}>
-            <Meta>Paper Link</Meta>
-          </Box>
-          <Text mt={2}>
-            <Link href="https://dl.acm.org/doi/10.1145/3706599.3719795" target="_blank" rel="noopener noreferrer" color={linkColor}>
-              Enhancing AI Explainability for Non-technical Users with LLM-Driven Narrative Gamification <ExternalLinkIcon mx="2px" />
-            </Link>
-          </Text>
         </Box>
       </Container>
     </Layout>

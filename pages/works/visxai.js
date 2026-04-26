@@ -30,30 +30,50 @@ const Work = () => {
           Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks <ExternalLinkIcon mx="2px" />
           </Link>{' '}
           is an interactive, beginner-friendly visualization that introduces how machine-learning models can be fooled by malicious adversarial attacks. 
-          Built primarily with D3.js and Idyll, the guide focuses on the Fast Gradient Sign Method (FGSM) and shows how tiny, human-imperceptible tweaks to 
-          an image can push a ResNet-34 model into making confident mistakes. Through dynamic visuals and animations, you can compare clean and subtly perturbed images, 
+          Built primarily with D3.js and Idyll, my guide focuses on the Fast Gradient Sign Method (FGSM) and shows how tiny, human-imperceptible tweaks to 
+          an image can push a ResNet-34 model into making confident mistakes. You can compare clean and subtly perturbed images, 
           explore how these attacks shift model behavior, and examine two versions of ResNet-34, one trained normally and one trained with adversarial methods, 
           to see how they respond differently.
         </P>
-        <Box my={4}>
-          <Box as="span" color={metaColor}>
-            <Meta>Links</Meta>
-          </Box>
-          <VStack align="stretch" spacing={2} mt={2} pl={2} borderLeftWidth="2px" borderColor={borderColor}>
-            <Box>
-              <Text as="span" fontWeight="medium" color="gray.500">Try it: </Text>
-              <Link href="https://visxai-aml.vercel.app/" target="_blank" rel="noopener noreferrer" color={linkColor}>
-                Interactive explainable (visxai-aml.vercel.app) <ExternalLinkIcon mx="2px" />
-              </Link>
-            </Box>
-            <Box>
-              <Text as="span" fontWeight="medium" color="gray.500">Video demo: </Text>
-              <Link href="https://youtu.be/ASEd4f5gMvA" target="_blank" rel="noopener noreferrer" color={linkColor}>
-                Watch on YouTube <ExternalLinkIcon mx="2px" />
-              </Link>
-            </Box>
-          </VStack>
-        </Box>
+        <Box
+  my={4}
+  p={3}
+  borderWidth="1px"
+  borderColor={borderColor}
+  borderRadius="md"
+>
+  <VStack align="stretch" spacing={2}>
+    <Box>
+      <Link
+        href="https://visxai-aml.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        color={linkColor}
+        fontWeight="semibold"
+      >
+        Interactive explainable <ExternalLinkIcon mx="1px" />
+      </Link>
+      <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+        Explore the live VISxAI demo.
+      </Text>
+    </Box>
+
+    <Box>
+      <Link
+        href="https://youtu.be/ASEd4f5gMvA"
+        target="_blank"
+        rel="noopener noreferrer"
+        color={linkColor}
+        fontWeight="semibold"
+      >
+        Video demo <ExternalLinkIcon mx="1px" />
+      </Link>
+      <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+        Watch the walkthrough on YouTube.
+      </Text>
+    </Box>
+  </VStack>
+</Box>
         <Box my={4}>
           <Box as="span" color={metaColor}>
             <Meta>Recognition & Outreach</Meta>
@@ -73,6 +93,10 @@ const Work = () => {
           alt="visxai"
           caption="Presentation at the VISxAI Workshop"
         />
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/UUkftG2KH5o?si=fMe0QTaigj2GuP6T&amp;start=5444" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+        <Text mt={2} fontSize="sm" color="gray.500" textAlign="center">
+          Video of my presentation at the 7th VISxAI workshop (starts from 1:30:44)
+        </Text>
         {/* <WorkImage src="/images/works/visxai/visxai6.jpg" alt="visxai" /> */}
         <Box my={4}>
           <Box as="span" color={metaColor}>

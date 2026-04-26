@@ -16,24 +16,35 @@ const Work = () => {
         GRADflix <Badge>2023</Badge>
       </Title>
       <P>
-        My GRADflix project is a playful 8-bit pixel-style video game, designed to present my research on visualizing adversarial machine learning (AML) in an accessible and creative way. 
-        I developed the game using a game engine for the underlying logic and interactivity, and hand-drew all the artwork from scratch using Procreate on my iPad. 
+        My GRADflix project is a playful 8-bit pixel-style video game, designed to present my MMath research on visualizing adversarial machine learning in an accessible and creative way. 
+        I developed the game using a game engine for the logic and interactivity, and hand-drew all the artwork from scratch using Procreate on my iPad. 
         The game is set to autoplay, and I recorded a playthrough to demonstrate how I can combine my programming and design skills to make complex AI concepts more understandable to a wider audience. 
-        The goal of this project is to highlight my MMath research and emphasize the value of visualizations in explaining AI safety and AML, as well as making technical topics more engaging and easier for non-technical audience to grasp.
+        The goal of this project is to highlight my research and emphasize the value of visualizations in explaining AI safety, as well as making technical topics more engaging for non-technical audience to grasp.
       </P>
-      <Box my={4}>
-        <Box as="span" color={metaColor}>
-          <Meta>Links</Meta>
-        </Box>
-        <VStack align="stretch" spacing={2} mt={2} pl={2} borderLeftWidth="2px" borderColor={borderColor}>
-          <Box>
-            <Text as="span" fontWeight="medium" color="gray.500">News: </Text>
-            <Link href="https://uwaterloo.ca/current-graduate-students/news/meet-gradflix-finalist-who-combined-art-and-programming" target="_blank" rel="noopener noreferrer" color={linkColor}>
-              Meet the GRADflix finalist who combined art and programming <ExternalLinkIcon mx="2px" />
-            </Link>
-          </Box>
-        </VStack>
-      </Box>
+      <Box
+  my={4}
+  p={3}
+  borderWidth="1px"
+  borderColor={borderColor}
+  borderRadius="md"
+>
+  <VStack align="stretch" spacing={2}>
+    <Box>
+      <Link
+        href="https://uwaterloo.ca/current-graduate-students/news/meet-gradflix-finalist-who-combined-art-and-programming"
+        target="_blank"
+        rel="noopener noreferrer"
+        color={linkColor}
+        fontWeight="semibold"
+      >
+        School News <ExternalLinkIcon mx="1px" />
+      </Link>
+      <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+        Meet the GRADflix finalist who combined art and programming.
+      </Text>
+    </Box>
+  </VStack>
+</Box>
       <Box my={4}>
         <Box as="span" color={metaColor}>
           <Meta>Recognition & Outreach</Meta>
