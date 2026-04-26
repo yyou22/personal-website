@@ -51,9 +51,9 @@ const Home = () => (
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
-            Yuzhe Y.
+            Yuzhe You
           </Heading>
-          <p> CS Researcher / Developer / Artist + Designer / Student Pilot / Research Intern @&nbsp;&nbsp;
+          <p> CS Researcher / Developer / Artist + Designer / Research Intern @&nbsp;&nbsp;
             <HStack as="span" display="inline-flex" alignItems="center" spacing={1} style={{ position: 'relative', top: '3px' }}>
               <Image 
                 src="/images/adobe.png"
@@ -74,6 +74,17 @@ const Home = () => (
               />
               <span>Microsoft</span>
             </HStack>
+            &nbsp;/ Speaker @ 2026 Adobe Summit&nbsp;&nbsp;
+            <HStack as="span" display="inline-flex" alignItems="center" spacing={1} style={{ position: 'relative', top: '3px' }}>
+              <Image 
+                src="/images/adobe summit.png"
+                alt="Adobe Summit Logo"
+                width={76}
+                height={16}
+                style={{ marginTop: '2px' }}
+              />
+            </HStack>
+            &nbsp;/ Student Pilot ✈️
           </p>
         </Box>
         <Box
@@ -110,19 +121,19 @@ const Home = () => (
         <VStack align="stretch" spacing={5} mt={2}>
           <Box>
             <Paragraph>
-              Hello, my name is Yuzhe. I am a fully funded PhD student in Computer Science at the University of Waterloo, where I am currently a member of the {' '}
+              Hello, my name is Yuzhe. I&apos;m a fully funded PhD student in Computer Science at the University of Waterloo and a member of the{' '}
               <Link href="https://www.jeffjianzhao.com/" target="_blank" rel="noopener noreferrer">
-                WVisdom Research Group
+              &nbsp;WVisdom Research Group
               </Link>
-              &nbsp;(formerly WatVis). Prior to this, I was a research member of the {' '}
+              &nbsp;(formerly WatVis). Previously, I was a research member of the{' '}
               <Link href="https://www.socr.umich.edu/" target="_blank" rel="noopener noreferrer">
-                SOCR Big Data & Predictive Analytics
+              &nbsp;SOCR Big Data & Predictive Analytics
               </Link>
-              &nbsp;at the University of Michigan - Ann Arbor, and was also affiliated with the {' '}
+              &nbsp;at the University of Michigan - Ann Arbor, and was also affiliated with the{' '}
               <Link href="https://www.civil.uwaterloo.ca/itss/index.htm" target="_blank" rel="noopener noreferrer">
-                iTSS Lab
+              &nbsp;iTSS Lab
               </Link>
-              &nbsp;at the University of Waterloo.
+              &nbsp;at UWaterloo.
             </Paragraph>
           </Box>
           <Box>
@@ -130,8 +141,9 @@ const Home = () => (
               Research
             </Text>
             <Paragraph>
-              My primary research interest is InfoVis for Explainable AI, with a focus on visualizing AI models under adversarial attacks and making XAI visualizations more meaningful for non-experts. I have also conducted research on applying machine learning to develop intelligent transportation solutions. In addition, I work on agent-supported interaction for creative design, which is an area I have been extensively involved in through my collaboration with&nbsp;<Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
-              Adobe
+              My research focuses on InfoVis for Explainable AI - visualizing machine learning models under adversarial attacks and making XAI more accessible to non-experts. I have also worked on machine learning for intelligent transportation. In parallel, I explore agent-supported interaction models for creative design through my collaboration with&nbsp;
+              <Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
+                Adobe
               </Link>.
             </Paragraph>
           </Box>
@@ -141,8 +153,8 @@ const Home = () => (
             </Text>
             <Paragraph>
               I previously interned at&nbsp;<Link href="https://www.microsoft.com/en-gb/about/" target="_blank" rel="noopener noreferrer">
-              Microsoft UK
-              </Link> and later at&nbsp;<Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
+              Microsoft
+              </Link> in Cambridge, UK, and later at&nbsp;<Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
               Adobe
               </Link>&nbsp;in San Jose, California. I am now returning to&nbsp;<Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
               Adobe
@@ -160,6 +172,7 @@ const Home = () => (
           {[
             'Visualization',
             'Explainable AI',
+            'Agent-supported Creativity',
             'Human-Computer Interaction',
             'Machine Learning',
             'Computer Vision',
@@ -195,6 +208,44 @@ const Home = () => (
           Recent News
         </Heading>
         <Box>
+        <BioSection>
+            <Box display="flex" alignItems="flex-start">
+              <Box width="90px" flexShrink={0}>
+                <BioYear>Apr 2026</BioYear>
+              </Box>
+              <Box flex={1}>
+                I am presenting my research 
+                <Link href="https://www.youtube.com/watch?v=HPjwlZ6knHg" target="_blank" rel="noopener noreferrer">
+                &nbsp;#ProjectTestKitchen&nbsp; 
+                </Link>
+                at the 2026
+                <Link href="https://business.adobe.com/summit/adobe-summit.html" target="_blank" rel="noopener noreferrer">
+                &nbsp;Adobe Summit
+                </Link>
+              &nbsp;Sneaks&nbsp;
+              <HStack as="span" display="inline-flex" alignItems="center" spacing={1} style={{ position: 'relative', top: '3px' }}>
+              <Image 
+                src="/images/adobe summit.png"
+                alt="Adobe Summit Logo"
+                width={76}
+                height={16}
+                style={{ marginTop: '2px' }}
+              />
+            </HStack>
+            &nbsp;!
+              </Box>
+            </Box>
+          </BioSection>
+          <BioSection>
+            <Box display="flex" alignItems="flex-start">
+              <Box width="90px" flexShrink={0}>
+                <BioYear>Apr 2026</BioYear>
+              </Box>
+              <Box flex={1}>
+                Awarded with WiCS Graduate Scholarship ($3,000 CAD)!
+              </Box>
+            </Box>
+          </BioSection>
           <BioSection>
             <Box display="flex" alignItems="flex-start">
               <Box width="90px" flexShrink={0}>
@@ -202,6 +253,16 @@ const Home = () => (
               </Box>
               <Box flex={1}>
                 I am returning to 
+                &nbsp;
+                <HStack as="span" display="inline-flex" alignItems="center" spacing={1} style={{ position: 'relative', top: '3px' }}>
+              <Image 
+                src="/images/adobe2.png"
+                alt="Adobe Logo"
+                width={16}
+                height={16}
+                style={{ marginTop: '2px' }}
+              />
+            </HStack> 
                 <Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
                 &nbsp;Adobe&nbsp; 
                 </Link>
@@ -226,6 +287,16 @@ const Home = () => (
               </Box>
               <Box flex={1}>
                 I am joining 
+                &nbsp;
+                <HStack as="span" display="inline-flex" alignItems="center" spacing={1} style={{ position: 'relative', top: '3px' }}>
+              <Image 
+                src="/images/adobe2.png"
+                alt="Adobe Logo"
+                width={16}
+                height={16}
+                style={{ marginTop: '2px' }}
+              />
+            </HStack> 
                 <Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
                 &nbsp;Adobe&nbsp; 
                 </Link>
@@ -287,6 +358,16 @@ const Home = () => (
               </Box>
               <Box flex={1}>
                 I am joining 
+                &nbsp;
+            <HStack as="span" display="inline-flex" alignItems="center" spacing={1} style={{ position: 'relative', top: '3px' }}>
+              <Image 
+                src="/images/microsoft.png"
+                alt="Microsoft Logo"
+                width={16}
+                height={16}
+                style={{ marginTop: '2px' }}
+              />
+            </HStack>
                 <Link href="https://www.microsoft.com/en-gb/about/" target="_blank" rel="noopener noreferrer">
                 &nbsp;Microsoft UK&nbsp; 
                 </Link>
@@ -407,8 +488,20 @@ const Home = () => (
         <Heading as="h3" variant="section-title">
         Discover My Research in Action!
         </Heading>
-        Watch a video about my MMath research on using interactive visualizations to explain adversarial attacks
-         targeted at machine learning models.
+        Watch my presentation from
+        <Link href="https://business.adobe.com/summit/adobe-summit.html" target="_blank" rel="noopener noreferrer">
+          &nbsp;Adobe Summit&nbsp;
+        </Link>
+        Sneaks 2026, where I showcased my research #ProjectTestKitchen in front of thousands of attendees and alongside American comedian and actor
+        <Link href="https://en.wikipedia.org/wiki/Iliza_Shlesinger" target="_blank" rel="noopener noreferrer">
+          &nbsp;Iliza Shlesinger
+        </Link>
+        .
+        <br/>
+        <br/>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/HPjwlZ6knHg?si=rLtcegIKdSDnPPVC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <br/>
+        Watch a pixel animation I made about my MMath research on using interactive visualizations to explain machine learning adversarial attacks.
         <br/>
         <br/>
         <iframe
