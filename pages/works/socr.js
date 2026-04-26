@@ -32,21 +32,25 @@ const Work = () => {
         difficult to analyze and interpret in meaningful ways using classical probability,
         statistical or algorithmic appoaches.
       </P>
-      <UnorderedList my={4}>
-        <Meta>My Role</Meta>
-        <ListItem>
-        Interrogated the {' '}
-        <Link href="https://physionet.org/content/mimiciii/1.4/" scroll={false} target="_blank" rel="noopener noreferrer">
-          <Link>MIMIC-III</Link>
-        </Link>
-        &nbsp;database, a large collection of ~43,000
-        critical care patients from an ICU in Boston, MA, by utilizing R/Rstudio to digest
-        the vital signs, laboratory results, free-text data, and wavefroms available in this
-        unique dataset and predict clinical outcomes via statistical modeling tools; developed
-        advanced AI/ML dara analytics to address specific biomedical, healthcare, neuroimaging-genectics,
-        and other applications.
-        </ListItem>
-      </UnorderedList>
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
+          <Meta>My Role</Meta>
+        </Box>
+        <UnorderedList mt={2} pl={6}>
+          <ListItem>
+          Interrogated the {' '}
+          <Link href="https://physionet.org/content/mimiciii/1.4/" scroll={false} target="_blank" rel="noopener noreferrer">
+            <Link>MIMIC-III</Link>
+          </Link>
+          &nbsp;database, a large collection of ~43,000
+          critical care patients from an ICU in Boston, MA, by utilizing R/Rstudio to digest
+          the vital signs, laboratory results, free-text data, and wavefroms available in this
+          unique dataset and predict clinical outcomes via statistical modeling tools; developed
+          advanced AI/ML dara analytics to address specific biomedical, healthcare, neuroimaging-genectics,
+          and other applications.
+          </ListItem>
+        </UnorderedList>
+      </Box>
       <Box my={4}>
         <Box as="span" color={metaColor}>
           <Meta>Recognition & Outreach</Meta>
@@ -60,31 +64,45 @@ const Work = () => {
           </ListItem>
         </UnorderedList>
       </Box>
-      <Box my={4}>
-        <Box as="span" color={metaColor}>
-          <Meta>Links</Meta>
-        </Box>
-        <VStack align="stretch" spacing={2} mt={2} pl={2} borderLeftWidth="2px" borderColor={borderColor}>
-          <Box>
-            <Text as="span" fontWeight="medium" color="gray.500">SOCR website: </Text>
-            <Link href="https://www.socr.umich.edu/" target="_blank" rel="noopener noreferrer" color={linkColor}>
-              socr.umich.edu <ExternalLinkIcon mx="2px" />
-            </Link>
-          </Box>
-          <Box>
-            <Text as="span" fontWeight="medium" color="gray.500">MDP website: </Text>
-            <Link href="https://mdp.engin.umich.edu/" target="_blank" rel="noopener noreferrer" color={linkColor}>
-              mdp.engin.umich.edu <ExternalLinkIcon mx="2px" />
-            </Link>
-          </Box>
-        </VStack>
-      </Box>
       <WorkImage src="/images/works/socr0.jpg" alt="socr" />
       <WorkImage src="/images/works/socr/socr1.png" alt="socr" />
       <SimpleGrid columns={2} gap={2}>
         <WorkImage src="/images/works/socr2.png" alt="socr" />
         <WorkImage src="/images/works/socr3.jpg" alt="socr" />
       </SimpleGrid>
+      <Box my={4} p={3} borderWidth="1px" borderColor={borderColor} borderRadius="md">
+        <Meta>Links</Meta>
+        <VStack align="stretch" spacing={2} mt={2}>
+          <Box>
+            <Link
+              href="https://www.socr.umich.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              color={linkColor}
+              fontWeight="semibold"
+            >
+              SOCR Website <ExternalLinkIcon mx="1px" />
+            </Link>
+            <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+              Statistics Online Computational Resource.
+            </Text>
+          </Box>
+          <Box>
+            <Link
+              href="https://mdp.engin.umich.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              color={linkColor}
+              fontWeight="semibold"
+            >
+              MDP Website <ExternalLinkIcon mx="1px" />
+            </Link>
+            <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+              UMich Multidisciplinary Design Program.
+            </Text>
+          </Box>
+        </VStack>
+      </Box>
       <Box my={4}>
         <Box as="span" color={metaColor}>
           <Meta>Skills</Meta>

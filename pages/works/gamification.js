@@ -31,66 +31,22 @@ const Work = () => {
           Our study focuses on integrating LLMs into Explainable AI (XAI) visualization technique with the goal to improve XAI visualizations&apos; meaningfulness and relatedness for non-technical users. 
           This prototype introduces LLM-driven conversational NPCs that guide users through complex AI concepts and XAI visual encodings, helping them understand things like model prediction process and decision boundaries in a more intuitive way.
         </P>
-        <Box
-  my={4}
-  p={3}
-  borderWidth="1px"
-  borderColor={borderColor}
-  borderRadius="md"
->
-  <VStack align="stretch" spacing={2}>
-    <Box>
-      <Link
-        href="https://dl.acm.org/doi/10.1145/3706599.3719795"
-        target="_blank"
-        rel="noopener noreferrer"
-        color={linkColor}
-        fontWeight="semibold"
-      >
-        Paper Link <ExternalLinkIcon mx="1px" />
-      </Link>
-      <Text fontSize="xs" color="gray.500" lineHeight="1.2">
-        Enhancing AI Explainability for Non-technical Users with LLM-Driven Narrative Gamification (ACM DL).
-      </Text>
-    </Box>
-
-    <Box>
-      <Link
-        href="https://youtu.be/yDacHXX2EZw?si=c3jDQXC-u17YAjWz"
-        target="_blank"
-        rel="noopener noreferrer"
-        color={linkColor}
-        fontWeight="semibold"
-      >
-        Video figure <ExternalLinkIcon mx="1px" />
-      </Link>
-      <Text fontSize="xs" color="gray.500" lineHeight="1.2">
-        Short visual overview of the system.
-      </Text>
-    </Box>
-
-    <Box>
-      <Link
-        href="https://youtu.be/P4zJqP6N1Fw"
-        target="_blank"
-        rel="noopener noreferrer"
-        color={linkColor}
-        fontWeight="semibold"
-      >
-        Video demo <ExternalLinkIcon mx="1px" />
-      </Link>
-      <Text fontSize="xs" color="gray.500" lineHeight="1.2">
-        Full walkthrough of the interaction design.
-      </Text>
-    </Box>
-  </VStack>
-</Box>
         <Box my={4}>
           <Box as="span" color={metaColor}>
             <Meta>Recognition & Outreach</Meta>
           </Box>
           <UnorderedList mt={2} pl={6}>
             <ListItem>Accepted by CHI&apos;25 as a Late-Breaking Work paper!</ListItem>
+          </UnorderedList>
+        </Box>
+        <Box my={4}>
+          <Box as="span" color={metaColor}>
+            <Meta>Core Features</Meta>
+          </Box>
+          <UnorderedList mt={2} pl={6}>
+            <ListItem>Integrates Large Language Models (LLMs) to create narrative-driven NPCs that explain AI models and visualizations.</ListItem>
+            <ListItem>Includes interactive t-SNE projections that allow users to explore model embeddings and understand AI decision-making processes.</ListItem>
+            <ListItem>Produces design implications of LLM-driven gamification in improving explainability and reducing cognitive load for non-technical AI users.</ListItem>
           </UnorderedList>
         </Box>
         <WorkImage src="/images/works/gamification/gamification1.gif" alt="gamification" />
@@ -105,16 +61,60 @@ const Work = () => {
         allowFullScreen
         style={{ maxWidth: '600px' }}
       ></iframe>
-        <Box my={4}>
-          <Box as="span" color={metaColor}>
-            <Meta>Core Features</Meta>
-          </Box>
-          <UnorderedList mt={2} pl={6}>
-            <ListItem>Introduces gamification elements into XAI visualizations, specifically focusing on improving non-technical user understanding.</ListItem>
-            <ListItem>Integrates Large Language Models (LLMs) to create narrative-driven NPCs that explain AI models and visualizations.</ListItem>
-            <ListItem>Explores interactive t-SNE projections to allow users to explore model embeddings and understand AI decision-making processes.</ListItem>
-            <ListItem>Produces design implications of LLM-driven gamification in improving explainability and reducing cognitive load for non-technical AI users.</ListItem>
-          </UnorderedList>
+        <Box
+          my={4}
+          p={3}
+          borderWidth="1px"
+          borderColor={borderColor}
+          borderRadius="md"
+        >
+          <Meta>Links</Meta>
+          <VStack align="stretch" spacing={2} mt={2}>
+            <Box>
+              <Link
+                href="https://dl.acm.org/doi/10.1145/3706599.3719795"
+                target="_blank"
+                rel="noopener noreferrer"
+                color={linkColor}
+                fontWeight="semibold"
+              >
+                Paper Link <ExternalLinkIcon mx="1px" />
+              </Link>
+              <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+                Enhancing AI Explainability for Non-technical Users with LLM-Driven Narrative Gamification (ACM DL).
+              </Text>
+            </Box>
+
+            <Box>
+              <Link
+                href="https://youtu.be/yDacHXX2EZw?si=c3jDQXC-u17YAjWz"
+                target="_blank"
+                rel="noopener noreferrer"
+                color={linkColor}
+                fontWeight="semibold"
+              >
+                Video figure <ExternalLinkIcon mx="1px" />
+              </Link>
+              <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+                Short visual overview of the system.
+              </Text>
+            </Box>
+
+            <Box>
+              <Link
+                href="https://youtu.be/P4zJqP6N1Fw"
+                target="_blank"
+                rel="noopener noreferrer"
+                color={linkColor}
+                fontWeight="semibold"
+              >
+                Video demo <ExternalLinkIcon mx="1px" />
+              </Link>
+              <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+                Full walkthrough of the interaction design.
+              </Text>
+            </Box>
+          </VStack>
         </Box>
         <Box my={4}>
           <Box as="span" color={metaColor}>

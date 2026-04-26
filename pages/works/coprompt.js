@@ -17,29 +17,33 @@ const Work = () => {
       </Title>
       <P>
       CoPrompt is a collaborative prompt engineering tool designed to assist programmers in LLM-driven natural language programming by facilitating seamless collaboration on prompt creation and refinement. 
-      It offers four key mechanisms: sharing, referring, linking, and requesting. These features allow programmers to share information effortlessly, modify prompts by referring to others&apos; work, 
-      link prompts for automatic updates, and request assistance without interrupting collaborators&apos; workflow. By providing multi-level hierarchical views and contextual prompt information, 
-      CoPrompt helps reduce communication barriers and repetitive updates, making collaborative prompt engineering more efficient.
+      We offer four key features: sharing, referring, linking, and requesting. These features allow programmers to easily share information and modify prompts by referring to others&apos; work, 
+      link prompts for automatic updates, and request assistance without interrupting collaborators&apos; workflow. CoPrompt provides multi-level hierarchical views and contextual prompt information, 
+      which help reduce communication barriers and repetitive updates, making collaborative prompt engineering more efficient.
       </P>
-      <Box my={4}>
-        <Box as="span" color={metaColor}>
-          <Meta>Links</Meta>
-        </Box>
-        <VStack align="stretch" spacing={2} mt={2} pl={2} borderLeftWidth="2px" borderColor={borderColor}>
-          <Box>
-            <Text as="span" fontWeight="medium" color="gray.500">Paper: </Text>
-            <Link href="https://dl.acm.org/doi/10.1145/3613904.3642212" target="_blank" rel="noopener noreferrer" color={linkColor}>
-              CoPrompt (ACM Digital Library) <ExternalLinkIcon mx="2px" />
-            </Link>
-          </Box>
-        </VStack>
-      </Box>
       <Box my={4}>
         <Box as="span" color={metaColor}>
           <Meta>Recognition & Outreach</Meta>
         </Box>
         <UnorderedList mt={2} pl={6}>
-          <ListItem>Accepted and presented at CHI 2024.</ListItem>
+          <ListItem>
+            Accepted and presented at CHI 2024:{' '}
+            <Link href="https://dl.acm.org/doi/10.1145/3613904.3642212" target="_blank" rel="noopener noreferrer">
+              Paper Link <ExternalLinkIcon mx="2px" />
+            </Link>
+            .
+          </ListItem>
+        </UnorderedList>
+      </Box>
+      <Box my={4}>
+        <Box as="span" color={metaColor}>
+          <Meta>Core Features</Meta>
+        </Box>
+        <UnorderedList mt={2} pl={6}>
+          <ListItem>Seamless collaboration through sharing, referring, linking, and requesting prompts.</ListItem>
+          <ListItem>Multi-level hierarchical views for prompt comprehension and modification.</ListItem>
+          <ListItem>Automated updates of linked prompts, reducing repetitive changes.</ListItem>
+          <ListItem>Facilitates both real-time and asynchronous collaboration.</ListItem>
         </UnorderedList>
       </Box>
       {/*<P>
@@ -67,16 +71,24 @@ const Work = () => {
         allowFullScreen
         style={{ maxWidth: '600px' }}
       ></iframe>
-      <Box my={4}>
-        <Box as="span" color={metaColor}>
-          <Meta>Core Features</Meta>
-        </Box>
-        <UnorderedList mt={2} pl={6}>
-          <ListItem>Seamless collaboration through sharing, referring, linking, and requesting prompts.</ListItem>
-          <ListItem>Multi-level hierarchical views for prompt comprehension and modification.</ListItem>
-          <ListItem>Automated updates of linked prompts, reducing repetitive changes.</ListItem>
-          <ListItem>Facilitates both real-time and asynchronous collaboration.</ListItem>
-        </UnorderedList>
+      <Box my={4} p={3} borderWidth="1px" borderColor={borderColor} borderRadius="md">
+        <Meta>Links</Meta>
+        <VStack align="stretch" spacing={2} mt={2}>
+          <Box>
+            <Link
+              href="https://dl.acm.org/doi/10.1145/3613904.3642212"
+              target="_blank"
+              rel="noopener noreferrer"
+              color={linkColor}
+              fontWeight="semibold"
+            >
+              Paper Link <ExternalLinkIcon mx="1px" />
+            </Link>
+            <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+              View on ACM Digital Library.
+            </Text>
+          </Box>
+        </VStack>
       </Box>
       <Box my={4}>
         <Box as="span" color={metaColor}>

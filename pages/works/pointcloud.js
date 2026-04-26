@@ -34,11 +34,6 @@ const Work = () => {
             <ListItem>Received Business Incubation Award (3rd Place) in a Hackathon hosted by Dynamic Map Platform Co. (50,000 JPY).</ListItem>
           </UnorderedList>
         </Box>
-        <WorkImage src="/images/works/point cloud/pc1.png" alt="point cloud" />
-        <WorkImage src="/images/works/point cloud/pc6.png" alt="point cloud" />
-        <WorkImage src="/images/works/point cloud/pc7.png" alt="point cloud" />
-        <WorkImage src="/images/works/point cloud/pc5.png" alt="point cloud" />
-        <WorkImage src="/images/works/point cloud/pc8.JPG" alt="point cloud" />
         <Box my={4}>
           <Box as="span" color={metaColor}>
             <Meta>Core Features</Meta>
@@ -49,6 +44,11 @@ const Work = () => {
             <ListItem>Offers valuable insights for tourism, real estate, and urban planning professionals.</ListItem>
           </UnorderedList>
         </Box>
+        <WorkImage src="/images/works/point cloud/pc1.png" alt="point cloud" />
+        <WorkImage src="/images/works/point cloud/pc6.png" alt="point cloud" />
+        <WorkImage src="/images/works/point cloud/pc7.png" alt="point cloud" />
+        <WorkImage src="/images/works/point cloud/pc5.png" alt="point cloud" />
+        <WorkImage src="/images/works/point cloud/pc8.JPG" alt="point cloud" />
         <Box my={4}>
           <Box as="span" color={metaColor}>
             <Meta>Skills</Meta>
