@@ -207,13 +207,37 @@ const CV = () => (
           <HStack spacing={3} align="center">
             <Icon as={FaAward} boxSize={6} color="teal.500" />
             <Heading as="h3" variant="section-title" color="teal.600">
-              Scholarships & Awards
+              Honors & Awards
             </Heading>
           </HStack>
           <VStack align="start" spacing={6} mt={4}>
             <Box>
             <Text fontSize="lg" fontWeight="bold">Graduate</Text>
               <VStack align="start" spacing={2} mt={2}>
+                <BioSection>
+                  <BioYear>
+                  <Text as="span" color="#6d758e" fontWeight="normal">
+                    Apr 2026
+                  </Text>
+                  </BioYear>
+                  2026 Adobe Summit Sneaks (1 of 7 selected from 500+ global submissions)
+                </BioSection>
+                <BioSection>
+                  <BioYear>
+                  <Text as="span" color="#6d758e" fontWeight="normal">
+                    Apr 2026
+                  </Text>
+                  </BioYear> 
+                  WiCS Graduate Scholarship ($3,000 CAD)
+                </BioSection>
+                <BioSection>
+                  <BioYear>
+                  <Text as="span" color="#6d758e" fontWeight="normal">
+                    Feb 2026
+                  </Text>
+                  </BioYear> 
+                  CHI 2026 Posters Outstanding Review Recognition
+                </BioSection>
                 <BioSection>
                   <BioYear>
                   <Text as="span" color="#6d758e" fontWeight="normal">
@@ -423,6 +447,38 @@ const CV = () => (
             </Heading>
           </HStack>
           <VStack align="start" spacing={6} mt={4}>
+            <Box>
+              <Text fontSize="md">
+                <Link color="#6b93a2" href="https://uwaterloo.ca/computer-science/news/yuzhe-you-cooks-storm-adobe-summit-2026" isExternal>
+                &quot;Yuzhe You cooks up a storm at Adobe Summit 2026.&quot;<ExternalLinkIcon mx="2px" />
+                </Link> Cheriton School of Computer Science, University of Waterloo, Apr 2026.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                <Link color="#6b93a2" href="https://theaieconomy.substack.com/p/adobe-sneaks-2026-five-ai-prototypes-worth-watching" isExternal>
+                &quot;Five Adobe Sneaks I Want Now.&quot;<ExternalLinkIcon mx="2px" />
+                </Link> The AI Economy, Apr 2026.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                <Link color="#6b93a2" href="https://uwaterloo.ca/math-alumni-newsletter/news/math-forefront-ai" isExternal>
+                &quot;Math at the forefront of AI: Foundational innovation to responsible impact.&quot;<ExternalLinkIcon mx="2px" />
+                </Link> Math e-Ties, University of Waterloo, Mar 2026.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                <Link color="#6b93a2" href="https://uwaterloo.ca/computer-science/news/international-womens-day-celebrating-women-researchers-and" isExternal>
+                &quot;International Women&apos;s Day: Celebrating women researchers and entrepreneurs.&quot;<ExternalLinkIcon mx="2px" />
+                </Link> Cheriton School of Computer Science, University of Waterloo, Mar 2026.
+              </Text>
+            </Box>
+            <Divider />
             <Box>
               <Text fontSize="md">
                 <Link color="#6b93a2" href="https://uwaterloo.ca/computer-science/news/gamifying-ai" isExternal>
