@@ -74,7 +74,7 @@ const Home = () => (
               />
               <span>Microsoft</span>
             </HStack>
-            &nbsp;/ Speaker @ 2026 Adobe Summit&nbsp;&nbsp;
+            &nbsp;/ Sneaks Speaker @ 2026 Adobe Summit&nbsp;&nbsp;
             <HStack as="span" display="inline-flex" alignItems="center" spacing={1} style={{ position: 'relative', top: '3px' }}>
               <Image 
                 src="/images/adobe summit.png"
