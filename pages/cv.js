@@ -1,4 +1,5 @@
-import { Container, Heading, Divider, Text, Box, VStack, HStack, Icon, Link, } from '@chakra-ui/react'
+import NextLink from 'next/link'
+import { Container, Heading, Divider, Text, Box, VStack, HStack, Icon, Link, Button } from '@chakra-ui/react'
 import Image from 'next/image'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
@@ -459,7 +460,7 @@ const CV = () => (
           <HStack spacing={3} align="center">
             <Icon as={FaNewspaper} boxSize={6} color="teal.500" />
             <Heading as="h3" variant="section-title" color="teal.600">
-              Press & Media Coverage
+              Selected Press & Media Coverage
             </Heading>
           </HStack>
           <VStack align="start" spacing={6} mt={4}>
@@ -470,15 +471,15 @@ const CV = () => (
                 </Link> Cheriton School of Computer Science, University of Waterloo, Apr 2026.
               </Text>
             </Box>
-            <Divider />
-            <Box>
+            {/*<Divider />
+             <Box>
               <Text fontSize="md">
                 <Link color="#6b93a2" href="https://uwaterloo.ca/math/news/yuzhe-you-presents-adobe-summit-2026" isExternal>
                 &quot;Yuzhe You presents at Adobe Summit 2026.&quot;<ExternalLinkIcon mx="2px" />
                 </Link> Faculty of Mathematics, University of Waterloo, Apr 2026.
               </Text>
             </Box>
-            <Divider />
+            <Divider /> 
             <Box>
               <Text fontSize="md">
                 <Link color="#6b93a2" href="https://theaieconomy.substack.com/p/adobe-sneaks-2026-five-ai-prototypes-worth-watching" isExternal>
@@ -487,7 +488,7 @@ const CV = () => (
               </Text>
             </Box>
             <Divider />
-            <Box>
+             <Box>
               <Text fontSize="md">
                 <Link color="#6b93a2" href="https://uwaterloo.ca/math-alumni-newsletter/news/math-forefront-ai" isExternal>
                 &quot;Math at the forefront of AI: Foundational innovation to responsible impact.&quot;<ExternalLinkIcon mx="2px" />
@@ -501,7 +502,7 @@ const CV = () => (
                 &quot;International Women&apos;s Day: Celebrating women researchers and entrepreneurs.&quot;<ExternalLinkIcon mx="2px" />
                 </Link> Cheriton School of Computer Science, University of Waterloo, Mar 2026.
               </Text>
-            </Box>
+            </Box> */}
             <Divider />
             <Box>
               <Text fontSize="md">
@@ -541,6 +542,13 @@ const CV = () => (
                 &quot;Cheriton School of Computer Science undergrads and grads among winners at Waterloo.AI’s Data Challenge.&quot;<ExternalLinkIcon mx="2px" />
                 </Link> Cheriton School of Computer Science, University of Waterloo, Nov 2022.
               </Text>
+            </Box>
+            <Box w="100%" textAlign="center">
+              <NextLink href="/press" passHref>
+                <Button as="a" colorScheme="teal" size="sm" mt={1}>
+                  See Full Press Coverage
+                </Button>
+              </NextLink>
             </Box>
           </VStack>
         </Box>
