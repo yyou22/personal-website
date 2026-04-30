@@ -23,7 +23,7 @@ const BASE_PRESS_ITEMS = [
     image:
       'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
     snippet:
-      'Coverage of Project Test Kitchen at Adobe Summit Sneaks, selected as 1 of 7 from 500+ submissions.'
+      'Coverage of my research Project Test Kitchen at Adobe Summit Sneaks, selected as 1 of 7 from 500+ submissions.'
   },
   {
     title: 'Yuzhe You presents at Adobe Summit 2026',
@@ -34,7 +34,7 @@ const BASE_PRESS_ITEMS = [
     image:
       'https://cs.uwaterloo.ca/sites/default/files/uploads/resize/backstage-of-sneaks-1000x750_1.jpeg',
     snippet:
-      'Mathematics feature highlighting Adobe Summit presentation and cross-faculty recognition.'
+      'Mathematics feature highlighting my Adobe Summit presentation and cross-faculty recognition.'
   },
   {
     title: 'Five Adobe Sneaks I Want Now',
@@ -44,17 +44,18 @@ const BASE_PRESS_ITEMS = [
     image:
       'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80',
     snippet:
-      'Independent media coverage of Adobe Sneaks 2026, featuring Project Test Kitchen.'
+      'Independent media coverage of Adobe Sneaks 2026, featuring my research Project Test Kitchen.'
   },
   {
     title: 'Math at the forefront of AI',
     publisher: 'Math e-Ties, University of Waterloo',
     date: 'Mar 2026',
     href: 'https://uwaterloo.ca/math-alumni-newsletter/news/math-forefront-ai',
+    lockImage: true,
     image:
-      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80',
+      'https://uwaterloo.ca/math-alumni-newsletter/sites/default/files/styles/uw_is_media_x_large/public/uploads/images/picture.jpeg?itok=PmZlLhSj',
     snippet:
-      'Roundup on AI research leadership with a spotlight on gamifying explainable AI.'
+      'Roundup on AI research leadership with a spotlight on my research of gamifying explainable AI.'
   },
   {
     title: 'International Women’s Day: Celebrating women researchers and entrepreneurs',
@@ -64,7 +65,7 @@ const BASE_PRESS_ITEMS = [
     image:
       'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80',
     snippet:
-      'Feature story on women researchers and entrepreneurs, including work on human-centered XAI.'
+      'Feature story on women researchers and entrepreneurs, including my work on human-centered XAI.'
   },
   {
     title: 'Gamifying AI',
@@ -74,7 +75,7 @@ const BASE_PRESS_ITEMS = [
     image:
       'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
     snippet:
-      'Profile on research vision and scholarship support for accessible explainable AI.'
+      'Profile on my research vision and scholarship support for accessible explainable AI.'
   },
   {
     title: 'Yuzhe You wins best student paper award at GI 2025 for novel cybersecurity tool',
@@ -91,30 +92,32 @@ const BASE_PRESS_ITEMS = [
     publisher: 'Cybersecurity and Privacy Institute, University of Waterloo',
     date: 'Oct 2024',
     href: 'https://uwaterloo.ca/cybersecurity-privacy-institute/news/cpi-congratulates-our-top-3-winners-cpi-annual-conference',
+    lockImage: true,
     image:
-      'https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1200&q=80',
+      'https://uwaterloo.ca/cybersecurity-privacy-institute/sites/default/files/uploads/images/yuzhe-you-jarvis-tse-advex_cpi_page-0001.jpg',
     snippet:
-      'Conference coverage recognizing top poster awards in the annual CPI conference.'
+      'Conference coverage recognizing top poster awards at the annual CPI conference, where I was selected as one of the award recipients.'
   },
   {
     title: 'Meet the GRADflix finalist who combined art and programming to share her research',
     publisher: 'Graduate Studies and Postdoctoral Affairs, University of Waterloo',
     date: 'May 2023',
     href: 'https://uwaterloo.ca/current-graduate-students/news/meet-gradflix-finalist-who-combined-art-and-programming',
+    lockImage: true,
     image:
-      'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=1200&q=80',
+      'https://uwaterloo.ca/current-graduate-students/sites/default/files/uploads/images/yuzhe_you_0.png',
     snippet:
-      'Feature on the GRADflix project blending pixel-art game design with research communication.'
-  },
+      'Feature on my GRADflix project blending pixel-art game design with research communication.'  },
   {
     title: 'Cheriton School of Computer Science undergrads and grads among winners at Waterloo.AI’s Data Challenge',
     publisher: 'Cheriton School of Computer Science, University of Waterloo',
     date: 'Nov 2022',
     href: 'https://cs.uwaterloo.ca/news/cheriton-students-among-winners-at-waterloo-ai-data-challenge',
+    lockImage: true,
     image:
-      'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80',
+      'https://cs.uwaterloo.ca/sites/default/files/uploads/images/tensor-squad.jpeg',
     snippet:
-      'Recognition of Waterloo.AI Data Challenge winners from Cheriton CS.'
+      'Recognition of Waterloo.AI Data Challenge winners from Cheriton CS, where my team was selected as one of the award recipients.'
   }
 ]
 
@@ -148,7 +151,7 @@ const Press = ({ pressItems }) => {
                     borderRadius="md"
                     objectFit="cover"
                     w={{ base: '132px', md: '176px' }}
-                    h={{ base: '68px', md: '76px' }}
+                    h={{ base: '76px', md: '88px' }}
                     flexShrink={0}
                   />
 

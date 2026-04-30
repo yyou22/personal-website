@@ -506,7 +506,7 @@ const Home = () => (
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-        style={{ maxWidth: '600px' }}
+        style={{ maxWidth: '600px', display: 'block', margin: '0 auto' }}
         ></iframe>
         <br/>
         Watch a pixel animation I made about my MMath research on using interactive visualizations to explain machine learning adversarial attacks.
@@ -519,7 +519,7 @@ const Home = () => (
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-        style={{ maxWidth: '600px' }}
+        style={{ maxWidth: '600px', display: 'block', margin: '0 auto' }}
         ></iframe>
       </Section>
 

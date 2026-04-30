@@ -57,7 +57,6 @@ const Work = () => {
             <ListItem>Includes embedding-level and instance-level analysis to show how adversarial perturbations affect models.</ListItem>
           </UnorderedList>
         </Box>
-        <br/>
         <WorkImage src="/images/works/visxai/visxai2.gif" alt="visxai" />
         <WorkImage src="/images/works/visxai/visxai4.gif" alt="visxai" />
         <WorkImage
