@@ -414,16 +414,32 @@ const CV = () => (
       </Box>
     </Section>
 
-      {/* Volunteering Section */}
+      {/* Services and Volunteering Section */}
       <Section delay={0.6}>
         <Box p={6} boxShadow="3px 4px 16px rgba(0, 0, 0, 0.5)" borderRadius="md">
           <HStack spacing={3} align="center">
             <Icon as={FaHandsHelping} boxSize={6} color="teal.500" />
             <Heading as="h3" variant="section-title" color="teal.600">
-              Volunteering
+              Services & Volunteering
             </Heading>
           </HStack>
           <VStack align="start" spacing={4} mt={4}>
+            <Box>
+              <Text>Reviewer for CHI 2026 Posters</Text>
+              <Text color="#6d758e">Jan 2026</Text>
+              <HStack mt={1} color="#FFB347">
+                <Icon as={FaTrophy} />
+                <Text fontSize="sm">Outstanding Review Recognition</Text>
+              </HStack>
+            </Box>
+            <Box>
+              <Text>Reviewer for PacificVis 2026 Vis-Meets-AI Workshop</Text>
+              <Text color="#6d758e">Dec 2025</Text>
+            </Box>
+            <Box>
+              <Text>Reviewer for UIST 2025 Papers</Text>
+              <Text color="#6d758e">May 2025</Text>
+            </Box>
             <Box>
               <Text fontSize="lg" fontWeight="bold">University of Waterloo</Text>
               <Text>Student host for Prof. Niklas Elmqvist&apos;s Seminar on Human-Centered AI Tools</Text>
@@ -452,6 +468,14 @@ const CV = () => (
                 <Link color="#6b93a2" href="https://uwaterloo.ca/computer-science/news/yuzhe-you-cooks-storm-adobe-summit-2026" isExternal>
                 &quot;Yuzhe You cooks up a storm at Adobe Summit 2026.&quot;<ExternalLinkIcon mx="2px" />
                 </Link> Cheriton School of Computer Science, University of Waterloo, Apr 2026.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                <Link color="#6b93a2" href="https://uwaterloo.ca/math/news/yuzhe-you-presents-adobe-summit-2026" isExternal>
+                &quot;Yuzhe You presents at Adobe Summit 2026.&quot;<ExternalLinkIcon mx="2px" />
+                </Link> Faculty of Mathematics, University of Waterloo, Apr 2026.
               </Text>
             </Box>
             <Divider />
@@ -534,13 +558,37 @@ const CV = () => (
           <VStack align="start" spacing={6} mt={4}>
             <Box>
               <Text fontSize="md">
+                <Link color="#6b93a2" href="https://www.youtube.com/watch?v=HPjwlZ6knHg" isExternal>
+                  <strong>Adobe Summit 2026 Sneaks: Project Test Kitchen.</strong>
+                  <ExternalLinkIcon mx="2px" />
+                </Link>
+                {' '}Live Demo and Oral Presentation, Adobe Summit Sneaks, Las Vegas, Apr 2026.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
+                <Link color="#6b93a2" href="https://www.youtube.com/watch?v=llRI-0r4VFc" isExternal>
+                  <strong>From Techno-Centred to Human-Centred XAI: Rethinking Meaningful AI Explanations.</strong>
+                  <ExternalLinkIcon mx="2px" />
+                </Link>
+                {' '}Oral Presentation, Rising Star series, University of Waterloo Computer Science Club, Feb 2026.
+              </Text>
+            </Box>
+            <Divider />
+            <Box>
+              <Text fontSize="md">
                 <strong>NavEaz: An AI-based Smartwatch Application for Driver Impairment Detection & Predictive Analysis.</strong> Oral Presentation, Transport Canada/NRC Community of Practice (CoP) workshop, Oct 2024.
               </Text>
             </Box>
             <Divider />
             <Box>
               <Text fontSize="md">
-                <strong>Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks.</strong> Oral Presentation, IEEE VIS, Oct 2024.
+                <Link color="#6b93a2" href={'https://www.youtube.com/watch?v=UUkftG2KH5o&t=5445s'} isExternal>
+                  <strong>Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks.</strong>
+                  <ExternalLinkIcon mx="2px" />
+                </Link>
+                {' '}Oral Presentation, IEEE VIS, Oct 2024.
               </Text>
             </Box>
             <Divider />
