@@ -27,7 +27,7 @@ import thumbFGSM from '../public/images/works/advex/advex1_thumbnail.gif'
 import thumbFGSM2 from '../public/images/works/advex/advex1_thumbnail.png'
 import thumbNavEaz from '../public/images/works/naveaz/naveaz1_thumbnail.png'
 //import { IoLogoTwitter} from 'react-icons/io5'
-import { IoLogoTwitter, IoLogoLinkedin} from 'react-icons/io5'
+import { IoLogoTwitter, IoLogoLinkedin, IoMail } from 'react-icons/io5'
 //import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 const ProfileImage = chakra(Image, {
@@ -36,7 +36,7 @@ const ProfileImage = chakra(Image, {
 
 const Home = () => (
   <Layout>
-    <Container>
+    <Container maxW="container.sm" py={6}>
       <Box
         borderRadius="lg"
         mb={6}
@@ -408,7 +408,16 @@ const Home = () => (
         <Heading as="h3" variant="section-title">
           Connect with Me
         </Heading>
-        <HStack spacing={4}>
+        <HStack spacing={4} flexWrap="wrap">
+          <Link href="mailto:y28you@uwaterloo.ca">
+            <Button
+              variant="ghost"
+              colorScheme="teal"
+              leftIcon={<IoMail />}
+            >
+              y28you@uwaterloo.ca
+            </Button>
+          </Link>
           <Link href="https://www.linkedin.com/in/yuzheyou/" target="_blank">
             <Button
               variant="ghost"

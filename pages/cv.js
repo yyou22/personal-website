@@ -72,6 +72,10 @@ const CV = () => (
               </HStack>
               <Text>Research Intern</Text>
               <Text color="#6d758e">Toronto, Canada | Feb 2026 - Present</Text>
+              <HStack mt={1} color="#FFB347">
+                <Icon as={FaTrophy} />
+                <Text fontSize="sm">Sneaks Speaker @ Adobe Summit 2026</Text>
+              </HStack>
             </Box>
             <Divider />
             {/* <Box>
