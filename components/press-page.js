@@ -23,7 +23,10 @@ const PressCard = ({
   cardBg,
   borderColor,
   mutedColor
-}) => (
+}) => {
+  const titleFallbackColor = useColorModeValue('gray.800', 'whiteAlpha.900')
+
+  return (
   <Box borderWidth="1px" borderColor={borderColor} bg={cardBg} borderRadius="lg" py={3} px={4}>
     <HStack align="center" spacing={{ base: 3, md: 4 }}>
       <Image
@@ -49,7 +52,7 @@ const PressCard = ({
               <ExternalLinkIcon mx="2px" />
             </Link>
           ) : (
-            <Text as="span" color={useColorModeValue('gray.800', 'whiteAlpha.900')}>
+            <Text as="span" color={titleFallbackColor}>
               {title}
             </Text>
           )}
@@ -60,7 +63,8 @@ const PressCard = ({
       </Box>
     </HStack>
   </Box>
-)
+  )
+}
 
 const PressPage = () => {
   const cardBg = useColorModeValue('whiteAlpha.800', 'whiteAlpha.100')
