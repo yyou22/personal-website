@@ -23,7 +23,10 @@ const PressCard = ({
   cardBg,
   borderColor,
   mutedColor
-}) => (
+}) => {
+  const titleFallbackColor = useColorModeValue('gray.800', 'whiteAlpha.900')
+
+  return (
   <Box borderWidth="1px" borderColor={borderColor} bg={cardBg} borderRadius="lg" py={3} px={4}>
     <HStack align="center" spacing={{ base: 3, md: 4 }}>
       <Image
@@ -43,10 +46,16 @@ const PressCard = ({
           </Text>
         </HStack>
         <Text fontWeight="bold" mb={1}>
-          <Link href={href} isExternal color="#6b93a2">
-            {title}
-            <ExternalLinkIcon mx="2px" />
-          </Link>
+          {href ? (
+            <Link href={href} isExternal color="#6b93a2">
+              {title}
+              <ExternalLinkIcon mx="2px" />
+            </Link>
+          ) : (
+            <Text as="span" color={titleFallbackColor}>
+              {title}
+            </Text>
+          )}
         </Text>
         <Text fontSize="sm" color={mutedColor}>
           {snippet}
@@ -54,7 +63,8 @@ const PressCard = ({
       </Box>
     </HStack>
   </Box>
-)
+  )
+}
 
 const PressPage = () => {
   const cardBg = useColorModeValue('whiteAlpha.800', 'whiteAlpha.100')
@@ -79,6 +89,19 @@ const PressPage = () => {
             </Heading>
             <Section>
               <PressCard
+                title="Adobe Research at Summit 2026: Agentic AI for orchestrating customer experiences"
+                publisher="Adobe Research"
+                date="May 2026"
+                href="https://research.adobe.com/news/adobe-research-at-summit-2026-agentic-ai-for-orchestrating-customer-experiences/"
+                image="/images/inside_adobe.png"
+                snippet="Adobe Research recap of Summit 2026 featuring major announcements and Sneaks, including my Project Test Kitchen presentation."
+                cardBg={cardBg}
+                borderColor={borderColor}
+                mutedColor={mutedColor}
+              />
+            </Section>
+            <Section delay={0.03}>
+              <PressCard
                 title="Yuzhe You cooks up a storm at Adobe Summit 2026"
                 publisher="Cheriton School of Computer Science, University of Waterloo"
                 date="Apr 2026"
@@ -90,7 +113,7 @@ const PressPage = () => {
                 mutedColor={mutedColor}
               />
             </Section>
-            <Section delay={0.03}>
+            <Section delay={0.06}>
               <PressCard
                 title="Yuzhe You presents at Adobe Summit 2026"
                 publisher="Faculty of Mathematics, University of Waterloo"
@@ -103,7 +126,19 @@ const PressPage = () => {
                 mutedColor={mutedColor}
               />
             </Section>
-            <Section delay={0.06}>
+            <Section delay={0.09}>
+              <PressCard
+                title="Summit Sneaks presenters offer a peek into the future of marketing, creativity, and AI."
+                publisher="Inside Adobe"
+                date="Apr 2026"
+                image="https://research.adobe.com/wp-content/uploads/2026/05/Summit-TN-684-x-480-px.png"
+                snippet="Inside Adobe feature about my journey at Adobe and my Project Test Kitchen presentation. This article is on Adobe’s internal employee news site and is not publicly accessible."
+                cardBg={cardBg}
+                borderColor={borderColor}
+                mutedColor={mutedColor}
+              />
+            </Section>
+            <Section delay={0.12}>
               <PressCard
                 title="Five Adobe Sneaks I Want Now"
                 publisher="The AI Economy"
@@ -116,7 +151,7 @@ const PressPage = () => {
                 mutedColor={mutedColor}
               />
             </Section>
-            <Section delay={0.09}>
+            <Section delay={0.15}>
               <PressCard
                 title="Math at the forefront of AI"
                 publisher="Math e-Ties, University of Waterloo"
@@ -129,7 +164,7 @@ const PressPage = () => {
                 mutedColor={mutedColor}
               />
             </Section>
-            <Section delay={0.12}>
+            <Section delay={0.18}>
               <PressCard
                 title="International Women’s Day: Celebrating women researchers and entrepreneurs"
                 publisher="Cheriton School of Computer Science, University of Waterloo"
