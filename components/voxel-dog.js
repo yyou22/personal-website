@@ -1,8 +1,12 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { Image } from '@chakra-ui/react'
 import * as THREE from 'three'
+import WebGL from 'three/examples/jsm/capabilities/WebGL.js'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGLTFModel } from '../lib/model'
 import { DogSpinner, DogContainer } from './voxel-dog-loader'
+
+const FALLBACK_MODEL_SRC = '/images/fallback_model.png'
 
 //function easeOutCirc(x) {
   //return Math.sqrt(1 - Math.pow(x - 1, 4))
@@ -11,6 +15,7 @@ import { DogSpinner, DogContainer } from './voxel-dog-loader'
 const VoxelDog = () => {
   const refContainer = useRef()
   const [loading, setLoading] = useState(true)
+  const [staticFallback, setStaticFallback] = useState(false)
   const [renderer, setRenderer] = useState()
   const [_camera, setCamera] = useState()
   const [target] = useState(new THREE.Vector3(-0.5, 1.2, 0))
@@ -38,13 +43,33 @@ const VoxelDog = () => {
   useEffect(() => {
     const { current: container } = refContainer
     if (container && !renderer) {
+      if (!WebGL.isWebGLAvailable()) {
+        setStaticFallback(true)
+        setLoading(false)
+        return
+      }
+
       const scW = container.clientWidth
       const scH = container.clientHeight
 
-      const renderer = new THREE.WebGLRenderer({
-        antialias: true,
-        alpha: true
-      })
+      let renderer
+      try {
+        renderer = new THREE.WebGLRenderer({
+          antialias: true,
+          alpha: true
+        })
+      } catch {
+        try {
+          renderer = new THREE.WebGLRenderer({
+            antialias: false,
+            alpha: true
+          })
+        } catch {
+          setStaticFallback(true)
+          setLoading(false)
+          return
+        }
+      }
       renderer.setPixelRatio(window.devicePixelRatio)
       renderer.setSize(scW, scH)
       renderer.outputEncoding = THREE.sRGBEncoding
@@ -74,15 +99,19 @@ const VoxelDog = () => {
       controls.target = target
       setControls(controls)
 
-      loadGLTFModel(scene, '/scene.glb', {
-        receiveShadow: false,
-        castShadow: false
-      }).then(() => {
-        animate()
-        setLoading(false)
-      })
-
       let req = null
+      let disposed = false
+      const disposeRenderer = () => {
+        if (disposed) return
+        disposed = true
+        cancelAnimationFrame(req)
+        controls.dispose()
+        if (renderer.domElement.parentNode === container) {
+          container.removeChild(renderer.domElement)
+        }
+        renderer.dispose()
+      }
+
       let frame = 0
       const animate = () => {
         req = requestAnimationFrame(animate)
@@ -107,10 +136,24 @@ const VoxelDog = () => {
         renderer.render(scene, camera)
       }
 
+      loadGLTFModel(scene, '/scene.glb', {
+        receiveShadow: false,
+        castShadow: false
+      })
+        .then(() => {
+          animate()
+          setLoading(false)
+        })
+        .catch(() => {
+          disposeRenderer()
+          setRenderer(undefined)
+          setStaticFallback(true)
+          setLoading(false)
+        })
+
       return () => {
         console.log('unmount')
-        cancelAnimationFrame(req)
-        renderer.dispose()
+        disposeRenderer()
       }
     }
   }, [])
@@ -123,7 +166,26 @@ const VoxelDog = () => {
   }, [renderer, handleWindowResize])
 
   return (
-    <DogContainer ref={refContainer}>{loading && <DogSpinner />}</DogContainer>
+    <DogContainer ref={refContainer}>
+      {loading && <DogSpinner />}
+      {staticFallback && (
+        <Image
+          src={FALLBACK_MODEL_SRC}
+          alt="Voxel model preview"
+          position="absolute"
+          top={0}
+          left={0}
+          right={0}
+          bottom={0}
+          w="100%"
+          h="100%"
+          objectFit="contain"
+          pointerEvents="none"
+          draggable={false}
+          sx={{ transform: 'translateY(-6%)' }}
+        />
+      )}
+    </DogContainer>
   )
 }
 
