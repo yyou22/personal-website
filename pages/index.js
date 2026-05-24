@@ -53,7 +53,8 @@ const Home = () => (
           <Heading as="h2" variant="page-title">
             Yuzhe You
           </Heading>
-          <p> CS Researcher / Developer / Artist + Designer / Research Intern @&nbsp;&nbsp;
+          <p> CS PhD Student / Researcher / Artist + Designer / Student Pilot ✈️<br />
+            Research Intern @&nbsp;&nbsp;
             <HStack as="span" display="inline-flex" alignItems="center" spacing={1} style={{ position: 'relative', top: '3px' }}>
               <Image 
                 src="/images/adobe.png"
@@ -74,7 +75,7 @@ const Home = () => (
               />
               <span>Microsoft</span>
             </HStack>
-            &nbsp;/ Sneaks Speaker @ 2026 Adobe Summit&nbsp;&nbsp;
+            &nbsp; <br />Sneaks Speaker @ Adobe Summit 2026&nbsp;&nbsp;
             <HStack as="span" display="inline-flex" alignItems="center" spacing={1} style={{ position: 'relative', top: '3px' }}>
               <Image 
                 src="/images/adobe summit.png"
@@ -84,7 +85,6 @@ const Home = () => (
                 style={{ marginTop: '2px' }}
               />
             </HStack>
-            &nbsp;/ Student Pilot ✈️
           </p>
         </Box>
         <Box
@@ -121,19 +121,19 @@ const Home = () => (
         <VStack align="stretch" spacing={5} mt={2}>
           <Box>
             <Paragraph>
-              Hello, my name is Yuzhe. I&apos;m a fully funded PhD student in Computer Science at the University of Waterloo and a member of the{' '}
+              I&apos;m a fully funded CS PhD student at the University of Waterloo, researching in the{' '}
               <Link href="https://www.jeffjianzhao.com/" target="_blank" rel="noopener noreferrer">
-              &nbsp;WVisdom Research Group
+                WVisdom Research Group
               </Link>
-              &nbsp;(formerly WatVis). Previously, I was a research member of the{' '}
+              . I was previously affiliated with{' '}
               <Link href="https://www.socr.umich.edu/" target="_blank" rel="noopener noreferrer">
-              &nbsp;SOCR Big Data & Predictive Analytics
+                SOCR Big Data & Predictive Analytics
               </Link>
-              &nbsp;at the University of Michigan - Ann Arbor, and was also affiliated with the{' '}
+              {' '}(University of Michigan) and{' '}
               <Link href="https://www.civil.uwaterloo.ca/itss/index.htm" target="_blank" rel="noopener noreferrer">
-              &nbsp;iTSS Lab
+                iTSS Lab
               </Link>
-              &nbsp;at UWaterloo.
+              {' '}(University of Waterloo).
             </Paragraph>
           </Box>
           <Box>
@@ -141,10 +141,11 @@ const Home = () => (
               Research
             </Text>
             <Paragraph>
-              My research focuses on InfoVis for Explainable AI - visualizing machine learning models under adversarial attacks and making XAI more accessible to non-experts. I have also worked on machine learning for intelligent transportation. In parallel, I explore agent-supported interaction models for creative design through my collaboration with&nbsp;
+              My research spans XAI Visualization, Human-Computer Interaction, and Machine Learning — building tools to visualize and interpret ML models, designing agentic pipelines for interactive XAI experiences, and developing ML solutions for intelligent transportation. I also collaborate with{' '}
               <Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
                 Adobe
-              </Link>.
+              </Link>
+              {' '}on agent-supported interaction and generative workflows for creative design and video generation.
             </Paragraph>
           </Box>
           <Box>
@@ -152,13 +153,19 @@ const Home = () => (
               Experience & interests
             </Text>
             <Paragraph>
-              I previously interned at&nbsp;<Link href="https://www.microsoft.com/en-gb/about/" target="_blank" rel="noopener noreferrer">
-              Microsoft
-              </Link> in Cambridge, UK, and later at&nbsp;<Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
-              Adobe
-              </Link>&nbsp;in San Jose, California. I am now returning to&nbsp;<Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
-              Adobe
-              </Link>&nbsp;as a research intern. In my spare time, I enjoy working on personal projects. I am also a digital artist and graphic designer, and a student pilot.
+              I&apos;ve interned at{' '}
+              <Link href="https://www.microsoft.com/en-gb/about/" target="_blank" rel="noopener noreferrer">
+                Microsoft
+              </Link>
+              {' '}(Cambridge, UK) and{' '}
+              <Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
+                Adobe
+              </Link>
+              {' '}(San Jose, CA), and am returning to{' '}
+              <Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
+                Adobe
+              </Link>
+              {' '}as a research intern. Outside of research, I&apos;m a digital artist, graphic designer, and student pilot.
             </Paragraph>
           </Box>
         </VStack>
@@ -172,18 +179,13 @@ const Home = () => (
           {[
             'Visualization',
             'Explainable AI',
-            'Agent-supported Creativity',
             'Human-Computer Interaction',
             'Machine Learning',
+            'Agentic AI',
             'Computer Vision',
-            'Coding',
             'Traditional & Digital Art',
             'Graphic Design',
             'UI/UX Design',
-            'Kendo',
-            'Target Shooting',
-            'Table Tennis',
-            'Piano',
             'Aviation',
             'Cockatoos'
           ].map(item => (
@@ -214,11 +216,11 @@ const Home = () => (
                 <BioYear>Apr 2026</BioYear>
               </Box>
               <Box flex={1}>
-                I am presenting my research 
+                Presented 
                 <Link href="https://www.youtube.com/watch?v=HPjwlZ6knHg" target="_blank" rel="noopener noreferrer">
                 &nbsp;#ProjectTestKitchen&nbsp; 
                 </Link>
-                at the 2026
+                at 
                 <Link href="https://business.adobe.com/summit/adobe-summit.html" target="_blank" rel="noopener noreferrer">
                 &nbsp;Adobe Summit
                 </Link>
@@ -232,7 +234,6 @@ const Home = () => (
                 style={{ marginTop: '2px' }}
               />
             </HStack>
-            &nbsp;!
               </Box>
             </Box>
           </BioSection>
@@ -242,7 +243,7 @@ const Home = () => (
                 <BioYear>Apr 2026</BioYear>
               </Box>
               <Box flex={1}>
-                Awarded with WiCS Graduate Scholarship ($3,000 CAD)!
+                Awarded WiCS Graduate Scholarship ($3,000 CAD)
               </Box>
             </Box>
           </BioSection>
@@ -252,7 +253,7 @@ const Home = () => (
                 <BioYear>Feb 2026</BioYear>
               </Box>
               <Box flex={1}>
-                I am returning to 
+                Returning to 
                 &nbsp;
                 <HStack as="span" display="inline-flex" alignItems="center" spacing={1} style={{ position: 'relative', top: '3px' }}>
               <Image 
@@ -266,7 +267,7 @@ const Home = () => (
                 <Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
                 &nbsp;Adobe&nbsp; 
                 </Link>
-                as a research intern this winter!
+                as a research intern
               </Box>
             </Box>
           </BioSection>
@@ -276,7 +277,7 @@ const Home = () => (
                 <BioYear>Jan 2026</BioYear>
               </Box>
               <Box flex={1}>
-                1 co-authored paper accepted to <i>Artificial Intelligence for Transportation</i> and 1 co-authored CHI&apos;26 paper accepted.
+                1 co-authored paper accepted to <i>Artificial Intelligence for Transportation</i> + 1 co-authored CHI&apos;26 paper accepted
               </Box>
             </Box>
           </BioSection>
@@ -286,7 +287,7 @@ const Home = () => (
                 <BioYear>Aug 2025</BioYear>
               </Box>
               <Box flex={1}>
-                I am joining 
+                Joined 
                 &nbsp;
                 <HStack as="span" display="inline-flex" alignItems="center" spacing={1} style={{ position: 'relative', top: '3px' }}>
               <Image 
@@ -300,7 +301,7 @@ const Home = () => (
                 <Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
                 &nbsp;Adobe&nbsp; 
                 </Link>
-                as a research intern this fall!
+                as a research intern
               </Box>
             </Box>
           </BioSection>
@@ -310,7 +311,7 @@ const Home = () => (
                 <BioYear>Jul 2025</BioYear>
               </Box>
               <Box flex={1}>
-                1 co-authored UIST&apos;25 paper accepted!
+                1 co-authored UIST&apos;25 paper accepted
               </Box>
             </Box>
           </BioSection>
@@ -320,7 +321,7 @@ const Home = () => (
                 <BioYear>Jul 2025</BioYear>
               </Box>
               <Box flex={1}>
-                Received my ROC-A (Aeronautical Radio Operator Certificate), Student Pilot Permit for Aeroplane, and Student Pilot Permit for Ultralight!
+              Earned ROC-A (Aeronautical Radio Operator Certificate) and Student Pilot Permits for both Aeroplane and Ultralight aircraft
               </Box>
             </Box>
           </BioSection>
@@ -330,13 +331,13 @@ const Home = () => (
                 <BioYear>Jul 2025</BioYear>
               </Box>
               <Box flex={1} >
-                I have been awarded <Link href="https://www.nserc-crsng.gc.ca/Students-Etudiants/PG-CS/cgrsd-besrd_eng.asp" target="_blank" rel="noopener noreferrer">
-                &nbsp;NSERC Canada Graduate Scholarship&nbsp; 
-                </Link> ($120,000 CAD), <Link href="https://osap.gov.on.ca/OSAPPortal/en/A-ZListofAid/PRDR019245.html" target="_blank" rel="noopener noreferrer">
-                &nbsp;Ontario Graduate Scholarship&nbsp; 
-                </Link> ($15,000 CAD), and UWaterloo<Link href="https://uwaterloo.ca/current-graduate-students/awards-and-funding/internal-awards/presidents-graduate-scholarship-pgs" target="_blank" rel="noopener noreferrer">
+                Awarded <Link href="https://www.nserc-crsng.gc.ca/Students-Etudiants/PG-CS/cgrsd-besrd_eng.asp" target="_blank" rel="noopener noreferrer">
+                &nbsp;NSERC CGS-D&nbsp; 
+                </Link> ($120,000 CAD) + <Link href="https://osap.gov.on.ca/OSAPPortal/en/A-ZListofAid/PRDR019245.html" target="_blank" rel="noopener noreferrer">
+                &nbsp;OGS&nbsp; 
+                </Link> ($15,000 CAD) + <Link href="https://uwaterloo.ca/current-graduate-students/awards-and-funding/internal-awards/presidents-graduate-scholarship-pgs" target="_blank" rel="noopener noreferrer">
                 &nbsp;President&apos;s Graduate Scholarship&nbsp; 
-                </Link> ($10,000 CAD)!
+                </Link> ($10,000 CAD)
               </Box>
             </Box>
           </BioSection>
@@ -346,8 +347,8 @@ const Home = () => (
                 <BioYear>Apr 2025</BioYear>
               </Box>
               <Box flex={1} >
-                1 GI&apos;25 paper accepted + received <Link href="https://cs.uwaterloo.ca/news/yuzhe-you-wins-best-student-paper-award-gi-2025-novel" target="_blank" rel="noopener noreferrer">Best Paper Award
-                </Link>!
+                GI&apos;25 paper accepted + 🏆 <Link href="https://cs.uwaterloo.ca/news/yuzhe-you-wins-best-student-paper-award-gi-2025-novel" target="_blank" rel="noopener noreferrer">Best Paper Award
+                </Link>
               </Box>
             </Box>
           </BioSection>
@@ -357,7 +358,7 @@ const Home = () => (
                 <BioYear>Apr 2025</BioYear>
               </Box>
               <Box flex={1}>
-                I am joining 
+                Joined 
                 &nbsp;
             <HStack as="span" display="inline-flex" alignItems="center" spacing={1} style={{ position: 'relative', top: '3px' }}>
               <Image 
@@ -371,7 +372,7 @@ const Home = () => (
                 <Link href="https://www.microsoft.com/en-gb/about/" target="_blank" rel="noopener noreferrer">
                 &nbsp;Microsoft UK&nbsp; 
                 </Link>
-                as a research intern this spring!
+                as a research intern
               </Box>
             </Box>
           </BioSection>
