@@ -383,7 +383,7 @@ const Home = () => (
                 <BioYear>Apr 2025</BioYear>
               </Box>
               <Box flex={1} >
-                GI&apos;25 paper accepted + 🏆 <Link href="https://cs.uwaterloo.ca/news/yuzhe-you-wins-best-student-paper-award-gi-2025-novel" target="_blank" rel="noopener noreferrer">Best Paper Award
+                GI&apos;25 paper accepted + 🏆 <Link href="https://uwaterloo.ca/computer-science/news/yuzhe-you-wins-best-student-paper-award-gi-2025-novel" target="_blank" rel="noopener noreferrer">Best Paper Award
                 </Link>
               </Box>
             </Box>
