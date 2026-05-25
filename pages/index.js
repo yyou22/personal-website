@@ -53,39 +53,75 @@ const Home = () => (
           <Heading as="h2" variant="page-title">
             Yuzhe You
           </Heading>
-          <p> CS PhD Student / Researcher / Artist + Designer / Student Pilot ✈️<br />
-            Research Intern @&nbsp;&nbsp;
-            <HStack as="span" display="inline-flex" alignItems="center" spacing={1} style={{ position: 'relative', top: '3px' }}>
-              <Image 
-                src="/images/adobe.png"
-                alt="Adobe Logo"
-                width={16}
-                height={16}
-                style={{ marginTop: '2px' }}
-              />
-              <span>Adobe</span>
-            </HStack> / Prev. @&nbsp;&nbsp;
-            <HStack as="span" display="inline-flex" alignItems="center" spacing={1} style={{ position: 'relative', top: '3px' }}>
-              <Image 
-                src="/images/microsoft.png"
-                alt="Microsoft Logo"
-                width={16}
-                height={16}
-                style={{ marginTop: '2px' }}
-              />
-              <span>Microsoft</span>
-            </HStack>
-            &nbsp; <br />Sneaks Speaker @ Adobe Summit 2026&nbsp;&nbsp;
-            <HStack as="span" display="inline-flex" alignItems="center" spacing={1} style={{ position: 'relative', top: '3px' }}>
-              <Image 
-                src="/images/adobe summit.png"
-                alt="Adobe Summit Logo"
-                width={76}
-                height={16}
-                style={{ marginTop: '2px' }}
-              />
-            </HStack>
-          </p>
+          <VStack align="start" spacing={1} mt={2} lineHeight="short">
+            <Text display={{ base: 'none', md: 'block' }}>
+              CS PhD Student / Researcher / Artist + Designer / Student Pilot ✈️
+            </Text>
+            <Box display={{ base: 'block', md: 'none' }}>
+              <Text>CS PhD Student / Researcher</Text>
+              <Text>Artist + Designer / Student Pilot ✈️</Text>
+            </Box>
+            <Text lineHeight="short">
+              Research Intern @
+              <HStack
+                as="span"
+                display="inline-flex"
+                alignItems="center"
+                spacing={1}
+                ml={2}
+                position="relative"
+                top="2px"
+                sx={{ '& img': { display: 'block' } }}
+              >
+                <Image
+                  src="/images/adobe.png"
+                  alt="Adobe Logo"
+                  width={16}
+                  height={16}
+                />
+                <span>Adobe</span>
+              </HStack>
+              {' '}/ Prev. @
+              <HStack
+                as="span"
+                display="inline-flex"
+                alignItems="center"
+                spacing={1}
+                ml={2}
+                position="relative"
+                top="2px"
+                sx={{ '& img': { display: 'block' } }}
+              >
+                <Image
+                  src="/images/microsoft.png"
+                  alt="Microsoft Logo"
+                  width={16}
+                  height={16}
+                />
+                <span>Microsoft</span>
+              </HStack>
+            </Text>
+            <Text lineHeight="short">
+              Sneaks Speaker @ Adobe Summit 2026
+              <HStack
+                as="span"
+                display="inline-flex"
+                alignItems="center"
+                ml={2}
+                position="relative"
+                top="2px"
+                sx={{ '& img': { display: 'block' } }}
+              >
+                <Image
+                  src="/images/adobe summit.png"
+                  alt="Adobe Summit Logo"
+                  width={76}
+                  height={16}
+                  style={{ maxWidth: '100%' }}
+                />
+              </HStack>
+            </Text>
+          </VStack>
         </Box>
         <Box
           flexShrink={0}
