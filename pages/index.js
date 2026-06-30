@@ -53,16 +53,43 @@ const Home = () => (
           <Heading as="h2" variant="page-title">
             Yuzhe You
           </Heading>
-          <VStack align="start" spacing={1} mt={2} lineHeight="short">
-            <Text display={{ base: 'none', md: 'block' }}>
-              CS PhD Student / Researcher / Artist + Designer / Student Pilot ✈️
+          <VStack align="start" spacing={2} mt={3} lineHeight="short">
+            {/* Roles — one flowing line with teal middot accents */}
+            <Text fontSize="sm" color={useColorModeValue('gray.700', 'whiteAlpha.900')} letterSpacing="wide">
+              {['CS PhD Researcher', 'Artist + Designer', 'Student Pilot ✈️'].map(
+                (role, i) => (
+                  <Box as="span" key={role}>
+                    {i > 0 && (
+                      <Box
+                        as="span"
+                        px={2}
+                        fontSize="lg"
+                        fontWeight="bold"
+                        color="gray.500"
+                        _dark={{ color: 'gray.400' }}
+                        aria-hidden="true"
+                      >
+                        ·
+                      </Box>
+                    )}
+                    {role}
+                  </Box>
+                )
+              )}
             </Text>
-            <Box display={{ base: 'block', md: 'none' }}>
-              <Text>CS PhD Student / Researcher</Text>
-              <Text>Artist + Designer / Student Pilot ✈️</Text>
-            </Box>
-            <Text lineHeight="short">
-              Research Intern @
+
+            {/* Affiliations — same flowing white text + teal dot style as line 1 */}
+            <Text fontSize="sm" color={useColorModeValue('gray.700', 'whiteAlpha.900')} letterSpacing="wide" style={{ marginTop: '2px' }}>
+              <Text
+                as="span"
+                fontSize="xs"
+                fontWeight="semibold"
+                textTransform="uppercase"
+                letterSpacing="wider"
+                color={useColorModeValue('teal.600', 'teal.300')}
+              >
+                Research Intern
+              </Text>{' '}@
               <HStack
                 as="span"
                 display="inline-flex"
@@ -73,15 +100,30 @@ const Home = () => (
                 top="2px"
                 sx={{ '& img': { display: 'block' } }}
               >
-                <Image
-                  src="/images/adobe.png"
-                  alt="Adobe Logo"
-                  width={16}
-                  height={16}
-                />
+                <Image src="/images/adobe.png" alt="Adobe" width={14} height={14} />
                 <span>Adobe</span>
               </HStack>
-              {' '}/ Prev. @
+              <Box
+                as="span"
+                px={2}
+                fontSize="lg"
+                fontWeight="bold"
+                color="gray.500"
+                _dark={{ color: 'gray.400' }}
+                aria-hidden="true"
+              >
+                ·
+              </Box>
+              <Text
+                as="span"
+                fontSize="xs"
+                fontWeight="semibold"
+                textTransform="uppercase"
+                letterSpacing="wider"
+                color={useColorModeValue('gray.500', 'gray.400')}
+              >
+                Previously
+              </Text>{' '}@
               <HStack
                 as="span"
                 display="inline-flex"
@@ -92,17 +134,23 @@ const Home = () => (
                 top="2px"
                 sx={{ '& img': { display: 'block' } }}
               >
-                <Image
-                  src="/images/microsoft.png"
-                  alt="Microsoft Logo"
-                  width={16}
-                  height={16}
-                />
+                <Image src="/images/microsoft.png" alt="Microsoft" width={14} height={14} />
                 <span>Microsoft</span>
               </HStack>
             </Text>
-            <Text lineHeight="short">
-              Sneaks Speaker @ Adobe Summit 2026
+
+            {/* Speaking credential — same style */}
+            <Text fontSize="sm" color={useColorModeValue('gray.700', 'whiteAlpha.900')} letterSpacing="wide">
+              <Text
+                as="span"
+                fontSize="xs"
+                fontWeight="semibold"
+                textTransform="uppercase"
+                letterSpacing="wider"
+                color={useColorModeValue('teal.600', 'teal.300')}
+              >
+                Sneaks Speaker
+              </Text>{' '}@ Adobe Summit 2026
               <HStack
                 as="span"
                 display="inline-flex"
@@ -114,9 +162,9 @@ const Home = () => (
               >
                 <Image
                   src="/images/adobe summit.png"
-                  alt="Adobe Summit Logo"
-                  width={76}
-                  height={16}
+                  alt="Adobe Summit"
+                  width={67}
+                  height={14}
                   style={{ maxWidth: '100%' }}
                 />
               </HStack>
@@ -239,6 +287,60 @@ const Home = () => (
             </WrapItem>
           ))}
         </Wrap>
+      </Section>
+
+      <Section delay={0.3}>
+        <Heading as="h3" variant="section-title">
+          Featured Works
+        </Heading>
+      </Section>
+
+      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+
+        <Section delay={0.4}>
+          <WorkGridItem
+            id="advex"
+            title="AdvEx"
+            thumbnail={thumbFGSM}
+            blurPlaceholder={thumbFGSM2}
+          >
+            An Interactive Visualization for Explaining AI-targeted Adversarial Attacks
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.4}>
+          <WorkGridItem
+            id="naveaz"
+            title="NavEaz"
+            thumbnail={thumbNavEaz}
+          >
+            An AI-powered SmartWatch App for Driver Impairment Prediction
+          </WorkGridItem>
+        </Section>
+
+        {/*
+        <Section delay={0.4}>
+          <WorkGridItem
+            id="socr"
+            title="SOCR - Big Data"
+            thumbnail={thumbSocr}
+          >
+            Design and disseminate advanced methods/tools in probability, statistics,
+            and machine learning; develop enhanced analysis and visualizations on &quot;Big Data&quot;
+          </WorkGridItem>
+        </Section>
+        */}
+
+      </SimpleGrid>
+
+      <Section delay={0.45}>
+        <Box align="center" my={4}>
+          <NextLink href="/works" scroll={false}>
+            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+              See My Full Portfolio
+            </Button>
+          </NextLink>
+        </Box>
       </Section>
 
       <Section delay={0.2}>
@@ -474,60 +576,6 @@ const Home = () => (
             </Button>
           </Link>
         </HStack>
-      </Section>
-
-      <Section delay={0.3}>
-        <Heading as="h3" variant="section-title">
-          Featured Works
-        </Heading>
-      </Section>
-
-      <SimpleGrid columns={[1, 1, 2]} gap={6}>
-
-        <Section delay={0.4}>
-          <WorkGridItem
-            id="advex"
-            title="AdvEx"
-            thumbnail={thumbFGSM}
-            blurPlaceholder={thumbFGSM2}
-          >
-            An Interactive Visualization for Explaining AI-targeted Adversarial Attacks
-          </WorkGridItem>
-        </Section>
-
-        <Section delay={0.4}>
-          <WorkGridItem
-            id="naveaz"
-            title="NavEaz"
-            thumbnail={thumbNavEaz}
-          >
-            An AI-powered SmartWatch App for Driver Impairment Prediction
-          </WorkGridItem>
-        </Section>
-
-        {/*
-        <Section delay={0.4}>
-          <WorkGridItem
-            id="socr"
-            title="SOCR - Big Data"
-            thumbnail={thumbSocr}
-          >
-            Design and disseminate advanced methods/tools in probability, statistics,
-            and machine learning; develop enhanced analysis and visualizations on &quot;Big Data&quot;
-          </WorkGridItem>
-        </Section>
-        */}
-
-      </SimpleGrid>
-
-      <Section delay={0.4}>
-        <Box align="center" my={4}>
-          <NextLink href="/works" scroll={false}>
-            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-              See My Full Portfolio
-            </Button>
-          </NextLink>
-        </Box>
       </Section>
 
       <Section delay={0.5}>
