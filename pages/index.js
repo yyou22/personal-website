@@ -53,7 +53,7 @@ const Home = () => (
           <Heading as="h2" variant="page-title">
             Yuzhe You
           </Heading>
-          <VStack align="start" spacing={2} mt={3} lineHeight="short">
+          <VStack align="start" spacing={1} mt={3} lineHeight="short">
             {/* Roles — one flowing line with teal middot accents */}
             <Text fontSize="sm" color={useColorModeValue('gray.700', 'whiteAlpha.900')} letterSpacing="wide">
               {['CS PhD Researcher', 'Artist + Designer', 'Student Pilot ✈️'].map(
@@ -79,96 +79,117 @@ const Home = () => (
             </Text>
 
             {/* Affiliations — same flowing white text + teal dot style as line 1 */}
-            <Text fontSize="sm" color={useColorModeValue('gray.700', 'whiteAlpha.900')} letterSpacing="wide" style={{ marginTop: '2px' }}>
-              <Text
-                as="span"
-                fontSize="xs"
-                fontWeight="semibold"
-                textTransform="uppercase"
-                letterSpacing="wider"
-                color={useColorModeValue('teal.600', 'teal.300')}
-              >
-                Research Intern
-              </Text>{' '}@
-              <HStack
-                as="span"
-                display="inline-flex"
-                alignItems="center"
-                spacing={1}
-                ml={2}
-                position="relative"
-                top="2px"
-                sx={{ '& img': { display: 'block' } }}
-              >
-                <Image src="/images/adobe.png" alt="Adobe" width={14} height={14} />
-                <span>Adobe</span>
-              </HStack>
-              <Box
-                as="span"
-                px={2}
-                fontSize="lg"
-                fontWeight="bold"
-                color="gray.500"
-                _dark={{ color: 'gray.400' }}
-                aria-hidden="true"
-              >
-                ·
-              </Box>
-              <Text
-                as="span"
-                fontSize="xs"
-                fontWeight="semibold"
-                textTransform="uppercase"
-                letterSpacing="wider"
-                color={useColorModeValue('gray.500', 'gray.400')}
-              >
-                Previously
-              </Text>{' '}@
-              <HStack
-                as="span"
-                display="inline-flex"
-                alignItems="center"
-                spacing={1}
-                ml={2}
-                position="relative"
-                top="2px"
-                sx={{ '& img': { display: 'block' } }}
-              >
-                <Image src="/images/microsoft.png" alt="Microsoft" width={14} height={14} />
-                <span>Microsoft</span>
-              </HStack>
-            </Text>
+            <Wrap
+              spacing={2}
+              align="center"
+              fontSize="sm"
+              color={useColorModeValue('gray.700', 'whiteAlpha.900')}
+              letterSpacing="wide"
+            >
+              <WrapItem>
+                <Text as="span">
+                  <Text
+                    as="span"
+                    fontSize="xs"
+                    fontWeight="semibold"
+                    textTransform="uppercase"
+                    letterSpacing="wider"
+                    color={useColorModeValue('teal.600', 'teal.300')}
+                  >
+                    Research Intern
+                  </Text>{' @'}
+                </Text>
+              </WrapItem>
+              <WrapItem>
+                <HStack
+                  as="span"
+                  display="inline-flex"
+                  alignItems="center"
+                  spacing={1}
+                  sx={{ '& img': { display: 'block' } }}
+                >
+                  <Image src="/images/adobe.png" alt="Adobe" width={14} height={14} />
+                  <span>Adobe</span>
+                </HStack>
+              </WrapItem>
+              <WrapItem>
+                <Text as="span" position="relative" top="-2px">
+                  <Box
+                    as="span"
+                    fontSize="lg"
+                    fontWeight="bold"
+                    color="gray.500"
+                    _dark={{ color: 'gray.400' }}
+                    aria-hidden="true"
+                    mr={2}
+                  >
+                    ·
+                  </Box>
+                  <Text
+                    as="span"
+                    fontSize="xs"
+                    fontWeight="semibold"
+                    textTransform="uppercase"
+                    letterSpacing="wider"
+                    color={useColorModeValue('gray.500', 'gray.400')}
+                  >
+                    Previously
+                  </Text>{' @'}
+                </Text>
+              </WrapItem>
+              <WrapItem>
+                <HStack
+                  as="span"
+                  display="inline-flex"
+                  alignItems="center"
+                  spacing={1}
+                  sx={{ '& img': { display: 'block' } }}
+                >
+                  <Image src="/images/microsoft.png" alt="Microsoft" width={14} height={14} />
+                  <span>Microsoft</span>
+                </HStack>
+              </WrapItem>
+            </Wrap>
 
             {/* Speaking credential — same style */}
-            <Text fontSize="sm" color={useColorModeValue('gray.700', 'whiteAlpha.900')} letterSpacing="wide">
-              <Text
-                as="span"
-                fontSize="xs"
-                fontWeight="semibold"
-                textTransform="uppercase"
-                letterSpacing="wider"
-                color={useColorModeValue('teal.600', 'teal.300')}
-              >
-                Sneaks Speaker
-              </Text>{' '}@ Adobe Summit 2026
-              <HStack
-                as="span"
-                display="inline-flex"
-                alignItems="center"
-                ml={2}
-                position="relative"
-                top="2px"
-                sx={{ '& img': { display: 'block' } }}
-              >
-                <Image
-                  src="/images/adobe summit.png"
-                  alt="Adobe Summit"
-                  width={67}
-                  height={14}
-                  style={{ maxWidth: '100%' }}
-                />
-              </HStack>
-            </Text>
+            <Wrap
+              spacing={2}
+              align="center"
+              fontSize="sm"
+              color={useColorModeValue('gray.700', 'whiteAlpha.900')}
+              letterSpacing="wide"
+            >
+              <WrapItem>
+                <Text as="span">
+                  <Text
+                    as="span"
+                    fontSize="xs"
+                    fontWeight="semibold"
+                    textTransform="uppercase"
+                    letterSpacing="wider"
+                    color={useColorModeValue('teal.600', 'teal.300')}
+                  >
+                    Sneaks Speaker
+                  </Text>{' @ Adobe Summit 2026'}
+                </Text>
+              </WrapItem>
+              <WrapItem>
+                <HStack
+                  as="span"
+                  display="inline-flex"
+                  alignItems="center"
+                  sx={{ '& img': { display: 'block' } }}
+                >
+                  <Image
+                    src="/images/adobe summit.png"
+                    alt="Adobe Summit"
+                    width={67}
+                    height={14}
+                    style={{ maxWidth: '100%' }}
+                  />
+                </HStack>
+              </WrapItem>
+            </Wrap>
           </VStack>
         </Box>
         <Box
