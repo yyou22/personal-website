@@ -57,22 +57,28 @@ const Home = () => (
             {/* Roles — one flowing line with teal middot accents */}
             <Text fontSize="sm" color={useColorModeValue('gray.700', 'whiteAlpha.900')} letterSpacing="wide">
               {['CS PhD Researcher', 'Artist + Designer', 'Student Pilot ✈️'].map(
-                (role, i) => (
+                (role, i, arr) => (
                   <Box as="span" key={role}>
-                    {i > 0 && (
-                      <Box
-                        as="span"
-                        px={2}
-                        fontSize="lg"
-                        fontWeight="bold"
-                        color="gray.500"
-                        _dark={{ color: 'gray.400' }}
-                        aria-hidden="true"
-                      >
-                        ·
-                      </Box>
-                    )}
-                    {role}
+                    {/* role + its trailing dot stay glued together; the only
+                        wrap point is the zero-width space AFTER the dot, so the
+                        dot stays at the end of the previous line on mobile */}
+                    <Box as="span" whiteSpace="nowrap">
+                      {role}
+                      {i < arr.length - 1 && (
+                        <Box
+                          as="span"
+                          px={2}
+                          fontSize="lg"
+                          fontWeight="bold"
+                          color="gray.500"
+                          _dark={{ color: 'gray.400' }}
+                          aria-hidden="true"
+                        >
+                          ·
+                        </Box>
+                      )}
+                    </Box>
+                    {i < arr.length - 1 && '​'}
                   </Box>
                 )
               )}
@@ -80,14 +86,23 @@ const Home = () => (
 
             {/* Affiliations — same flowing white text + teal dot style as line 1 */}
             <Wrap
-              spacing={2}
+              spacingX={0}
+              spacingY={0}
               align="center"
               fontSize="sm"
               color={useColorModeValue('gray.700', 'whiteAlpha.900')}
               letterSpacing="wide"
             >
+              {/* Keep each "label @ company" together as one unit so the
+                  line only breaks between affiliations, never mid-phrase */}
               <WrapItem>
-                <Text as="span">
+                <HStack
+                  as="span"
+                  display="inline-flex"
+                  alignItems="center"
+                  spacing={2}
+                  whiteSpace="nowrap"
+                >
                   <Text
                     as="span"
                     fontSize="xs"
@@ -97,34 +112,43 @@ const Home = () => (
                     color={useColorModeValue('teal.600', 'teal.300')}
                   >
                     Research Intern
-                  </Text>{' @'}
-                </Text>
+                  </Text>
+                  <HStack
+                    as="span"
+                    display="inline-flex"
+                    alignItems="center"
+                    spacing={1}
+                    sx={{ '& img': { display: 'block' } }}
+                  >
+                    <span> @&nbsp;&nbsp;</span>
+                    <Image src="/images/adobe.png" alt="Adobe" width={14} height={14} />
+                    <span>Adobe</span>
+                  </HStack>
+                  {/* trailing separator stays at the end of this line;
+                      lineHeight={1} keeps the tall lg glyph from inflating
+                      the row height (which widened the mobile line gap) */}
+                  <Box
+                    as="span"
+                    fontSize="lg"
+                    lineHeight={1}
+                    pr={2}
+                    fontWeight="bold"
+                    color="gray.500"
+                    _dark={{ color: 'gray.400' }}
+                    aria-hidden="true"
+                  >
+                    ·
+                  </Box>
+                </HStack>
               </WrapItem>
               <WrapItem>
                 <HStack
                   as="span"
                   display="inline-flex"
                   alignItems="center"
-                  spacing={1}
-                  sx={{ '& img': { display: 'block' } }}
+                  spacing={2}
+                  whiteSpace="nowrap"
                 >
-                  <Image src="/images/adobe.png" alt="Adobe" width={14} height={14} />
-                  <span>Adobe</span>
-                </HStack>
-              </WrapItem>
-              <WrapItem>
-                <Text as="span" position="relative" top="-2px">
-                  <Box
-                    as="span"
-                    fontSize="lg"
-                    fontWeight="bold"
-                    color="gray.500"
-                    _dark={{ color: 'gray.400' }}
-                    aria-hidden="true"
-                    mr={2}
-                  >
-                    ·
-                  </Box>
                   <Text
                     as="span"
                     fontSize="xs"
@@ -133,20 +157,19 @@ const Home = () => (
                     letterSpacing="wider"
                     color={useColorModeValue('gray.500', 'gray.400')}
                   >
-                    Previously
-                  </Text>{' @'}
-                </Text>
-              </WrapItem>
-              <WrapItem>
-                <HStack
-                  as="span"
-                  display="inline-flex"
-                  alignItems="center"
-                  spacing={1}
-                  sx={{ '& img': { display: 'block' } }}
-                >
-                  <Image src="/images/microsoft.png" alt="Microsoft" width={14} height={14} />
-                  <span>Microsoft</span>
+                    Previously 
+                  </Text>
+                  <HStack
+                    as="span"
+                    display="inline-flex"
+                    alignItems="center"
+                    spacing={1}
+                    sx={{ '& img': { display: 'block' } }}
+                  >
+                    <span> @&nbsp;&nbsp;</span>
+                    <Image src="/images/microsoft.png" alt="Microsoft" width={14} height={14} />
+                    <span>Microsoft</span>
+                  </HStack>
                 </HStack>
               </WrapItem>
             </Wrap>
@@ -170,7 +193,7 @@ const Home = () => (
                     color={useColorModeValue('teal.600', 'teal.300')}
                   >
                     Sneaks Speaker
-                  </Text>{' @ Adobe Summit 2026'}
+                  </Text>{' @ Adobe Summit 2026'}
                 </Text>
               </WrapItem>
               <WrapItem>
