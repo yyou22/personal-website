@@ -14,9 +14,12 @@ import {
   Tag,
   VStack,
   Text,
+  Icon,
 } from '@chakra-ui/react'
+import { FaAward } from 'react-icons/fa'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
+import ExperienceGrid from '../components/experience-grid'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
@@ -34,6 +37,35 @@ const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
 })
 
+const RoleBadge = ({ emoji, children }) => (
+  <Box
+    display="inline-flex"
+    flexDirection={{ base: 'column', sm: 'row' }}
+    alignItems="center"
+    justifyContent="center"
+    minW={0}
+    gap={{ base: 1, sm: 1.5 }}
+    px={{ base: 1, sm: 2.5, md: 3 }}
+    py={{ base: 2, sm: 1.5, md: 2 }}
+    borderRadius={{ base: 'lg', sm: 'full' }}
+    borderWidth="1px"
+    borderColor={useColorModeValue(
+      { base: 'blackAlpha.200', md: 'blackAlpha.300' },
+      { base: 'whiteAlpha.200', md: 'whiteAlpha.400' }
+    )}
+    bg={useColorModeValue(
+      { base: 'whiteAlpha.500', md: 'blackAlpha.50' },
+      { base: 'whiteAlpha.50', md: 'whiteAlpha.100' }
+    )}
+    color={useColorModeValue('gray.700', 'gray.200')}
+  >
+    <Text as="span" fontSize={{ base: 'sm', md: 'md' }} lineHeight={1} aria-hidden="true">{emoji}</Text>
+    <Text as="span" minW={0} maxW="100%" overflowWrap="anywhere" fontSize={{ base: 'xs', md: '13px' }} fontWeight={{ base: 'medium', md: 'semibold' }} lineHeight="short" textAlign="center" whiteSpace={{ base: 'normal', sm: 'nowrap' }}>
+      {children}
+    </Text>
+  </Box>
+)
+
 const Home = () => (
   <Layout>
     <Container maxW="container.sm" py={6}>
@@ -49,171 +81,30 @@ const Home = () => (
       </Box>
 
       <Box display={{ md: 'flex' }}>
-        <Box flexGrow={1}>
+        <Box flexGrow={1} minW={0}>
           <Heading as="h2" variant="page-title">
             Yuzhe You
           </Heading>
-          <VStack align="start" spacing={1} mt={3} lineHeight="short">
-            {/* Roles — one flowing line with teal middot accents */}
-            <Text fontSize="sm" color={useColorModeValue('gray.700', 'whiteAlpha.900')} letterSpacing="wide">
-              {['CS PhD Researcher', 'Artist + Designer', 'Student Pilot ✈️'].map(
-                (role, i, arr) => (
-                  <Box as="span" key={role}>
-                    {/* role + its trailing dot stay glued together; the only
-                        wrap point is the zero-width space AFTER the dot, so the
-                        dot stays at the end of the previous line on mobile */}
-                    <Box as="span" whiteSpace="nowrap">
-                      {role}
-                      {i < arr.length - 1 && (
-                        <Box
-                          as="span"
-                          px={2}
-                          fontSize="lg"
-                          fontWeight="bold"
-                          color="gray.500"
-                          _dark={{ color: 'gray.400' }}
-                          aria-hidden="true"
-                        >
-                          ·
-                        </Box>
-                      )}
-                    </Box>
-                    {i < arr.length - 1 && '​'}
-                  </Box>
-                )
-              )}
-            </Text>
-
-            {/* Affiliations — same flowing white text + teal dot style as line 1 */}
-            <Wrap
-              spacingX={0}
-              spacingY={0}
-              align="center"
-              fontSize="sm"
-              color={useColorModeValue('gray.700', 'whiteAlpha.900')}
-              letterSpacing="wide"
-            >
-              {/* Keep each "label @ company" together as one unit so the
-                  line only breaks between affiliations, never mid-phrase */}
-              <WrapItem>
-                <HStack
-                  as="span"
-                  display="inline-flex"
-                  alignItems="center"
-                  spacing={2}
-                  whiteSpace="nowrap"
-                >
-                  <Text
-                    as="span"
-                    fontSize="xs"
-                    fontWeight="semibold"
-                    textTransform="uppercase"
-                    letterSpacing="wider"
-                    color={useColorModeValue('teal.600', 'teal.300')}
-                  >
-                    Research Intern
-                  </Text>
-                  <HStack
-                    as="span"
-                    display="inline-flex"
-                    alignItems="center"
-                    spacing={1}
-                    sx={{ '& img': { display: 'block' } }}
-                  >
-                    <span> @&nbsp;&nbsp;</span>
-                    <Image src="/images/adobe.png" alt="Adobe" width={14} height={14} />
-                    <span>Adobe</span>
-                  </HStack>
-                  {/* trailing separator stays at the end of this line;
-                      lineHeight={1} keeps the tall lg glyph from inflating
-                      the row height (which widened the mobile line gap) */}
-                  <Box
-                    as="span"
-                    fontSize="lg"
-                    lineHeight={1}
-                    pr={2}
-                    fontWeight="bold"
-                    color="gray.500"
-                    _dark={{ color: 'gray.400' }}
-                    aria-hidden="true"
-                  >
-                    ·
-                  </Box>
-                </HStack>
-              </WrapItem>
-              <WrapItem>
-                <HStack
-                  as="span"
-                  display="inline-flex"
-                  alignItems="center"
-                  spacing={2}
-                  whiteSpace="nowrap"
-                >
-                  <Text
-                    as="span"
-                    fontSize="xs"
-                    fontWeight="semibold"
-                    textTransform="uppercase"
-                    letterSpacing="wider"
-                    color={useColorModeValue('gray.500', 'gray.400')}
-                  >
-                    Previously 
-                  </Text>
-                  <HStack
-                    as="span"
-                    display="inline-flex"
-                    alignItems="center"
-                    spacing={1}
-                    sx={{ '& img': { display: 'block' } }}
-                  >
-                    <span> @&nbsp;&nbsp;</span>
-                    <Image src="/images/microsoft.png" alt="Microsoft" width={14} height={14} />
-                    <span>Microsoft</span>
-                  </HStack>
-                </HStack>
-              </WrapItem>
-            </Wrap>
-
-            {/* Speaking credential — same style */}
-            <Wrap
-              spacing={2}
-              align="center"
-              fontSize="sm"
-              color={useColorModeValue('gray.700', 'whiteAlpha.900')}
-              letterSpacing="wide"
-            >
-              <WrapItem>
-                <Text as="span">
-                  <Text
-                    as="span"
-                    fontSize="xs"
-                    fontWeight="semibold"
-                    textTransform="uppercase"
-                    letterSpacing="wider"
-                    color={useColorModeValue('teal.600', 'teal.300')}
-                  >
-                    Sneaks Speaker
-                  </Text>{' @ Adobe Summit 2026'}
+          <Box display={{ base: 'grid', sm: 'flex' }} gridTemplateColumns="repeat(3, minmax(0, 1fr))" flexWrap="wrap" gap={{ base: 1.5, sm: 2 }} mt={3}>
+            <RoleBadge emoji="📚">CS PhD Researcher</RoleBadge>
+            <RoleBadge emoji="🎨">Artist + Designer</RoleBadge>
+            <RoleBadge emoji="✈️">Student Pilot</RoleBadge>
+          </Box>
+          <Box display="grid" gridTemplateColumns="14px minmax(0, 1fr)" alignItems="start" columnGap={2} mt={3} fontSize="13px" lineHeight={1.6} color={useColorModeValue('gray.700', 'gray.200')}>
+            <Icon as={FaAward} boxSize="14px" mt="3px" flexShrink={0} color={useColorModeValue('orange.700', '#FFB347')} aria-hidden="true" />
+              <Text title="Current holder of the NSERC Canada Graduate Scholarship – Doctoral">
+                <Text as="span" fontWeight="medium">NSERC CGS-D Scholar</Text>{' '}
+                <Text as="span" color={useColorModeValue('gray.600', 'gray.400')} whiteSpace="nowrap">· $120k CAD</Text>
+              </Text>
+              <Icon as={FaAward} boxSize="14px" mt="3px" flexShrink={0} color={useColorModeValue('orange.700', '#FFB347')} aria-hidden="true" />
+              <Text title="Current holder of the UWaterloo President’s Graduate Scholarship">
+                <Text as="span" fontWeight="medium">UWaterloo President&apos;s</Text>{' '}
+                <Text as="span" whiteSpace="nowrap">
+                  <Text as="span" fontWeight="medium">Graduate Scholar</Text>{' '}
+                  <Text as="span" color={useColorModeValue('gray.600', 'gray.400')}>· $10k CAD</Text>
                 </Text>
-              </WrapItem>
-              <WrapItem>
-                <HStack
-                  as="span"
-                  display="inline-flex"
-                  alignItems="center"
-                  sx={{ '& img': { display: 'block' } }}
-                >
-                  <Image
-                    src="/images/adobe summit.png"
-                    alt="Adobe Summit"
-                    width={67}
-                    height={14}
-                    style={{ maxWidth: '100%' }}
-                  />
-                </HStack>
-              </WrapItem>
-            </Wrap>
-          </VStack>
+              </Text>
+          </Box>
         </Box>
         <Box
           flexShrink={0}
@@ -269,32 +160,14 @@ const Home = () => (
               Research
             </Text>
             <Paragraph>
-              My research spans XAI Visualization, Human-Computer Interaction, and Machine Learning — building tools to visualize and interpret ML models, designing agentic pipelines for interactive XAI experiences, and developing ML solutions for intelligent transportation. I also collaborate with{' '}
-              <Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
-                Adobe
-              </Link>
-              {' '}on agent-supported interaction and generative workflows for creative design and video generation.
+              My research spans XAI Visualization, Human-Computer Interaction, and Machine Learning — building tools to visualize and interpret ML models, designing agent-supported generative workflows for creative design and video generation, and developing ML solutions for intelligent transportation.
             </Paragraph>
           </Box>
           <Box>
             <Text as="span" fontWeight="semibold" fontSize="sm" color={useColorModeValue('teal.600', 'teal.300')} textTransform="uppercase" letterSpacing="wider" mb={2} display="block">
-              Experience & interests
+              Experience
             </Text>
-            <Paragraph>
-              I&apos;ve interned at{' '}
-              <Link href="https://www.microsoft.com/en-gb/about/" target="_blank" rel="noopener noreferrer">
-                Microsoft
-              </Link>
-              {' '}(Cambridge, UK) and{' '}
-              <Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
-                Adobe
-              </Link>
-              {' '}(San Jose, CA), and am returning to{' '}
-              <Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
-                Adobe
-              </Link>
-              {' '}as a research intern. Outside of research, I&apos;m a digital artist, graphic designer, and student pilot.
-            </Paragraph>
+            <ExperienceGrid />
           </Box>
         </VStack>
       </Section>
@@ -305,15 +178,12 @@ const Home = () => (
         </Heading>
         <Wrap spacing={2}>
           {[
-            'Visualization',
-            'Explainable AI',
+            'XAI Visualization',
             'Human-Computer Interaction',
             'Machine Learning',
             'Agentic AI',
-            'Computer Vision',
             'Traditional & Digital Art',
-            'Graphic Design',
-            'UI/UX Design',
+            'Piano',
             'Aviation',
             'Cockatoos'
           ].map(item => (
@@ -397,7 +267,7 @@ const Home = () => (
               <Box width="90px" flexShrink={0}>
                 <BioYear>Apr 2026</BioYear>
               </Box>
-              <Box flex={1}>
+              <Box flex={1} minW={0} overflowWrap="anywhere">
                 Presented 
                 <Link href="https://www.youtube.com/watch?v=HPjwlZ6knHg" target="_blank" rel="noopener noreferrer">
                 &nbsp;#ProjectTestKitchen&nbsp; 
