@@ -51,6 +51,16 @@ const paperPreviews = [
   '/images/works/visxai/visxai1_thumbnail.png',
   '/images/works/coprompt4.jpeg'
 ]
+const paperPreviewPositions = [
+  '50% 23%', // Community Library interface and example images.
+  '70% 50%', // Forecasting models on the right of the workflow.
+  '50% 0%', // Code evaluation dashboard.
+  '50% 35%', // Comparative model visualizations.
+  '50% 20%', // Adversarial attack scatterplots.
+  '50% 75%', // Narrative interaction and character.
+  '50% 45%', // Panda illustration and title.
+  '50% 40%' // Collaborative prompting interface.
+]
 const paperVenues = [
   'CHI 2026',
   'AI for Transportation · 2026',
@@ -110,15 +120,37 @@ const Reveal = ({ label, children, ...props }) => {
     </Box>
   )
 }
-const CVSection = ({ id, title, children, description }) => {
+const stripPeriod = text => text.replace(/\.$/, '')
+const Row = ({ children, ...props }) => (
+  <Box
+    display="grid"
+    gridTemplateColumns={{
+      base: 'minmax(0, 1fr)',
+      md: '190px minmax(0, 1fr)'
+    }}
+    gap={{ base: 1, md: 5 }}
+    py={4}
+    borderBottomWidth="1px"
+    borderColor={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+    _last={{ borderBottomWidth: 0 }}
+    {...props}
+  >
+    {children}
+  </Box>
+)
+const CVSection = ({ id, title, children, description, ...props }) => {
   const icon = sections.find(s => s[0] === id)[2]
   return (
     <Box
       as="section"
       id={id}
       aria-labelledby={`${id}-title`}
-      mt={{ base: 9, md: 11 }}
+      mt={id === 'education' ? { base: 7, md: 8 } : { base: 9, md: 12 }}
+      pt={id === 'education' ? 0 : { base: 6, md: 7 }}
+      borderTopWidth={id === 'education' ? 0 : '1px'}
+      borderColor={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
       scrollMarginTop="88px"
+      {...props}
     >
       <Box
         display="flex"
@@ -230,34 +262,58 @@ const SmallEntry = ({ date, children }) => (
   </Box>
 )
 
-const AwardCard = ({ item }) => {
+const AwardRow = ({ item }) => {
   const accent = useColorModeValue('#426b89', '#9bbbd4')
   const amount = item.title.match(/\((\$?[\d,]+ (?:CAD|JPY|RMB))\)/)
   const title = item.title
     .replace(/\s*\(\$?[\d,]+ (?:CAD|JPY|RMB)\)/, '')
     .replace(' [had to decline due to already holding NSERC CGS-D]', '')
   return (
-    <Panel p={3}>
-      <Details fontSize="sm" mb={1}>
+    <Box
+      display="grid"
+      gridTemplateColumns={{
+        base: 'minmax(0, 1fr)',
+        sm: '80px minmax(0, 1fr) auto'
+      }}
+      columnGap={4}
+      rowGap={0.5}
+      py={3}
+      borderBottomWidth="1px"
+      borderColor={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+      _first={{ pt: 0 }}
+      _last={{ pb: 0, borderBottomWidth: 0 }}
+    >
+      <Details fontSize="sm" lineHeight={1.6} pt="1px">
         {item.date}
       </Details>
-      <Text fontSize="15px" lineHeight={1.5} fontWeight="medium">
-        {title}
-      </Text>
-      {amount && (
-        <Text fontSize="15px" fontWeight="semibold" color={accent} mt={1}>
+      <Box minW={0}>
+        <Text fontSize="15px" lineHeight={1.6} fontWeight="medium">
+          {title}
+        </Text>
+        {item.title.includes('had to decline') && (
+          <Details fontSize="sm" mt={0.5}>
+            Declined while holding the NSERC doctoral scholarship.
+          </Details>
+        )}
+      </Box>
+      {amount ? (
+        <Text
+          fontSize="sm"
+          lineHeight={1.6}
+          pt="1px"
+          fontWeight="semibold"
+          color={accent}
+          whiteSpace="nowrap"
+          textAlign={{ sm: 'right' }}
+        >
           {amount[1]}
         </Text>
+      ) : (
+        <Box display={{ base: 'none', sm: 'block' }} />
       )}
-      {item.title.includes('had to decline') && (
-        <Details fontSize="sm" mt={1}>
-          Declined while holding the NSERC doctoral scholarship.
-        </Details>
-      )}
-    </Panel>
+    </Box>
   )
 }
-
 const additionalAwards = cv.awards
   .flatMap(({ items }) => items)
   .filter(
@@ -273,6 +329,8 @@ const CV = () => {
   const foreground = useColorModeValue('gray.800', 'gray.200')
   const navHover = useColorModeValue('blackAlpha.50', 'whiteAlpha.100')
   const border = useColorModeValue('blackAlpha.200', 'whiteAlpha.200')
+  const chipBg = useColorModeValue('#426b8914', '#9bbbd41f')
+  const highlightBorder = useColorModeValue('#c9a15f', '#d9b77c')
   const highlights = [
     {
       title: 'NSERC Canada Graduate Scholarship — Doctoral',
@@ -343,7 +401,7 @@ const CV = () => {
         </Box>
 
         <CVSection id="education" title="Education">
-          <Box display="grid" gap={3}>
+          <Panel py={1}>
             {cv.education.flatMap(({ institution, details }) => {
               const degrees =
                 institution === 'University of Waterloo'
@@ -352,17 +410,7 @@ const CV = () => {
               return degrees.map(([degree, when, ...notes]) => {
                 const [location, dates] = when.split(' | ')
                 return (
-                  <Panel
-                    key={degree}
-                    py={3}
-                    px={{ base: 4, md: 5 }}
-                    display="grid"
-                    gridTemplateColumns={{
-                      base: 'minmax(0, 1fr)',
-                      md: '190px minmax(0, 1fr)'
-                    }}
-                    gap={{ base: 0, md: 5 }}
-                  >
+                  <Row key={degree}>
                     <Institution name={institution} />
                     <Box minW={0}>
                       <Heading as="h4" fontSize="md" lineHeight={1.5}>
@@ -372,38 +420,28 @@ const CV = () => {
                         {dates} · {location}
                       </Details>
                       {notes.length > 0 && (
-                        <Details fontSize="sm" mt={1}>
+                        <Details fontSize="sm" mt={0.5}>
                           {notes.join(' · ')}
                         </Details>
                       )}
                     </Box>
-                  </Panel>
+                  </Row>
                 )
               })
             })}
-          </Box>
+          </Panel>
         </CVSection>
 
         <CVSection id="experience" title="Industry experience">
-          <Box display="grid" gap={3}>
+          <Panel py={1}>
             {cv.experience.map(
               ({ institution, details: [role, when], highlight }) => {
                 const [location, dates] = when.split(' | ')
                 return (
-                  <Panel
-                    key={`${institution}-${dates}`}
-                    py={3}
-                    px={{ base: 4, md: 5 }}
-                    display="grid"
-                    gridTemplateColumns={{
-                      base: 'minmax(0, 1fr)',
-                      md: '190px minmax(0, 1fr)'
-                    }}
-                    gap={{ base: 0, md: 5 }}
-                  >
+                  <Row key={`${institution}-${dates}`}>
                     <Institution name={institution} />
                     <Box minW={0}>
-                      <Heading as="h4" fontSize="md">
+                      <Heading as="h4" fontSize="md" lineHeight={1.5}>
                         {role}
                       </Heading>
                       <Details fontSize="sm" mt={1}>
@@ -411,11 +449,11 @@ const CV = () => {
                       </Details>
                       {highlight && <Recognition>{highlight}</Recognition>}
                     </Box>
-                  </Panel>
+                  </Row>
                 )
               }
             )}
-          </Box>
+          </Panel>
         </CVSection>
 
         <CVSection
@@ -435,7 +473,7 @@ const CV = () => {
                   gap={4}
                   alignItems="start"
                 >
-                  <Box w="144px" h="108px" borderRadius="md" overflow="hidden">
+                  <Box w="144px" h="80px" borderRadius="md" overflow="hidden">
                     <Image
                       src={paperPreviews[index]}
                       alt=""
@@ -443,18 +481,28 @@ const CV = () => {
                       w="full"
                       h="full"
                       objectFit="cover"
+                      objectPosition={paperPreviewPositions[index]}
                     />
                   </Box>
                   <Box minW={0}>
                     <Text
-                      fontSize="sm"
-                      fontWeight="medium"
-                      color={muted}
+                      as="span"
+                      display="inline-block"
+                      fontSize="xs"
+                      fontWeight="semibold"
+                      letterSpacing="wide"
+                      color={accent}
+                      bg={chipBg}
+                      px={2}
+                      py={0.5}
+                      borderRadius="sm"
                       mb={2}
                     >
                       {paperVenues[index]}
                     </Text>
-                    <ItemTitle href={paper.href}>{paper.title}</ItemTitle>
+                    <ItemTitle href={paper.href}>
+                      {stripPeriod(paper.title)}
+                    </ItemTitle>
                     {paper.award && (
                       <Recognition>
                         <strong>{paper.award}</strong>
@@ -483,7 +531,7 @@ const CV = () => {
           </Box>
         </CVSection>
 
-        <CVSection id="awards" title="Honors & awards">
+        <CVSection id="awards" title="Selected honors & awards">
           <Box
             display="grid"
             gridTemplateColumns={{
@@ -493,42 +541,55 @@ const CV = () => {
             gap={3}
           >
             {highlights.map(item => (
-              <Panel key={item.title}>
-                <Recognition>{item.date}</Recognition>
-                <Heading as="h4" fontSize="md" lineHeight={1.5} mt={3}>
+              <Panel
+                key={item.title}
+                display="flex"
+                flexDirection="column"
+                borderTopWidth="3px"
+                borderTopColor={highlightBorder}
+              >
+                <Details fontSize="sm">{item.date}</Details>
+                <Heading as="h4" fontSize="md" lineHeight={1.5} mt={2}>
                   {item.title}
                 </Heading>
                 <Text
-                  fontSize="15px"
+                  fontSize={item.amount ? 'lg' : '15px'}
                   fontWeight={item.amount ? 'bold' : 'normal'}
                   color={item.amount ? accent : muted}
-                  mt={2}
+                  mt="auto"
+                  pt={3}
                 >
                   {item.amount || item.detail}
                 </Text>
               </Panel>
             ))}
           </Box>
-          <Box display="grid" gridTemplateColumns={grid} gap={3} mt={4}>
+          <Panel mt={3}>
             {additionalAwards.slice(0, 5).map(item => (
-              <AwardCard key={item.title} item={item} />
+              <AwardRow key={item.title} item={item} />
             ))}
-          </Box>
-          <Reveal
-            label={`View ${additionalAwards.length - 5} more honors & awards`}
-            mt={4}
-          >
-            <Box display="grid" gridTemplateColumns={grid} gap={3}>
+            <Reveal
+              label={`View ${additionalAwards.length - 5} more honors & awards`}
+              mt={3}
+              pt={3}
+              borderTopWidth="1px"
+              borderColor={border}
+            >
               {additionalAwards.slice(5).map(item => (
-                <AwardCard key={item.title} item={item} />
+                <AwardRow key={item.title} item={item} />
               ))}
-            </Box>
-          </Reveal>
+            </Reveal>
+          </Panel>
         </CVSection>
 
         <Box display="grid" gridTemplateColumns={grid} columnGap={5}>
-          <CVSection id="teaching" title="Teaching">
-            <Panel>
+          <CVSection
+            id="teaching"
+            title="Teaching"
+            display="flex"
+            flexDirection="column"
+          >
+            <Panel flex="1">
               {cv.teaching.map(({ details }) => (
                 <SmallEntry
                   date={details[details.length - 1]}
@@ -546,8 +607,13 @@ const CV = () => {
               ))}
             </Panel>
           </CVSection>
-          <CVSection id="service" title="Service & volunteering">
-            <Panel>
+          <CVSection
+            id="service"
+            title="Service & volunteering"
+            display="flex"
+            flexDirection="column"
+          >
+            <Panel flex="1">
               {cv.service.map(({ details, award }) => (
                 <SmallEntry
                   date={details[details.length - 1]}
@@ -583,7 +649,7 @@ const CV = () => {
                   objectFit="cover"
                 />
                 <Box p={4}>
-                  <ItemTitle href={talk.href}>{talk.title}</ItemTitle>
+                  <ItemTitle href={talk.href}>{stripPeriod(talk.title)}</ItemTitle>
                   <Details fontSize="sm" mt={2}>
                     {talk.details}
                   </Details>
@@ -595,7 +661,7 @@ const CV = () => {
             <Panel>
               {cv.talks.slice(2).map((talk, index) => (
                 <Box key={talk.title} mt={index ? 5 : 0}>
-                  <ItemTitle href={talk.href}>{talk.title}</ItemTitle>
+                  <ItemTitle href={talk.href}>{stripPeriod(talk.title)}</ItemTitle>
                   <Details fontSize="sm" mt={2}>
                     {talk.details}
                   </Details>
@@ -610,7 +676,7 @@ const CV = () => {
             {cv.press.slice(0, 2).map((story, index) => (
               <Box key={story.href} mt={index ? 5 : 0}>
                 <ItemTitle href={story.href}>
-                  {story.title.replace(/^"|"$/g, '')}
+                  {stripPeriod(story.title.replace(/^"|"$/g, ''))}
                 </ItemTitle>
                 <Details fontSize="sm" mt={2}>
                   {story.details}
@@ -621,7 +687,7 @@ const CV = () => {
               {cv.press.slice(2).map((story, index) => (
                 <Box key={story.href} mt={index ? 5 : 0}>
                   <ItemTitle href={story.href}>
-                    {story.title.replace(/^"|"$/g, '')}
+                    {stripPeriod(story.title.replace(/^"|"$/g, ''))}
                   </ItemTitle>
                   <Details fontSize="sm" mt={2}>
                     {story.details}

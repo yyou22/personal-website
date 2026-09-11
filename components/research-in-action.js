@@ -48,7 +48,8 @@ const ResearchVideo = ({ label, title, videoId, children }) => (
       </Heading>
       <Text
         mt={3}
-        lineHeight={1.75}
+        fontSize="sm"
+        lineHeight={1.65}
         color={useColorModeValue('gray.700', 'gray.300')}
       >
         {children}
@@ -62,7 +63,7 @@ const ResearchInAction = () => (
     <Heading as="h3" variant="section-title" mb={6}>
       Discover My Research in Action
     </Heading>
-    <SimpleGrid columns={[1, 1, 2]} gap={6}>
+    <SimpleGrid columns={[1, 1, 2]} gap={3}>
       <ResearchVideo
         label="Adobe Summit Sneaks · 2026"
         title="#ProjectTestKitchen"

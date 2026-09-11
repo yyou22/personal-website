@@ -16,6 +16,7 @@ import {
   Icon,
 } from '@chakra-ui/react'
 import { FaAward } from 'react-icons/fa'
+import { RiBookOpenLine, RiFlightTakeoffLine, RiQuillPenLine } from 'react-icons/ri'
 import ContactLinks from '../components/contact-links'
 import ResearchInAction from '../components/research-in-action'
 import { ChevronRightIcon } from '@chakra-ui/icons'
@@ -70,34 +71,43 @@ const SectionButton = ({ href, children }) => (
   </NextLink>
 )
 
-const RoleBadge = ({ emoji, children }) => (
-  <Box
-    display="inline-flex"
-    flexDirection={{ base: 'column', sm: 'row' }}
-    alignItems="center"
-    justifyContent="center"
-    minW={0}
-    gap={{ base: 1, sm: 1.5 }}
-    px={{ base: 1, sm: 2.5, md: 3 }}
-    py={{ base: 2, sm: 1.5, md: 2 }}
-    borderRadius={{ base: 'lg', sm: 'full' }}
-    borderWidth="1px"
-    borderColor={useColorModeValue(
-      { base: 'blackAlpha.200', md: 'blackAlpha.300' },
-      { base: 'whiteAlpha.200', md: 'whiteAlpha.400' }
-    )}
-    bg={useColorModeValue(
-      { base: 'whiteAlpha.500', md: 'blackAlpha.50' },
-      { base: 'whiteAlpha.50', md: 'whiteAlpha.100' }
-    )}
-    color={useColorModeValue('gray.700', 'gray.200')}
-  >
-    <Text as="span" fontSize={{ base: 'sm', md: 'md' }} lineHeight={1} aria-hidden="true">{emoji}</Text>
-    <Text as="span" minW={0} maxW="100%" overflowWrap="anywhere" fontSize={{ base: 'xs', md: '13px' }} fontWeight={{ base: 'medium', md: 'semibold' }} lineHeight="short" textAlign="center" whiteSpace={{ base: 'normal', sm: 'nowrap' }}>
-      {children}
-    </Text>
-  </Box>
-)
+const Roles = ({ roles }) => {
+  const accent = useColorModeValue('teal.600', 'teal.300')
+  return (
+    <Box
+      as="p"
+      display={{ base: 'grid', sm: 'flex' }}
+      gridTemplateColumns="repeat(3, minmax(0, 1fr))"
+      flexWrap="nowrap"
+      alignItems={{ base: 'start', sm: 'center' }}
+      columnGap={{ base: 2, sm: 4 }}
+      mt={{ base: 3, sm: 2 }}
+      fontSize={{ base: '10px', sm: '11px' }}
+      fontWeight="semibold"
+      letterSpacing={{ base: '0.1em', sm: '0.08em' }}
+      textTransform="uppercase"
+      lineHeight={{ base: 1.4, sm: 'tall' }}
+      color={useColorModeValue('gray.700', 'gray.300')}
+    >
+      {roles.map(({ icon, label }) => (
+        <Box
+          as="span"
+          key={label}
+          display="flex"
+          flexDirection={{ base: 'column', sm: 'row' }}
+          alignItems="center"
+          gap={{ base: 1, sm: 1.5 }}
+          minW={0}
+          textAlign="center"
+          whiteSpace={{ base: 'normal', sm: 'nowrap' }}
+        >
+          <Icon as={icon} boxSize={{ base: '17px', sm: '15px' }} flexShrink={0} color={accent} aria-hidden="true" />
+          {label}
+        </Box>
+      ))}
+    </Box>
+  )
+}
 
 const Home = () => (
   <Layout>
@@ -118,11 +128,13 @@ const Home = () => (
           <Heading as="h2" variant="page-title">
             Yuzhe You
           </Heading>
-          <Box display={{ base: 'grid', sm: 'flex' }} gridTemplateColumns="repeat(3, minmax(0, 1fr))" flexWrap="wrap" gap={{ base: 1.5, sm: 2 }} mt={3}>
-            <RoleBadge emoji="📚">CS PhD Researcher</RoleBadge>
-            <RoleBadge emoji="🎨">Artist + Designer</RoleBadge>
-            <RoleBadge emoji="✈️">Student Pilot</RoleBadge>
-          </Box>
+          <Roles
+            roles={[
+              { icon: RiBookOpenLine, label: 'CS PhD Researcher' },
+              { icon: RiQuillPenLine, label: 'Artist + Designer' },
+              { icon: RiFlightTakeoffLine, label: 'Student Pilot' }
+            ]}
+          />
           <Box display="grid" gridTemplateColumns="14px minmax(0, 1fr)" alignItems="start" columnGap={2} mt={3} fontSize="13px" lineHeight={1.6} color={useColorModeValue('gray.700', 'gray.200')}>
             <Icon as={FaAward} boxSize="14px" mt="3px" flexShrink={0} color={useColorModeValue('orange.700', '#FFB347')} aria-hidden="true" />
               <Text title="Current holder of the NSERC Canada Graduate Scholarship – Doctoral">

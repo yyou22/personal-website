@@ -36,7 +36,6 @@ const contacts = [
 ]
 
 const ContactLinks = () => {
-  const foreground = useColorModeValue('gray.700', 'gray.200')
   const accent = useColorModeValue('teal.700', 'teal.200')
 
   return (
@@ -54,7 +53,7 @@ const ContactLinks = () => {
           py={2}
           minH="44px"
           minW={0}
-          color={foreground}
+          color={accent}
           transition="color 160ms ease"
           _hover={{
             textDecoration: 'underline',
