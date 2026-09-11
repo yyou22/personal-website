@@ -24,7 +24,7 @@ const sourceNames = {
   'Graduate Studies and Postdoctoral Affairs, University of Waterloo': 'Waterloo · Graduate Studies'
 }
 
-const selectedStories = [
+export const selectedStories = [
   pressArticles.find(article => article.href?.endsWith('/adobe-research-intern-follows-her-mentors-footsteps/')),
   pressArticles.find(article => article.href?.includes('watch?v=WIrwwJNthxc')),
   pressArticles.find(article => article.href?.endsWith('/yuzhe-you-cooks-storm-adobe-summit-2026')),

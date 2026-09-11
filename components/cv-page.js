@@ -21,6 +21,7 @@ import {
   FaNewspaper
 } from 'react-icons/fa'
 import Layout from './layouts/article'
+import { SelectedStory, selectedStories } from './press-page'
 import { cv } from '../lib/cv'
 
 const sections = [
@@ -31,7 +32,7 @@ const sections = [
   ['teaching', 'Teaching', FaChalkboardTeacher],
   ['service', 'Service', FaHandsHelping],
   ['talks', 'Talks', FaMicrophone],
-  ['media', 'Media', FaNewspaper]
+  ['media', 'Selected News', FaNewspaper]
 ]
 const logos = {
   'University of Waterloo': '/images/uwaterloo.png',
@@ -42,6 +43,7 @@ const logos = {
   Blackberry: '/images/blackberry.png'
 }
 const paperPreviews = [
+  '/images/works/test-kitchen/workflow.png',
   '/images/publications/community-library.png',
   '/images/publications/traffic-forecasting.png',
   '/images/publications/macedon.png',
@@ -52,6 +54,7 @@ const paperPreviews = [
   '/images/works/coprompt4.jpeg'
 ]
 const paperPreviewPositions = [
+  '50% 50%', // Surprise2Refine exploration and refinement workflow.
   '50% 23%', // Community Library interface and example images.
   '70% 50%', // Forecasting models on the right of the workflow.
   '50% 0%', // Code evaluation dashboard.
@@ -62,6 +65,7 @@ const paperPreviewPositions = [
   '50% 40%' // Collaborative prompting interface.
 ]
 const paperVenues = [
+  'UIST 2026 · Accepted',
   'CHI 2026',
   'AI for Transportation · 2026',
   'UIST 2025',
@@ -671,31 +675,16 @@ const CV = () => {
           </Reveal>
         </CVSection>
 
-        <CVSection id="media" title="In the news">
-          <Panel>
-            {cv.press.slice(0, 2).map((story, index) => (
-              <Box key={story.href} mt={index ? 5 : 0}>
-                <ItemTitle href={story.href}>
-                  {stripPeriod(story.title.replace(/^"|"$/g, ''))}
-                </ItemTitle>
-                <Details fontSize="sm" mt={2}>
-                  {story.details}
-                </Details>
-              </Box>
+        <CVSection id="media" title="Selected News">
+          <Box
+            display="grid"
+            gridTemplateColumns={grid}
+            gap={{ base: 4, md: 5 }}
+          >
+            {selectedStories.slice(0, 2).map(story => (
+              <SelectedStory key={story.href} article={story} />
             ))}
-            <Reveal label="More selected media coverage" mt={4}>
-              {cv.press.slice(2).map((story, index) => (
-                <Box key={story.href} mt={index ? 5 : 0}>
-                  <ItemTitle href={story.href}>
-                    {stripPeriod(story.title.replace(/^"|"$/g, ''))}
-                  </ItemTitle>
-                  <Details fontSize="sm" mt={2}>
-                    {story.details}
-                  </Details>
-                </Box>
-              ))}
-            </Reveal>
-          </Panel>
+          </Box>
           <NextLink href="/press" passHref>
             <Link
               display="inline-flex"
