@@ -27,7 +27,7 @@ import thumbVATRA2 from '../public/images/works/vatra/vatra2_thumbnail.png'
 import thumbArt from '../public/images/works/art/the-long-way-home-original.jpg'
 import thumbTestKitchen from '../public/images/works/test-kitchen/iliza-live-demo.jpg'
 import thumbCommunityLibrary from '../public/images/publications/community-library.png'
-import thumbTrafficFlow from '../public/images/works/traffic-flow/thumbnail-generated.png'
+import thumbTrafficFlow from '../public/images/works/traffic-flow/thumbnail-intersection.webp'
 import thumbMacedon from '../public/images/works/macedon/thumbnail-generated.png'
 
 const Works = () => (
