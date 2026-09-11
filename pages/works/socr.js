@@ -16,21 +16,18 @@ const Work = () => {
         SOCR - Big Data <Badge>2019 - 2020</Badge>
       </Title>
       <P>
-        The {' '}
+        I worked with the{' '}
         <Link href="https://www.socr.umich.edu/" scroll={false} target="_blank" rel="noopener noreferrer">
-          <Link>Statistics Online Computational Resource</Link>
+          Statistics Online Computational Resource
         </Link>
-        &nbsp;(SOCR) designs and disseminates
-        educational materials, web-services, and advanced methods/tools in probability,
-        statistics, and machine learning. This is a research team led by faculties under the {' '}
+        {' '}(SOCR) team through the University of Michigan&apos;s{' '}
         <Link href="https://mdp.engin.umich.edu/" scroll={false} target="_blank" rel="noopener noreferrer">
-          <Link>UMich-MDP Progam</Link>
+          Multidisciplinary Design Program
         </Link>
-        &nbsp;(University of Michigan Multidisciplinary Design Program) that
-        develops enhanced analysis and visualization toolboxes with an emphasis on &quot;Big Data,&quot;
-        which are large, heterogeneous, time-varying, multisource and incomplete dataset that are
-        difficult to analyze and interpret in meaningful ways using classical probability,
-        statistical or algorithmic appoaches.
+        . SOCR develops tools and teaching materials for statistics, data
+        analysis, and machine learning. My work included analyzing clinical
+        data and contributing to educational resources that help students
+        work with databases and predictive models.
       </P>
       <Box my={4}>
         <Box as="span" color={metaColor}>
@@ -38,16 +35,14 @@ const Work = () => {
         </Box>
         <UnorderedList mt={2} pl={6}>
           <ListItem>
-          Interrogated the {' '}
+          Analyzed the{' '}
           <Link href="https://physionet.org/content/mimiciii/1.4/" scroll={false} target="_blank" rel="noopener noreferrer">
-            <Link>MIMIC-III</Link>
+            MIMIC-III
           </Link>
-          &nbsp;database, a large collection of ~43,000
-          critical care patients from an ICU in Boston, MA, by utilizing R/Rstudio to digest
-          the vital signs, laboratory results, free-text data, and wavefroms available in this
-          unique dataset and predict clinical outcomes via statistical modeling tools; developed
-          advanced AI/ML dara analytics to address specific biomedical, healthcare, neuroimaging-genectics,
-          and other applications.
+          {' '}critical care database using R and RStudio. I worked with vital
+          signs, lab results, clinical notes, and waveforms to explore
+          statistical models for predicting clinical outcomes, alongside
+          machine learning methods for biomedical and healthcare applications.
           </ListItem>
         </UnorderedList>
       </Box>
@@ -57,7 +52,7 @@ const Work = () => {
         </Box>
         <UnorderedList mt={2} pl={6}>
           <ListItem>
-            Contributed to an educational module for Data Science and Predictive Analytics (UMich HS650): {' '}
+            Contributed a database-querying module to the University of Michigan&apos;s Data Science and Predictive Analytics course (HS650).{' '}
             <Link href="http://www.socr.umich.edu/people/dinov/courses/DSPA_notes/DSPA_Appendix_5_SQL_DB_Queries.html" target="_blank" rel="noopener noreferrer" color={linkColor}>
               Appendix 5: Database SQL Queries <ExternalLinkIcon mx="2px" />
             </Link>

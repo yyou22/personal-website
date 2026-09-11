@@ -17,7 +17,7 @@ export const Title = ({ children }) => (
   </Box>
 )
 
-export const WorkImage = ({ src, alt, caption }) => {
+export const WorkImage = ({ src, alt, caption, sidePadding = 0, verticalPadding = 0 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   
   return (
@@ -28,6 +28,9 @@ export const WorkImage = ({ src, alt, caption }) => {
           w="full" 
           h="auto" 
           maxW="600px" 
+          px={sidePadding}
+          py={verticalPadding}
+          bg={sidePadding || verticalPadding ? 'white' : undefined}
           src={src} 
           alt={alt} 
           cursor="pointer" 
@@ -55,6 +58,9 @@ export const WorkImage = ({ src, alt, caption }) => {
               borderRadius="lg" 
               w="full" 
               h="auto" 
+              px={sidePadding}
+              py={verticalPadding}
+              bg={sidePadding || verticalPadding ? 'white' : undefined}
               src={src} 
               alt={alt} 
               objectFit="contain" 

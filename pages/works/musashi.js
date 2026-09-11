@@ -25,12 +25,17 @@ const Work = () => {
         Waterloo.AI Challenge <Badge>2022</Badge>
         </Title>
         <P>
-          Developed during the Fall 2022 Waterloo.AI Data Challenge sponsored by Musashi AI, this project focuses on detecting human presence in fisheye top-down surveillance footage for workplace monitoring. 
-          The goal of the project is to accurately identify humans within predefined regions of interest (ROIs) using ensemble machine learning techniques tailored for complex environments captured through fisheye cameras. 
+          Our team developed this project for the Fall 2022 Waterloo.AI Data
+          Challenge, sponsored by Musashi AI. The task was to detect people in
+          selected areas of overhead fisheye camera footage. We explored how
+          machine learning could handle the distorted views these cameras
+          produce in workplace settings.
         </P>
         <P>
-          Our solution uses a combination of pre-trained Convolutional Neural Networks (CNNs), specifically ResNet-101 for robust feature extraction, and unsupervised clustering methods like k-Means to segment and detect human figures. 
-          This ensemble approach achieves efficient detection and monitoring in dynamic workplace environments, leading to both accuracy and computational efficiency.
+          Our approach combines a pretrained ResNet-101 model for extracting
+          image features with k-means clustering to help identify people. We
+          also explored fine-tuning and linear classifiers as alternative ways
+          to approach the detection task.
         </P>
         <Box my={4}>
           <Box as="span" color={metaColor}>
@@ -38,9 +43,9 @@ const Work = () => {
           </Box>
           <UnorderedList mt={2} pl={6}>
             <ListItem>
-              2nd Place Winner in Waterloo.AI Data Challenge (1,000 CAD Award):{' '}
+              Received second place in the Waterloo.AI Data Challenge (1,000 CAD).{' '}
               <Link href="https://cs.uwaterloo.ca/news/cheriton-students-among-winners-at-waterloo-ai-data-challenge" target="_blank" rel="noopener noreferrer">
-                UWaterloo News <ExternalLinkIcon mx="2px" />
+                Read the University of Waterloo feature <ExternalLinkIcon mx="2px" />
               </Link>
               .
             </ListItem>
@@ -51,9 +56,9 @@ const Work = () => {
             <Meta>Core Features</Meta>
           </Box>
           <UnorderedList mt={2} pl={6}>
-            <ListItem>Utilizes pre-trained ResNet-101 to extract features from image data.</ListItem>
-            <ListItem>Applies k-Means clustering to group data points and identify human figures in the ROIs.</ListItem>
-            <ListItem>Explores multiple approaches including CNN fine-tuning and linear classifiers to improve detection accuracy.</ListItem>
+            <ListItem>Extract image features with a pretrained ResNet-101 model.</ListItem>
+            <ListItem>Use k-means clustering to help identify people within selected regions.</ListItem>
+            <ListItem>Compare approaches including CNN fine-tuning and linear classifiers.</ListItem>
           </UnorderedList>
         </Box>
         <WorkImage src="/images/works/musashi/musashi5.png" alt="musashi" />

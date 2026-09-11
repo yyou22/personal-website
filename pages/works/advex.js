@@ -16,11 +16,12 @@ const Work = () => {
         AdvEx <Badge>2024</Badge>
       </Title>
       <P>
-        AdvEx is an interactive multi-level visualization designed to help novice machine learning learners understand adversarial evasion attacks in image classification models. 
-        The system visualizes subtle, human-imperceptible perturbations used in attacks and allows users to explore their impact across different classifiers, 
-        attack methods, and individual images. 
-        By supporting multi-level visual exploration — both instance-level and dataset-level — AdvEx highlights how adversarial attacks affect models differently depending on the data, 
-        model architecture, and training methods.
+        AdvEx helps people new to machine learning explore adversarial attacks
+        on image classifiers. These attacks make small changes to an image that
+        can alter a model&apos;s prediction while remaining difficult for a person
+        to notice. The tool lets you compare models and attack methods, inspect
+        individual images, and explore patterns across a dataset to see where
+        and how predictions change.
       </P>
       <Box my={4}>
         <Box as="span" color={metaColor}>
@@ -28,20 +29,20 @@ const Work = () => {
         </Box>
         <UnorderedList mt={2} pl={6}>
           <ListItem>
-            Accepted by ACM Transactions on Interactive Intelligent System journal:{' '}
+            Published in ACM Transactions on Interactive Intelligent Systems.{' '}
             <Link href="https://dl.acm.org/doi/10.1145/3725739" target="_blank" rel="noopener noreferrer">
-              Paper Link <ExternalLinkIcon mx="2px" />
+              Read the paper <ExternalLinkIcon mx="2px" />
             </Link>
             .
           </ListItem>
           <ListItem>
-            Received 3rd place best poster award (300 CAD) at the 2024 Cybersecurity and Privacy Institute Annual Conference, University of Waterloo:{' '}
+            Received third place in the poster competition at the University of Waterloo&apos;s 2024 Cybersecurity and Privacy Institute Annual Conference (300 CAD).{' '}
             <Link href="https://uwaterloo.ca/cybersecurity-privacy-institute/news/cpi-congratulates-our-top-3-winners-cpi-annual-conference" target="_blank" rel="noopener noreferrer">
-              CPI Announcement <ExternalLinkIcon mx="2px" />
+              Read the award announcement <ExternalLinkIcon mx="2px" />
             </Link>
             .
           </ListItem>
-          <ListItem>Delivered an oral and poster presentation at the 2023 Math and Computing Research Discovery Days, University of Waterloo.</ListItem>
+          <ListItem>Presented as a talk and poster at the University of Waterloo&apos;s 2023 Math and Computing Research Discovery Days.</ListItem>
         </UnorderedList>
       </Box>
       <Box my={4}>
@@ -49,9 +50,9 @@ const Work = () => {
           <Meta>Core Features</Meta>
         </Box>
         <UnorderedList mt={2} pl={6}>
-          <ListItem>Interactive Visualization of Adversarial Evasion Attacks (e.g., FGSM, PGD, ZOO attacks).</ListItem>
-          <ListItem>Real-time data analytics and model performance evaluation.</ListItem>
-          <ListItem>Illustrates the logic and impact of adversarial attacks through dynamic and interactive visualizations.</ListItem>
+          <ListItem>Explore attacks such as FGSM, PGD, and ZOO through interactive views.</ListItem>
+          <ListItem>Compare how different classifiers respond to the same attack.</ListItem>
+          <ListItem>Inspect changes to individual images alongside patterns in model performance.</ListItem>
         </UnorderedList>
       </Box>
       <WorkImage src="/images/works/advex/advex1.gif" alt="fgsm" />

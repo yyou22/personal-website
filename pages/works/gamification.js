@@ -26,17 +26,21 @@ const Work = () => {
         </Title>
         <P>
         <Link href="https://dl.acm.org/doi/10.1145/3706599.3719795" target="_blank" rel="noopener noreferrer">
-          &quot;Enhancing AI Explainability for Non-technical Users with LLM-Driven Narrative Gamification&quot; <ExternalLinkIcon mx="2px" />
-        </Link> explores how gamification and narrative-driven interactions, powered by Large Language Models (LLMs), can enhance AI explainability for non-technical users. 
-          Our study focuses on integrating LLMs into Explainable AI (XAI) visualization technique with the goal to improve XAI visualizations&apos; meaningfulness and relatedness for non-technical users. 
-          This prototype introduces LLM-driven conversational NPCs that guide users through complex AI concepts and XAI visual encodings, helping them understand things like model prediction process and decision boundaries in a more intuitive way.
+          XAI Gamification <ExternalLinkIcon mx="2px" />
+        </Link>{' '}explores how stories and game characters can help people
+          without a technical background understand AI. The prototype uses
+          large language models to power conversational characters that guide
+          users through visualizations of model predictions and decision
+          boundaries. We use these interactions to investigate how AI
+          explanations can connect more closely to a person&apos;s interests
+          and experience.
         </P>
         <Box my={4}>
           <Box as="span" color={metaColor}>
             <Meta>Recognition & Outreach</Meta>
           </Box>
           <UnorderedList mt={2} pl={6}>
-            <ListItem>Accepted by CHI&apos;25 as a Late-Breaking Work paper!</ListItem>
+            <ListItem>Accepted to CHI 2025 as a Late-Breaking Work paper.</ListItem>
           </UnorderedList>
         </Box>
         <Box my={4}>
@@ -44,9 +48,9 @@ const Work = () => {
             <Meta>Core Features</Meta>
           </Box>
           <UnorderedList mt={2} pl={6}>
-            <ListItem>Integrates Large Language Models (LLMs) to create narrative-driven NPCs that explain AI models and visualizations.</ListItem>
-            <ListItem>Includes interactive t-SNE projections that allow users to explore model embeddings and understand AI decision-making processes.</ListItem>
-            <ListItem>Produces design implications of LLM-driven gamification in improving explainability and reducing cognitive load for non-technical AI users.</ListItem>
+            <ListItem>Talk with AI-powered characters about models and their visualizations.</ListItem>
+            <ListItem>Explore model embeddings through interactive t-SNE views.</ListItem>
+            <ListItem>Use a story to connect explanations of predictions and decision boundaries.</ListItem>
           </UnorderedList>
         </Box>
         <WorkImage src="/images/works/gamification/gamification1.gif" alt="gamification" />

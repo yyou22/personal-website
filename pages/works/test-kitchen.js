@@ -52,27 +52,11 @@ const Work = () => {
 
         <Box my={4}>
           <Box as="span" color={metaColor}>
-            <Meta>My Role</Meta>
-          </Box>
-          <Text mt={2}>
-            Research intern at Adobe Research and first author of
-            Surprise2Refine. I developed the prototype with mentorship from
-            Tongyu Zhou and collaborated with Adobe designers to bring it to the
-            Summit stage as Project Test Kitchen.
-          </Text>
-        </Box>
-
-        <Box my={4}>
-          <Box as="span" color={metaColor}>
             <Meta>Recognition &amp; Outreach</Meta>
           </Box>
-          <UnorderedList mt={2} pl={6} spacing={2}>
+          <UnorderedList mt={2} pl={6}>
             <ListItem>
-              <Link href={paperUrl} isExternal>
-                Surprise2Refine accepted to ACM UIST 2026{' '}
-                <ExternalLinkIcon mx="2px" />
-              </Link>
-              .
+              Accepted to ACM UIST 2026.
             </ListItem>
             <ListItem>
               Presented at Adobe Summit Sneaks 2026, selected as one of seven
@@ -82,6 +66,16 @@ const Work = () => {
                 Read the Adobe Research feature <ExternalLinkIcon mx="2px" />
               </Link>
             </ListItem>
+            <ListItem>
+              Technology transfer into Adobe products is currently in progress.
+            </ListItem>
+            <ListItem>
+              Covered by multiple press and news outlets.{' '}
+              <Link href="/press#project-coverage">
+                Explore Project Test Kitchen press coverage
+              </Link>
+              .
+            </ListItem>
           </UnorderedList>
         </Box>
 
@@ -89,7 +83,7 @@ const Work = () => {
           <Box as="span" color={metaColor}>
             <Meta>Core Features</Meta>
           </Box>
-          <UnorderedList mt={2} pl={6} spacing={2}>
+          <UnorderedList mt={2} pl={6}>
             <ListItem>
               A moodboard captures visual references, sketches, and notes to
               guide generation.
@@ -114,32 +108,36 @@ const Work = () => {
           src="/images/works/test-kitchen/workflow.png"
           alt="Surprise2Refine workflow: a moodboard and conceptual axes guide exploration, followed by zooming, anchoring, and decomposition."
           caption="Exploration and refinement in Surprise2Refine. Figure 1, You et al., 2026."
+          sidePadding={{ base: 3, md: 5 }}
         />
         <WorkImage
-          src="/images/works/test-kitchen/refinement.png"
-          alt="A diverse grid of poster designs becomes a focused set of variations through the zooming interaction."
-          caption="Zooming into a design to explore smaller variations. Figure 4, You et al., 2026."
+          src="/images/works/test-kitchen/comedy-poster-workflow.png"
+          alt="Surprise2Refine comedy poster design: a moodboard guides exploration along art style and composition axes, followed by zooming, anchoring, and decomposition to create the final poster."
+          caption="From a moodboard to a finished comedy poster: exploration and refinement in Surprise2Refine."
         />
 
-        <Box my={4}>
-          <Box as="span" color={metaColor}>
-            <Meta>Evaluation</Meta>
-          </Box>
-          <Text mt={2}>
-            A formative study with five designers informed the workflow. In a
-            comparative study with 14 designers, participants reported greater
-            control, clearer tracking of design decisions, and improved
-            perceived creativity.{' '}
-            <Link href={paperUrl} isExternal>
-              Read the study <ExternalLinkIcon mx="2px" />
-            </Link>
-          </Text>
+        <Box display="grid" gap={4} mt={6}>
+          <WorkImage
+            src="/images/works/test-kitchen/iliza-live-demo.jpg"
+            alt="Iliza Shlesinger trying Project Test Kitchen on stage, with the generated poster designs displayed behind her."
+            caption="Comedian Iliza Shlesinger trying Project Test Kitchen live at Adobe Summit Sneaks 2026."
+          />
+          <WorkImage
+            src="/images/works/test-kitchen/summit-stage-demo.png"
+            alt="Yuzhe You presenting Project Test Kitchen at the podium during Adobe Summit Sneaks 2026."
+            caption="Presenting Project Test Kitchen at Adobe Summit Sneaks 2026."
+          />
         </Box>
 
         <Box my={4}>
           <Box as="span" color={metaColor}>
             <Meta>Adobe Summit Demo</Meta>
           </Box>
+          <Text mt={2}>
+            Watch Project Test Kitchen in action! I presented it live at Adobe
+            Summit Sneaks 2026, where comedian Iliza Shlesinger tried it out on
+            stage.
+          </Text>
           <AspectRatio
             ratio={16 / 9}
             mt={3}
@@ -155,6 +153,7 @@ const Work = () => {
               style={{ border: 0 }}
             />
           </AspectRatio>
+
         </Box>
 
         <Box
@@ -173,14 +172,6 @@ const Work = () => {
               fontWeight="semibold"
             >
               Surprise2Refine paper <ExternalLinkIcon mx="1px" />
-            </Link>
-            <Link
-              href="https://doi.org/10.1145/3830398.3830612"
-              isExternal
-              color={linkColor}
-              fontWeight="semibold"
-            >
-              ACM publication <ExternalLinkIcon mx="1px" />
             </Link>
             <Link
               href="https://www.youtube.com/watch?v=HPjwlZ6knHg"

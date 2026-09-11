@@ -22,10 +22,11 @@ const Work = () => {
         Art & Illustration
         </Title>
         <P>
-        Art and design have always been central to my creative journey. 
-        Starting with traditional techniques like charcoal, acrylics, and watercolor, I attended the Rhode Island School of Design&apos;s pre-college program in 2015, where three of my artworks were selected for exhibition. 
-        Recently, I&apos;ve shifted my focus to digital art, graphic design, and UI/UX design, combining my artistic foundation with modern tools. 
-        While my coding and research projects don&apos;t explicitly showcase my art, you can still see the impact of my design background in how I approach and present my work.
+        My art spans charcoal, acrylics, watercolor, and digital illustration.
+        I attended the Rhode Island School of Design&apos;s pre-college program
+        in 2015, where three of my pieces were selected for exhibition. I also
+        work in graphic and interface design, bringing the same attention to
+        composition, color, and visual storytelling to my research projects.
         </P>
         <Box my={4}>
           <Box as="span" color={metaColor}>

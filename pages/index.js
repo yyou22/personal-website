@@ -33,6 +33,12 @@ import { WorkGridItem } from '../components/grid-item'
 import thumbFGSM from '../public/images/works/advex/advex1_thumbnail.gif'
 import thumbFGSM2 from '../public/images/works/advex/advex1_thumbnail.png'
 import thumbNavEaz from '../public/images/works/naveaz/naveaz1_thumbnail.png'
+import thumbTestKitchen from '../public/images/works/test-kitchen/iliza-live-demo.jpg'
+import thumbCommunityLibrary from '../public/images/publications/community-library.png'
+import thumbVATRA from '../public/images/works/vatra/vatra1_thumbnail_.gif'
+import thumbVATRA2 from '../public/images/works/vatra/vatra2_thumbnail.png'
+import thumbGradflix from '../public/images/works/gradflix/gradflix_thumbnail.gif'
+import thumbGradflix2 from '../public/images/works/gradflix/gradflix_thumbnail.png'
 //import { IoLogoTwitter} from 'react-icons/io5'
 //import { ExternalLinkIcon } from '@chakra-ui/icons'
 
@@ -71,16 +77,15 @@ const SectionButton = ({ href, children }) => (
   </NextLink>
 )
 
-// On mobile the amount drops to its own line so award names never split
 const AwardAmount = ({ children }) => (
   <Text
     as="span"
-    display={{ base: 'block', sm: 'inline' }}
-    fontSize={{ base: '12px', sm: 'inherit' }}
+    display="inline"
+    fontSize="inherit"
     color={useColorModeValue('gray.600', 'gray.400')}
     whiteSpace="nowrap"
   >
-    <Box as="span" display={{ base: 'none', sm: 'inline' }}>· </Box>
+    ·{' '}
     {children}
   </Text>
 )
@@ -130,7 +135,7 @@ const Roles = ({ roles }) => {
 
 const Home = () => (
   <Layout>
-    <Container maxW="container.sm" py={6}>
+    <Container maxW="700px" px={{ base: 0, md: 2 }} py={6}>
       <Box
         borderRadius="lg"
         mb={6}
@@ -154,15 +159,18 @@ const Home = () => (
               { icon: RiFlightTakeoffLine, label: 'Student Pilot' }
             ]}
           />
-          <Box display="grid" gridTemplateColumns="14px minmax(0, 1fr)" alignItems="start" columnGap={2} rowGap={{ base: 1.5, sm: 0 }} mt={3} fontSize="13px" lineHeight={1.6} color={useColorModeValue('gray.700', 'gray.200')}>
+          <Box display="grid" gridTemplateColumns="14px minmax(0, 1fr)" alignItems="start" columnGap={2} rowGap={{ base: 1.5, md: 0 }} mt={3} fontSize="13px" lineHeight={1.6} color={useColorModeValue('gray.700', 'gray.200')}>
             <Icon as={FaAward} boxSize="14px" mt="3px" flexShrink={0} color={useColorModeValue('orange.700', '#FFB347')} aria-hidden="true" />
-              <Text title="Current holder of the NSERC Canada Graduate Scholarship – Doctoral">
+              <Text whiteSpace="nowrap" title="Current holder of the NSERC Canada Graduate Scholarship – Doctoral">
                 <Text as="span" fontWeight="medium">NSERC CGS-D Scholar</Text>{' '}
                 <AwardAmount>$120k CAD</AwardAmount>
               </Text>
               <Icon as={FaAward} boxSize="14px" mt="3px" flexShrink={0} color={useColorModeValue('orange.700', '#FFB347')} aria-hidden="true" />
-              <Text title="Current holder of the UWaterloo President’s Graduate Scholarship">
-                <Text as="span" fontWeight="medium" whiteSpace="nowrap">UWaterloo President&apos;s Graduate Scholar</Text>{' '}
+              <Text whiteSpace="nowrap" title="Current holder of the UWaterloo President’s Graduate Scholarship">
+                <Text as="span" fontWeight="medium">
+                  <Box as="span" display={{ base: 'inline', sm: 'none' }}>UWaterloo President&apos;s Scholar</Box>
+                  <Box as="span" display={{ base: 'none', sm: 'inline' }}>UWaterloo President&apos;s Graduate Scholar</Box>
+                </Text>{' '}
                 <AwardAmount>$10k CAD</AwardAmount>
               </Text>
           </Box>
@@ -275,7 +283,42 @@ const Home = () => (
         </Heading>
       </Section>
 
-      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+      <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} columnGap={5} rowGap={4}>
+
+        <Section delay={0.4}>
+          <WorkGridItem
+            id="test-kitchen"
+            title="Project Test Kitchen"
+            thumbnail={thumbTestKitchen}
+            thumbnailBrand={{ logo: '/images/adobe2.png', name: 'Adobe Research', overlay: true }}
+            thumbnailObjectFit="cover"
+          >
+            My Adobe internship project, presented at Summit Sneaks 2026
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.4}>
+          <WorkGridItem
+            id="community-library"
+            title="Community Library Creator"
+            thumbnail={thumbCommunityLibrary}
+            thumbnailBrand={{ logo: '/images/microsoft.png', name: 'Microsoft Research' }}
+            thumbnailObjectFit="cover"
+          >
+            Community-led disability representation in AI-generated images
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.4}>
+          <WorkGridItem
+            id="vatra"
+            title="VATRA"
+            thumbnail={thumbVATRA}
+            blurPlaceholder={thumbVATRA2}
+          >
+            Exploring model trade-offs in adversarial machine learning
+          </WorkGridItem>
+        </Section>
 
         <Section delay={0.4}>
           <WorkGridItem
@@ -284,7 +327,7 @@ const Home = () => (
             thumbnail={thumbFGSM}
             blurPlaceholder={thumbFGSM2}
           >
-            An Interactive Visualization for Explaining AI-targeted Adversarial Attacks
+            Understanding adversarial attacks through interactive visualization
           </WorkGridItem>
         </Section>
 
@@ -294,7 +337,18 @@ const Home = () => (
             title="NavEaz"
             thumbnail={thumbNavEaz}
           >
-            An AI-powered SmartWatch App for Driver Impairment Prediction
+            A smartwatch app for predicting driver impairment
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.4}>
+          <WorkGridItem
+            id="gradflix"
+            title="GRADflix"
+            thumbnail={thumbGradflix}
+            blurPlaceholder={thumbGradflix2}
+          >
+            My MMath research, told through an 8-bit pixel game
           </WorkGridItem>
         </Section>
 

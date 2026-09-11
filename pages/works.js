@@ -25,25 +25,41 @@ import thumbGamification2 from '../public/images/works/gamification/gamification
 import thumbVATRA from '../public/images/works/vatra/vatra1_thumbnail_.gif'
 import thumbVATRA2 from '../public/images/works/vatra/vatra2_thumbnail.png'
 import thumbArt from '../public/images/works/art/art_thumbnail.png'
-import thumbTestKitchen from '../public/images/works/test-kitchen/summit-thumbnail-v2.png'
+import thumbTestKitchen from '../public/images/works/test-kitchen/iliza-live-demo.jpg'
+import thumbCommunityLibrary from '../public/images/publications/community-library.png'
+import thumbTrafficFlow from '../public/images/works/traffic-flow/thumbnail-generated.png'
+import thumbMacedon from '../public/images/works/macedon/thumbnail-generated.png'
 
 const Works = () => (
 
   <Layout title="Works">
-    <Container>
+    <Container maxW="container.md" px={{ base: 0, md: 2 }}>
       <Section>
         <Heading as="h3" fontSize={20} mb={4}>
           Industry
         </Heading>
       </Section>
-      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+      <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} columnGap={5} rowGap={4}>
         <Section>
           <WorkGridItem
             id="test-kitchen"
             title="Project Test Kitchen"
             thumbnail={thumbTestKitchen}
+            thumbnailBrand={{ logo: '/images/adobe2.png', name: 'Adobe Research', overlay: true }}
+            thumbnailObjectFit="cover"
           >
             My Adobe internship project, presented at Adobe Summit Sneaks 2026
+          </WorkGridItem>
+        </Section>
+        <Section>
+          <WorkGridItem
+            id="community-library"
+            title="Community Library Creator"
+            thumbnail={thumbCommunityLibrary}
+            thumbnailBrand={{ logo: '/images/microsoft.png', name: 'Microsoft Research' }}
+            thumbnailObjectFit="cover"
+          >
+            Research I contributed to during my Microsoft internship, published at CHI 2026
           </WorkGridItem>
         </Section>
       </SimpleGrid>
@@ -52,7 +68,28 @@ const Works = () => (
       <Heading as="h3" fontSize={20} mb={4}>
         Academic
       </Heading>
-      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+      <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} columnGap={5} rowGap={4}>
+        <Section>
+          <WorkGridItem id="traffic-flow" title="Traffic Forecasting" thumbnail={thumbTrafficFlow}>
+            Forecasting intersection turning movements with limited training data
+          </WorkGridItem>
+        </Section>
+        <Section>
+          <WorkGridItem id="macedon" title="MACEDON" thumbnail={thumbMacedon}>
+            Interactive code evaluation and optimization with LLM assistance
+          </WorkGridItem>
+        </Section>
+
+        <Section>
+          <WorkGridItem
+            id="vatra"
+            title="VATRA"
+            thumbnail={thumbVATRA}
+            blurPlaceholder={thumbVATRA2}
+          >
+            Comparative visual analytics for AI model trade-off analysis
+          </WorkGridItem>
+        </Section>
 
         <Section>
           <WorkGridItem
@@ -61,7 +98,7 @@ const Works = () => (
             thumbnail={thumbVISxAI}
             blurPlaceholder={thumbVISxAI2}
           >
-            A Beginner&apos;s Introduction to Adversarial Attacks
+            A beginner&apos;s introduction to adversarial attacks
           </WorkGridItem>
         </Section>
 
@@ -71,7 +108,7 @@ const Works = () => (
             title="NavEaz"
             thumbnail={thumbNavEaz}
           >
-            An AI-powered SmartWatch App for Driver Impairment Prediction
+            An AI-powered smartwatch app for driver impairment prediction
           </WorkGridItem>
         </Section>
 
@@ -82,62 +119,41 @@ const Works = () => (
             thumbnail={thumbGamification}
             blurPlaceholder={thumbGamification2}
           >
-            LLM-Powered Narrative Gamification Framework for XAI Visualizations
+            An LLM-powered narrative gamification framework for XAI visualizations
           </WorkGridItem>
         </Section>
 
         <Section delay={0.1}>
-          <WorkGridItem
-            id="vatra"
-            title="VATRA"
-            thumbnail={thumbVATRA}
-            blurPlaceholder={thumbVATRA2}
-          >
-            Comparative Visual Analytics for AI Model Trade-off Analysis
-          </WorkGridItem>
-        </Section>
-
-        <Section delay={0.2}>
-          <WorkGridItem
-            id="gradflix"
-            title="GRADflix"
-            thumbnail={thumbGradflix}
-            blurPlaceholder={thumbGradflix2}
-          >
-            A 8-bit Pixel Video Game that Showcases my MMath Research
-          </WorkGridItem>
-        </Section>
-
-        <Section delay={0.2}>
           <WorkGridItem
             id="advex"
             title="AdvEx"
             thumbnail={thumbFGSM}
             blurPlaceholder={thumbFGSM2}
           >
-            An Interactive Visualization for Explaining AI-targeted Adversarial Attacks
+            An interactive visualization for explaining AI-targeted adversarial attacks
           </WorkGridItem>
         </Section>
 
-        <Section delay={0.3}>
+        <Section delay={0.1}>
           <WorkGridItem
             id="coprompt"
             title="CoPrompt"
             thumbnail={thumbCoPrompt}
           >
-            A Collaborative Prompt Engineering Tool for LLM-driven Natural Language Programming
+            A collaborative prompt engineering tool for LLM-driven natural language programming
           </WorkGridItem>
         </Section>
 
-        <Section delay={0.3}>
+        <Section delay={0.2}>
           <WorkGridItem
             id="pointcloud"
             title="Point Cloud Visibility"
             thumbnail={thumbCloud}
           >
-            A Point Cloud-based Application that Uses Ray-casting to Compute Visbility of POIs
+            A point cloud application that uses ray-casting to compute the visibility of POIs
           </WorkGridItem>
         </Section>
+
       </SimpleGrid>
 
         <Section delay={0.4}>
@@ -147,7 +163,18 @@ const Works = () => (
           </Heading>
         </Section>
 
-      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+      <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} columnGap={5} rowGap={4}>
+
+        <Section delay={0.4}>
+          <WorkGridItem
+            id="gradflix"
+            title="GRADflix"
+            thumbnail={thumbGradflix}
+            blurPlaceholder={thumbGradflix2}
+          >
+            An 8-bit pixel video game that showcases my MMath research
+          </WorkGridItem>
+        </Section>
 
         <Section delay={0.4}>
           <WorkGridItem
@@ -155,7 +182,7 @@ const Works = () => (
             title="Waterloo.AI Challenge"
             thumbnail={thumbMusashi}
           >
-            Ensemble AI Solution for Human Detection in Top-down Fisheye Workplace Monitoring
+            An ensemble AI solution for human detection in top-down fisheye workplace monitoring
           </WorkGridItem>
         </Section>
 
@@ -165,8 +192,8 @@ const Works = () => (
             title="SOCR - Big Data"
             thumbnail={thumbSocr}
           >
-            Design and Disseminate Advanced Methods/tools in Probability, Statistics,
-            and Machine Learning
+            Designing and disseminating advanced tools in probability, statistics,
+            and machine learning
           </WorkGridItem>
         </Section>
 
@@ -255,7 +282,7 @@ const Works = () => (
           </Heading>
       </Section>
 
-      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+      <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} columnGap={5} rowGap={4}>
 
         <Section delay={0.5}>
           <WorkGridItem
@@ -263,7 +290,7 @@ const Works = () => (
             title="Art & Illustration"
             thumbnail={thumbArt}
           >
-            Explore My Paintings, Drawings, and Illustrations
+            Explore my paintings, drawings, and illustrations
           </WorkGridItem>
         </Section>
       

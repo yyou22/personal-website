@@ -15,6 +15,7 @@ import {
   FaGraduationCap,
   FaBriefcase,
   FaBookOpen,
+  FaLightbulb,
   FaChalkboardTeacher,
   FaHandsHelping,
   FaMicrophone,
@@ -23,11 +24,13 @@ import {
 import Layout from './layouts/article'
 import { SelectedStory, selectedStories } from './press-page'
 import { cv } from '../lib/cv'
+import { publications } from '../lib/publications'
 
 const sections = [
   ['education', 'Education', FaGraduationCap],
   ['experience', 'Experience', FaBriefcase],
   ['publications', 'Publications', FaBookOpen],
+  ['patent', 'Patent', FaLightbulb],
   ['awards', 'Awards', FaTrophy],
   ['teaching', 'Teaching', FaChalkboardTeacher],
   ['service', 'Service', FaHandsHelping],
@@ -42,39 +45,6 @@ const logos = {
   Microsoft: '/images/microsoft.png',
   Blackberry: '/images/blackberry.png'
 }
-const paperPreviews = [
-  '/images/works/test-kitchen/workflow.png',
-  '/images/publications/community-library.png',
-  '/images/publications/traffic-forecasting.png',
-  '/images/publications/macedon.png',
-  '/images/works/vatra/vatra2_thumbnail.png',
-  '/images/works/advex/advex1_thumbnail.png',
-  '/images/works/gamification/gamification4_thumbnail.png',
-  '/images/works/visxai/visxai1_thumbnail.png',
-  '/images/works/coprompt4.jpeg'
-]
-const paperPreviewPositions = [
-  '50% 50%', // Surprise2Refine exploration and refinement workflow.
-  '50% 23%', // Community Library interface and example images.
-  '70% 50%', // Forecasting models on the right of the workflow.
-  '50% 0%', // Code evaluation dashboard.
-  '50% 35%', // Comparative model visualizations.
-  '50% 20%', // Adversarial attack scatterplots.
-  '50% 75%', // Narrative interaction and character.
-  '50% 45%', // Panda illustration and title.
-  '50% 40%' // Collaborative prompting interface.
-]
-const paperVenues = [
-  'UIST 2026 · Accepted',
-  'CHI 2026',
-  'AI for Transportation · 2026',
-  'UIST 2025',
-  'Graphics Interface 2025',
-  'ACM TiiS 2025',
-  'CHI EA 2025',
-  'VISxAI 2024',
-  'CHI 2024'
-]
 const grid = { base: 'minmax(0, 1fr)', md: 'repeat(2, minmax(0, 1fr))' }
 
 const Panel = ({ children, ...props }) => (
@@ -462,77 +432,105 @@ const CV = () => {
 
         <CVSection
           id="publications"
-          title="Publications"
+          title="Selected publications"
           description="Research in explainable AI, interactive systems, and intelligent transportation."
         >
           <Box display="grid" gap={3}>
-            {cv.publications.map((paper, index) => (
-              <Panel as="article" key={paper.href}>
-                <Box
-                  display="grid"
-                  gridTemplateColumns={{
-                    base: 'minmax(0, 1fr)',
-                    sm: '144px minmax(0, 1fr)'
-                  }}
-                  gap={4}
-                  alignItems="start"
-                >
-                  <Box w="144px" h="80px" borderRadius="md" overflow="hidden">
-                    <Image
-                      src={paperPreviews[index]}
-                      alt=""
-                      loading="lazy"
-                      w="full"
-                      h="full"
-                      objectFit="cover"
-                      objectPosition={paperPreviewPositions[index]}
-                    />
-                  </Box>
-                  <Box minW={0}>
-                    <Text
-                      as="span"
-                      display="inline-block"
-                      fontSize="xs"
-                      fontWeight="semibold"
-                      letterSpacing="wide"
-                      color={accent}
-                      bg={chipBg}
-                      px={2}
-                      py={0.5}
-                      borderRadius="sm"
-                      mb={2}
-                    >
-                      {paperVenues[index]}
-                    </Text>
-                    <ItemTitle href={paper.href}>
-                      {stripPeriod(paper.title)}
-                    </ItemTitle>
-                    {paper.award && (
-                      <Recognition>
-                        <strong>{paper.award}</strong>
-                      </Recognition>
-                    )}
-                    <Box mt={3}>
-                      <Details fontSize="sm">
-                        {paper.authors.split(/(Yuzhe You)/).map((part, j) =>
-                          part === 'Yuzhe You' ? (
-                            <Text as="strong" color={foreground} key={j}>
-                              {part}
-                            </Text>
-                          ) : (
-                            part
-                          )
-                        )}
-                      </Details>
-                      <Details fontSize="sm" mt={2}>
-                        {paper.venue}
-                      </Details>
+            {publications
+              .filter(paper =>
+                ['C5', 'C4', 'C2', 'J1', 'W2'].includes(paper.citationId)
+              )
+              .map(paper => (
+                <Panel as="article" key={paper.href}>
+                  <Box
+                    display="grid"
+                    gridTemplateColumns={{
+                      base: 'minmax(0, 1fr)',
+                      sm: '144px minmax(0, 1fr)'
+                    }}
+                    gap={4}
+                    alignItems="start"
+                  >
+                    <Box w="144px" h="80px" borderRadius="md" overflow="hidden">
+                      <Image
+                        src={paper.image}
+                        alt=""
+                        loading="lazy"
+                        w="full"
+                        h="full"
+                        objectFit="cover"
+                        objectPosition={paper.position}
+                      />
+                    </Box>
+                    <Box minW={0}>
+                      <Text
+                        as="span"
+                        display="inline-block"
+                        fontSize="xs"
+                        fontWeight="semibold"
+                        letterSpacing="wide"
+                        color={accent}
+                        bg={chipBg}
+                        px={2}
+                        py={0.5}
+                        borderRadius="sm"
+                        mb={2}
+                      >
+                        {paper.label}
+                      </Text>
+                      <ItemTitle href={paper.href}>
+                        {stripPeriod(paper.title)}
+                      </ItemTitle>
+                      {paper.award && (
+                        <Recognition>
+                          <strong>{paper.award}</strong>
+                        </Recognition>
+                      )}
+                      <Box mt={3}>
+                        <Details fontSize="sm">
+                          {paper.authors.split(/(Yuzhe You)/).map((part, j) =>
+                            part === 'Yuzhe You' ? (
+                              <Text as="strong" color={foreground} key={j}>
+                                {part}
+                              </Text>
+                            ) : (
+                              part
+                            )
+                          )}
+                        </Details>
+                        <Details fontSize="sm" mt={2}>
+                          {paper.venue}
+                        </Details>
+                      </Box>
                     </Box>
                   </Box>
-                </Box>
-              </Panel>
-            ))}
+                </Panel>
+              ))}
           </Box>
+        </CVSection>
+
+        <NextLink href="/publications" passHref>
+          <Link
+            display="inline-flex"
+            alignItems="center"
+            gap={2}
+            color={accent}
+            fontSize="15px"
+            fontWeight="medium"
+            mt={4}
+            py={2}
+          >
+            View all publications <ArrowForwardIcon aria-hidden="true" />
+          </Link>
+        </NextLink>
+
+        <CVSection id="patent" title="PATENT">
+          {cv.patents.map(patent => (
+            <Panel as="article" key={patent.application}>
+              <ItemTitle>{patent.title}</ItemTitle>
+              <Details mt={1}>{patent.application}</Details>
+            </Panel>
+          ))}
         </CVSection>
 
         <CVSection id="awards" title="Selected honors & awards">
@@ -653,7 +651,9 @@ const CV = () => {
                   objectFit="cover"
                 />
                 <Box p={4}>
-                  <ItemTitle href={talk.href}>{stripPeriod(talk.title)}</ItemTitle>
+                  <ItemTitle href={talk.href}>
+                    {stripPeriod(talk.title)}
+                  </ItemTitle>
                   <Details fontSize="sm" mt={2}>
                     {talk.details}
                   </Details>
@@ -665,7 +665,9 @@ const CV = () => {
             <Panel>
               {cv.talks.slice(2).map((talk, index) => (
                 <Box key={talk.title} mt={index ? 5 : 0}>
-                  <ItemTitle href={talk.href}>{stripPeriod(talk.title)}</ItemTitle>
+                  <ItemTitle href={talk.href}>
+                    {stripPeriod(talk.title)}
+                  </ItemTitle>
                   <Details fontSize="sm" mt={2}>
                     {talk.details}
                   </Details>

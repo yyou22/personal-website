@@ -28,7 +28,8 @@ export const selectedStories = [
   pressArticles.find(article => article.href?.endsWith('/adobe-research-intern-follows-her-mentors-footsteps/')),
   pressArticles.find(article => article.href?.includes('watch?v=WIrwwJNthxc')),
   pressArticles.find(article => article.href?.endsWith('/yuzhe-you-cooks-storm-adobe-summit-2026')),
-  pressArticles.find(article => article.href?.endsWith('/yuzhe-you-wins-best-student-paper-award-gi-2025-novel'))
+  pressArticles.find(article => article.href?.endsWith('/yuzhe-you-wins-best-student-paper-award-gi-2025-novel')),
+  pressArticles.find(article => article.href?.endsWith('/meet-gradflix-finalist-who-combined-art-and-programming'))
 ]
 
 const PressImage = ({ article, selected = false }) => {
@@ -53,7 +54,7 @@ const PressImage = ({ article, selected = false }) => {
   )
 }
 
-const SourceLine = ({ article }) => {
+const SourceLine = ({ article, showDesk = true }) => {
   const muted = useColorModeValue('gray.600', 'gray.400')
   const foreground = useColorModeValue('gray.800', 'gray.100')
   const isWaterloo = article.publisher.includes('University of Waterloo')
@@ -73,7 +74,7 @@ const SourceLine = ({ article }) => {
           {publication}
         </Text>
         <Text fontSize="xs" color={muted} lineHeight={1.5}>
-          {desk && <>{desk} · </>}{article.date}
+          {showDesk && desk && <>{desk} · </>}{article.date}
         </Text>
       </Box>
     </Box>
@@ -87,6 +88,72 @@ const CoverageCue = ({ article, color }) => {
     {article.interviewStart ? `Watch interview · ${article.interviewStart}` : article.href.includes('youtube.com') ? 'Watch coverage' : 'Read coverage'}
     <ExternalLinkIcon ml={1.5} boxSize={3} aria-hidden="true" />
   </Text>
+  )
+}
+
+const FeaturedCard = ({ article, lead = false }) => {
+  const muted = useColorModeValue('gray.600', 'gray.400')
+  const titleColor = useColorModeValue('#426b89', '#9bbbd4')
+  const accent = useColorModeValue('#406b7c', '#709faf')
+  const border = useColorModeValue('blackAlpha.200', 'whiteAlpha.300')
+  const background = useColorModeValue('whiteAlpha.700', '#29292c')
+  const imageBackground = useColorModeValue('blackAlpha.50', 'whiteAlpha.100')
+
+  return (
+    <LinkBox
+      as="article"
+      role="group"
+      minW={0}
+      display="flex"
+      flexDirection="column"
+      gridColumn={{ sm: lead ? '1 / -1' : undefined, md: lead ? 'span 2' : undefined }}
+      bg={background}
+      borderWidth="1px"
+      borderColor={border}
+      borderRadius="lg"
+      overflow="hidden"
+      transition="border-color 0.2s, box-shadow 0.2s, transform 0.2s"
+      _hover={{ borderColor: accent, boxShadow: '0 10px 28px rgba(0, 0, 0, 0.18)', transform: 'translateY(-2px)' }}
+      _focusWithin={{ borderColor: accent }}
+    >
+      <Box
+        position="relative"
+        flexShrink={0}
+        w="full"
+        bg={imageBackground}
+        sx={{ aspectRatio: '4 / 3' }}
+      >
+        <Image
+          src={article.image}
+          alt=""
+          position="absolute"
+          inset={0}
+          w="full"
+          h="full"
+          objectFit="cover"
+          objectPosition={article.featuredImagePosition || 'center'}
+          fallback={<Box position="absolute" inset={0} bg={imageBackground} />}
+        />
+      </Box>
+      <Box display="flex" flexDirection="column" flex={1} minW={0} p={{ base: 4, md: lead ? 6 : 4 }}>
+        <SourceLine article={article} showDesk={false} />
+        <Heading as="h4" fontSize={lead ? { base: 'md', md: 'xl' } : 'md'} lineHeight={1.4} mt={3}>
+          <LinkOverlay
+            href={article.href}
+            isExternal
+            color={titleColor}
+            _groupHover={{ textDecoration: 'underline' }}
+            _focusVisible={{ outline: '2px solid', outlineColor: accent, outlineOffset: '4px' }}
+          >
+            {article.title}
+          </LinkOverlay>
+        </Heading>
+        <Text fontSize="sm" lineHeight={1.6} color={muted} mt={2}>{article.snippet}</Text>
+        <Box mt="auto">
+          <CoverageCue article={article} color={accent} />
+        </Box>
+      </Box>
+    </LinkBox>
   )
 }
 
@@ -224,7 +291,7 @@ const CoverageGroup = ({ title, description, articles, id }) => {
   return (
     <Box as="section" aria-labelledby={id} mt={{ base: 9, md: 10 }}>
       <Box pb={4} borderBottomWidth="1px" borderColor={border}>
-        <Heading as="h3" id={id} fontSize="lg" fontWeight="semibold">{title}</Heading>
+        <Heading as="h3" id={id} scrollMarginTop="80px" fontSize="lg" fontWeight="semibold">{title}</Heading>
         {description && <Text fontSize="sm" color={muted} lineHeight={1.65} mt={2}>{description}</Text>}
       </Box>
       {years.map((year, index) => (
@@ -265,8 +332,8 @@ const PressPage = () => {
         </Box>
         <Box as="section" aria-labelledby="featured-coverage">
           <Heading as="h3" id="featured-coverage" fontSize="sm" fontWeight="semibold" mb={4}>Featured coverage</Heading>
-          <Box display="grid" gridTemplateColumns={{ base: 'minmax(0, 1fr)', md: 'repeat(2, minmax(0, 1fr))' }} gap={{ base: 4, md: 5 }}>
-            {selectedStories.map(article => <SelectedStory article={article} key={article.title} />)}
+          <Box display="grid" gridTemplateColumns={{ base: 'minmax(0, 1fr)', sm: 'repeat(2, minmax(0, 1fr))', md: 'repeat(3, minmax(0, 1fr))' }} gap={4}>
+            {selectedStories.map((article, index) => <FeaturedCard article={article} key={article.title} lead={index === 0} />)}
           </Box>
         </Box>
         <CoverageGroup
