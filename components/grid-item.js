@@ -104,7 +104,7 @@ export const GridItem = ({ children, href, title, thumbnail, blurPlaceholder }) 
 )
 
 // For works displayed directly inside the site
-export const WorkGridItem = ({ children, id, title, thumbnail, blurPlaceholder, thumbnailBrand, thumbnailObjectFit }) => (
+export const WorkGridItem = ({ children, id, title, thumbnail, blurPlaceholder, thumbnailBrand, thumbnailObjectFit, thumbnailPosition, thumbnailDynamicRange }) => (
   <Box w="100%" textAlign="left">
     <NextLink href={`/works/${id}`}>
     <WorkBox>
@@ -137,12 +137,13 @@ export const WorkGridItem = ({ children, id, title, thumbnail, blurPlaceholder, 
             <Text as="span" fontSize="sm" fontWeight="semibold">{thumbnailBrand.name}</Text>
           </Box>
         )}
-        <Box as="span" display="block" position="relative" flex={1} minH={0}>
+        <Box as="span" display="block" position="relative" flex={1} minH={0} sx={{ dynamicRangeLimit: thumbnailDynamicRange }}>
         <Image
           src={thumbnail}
           alt={title}
           layout="fill"
           objectFit={thumbnailObjectFit || (thumbnailBrand ? 'contain' : 'cover')}
+          objectPosition={thumbnailPosition}
           className="grid-item-thumbnail"
           placeholder="blur"
           blurDataURL={isGif(thumbnail) ? blurPlaceholder?.src : undefined}

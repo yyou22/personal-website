@@ -1,4 +1,4 @@
-import { Container, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
+import { Box, Container, Heading, SimpleGrid, Divider, Text } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
@@ -24,7 +24,7 @@ import thumbGamification from '../public/images/works/gamification/gamification3
 import thumbGamification2 from '../public/images/works/gamification/gamification4_thumbnail.png'
 import thumbVATRA from '../public/images/works/vatra/vatra1_thumbnail_.gif'
 import thumbVATRA2 from '../public/images/works/vatra/vatra2_thumbnail.png'
-import thumbArt from '../public/images/works/art/art_thumbnail.png'
+import thumbArt from '../public/images/works/art/the-long-way-home-original.jpg'
 import thumbTestKitchen from '../public/images/works/test-kitchen/iliza-live-demo.jpg'
 import thumbCommunityLibrary from '../public/images/publications/community-library.png'
 import thumbTrafficFlow from '../public/images/works/traffic-flow/thumbnail-generated.png'
@@ -289,9 +289,52 @@ const Works = () => (
             id="art"
             title="Art & Illustration"
             thumbnail={thumbArt}
+            thumbnailPosition="50% 45%"
+            thumbnailDynamicRange="standard"
           >
             Explore my paintings, drawings, and illustrations
           </WorkGridItem>
+        </Section>
+        <Section delay={0.5}>
+          <Box as="article" w="full" textAlign="left">
+            <Box
+              as="svg"
+              viewBox="0 0 480 270"
+              display="block"
+              w="full"
+              borderRadius="12px"
+              overflow="hidden"
+              boxShadow="0 0 0 1px rgba(128, 128, 128, 0.22)"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <defs>
+                <linearGradient id="creative-paper" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="#e8e8e8" />
+                  <stop offset="100%" stopColor="#c4c4c4" />
+                </linearGradient>
+              </defs>
+              <rect width="480" height="270" fill="#303030" />
+              <circle cx="414" cy="36" r="142" fill="none" stroke="#a0a0a0" strokeOpacity="0.16" />
+              <circle cx="414" cy="36" r="112" fill="none" stroke="#a0a0a0" strokeOpacity="0.16" />
+              <rect x="128" y="50" width="182" height="184" rx="5" fill="#a8a8a8" transform="rotate(-16 219 142)" />
+              <rect x="180" y="36" width="172" height="184" rx="5" fill="#858585" transform="rotate(13 266 128)" />
+              <rect x="158" y="39" width="172" height="192" rx="5" fill="url(#creative-paper)" />
+              <path d="M190 195V127a54 54 0 0 1 108 0v68Z" fill="#494949" />
+              <circle cx="244" cy="116" r="28" fill="#b8b8b8" />
+              <path d="M190 181c31-51 63-51 108 0v14H190Z" fill="#979797" />
+              <path d="M190 210h60m12 0h36" stroke="#494949" strokeOpacity="0.45" strokeWidth="2" />
+            </Box>
+            <Text mt={3} fontSize={18} fontWeight="medium" lineHeight={1.35}>
+              Stealth Studio
+            </Text>
+            <Text mt={1} fontSize={14} lineHeight={1.55} opacity={0.75}>
+              Founded an independent venture in creative direction and digital experiences, with 1.9M+ views.
+            </Text>
+            <Text mt={3} fontSize={14} lineHeight={1.55} fontStyle="italic" opacity={0.75}>
+              Happy to share more about building it in an interview.
+            </Text>
+          </Box>
         </Section>
       
       </SimpleGrid>
