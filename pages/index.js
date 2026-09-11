@@ -57,7 +57,7 @@ const SectionButton = ({ href, children }) => (
       color={useColorModeValue('teal.700', 'teal.200')}
       bg={useColorModeValue('whiteAlpha.400', 'whiteAlpha.50')}
       borderColor={useColorModeValue('blackAlpha.200', 'whiteAlpha.200')}
-      borderRadius="full"
+      borderRadius="md"
       rightIcon={<ChevronRightIcon boxSize={4} aria-hidden="true" />}
       _hover={{
         bg: useColorModeValue('teal.50', 'whiteAlpha.100'),

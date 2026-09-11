@@ -35,7 +35,7 @@ const Main = ({ children, router }) => {
       <NavBar path={router.asPath} />
 
       <Container maxW="container.md" pt={14}>
-        {router.pathname !== '/press' && <LazyVoxelDog />}
+        {!['/press', '/cv'].includes(router.pathname) && <LazyVoxelDog />}
 
         {children}
 

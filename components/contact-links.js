@@ -2,11 +2,9 @@ import {
   Box,
   Icon,
   Link,
-  SimpleGrid,
   Text,
   useColorModeValue
 } from '@chakra-ui/react'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { IoLogoLinkedin, IoLogoTwitter, IoMail } from 'react-icons/io5'
 import { SiGooglescholar } from 'react-icons/si'
 
@@ -38,38 +36,29 @@ const contacts = [
 ]
 
 const ContactLinks = () => {
-  const foreground = useColorModeValue('gray.800', 'gray.100')
-  const muted = useColorModeValue('gray.600', 'gray.400')
+  const foreground = useColorModeValue('gray.700', 'gray.200')
   const accent = useColorModeValue('teal.700', 'teal.200')
-  const surface = useColorModeValue('whiteAlpha.500', 'whiteAlpha.50')
-  const iconSurface = useColorModeValue('teal.50', 'whiteAlpha.100')
-  const border = useColorModeValue('blackAlpha.200', 'whiteAlpha.200')
-  const hoverSurface = useColorModeValue('whiteAlpha.800', 'whiteAlpha.100')
 
   return (
-    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={3}>
+    <Box display="flex" flexWrap="wrap" columnGap={6} rowGap={1}>
       {contacts.map(({ label, detail, href, icon }) => (
         <Link
           key={href}
           href={href}
           isExternal={!href.startsWith('mailto:')}
           aria-label={`${label}: ${detail}`}
-          data-group=""
-          display="flex"
+          title={detail}
+          display="inline-flex"
           alignItems="center"
-          gap={3}
-          p={4}
+          gap={2}
+          py={2}
+          minH="44px"
           minW={0}
-          borderWidth="1px"
-          borderColor={border}
-          borderRadius="lg"
-          bg={surface}
           color={foreground}
-          transition="background-color 160ms ease, border-color 160ms ease"
+          transition="color 160ms ease"
           _hover={{
-            textDecoration: 'none',
-            bg: hoverSurface,
-            borderColor: accent
+            textDecoration: 'underline',
+            color: accent
           }}
           _focusVisible={{
             outline: '2px solid',
@@ -77,43 +66,13 @@ const ContactLinks = () => {
             outlineOffset: '3px'
           }}
         >
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            boxSize={10}
-            flexShrink={0}
-            borderRadius="md"
-            bg={iconSurface}
-            color={accent}
-          >
-            <Icon as={icon} boxSize={5} aria-hidden="true" />
-          </Box>
-          <Box minW={0} flex={1}>
-            <Text fontSize="sm" fontWeight="semibold" lineHeight={1.5}>
-              {label}
-            </Text>
-            <Text
-              fontSize="sm"
-              color={muted}
-              mt={0.5}
-              overflowWrap="anywhere"
-              _groupHover={{ color: accent }}
-            >
-              {detail}
-            </Text>
-          </Box>
-          {!href.startsWith('mailto:') && (
-            <ExternalLinkIcon
-              boxSize={3.5}
-              flexShrink={0}
-              color={muted}
-              aria-hidden="true"
-            />
-          )}
+          <Icon as={icon} boxSize={4} flexShrink={0} aria-hidden="true" />
+          <Text as="span" fontSize="sm" lineHeight={1.5}>
+            {label}
+          </Text>
         </Link>
       ))}
-    </SimpleGrid>
+    </Box>
   )
 }
 

@@ -66,20 +66,39 @@ export const GridItem = ({ children, href, title, thumbnail, blurPlaceholder }) 
 )
 
 // For works displayed directly inside the site
-export const WorkGridItem = ({ children, id, title, thumbnail, blurPlaceholder }) => (
+export const WorkGridItem = ({ children, id, title, thumbnail, blurPlaceholder, thumbnailBrand }) => (
   <Box w="100%" textAlign="center">
     <NextLink href={`/works/${id}`}>
     <GridBox>
       <LinkBox cursor="pointer">
+        <Box
+          as="span"
+          display={thumbnailBrand ? 'flex' : 'block'}
+          flexDirection="column"
+          sx={thumbnailBrand ? { aspectRatio: '16 / 9' } : undefined}
+          borderRadius="12px"
+          overflow="hidden"
+          bg={thumbnailBrand ? 'white' : undefined}
+        >
+        {thumbnailBrand && (
+          <Box as="span" display="flex" alignItems="center" flexShrink={0} gap={2} px={3} py={1.5} color="gray.800">
+            <Image src={thumbnailBrand.logo} alt="" width={20} height={20} objectFit="contain" />
+            <Text as="span" fontSize="sm" fontWeight="semibold">{thumbnailBrand.name}</Text>
+          </Box>
+        )}
+        <Box as="span" display="block" position="relative" flex={thumbnailBrand ? 1 : undefined} minH={0}>
         <Image
           src={thumbnail}
           alt={title}
-          layout="intrinsic"
+          layout={thumbnailBrand ? 'fill' : 'intrinsic'}
+          objectFit={thumbnailBrand ? 'contain' : undefined}
           className="grid-item-thumbnail"
           placeholder="blur"
           blurDataURL={isGif(thumbnail) ? blurPlaceholder?.src : undefined}
           loading="lazy"
         />
+        </Box>
+        </Box>
         <LinkOverlay href={`/works/${id}`}>
           <Text mt={2} fontSize={20}>
           <span className="code"> &#8611; </span>{title}<span className="code"> &#8610; </span>

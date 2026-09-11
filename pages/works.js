@@ -25,15 +25,33 @@ import thumbGamification2 from '../public/images/works/gamification/gamification
 import thumbVATRA from '../public/images/works/vatra/vatra1_thumbnail_.gif'
 import thumbVATRA2 from '../public/images/works/vatra/vatra2_thumbnail.png'
 import thumbArt from '../public/images/works/art/art_thumbnail.png'
+import thumbTestKitchen from '../public/images/works/test-kitchen/summit-thumbnail-v2.png'
 
 const Works = () => (
 
   <Layout title="Works">
     <Container>
-      <Heading as="h3" fontSize={20} mb={4}>
-        Works
-      </Heading>
+      <Section>
+        <Heading as="h3" fontSize={20} mb={4}>
+          Industry
+        </Heading>
+      </Section>
+      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+        <Section>
+          <WorkGridItem
+            id="test-kitchen"
+            title="Project Test Kitchen"
+            thumbnail={thumbTestKitchen}
+          >
+            My Adobe internship project, presented at Adobe Summit Sneaks 2026
+          </WorkGridItem>
+        </Section>
+      </SimpleGrid>
 
+      <Divider my={6} />
+      <Heading as="h3" fontSize={20} mb={4}>
+        Academic
+      </Heading>
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
 
         <Section>
