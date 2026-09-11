@@ -56,10 +56,10 @@ const WelcomeBanner = () => (
         as={MdWavingHand}
         className="welcome-wave"
         aria-hidden="true"
-        boxSize="22px"
-        verticalAlign="-4px"
+        boxSize="18px"
+        verticalAlign="-3px"
         color={useColorModeValue('teal.600', 'teal.300')}
-        mr={2}
+        mr={1.5}
       />
       Hello, I am Yuzhe! Welcome to my website.
     </Box>
