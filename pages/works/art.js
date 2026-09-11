@@ -1,11 +1,55 @@
-import { useEffect } from 'react'
-import { Container, ListItem, UnorderedList, Box, useColorModeValue, Wrap, WrapItem, Tag } from '@chakra-ui/react'
-import { Title, Meta, WorkImage } from '../../components/work'
+import { useEffect, useState } from 'react'
+import {
+  Container, ListItem, UnorderedList, Box, Heading, Image, useColorModeValue, Wrap, WrapItem, Tag,
+  Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, Text
+} from '@chakra-ui/react'
+import { Title, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 
+// Each row is laid out at equal height; widths follow each piece's aspect ratio,
+// so nothing is cropped and every row ends flush on both sides.
+const galleryRows = [
+  [
+    { title: 'Cool Scottish Pilot', year: 2025, image: 'cool-scottish-pilot-original.jpg', width: 4284, height: 5712 },
+    { title: 'The Long Way Home', year: 2026, image: 'the-long-way-home-original.jpg', width: 2971, height: 3978 }
+  ],
+  [
+    { title: 'Terrifier', year: 2026, image: 'terrifier-original.jpg', width: 3337, height: 2481 }
+  ],
+  [
+    { title: 'Venice', year: 2013, image: 'art1.png', width: 1564, height: 1124 },
+    { title: 'Splendid', year: 2015, image: 'art3.png', width: 1306, height: 1962 }
+  ],
+  [
+    { title: 'Contemplation', year: 2015, image: 'art2.png', width: 746, height: 826 },
+    { title: 'Memory of Rhode Island', year: 2015, image: 'art4.png', width: 852, height: 760 }
+  ],
+  [
+    { title: 'Gangsters', year: 2015, image: 'art5.png', width: 1680, height: 1262 },
+    { title: 'Blessing of the Mountain', year: 2014, image: 'blessing-of-the-mountain.jpg', width: 2112, height: 2789 }
+  ]
+]
+
+const galleryGroups = [
+  {
+    title: 'Recent work',
+    description:
+      'After nearly a decade away, I’ve returned to painting and drawing—rediscovering familiar materials and learning about myself along the way.',
+    rows: galleryRows.slice(0, 2)
+  },
+  {
+    title: 'Earlier work',
+    description: 'Paintings and drawings from 2013–2015.',
+    rows: galleryRows.slice(2)
+  }
+]
+
 const Work = () => {
   const metaColor = useColorModeValue('green.800', undefined)
+  const yearColor = useColorModeValue('gray.600', 'gray.400')
+  const imageShadow = useColorModeValue('0 6px 20px rgba(0, 0, 0, 0.10)', '0 6px 20px rgba(0, 0, 0, 0.35)')
+  const [selected, setSelected] = useState(null)
 
   useEffect(() => {
     // Load any necessary scripts for external components
@@ -22,10 +66,11 @@ const Work = () => {
         Art & Illustration
         </Title>
         <P>
-        Art and design have always been central to my creative journey. 
-        Starting with traditional techniques like charcoal, acrylics, and watercolor, I attended the Rhode Island School of Design&apos;s pre-college program in 2015, where three of my artworks were selected for exhibition. 
-        Recently, I&apos;ve shifted my focus to digital art, graphic design, and UI/UX design, combining my artistic foundation with modern tools. 
-        While my coding and research projects don&apos;t explicitly showcase my art, you can still see the impact of my design background in how I approach and present my work.
+        My art spans charcoal, acrylics, watercolor, and digital illustration.
+        I attended the Rhode Island School of Design&apos;s pre-college program
+        in 2015, where three of my pieces were selected for exhibition. I also
+        work in graphic and interface design, bringing the same attention to
+        composition, color, and visual storytelling to my research projects.
         </P>
         <Box my={4}>
           <Box as="span" color={metaColor}>
@@ -36,11 +81,67 @@ const Work = () => {
             <ListItem>Six artworks featured in University of Michigan&apos;s Blueprint Literary Magazine (2018&ndash;2019).</ListItem>
           </UnorderedList>
         </Box>
-        <WorkImage src="/images/works/art/art1.png" alt="art" />
-        <WorkImage src="/images/works/art/art3.png" alt="art" />
-        <WorkImage src="/images/works/art/art2.png" alt="art" />
-        <WorkImage src="/images/works/art/art4.png" alt="art" />
-        <WorkImage src="/images/works/art/art5.png" alt="art" />
+        {galleryGroups.map(group => (
+          <Box as="section" key={group.title} aria-label={group.title} my={{ base: 8, sm: 10 }}>
+            <Heading as="h4" fontSize="lg" mb={1}>{group.title}</Heading>
+            <Text fontSize="sm" lineHeight={1.65} color={yearColor} mb={5}>{group.description}</Text>
+            <Box display="flex" flexDirection="column" gap={{ base: 8, sm: 6 }}>
+          {group.rows.map(row => (
+            <Box
+              key={row[0].title}
+              display="flex"
+              flexDirection={{ base: 'column', sm: 'row' }}
+              justifyContent="center"
+              gap={{ base: 8, sm: 4 }}
+            >
+              {row.map(artwork => (
+                <Box
+                  as="figure"
+                  key={artwork.title}
+                  m={0}
+                  minW={0}
+                  flex={{ sm: `${artwork.width / artwork.height} 1 0` }}
+                >
+                  <Box
+                    as="button"
+                    type="button"
+                    display="block"
+                    w="full"
+                    p={0}
+                    border={0}
+                    bg="transparent"
+                    borderRadius="md"
+                    cursor="zoom-in"
+                    aria-label={`View larger: ${artwork.title}`}
+                    onClick={() => setSelected(artwork)}
+                    _focusVisible={{ outline: '2px solid', outlineColor: 'teal.400', outlineOffset: '3px' }}
+                  >
+                    <Image
+                      src={`/images/works/art/${artwork.image}`}
+                      alt={`${artwork.title}, ${artwork.year}`}
+                      htmlWidth={artwork.width}
+                      htmlHeight={artwork.height}
+                      w="full"
+                      h="auto"
+                      display="block"
+                      loading="lazy"
+                      borderRadius="md"
+                      boxShadow={imageShadow}
+                      // Prevent iPhone HDR gain maps from boosting artwork brightness.
+                      sx={{ dynamicRangeLimit: 'standard' }}
+                    />
+                  </Box>
+                  <Box as="figcaption" display="flex" justifyContent="space-between" alignItems="baseline" gap={3} mt={2.5}>
+                    <Box as="span" fontSize="sm" fontWeight="medium" lineHeight={1.4}>{artwork.title}</Box>
+                    <Box as="time" dateTime={String(artwork.year)} fontSize="xs" color={yearColor} flexShrink={0}>{artwork.year}</Box>
+                  </Box>
+                </Box>
+              ))}
+            </Box>
+          ))}
+            </Box>
+          </Box>
+        ))}
         <Box my={4}>
           <Box as="span" color={metaColor}>
             <Meta>Skills</Meta>
@@ -53,6 +154,33 @@ const Work = () => {
             ))}
           </Wrap>
         </Box>
+
+        <Modal isOpen={Boolean(selected)} onClose={() => setSelected(null)} isCentered>
+          <ModalOverlay bg="blackAlpha.800" />
+          <ModalContent w="auto" maxW="92vw" m={4} bg="transparent" boxShadow="none">
+            <ModalCloseButton position="fixed" top={4} right={4} color="white" bg="blackAlpha.500" _hover={{ bg: 'blackAlpha.700' }} />
+            <ModalBody p={0}>
+              {selected && (
+                <>
+                  <Image
+                    src={`/images/works/art/${selected.image}`}
+                    alt={`${selected.title}, ${selected.year}`}
+                    maxH="85vh"
+                    maxW="92vw"
+                    w="auto"
+                    h="auto"
+                    mx="auto"
+                    borderRadius="md"
+                    sx={{ dynamicRangeLimit: 'standard' }}
+                  />
+                  <Text mt={3} textAlign="center" fontSize="sm" color="whiteAlpha.900">
+                    {selected.title} · {selected.year}
+                  </Text>
+                </>
+              )}
+            </ModalBody>
+          </ModalContent>
+        </Modal>
       </Container>
     </Layout>
   )

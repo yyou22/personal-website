@@ -35,7 +35,7 @@ const Logo = () => {
             fontWeight="bold"
             ml={3}
           >
-            Yuzhe Y.
+            Yuzhe You
           </Text>
         </LogoBox>
       </a>

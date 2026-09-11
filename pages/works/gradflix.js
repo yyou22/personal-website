@@ -16,10 +16,12 @@ const Work = () => {
         GRADflix <Badge>2023</Badge>
       </Title>
       <P>
-        My GRADflix project is a playful 8-bit pixel-style video game, designed to present my MMath research on visualizing adversarial machine learning in an accessible and creative way. 
-        I developed the game using a game engine for the logic and interactivity, and hand-drew all the artwork from scratch using Procreate on my iPad. 
-        The game is set to autoplay, and I recorded a playthrough to demonstrate how I can combine my programming and design skills to make complex AI concepts more understandable to a wider audience. 
-        The goal of this project is to highlight my research and emphasize the value of visualizations in explaining AI safety, as well as making technical topics more engaging for non-technical audience to grasp.
+        For GRADflix, I turned my MMath research on adversarial machine learning
+        into an 8-bit pixel game. I programmed the game logic and interactions,
+        drew the artwork in Procreate on my iPad, and recorded an automated
+        playthrough for the competition. The project brings together my
+        research, programming, and illustration to introduce AI concepts to
+        people outside the field.
       </P>
       <Box my={4}>
         <Box as="span" color={metaColor}>
@@ -28,7 +30,7 @@ const Work = () => {
         <UnorderedList mt={2} pl={6}>
           <ListItem>Selected as a finalist in the 2023 University of Waterloo GRADflix competition.</ListItem>
           <ListItem>
-            UWaterloo News:{' '}
+            Featured by the University of Waterloo.{' '}
             <Link href="https://uwaterloo.ca/current-graduate-students/news/meet-gradflix-finalist-who-combined-art-and-programming" target="_blank" rel="noopener noreferrer">
               Meet the GRADflix finalist who combined art and programming <ExternalLinkIcon mx="2px" />
             </Link>
@@ -41,10 +43,10 @@ const Work = () => {
           <Meta>Core Features</Meta>
         </Box>
         <UnorderedList mt={2} pl={6}>
-          <ListItem>A 8-bit pixel animation combining art and programming.</ListItem>
-          <ListItem>Custom game engine scripting and programming for seamless animations and interactions.</ListItem>
-          <ListItem>Interactive video game elements used to explain adversarial machine learning and XAI visualization research.</ListItem>
-          <ListItem>Created a fully functional game, set to autoplay and recorded as a screencast.</ListItem>
+          <ListItem>Original pixel artwork drawn in Procreate.</ListItem>
+          <ListItem>Scripted game logic, animation, and interactions.</ListItem>
+          <ListItem>Game elements that introduce adversarial attacks and AI visualization research.</ListItem>
+          <ListItem>An automated playthrough recorded as a short research video.</ListItem>
         </UnorderedList>
       </Box>
       <WorkImage src="/images/works/gradflix/gradflix3.png" alt="GRADflix" />

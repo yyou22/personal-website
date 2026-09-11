@@ -16,10 +16,12 @@ const Work = () => {
         CoPrompt <Badge>2024</Badge>
       </Title>
       <P>
-      CoPrompt is a collaborative prompt engineering tool designed to assist programmers in LLM-driven natural language programming by facilitating seamless collaboration on prompt creation and refinement. 
-      We offer four key features: sharing, referring, linking, and requesting. These features allow programmers to easily share information and modify prompts by referring to others&apos; work, 
-      link prompts for automatic updates, and request assistance without interrupting collaborators&apos; workflow. CoPrompt provides multi-level hierarchical views and contextual prompt information, 
-      which help reduce communication barriers and repetitive updates, making collaborative prompt engineering more efficient.
+        Writing prompts with a team can mean a lot of copying, checking, and
+        asking what changed. We built CoPrompt to make that back-and-forth
+        easier when coding with AI. You can see what your teammates are working
+        on, build on their prompts, and link them to your own so you don&apos;t
+        have to copy every update by hand. And when you get stuck, you can
+        leave a request for help right alongside the prompt.
       </P>
       <Box my={4}>
         <Box as="span" color={metaColor}>
@@ -27,9 +29,9 @@ const Work = () => {
         </Box>
         <UnorderedList mt={2} pl={6}>
           <ListItem>
-            Accepted and presented at CHI 2024:{' '}
+            Accepted to and presented at CHI 2024.{' '}
             <Link href="https://dl.acm.org/doi/10.1145/3613904.3642212" target="_blank" rel="noopener noreferrer">
-              Paper Link <ExternalLinkIcon mx="2px" />
+              Read the paper <ExternalLinkIcon mx="2px" />
             </Link>
             .
           </ListItem>
@@ -40,10 +42,10 @@ const Work = () => {
           <Meta>Core Features</Meta>
         </Box>
         <UnorderedList mt={2} pl={6}>
-          <ListItem>Seamless collaboration through sharing, referring, linking, and requesting prompts.</ListItem>
-          <ListItem>Multi-level hierarchical views for prompt comprehension and modification.</ListItem>
-          <ListItem>Automated updates of linked prompts, reducing repetitive changes.</ListItem>
-          <ListItem>Facilitates both real-time and asynchronous collaboration.</ListItem>
+          <ListItem>Share a prompt or build on one a teammate has already written.</ListItem>
+          <ListItem>See how prompts fit together, then open one for a closer look.</ListItem>
+          <ListItem>Link prompts so changes stay in sync.</ListItem>
+          <ListItem>Ask for help where you need it, whether your teammate is working alongside you or checking in later.</ListItem>
         </UnorderedList>
       </Box>
       {/*<P>
@@ -82,7 +84,7 @@ const Work = () => {
               color={linkColor}
               fontWeight="semibold"
             >
-              Paper Link <ExternalLinkIcon mx="1px" />
+              Read the CoPrompt paper <ExternalLinkIcon mx="1px" />
             </Link>
             <Text fontSize="xs" color="gray.500" lineHeight="1.2">
               View on ACM Digital Library.

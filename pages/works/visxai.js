@@ -29,20 +29,22 @@ const Work = () => {
           <Link href="https://visxai-aml.vercel.app/" target="_blank" rel="noopener noreferrer">
           Panda or Gibbon? A Beginner&apos;s Introduction to Adversarial Attacks <ExternalLinkIcon mx="2px" />
           </Link>{' '}
-          is an interactive, beginner-friendly visualization that introduces how machine-learning models can be fooled by malicious adversarial attacks. 
-          Built primarily with D3.js and Idyll, my guide focuses on the Fast Gradient Sign Method (FGSM) and shows how tiny, human-imperceptible tweaks to 
-          an image can push a ResNet-34 model into making confident mistakes. You can compare clean and subtly perturbed images, 
-          explore how these attacks shift model behavior, and examine two versions of ResNet-34, one trained normally and one trained with adversarial methods, 
-          to see how they respond differently.
+          is an interactive guide to how small changes in an image can mislead
+          a machine learning model. I built it with D3.js and Idyll to introduce
+          adversarial attacks through examples you can explore yourself. The
+          guide focuses on the Fast Gradient Sign Method (FGSM), letting you
+          compare original and altered images and see how two versions of
+          ResNet-34 respond: one with standard training and one trained to
+          resist attacks.
         </P>
         <Box my={4}>
           <Box as="span" color={metaColor}>
             <Meta>Recognition & Outreach</Meta>
           </Box>
           <UnorderedList mt={2} pl={6}>
-            <ListItem>Accepted and presented at the 7th VISxAI Workshop at IEEE VIS24: {' '}
+            <ListItem>Accepted to and presented at the 7th VISxAI Workshop at IEEE VIS 2024.{' '}
             <Link href="https://visxai.io/" target="_blank" rel="noopener noreferrer">
-              VISxAI Workshop Program Info <ExternalLinkIcon mx="2px" />
+              Explore the workshop program <ExternalLinkIcon mx="2px" />
             </Link>
             </ListItem>
           </UnorderedList>
@@ -52,9 +54,9 @@ const Work = () => {
             <Meta>Core Features</Meta>
           </Box>
           <UnorderedList mt={2} pl={6}>
-            <ListItem>Explains adversarial attacks using beginner-friendly interactive visualizations.</ListItem>
-            <ListItem>Explores the FGSM attack&apos;s impact on ResNet-34 models, with insights into both natural and adversarial images, as well as standard and adversarial trainings.</ListItem>
-            <ListItem>Includes embedding-level and instance-level analysis to show how adversarial perturbations affect models.</ListItem>
+            <ListItem>Compare original images with versions altered by an FGSM attack.</ListItem>
+            <ListItem>See how standard and adversarially trained models respond differently.</ListItem>
+            <ListItem>Explore individual predictions and the patterns shown in embedding views.</ListItem>
           </UnorderedList>
         </Box>
         <WorkImage src="/images/works/visxai/visxai2.gif" alt="visxai" />

@@ -26,12 +26,14 @@ const Work = () => {
         </Title>
         <P>
           <Link href="https://dl.acm.org/doi/10.1145/3769872.3769899" target="_blank" rel="noopener noreferrer">
-            &quot;Exploring Comparative Visual Approaches for Understanding Model Trade-offs in Adversarial Machine Learning&quot; <ExternalLinkIcon mx="2px" />
+            VATRA <ExternalLinkIcon mx="2px" />
           </Link>
-          &nbsp;is a project that explores effective comparative visual techniques for model trade-off analysis in adversarial machine learning (AML). 
-          This work focuses on the need for practitioners to concurrently evaluate the accuracy and robustness of AI models across both standard and adversarial conditions. 
-          We identify and present effective visualization techniques for understanding AML trade-offs at different levels of detail.
-          Then, based on insights gathered from an iterative design process, we designed VATRA, a design probe that supports multi-level comparative visualizations and enables machine learning practitioners to analyze trade-offs in adversarial training (AT) methods, which often come at the cost of reduced model accuracy and fairness.
+          {' '}helps machine learning practitioners compare how models perform on
+          ordinary images and images altered by adversarial attacks. Training a
+          model to resist attacks can affect its accuracy and how evenly it
+          performs across different classes. We developed VATRA through an
+          iterative design process to make these trade-offs easier to explore,
+          from overall model performance down to individual examples.
         </P>
         <Box my={4}>
           <Box as="span" color={metaColor}>
@@ -39,9 +41,9 @@ const Work = () => {
           </Box>
           <UnorderedList mt={2} pl={6}>
             <ListItem>
-              Accepted by Graphics Interface 2025 and received Best Paper Award:{' '}
+              Accepted to Graphics Interface 2025 and received a Best Paper Award.{' '}
               <Link href="https://uwaterloo.ca/computer-science/news/yuzhe-you-wins-best-student-paper-award-gi-2025-novel" target="_blank" rel="noopener noreferrer">
-                UWaterloo News <ExternalLinkIcon mx="2px" />
+                Read the University of Waterloo feature <ExternalLinkIcon mx="2px" />
               </Link>
               .
             </ListItem>
@@ -52,9 +54,9 @@ const Work = () => {
             <Meta>Core Features</Meta>
           </Box>
           <UnorderedList mt={2} pl={6}>
-            <ListItem>Exploration of comparative visual designs for model trade-off analysis in standard and adversarial conditions.</ListItem>
-            <ListItem>Multi-level comparative visual analytics: from instance-level, embedding-level, to model-level comparisons.</ListItem>
-            <ListItem>Empirical insights into design considerations for using comparative visualizations in AML trade-off analysis.</ListItem>
+            <ListItem>Compare model performance on ordinary and adversarial images.</ListItem>
+            <ListItem>Move between model summaries, embedding views, and individual examples.</ListItem>
+            <ListItem>Explore how adversarial training affects accuracy, robustness, and performance across classes.</ListItem>
           </UnorderedList>
         </Box>
         <WorkImage src="/images/works/vatra/vatra3.png" alt="VATRA" />

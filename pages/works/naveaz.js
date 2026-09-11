@@ -13,18 +13,20 @@ const Work = () => {
         NavEaz <Badge>2024</Badge>
       </Title>
       <P>
-      NavEaz is our AI-powered smartwatch app built to help drivers stay focused behind the wheel. 
-      It tracks physiological signals like heart rate and electrodermal activity in real time and uses a machine-learning model 
-      that combines CNNs and LSTMs, developed and tested by our team, to detect signs of fatigue, drowsiness, and other forms of impairment. 
-      Instead of only reacting once attention drops, NavEaz looks for patterns that suggest a driver’s focus may slip in the next 5 to 15 minutes, 
-      giving them an early nudge to refocus before the situation becomes risky.
+        NavEaz is a smartwatch app our team developed to explore early signs of
+        driver impairment. It uses heart rate and electrodermal activity
+        (changes in the skin&apos;s electrical conductance) to track patterns
+        associated with fatigue and drowsiness. Our machine learning model
+        combines convolutional and recurrent networks to detect these patterns
+        and estimate changes in attention over the next 5 to 15 minutes, with
+        the goal of providing earlier support to drivers.
       </P>
       <Box my={4}>
         <Box as="span" color={metaColor}>
           <Meta>Recognition & Outreach</Meta>
         </Box>
         <UnorderedList mt={2} pl={6}>
-          <ListItem>Selected to be presented at Transport Canada/NRC Community of Practice (CoP) workshop, Oct 2024.</ListItem>
+          <ListItem>Selected for presentation at the Transport Canada/NRC Community of Practice workshop in October 2024.</ListItem>
           <ListItem>Received an Innovation Design Award from ICACHI (5,000 RMB).</ListItem>
         </UnorderedList>
       </Box>
@@ -33,9 +35,9 @@ const Work = () => {
           <Meta>Core Features</Meta>
         </Box>
         <UnorderedList mt={2} pl={6}>
-          <ListItem>Real-time monitoring and prediction of driver impairment using AI based on physiological signals.</ListItem>
-          <ListItem>Integration with non-invasive smartwatch sensors for non-intrusive driver assistance.</ListItem>
-          <ListItem>Generative AI dynamically tailors responses, such as suggesting rest breaks or playing music.</ListItem>
+          <ListItem>Track physiological signals through smartwatch sensors.</ListItem>
+          <ListItem>Use these signals to estimate current and upcoming changes in driver attention.</ListItem>
+          <ListItem>Use generative AI to tailor responses, such as suggesting a rest break or playing music.</ListItem>
         </UnorderedList>
       </Box>
       <WorkImage src="/images/works/naveaz1.png" alt="naveaz" />

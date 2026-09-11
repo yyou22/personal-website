@@ -8,16 +8,23 @@ import {
   Button,
   useColorModeValue,
   chakra,
-  HStack,
-  Wrap,
-  WrapItem,
-  Tag,
+  // HStack, // Used by the archived Recent News entries below.
+  // Wrap, WrapItem, // Used by the temporarily hidden interests section.
+  // Tag, // Used by the temporarily hidden interests section.
   VStack,
   Text,
+  Icon,
 } from '@chakra-ui/react'
+import { FaAward } from 'react-icons/fa'
+import { RiBookOpenLine, RiFlightTakeoffLine, RiQuillPenLine } from 'react-icons/ri'
+import ContactLinks from '../components/contact-links'
+import ResearchInAction from '../components/research-in-action'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
-import { BioSection, BioYear } from '../components/bio'
+import ExperienceGrid from '../components/experience-grid'
+// import { BioSection, BioYear } from '../components/bio' // Archived news below.
+import { FeaturedCard } from '../components/press-page'
+import { pressArticles } from '../lib/press'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Image from 'next/image'
@@ -26,17 +33,114 @@ import { WorkGridItem } from '../components/grid-item'
 import thumbFGSM from '../public/images/works/advex/advex1_thumbnail.gif'
 import thumbFGSM2 from '../public/images/works/advex/advex1_thumbnail.png'
 import thumbNavEaz from '../public/images/works/naveaz/naveaz1_thumbnail.png'
+import thumbTestKitchen from '../public/images/works/test-kitchen/iliza-live-demo.jpg'
+import thumbCommunityLibrary from '../public/images/publications/community-library.png'
+import thumbVATRA from '../public/images/works/vatra/vatra1_thumbnail_.gif'
+import thumbVATRA2 from '../public/images/works/vatra/vatra2_thumbnail.png'
+import thumbGradflix from '../public/images/works/gradflix/gradflix_thumbnail.gif'
+import thumbGradflix2 from '../public/images/works/gradflix/gradflix_thumbnail.png'
 //import { IoLogoTwitter} from 'react-icons/io5'
-import { IoLogoTwitter, IoLogoLinkedin, IoMail } from 'react-icons/io5'
 //import { ExternalLinkIcon } from '@chakra-ui/icons'
+
+const recentNews = pressArticles.filter(article =>
+  article.href?.endsWith('/adobe-research-intern-follows-her-mentors-footsteps/') ||
+  article.href?.includes('watch?v=WIrwwJNthxc') ||
+  article.href?.endsWith('/yuzhe-you-wins-best-student-paper-award-gi-2025-novel')
+)
+const recentNewsSummaries = {
+  'Adobe Research': 'My internship, mentorship, and journey to Adobe Summit Sneaks.',
+  'Adobe for Business': 'A behind-the-scenes interview on Project Test Kitchen.'
+}
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
 })
 
+const SectionButton = ({ href, children }) => (
+  <NextLink href={href} passHref scroll={false}>
+    <Button
+      as="a"
+      variant="outline"
+      size="sm"
+      h={9}
+      px={4}
+      fontSize="sm"
+      fontWeight="medium"
+      color={useColorModeValue('teal.700', 'teal.200')}
+      bg={useColorModeValue('whiteAlpha.400', 'whiteAlpha.50')}
+      borderColor={useColorModeValue('blackAlpha.200', 'whiteAlpha.200')}
+      borderRadius="md"
+      rightIcon={<ChevronRightIcon boxSize={4} aria-hidden="true" />}
+      _hover={{
+        bg: useColorModeValue('teal.50', 'whiteAlpha.100'),
+        borderColor: useColorModeValue('teal.300', 'teal.500')
+      }}
+      _focusVisible={{ outline: '2px solid', outlineColor: 'teal.400', outlineOffset: '3px' }}
+    >
+      {children}
+    </Button>
+  </NextLink>
+)
+
+const AwardAmount = ({ children }) => (
+  <Text
+    as="span"
+    display="inline"
+    fontSize="inherit"
+    color={useColorModeValue('gray.600', 'gray.400')}
+    whiteSpace="nowrap"
+  >
+    ·{' '}
+    {children}
+  </Text>
+)
+
+const Roles = ({ roles }) => {
+  const accent = useColorModeValue('teal.600', 'teal.300')
+  return (
+    <Box
+      as="p"
+      display={{ base: 'grid', sm: 'flex' }}
+      gridTemplateColumns="repeat(3, minmax(0, 1fr))"
+      flexWrap="nowrap"
+      alignItems={{ base: 'start', sm: 'center' }}
+      columnGap={{ base: 2, sm: 4 }}
+      mt={{ base: 3, sm: 2 }}
+      fontSize={{ base: '10px', sm: '11px' }}
+      fontWeight="semibold"
+      letterSpacing={{ base: '0.1em', sm: '0.08em' }}
+      textTransform="uppercase"
+      lineHeight={{ base: 1.4, sm: 'tall' }}
+      color={useColorModeValue('gray.700', 'gray.300')}
+    >
+      {roles.map(({ icon, label }) => (
+        <Box
+          as="span"
+          key={label}
+          display="flex"
+          flexDirection={{ base: 'column', sm: 'row' }}
+          alignItems="center"
+          gap={{ base: 1, sm: 1.5 }}
+          minW={0}
+          textAlign="center"
+          whiteSpace={{ base: 'normal', sm: 'nowrap' }}
+        >
+          <Icon as={icon} boxSize={{ base: '17px', sm: '15px' }} flexShrink={0} color={accent} aria-hidden="true" />
+          {/* On mobile, break before the last word so every role reads as two lines */}
+          <span>
+            {label.slice(0, label.lastIndexOf(' '))}
+            <Box as="br" display={{ sm: 'none' }} />{' '}
+            {label.slice(label.lastIndexOf(' ') + 1)}
+          </span>
+        </Box>
+      ))}
+    </Box>
+  )
+}
+
 const Home = () => (
   <Layout>
-    <Container maxW="container.sm" py={6}>
+    <Container maxW="700px" px={{ base: 0, md: 2 }} py={6}>
       <Box
         borderRadius="lg"
         mb={6}
@@ -49,171 +153,32 @@ const Home = () => (
       </Box>
 
       <Box display={{ md: 'flex' }}>
-        <Box flexGrow={1}>
+        <Box flexGrow={1} minW={0}>
           <Heading as="h2" variant="page-title">
             Yuzhe You
           </Heading>
-          <VStack align="start" spacing={1} mt={3} lineHeight="short">
-            {/* Roles — one flowing line with teal middot accents */}
-            <Text fontSize="sm" color={useColorModeValue('gray.700', 'whiteAlpha.900')} letterSpacing="wide">
-              {['CS PhD Researcher', 'Artist + Designer', 'Student Pilot ✈️'].map(
-                (role, i, arr) => (
-                  <Box as="span" key={role}>
-                    {/* role + its trailing dot stay glued together; the only
-                        wrap point is the zero-width space AFTER the dot, so the
-                        dot stays at the end of the previous line on mobile */}
-                    <Box as="span" whiteSpace="nowrap">
-                      {role}
-                      {i < arr.length - 1 && (
-                        <Box
-                          as="span"
-                          px={2}
-                          fontSize="lg"
-                          fontWeight="bold"
-                          color="gray.500"
-                          _dark={{ color: 'gray.400' }}
-                          aria-hidden="true"
-                        >
-                          ·
-                        </Box>
-                      )}
-                    </Box>
-                    {i < arr.length - 1 && '​'}
-                  </Box>
-                )
-              )}
-            </Text>
-
-            {/* Affiliations — same flowing white text + teal dot style as line 1 */}
-            <Wrap
-              spacingX={0}
-              spacingY={0}
-              align="center"
-              fontSize="sm"
-              color={useColorModeValue('gray.700', 'whiteAlpha.900')}
-              letterSpacing="wide"
-            >
-              {/* Keep each "label @ company" together as one unit so the
-                  line only breaks between affiliations, never mid-phrase */}
-              <WrapItem>
-                <HStack
-                  as="span"
-                  display="inline-flex"
-                  alignItems="center"
-                  spacing={2}
-                  whiteSpace="nowrap"
-                >
-                  <Text
-                    as="span"
-                    fontSize="xs"
-                    fontWeight="semibold"
-                    textTransform="uppercase"
-                    letterSpacing="wider"
-                    color={useColorModeValue('teal.600', 'teal.300')}
-                  >
-                    Research Intern
-                  </Text>
-                  <HStack
-                    as="span"
-                    display="inline-flex"
-                    alignItems="center"
-                    spacing={1}
-                    sx={{ '& img': { display: 'block' } }}
-                  >
-                    <span> @&nbsp;&nbsp;</span>
-                    <Image src="/images/adobe.png" alt="Adobe" width={14} height={14} />
-                    <span>Adobe</span>
-                  </HStack>
-                  {/* trailing separator stays at the end of this line;
-                      lineHeight={1} keeps the tall lg glyph from inflating
-                      the row height (which widened the mobile line gap) */}
-                  <Box
-                    as="span"
-                    fontSize="lg"
-                    lineHeight={1}
-                    pr={2}
-                    fontWeight="bold"
-                    color="gray.500"
-                    _dark={{ color: 'gray.400' }}
-                    aria-hidden="true"
-                  >
-                    ·
-                  </Box>
-                </HStack>
-              </WrapItem>
-              <WrapItem>
-                <HStack
-                  as="span"
-                  display="inline-flex"
-                  alignItems="center"
-                  spacing={2}
-                  whiteSpace="nowrap"
-                >
-                  <Text
-                    as="span"
-                    fontSize="xs"
-                    fontWeight="semibold"
-                    textTransform="uppercase"
-                    letterSpacing="wider"
-                    color={useColorModeValue('gray.500', 'gray.400')}
-                  >
-                    Previously 
-                  </Text>
-                  <HStack
-                    as="span"
-                    display="inline-flex"
-                    alignItems="center"
-                    spacing={1}
-                    sx={{ '& img': { display: 'block' } }}
-                  >
-                    <span> @&nbsp;&nbsp;</span>
-                    <Image src="/images/microsoft.png" alt="Microsoft" width={14} height={14} />
-                    <span>Microsoft</span>
-                  </HStack>
-                </HStack>
-              </WrapItem>
-            </Wrap>
-
-            {/* Speaking credential — same style */}
-            <Wrap
-              spacing={2}
-              align="center"
-              fontSize="sm"
-              color={useColorModeValue('gray.700', 'whiteAlpha.900')}
-              letterSpacing="wide"
-            >
-              <WrapItem>
-                <Text as="span">
-                  <Text
-                    as="span"
-                    fontSize="xs"
-                    fontWeight="semibold"
-                    textTransform="uppercase"
-                    letterSpacing="wider"
-                    color={useColorModeValue('teal.600', 'teal.300')}
-                  >
-                    Sneaks Speaker
-                  </Text>{' @ Adobe Summit 2026'}
-                </Text>
-              </WrapItem>
-              <WrapItem>
-                <HStack
-                  as="span"
-                  display="inline-flex"
-                  alignItems="center"
-                  sx={{ '& img': { display: 'block' } }}
-                >
-                  <Image
-                    src="/images/adobe summit.png"
-                    alt="Adobe Summit"
-                    width={67}
-                    height={14}
-                    style={{ maxWidth: '100%' }}
-                  />
-                </HStack>
-              </WrapItem>
-            </Wrap>
-          </VStack>
+          <Roles
+            roles={[
+              { icon: RiBookOpenLine, label: 'CS PhD Researcher' },
+              { icon: RiQuillPenLine, label: 'Artist + Designer' },
+              { icon: RiFlightTakeoffLine, label: 'Student Pilot' }
+            ]}
+          />
+          <Box display="grid" gridTemplateColumns="14px minmax(0, 1fr)" alignItems="start" columnGap={2} rowGap={{ base: 1.5, md: 0 }} mt={3} fontSize="13px" lineHeight={1.6} color={useColorModeValue('gray.700', 'gray.200')}>
+            <Icon as={FaAward} boxSize="14px" mt="3px" flexShrink={0} color={useColorModeValue('orange.700', '#FFB347')} aria-hidden="true" />
+              <Text whiteSpace="nowrap" title="Current holder of the NSERC Canada Graduate Scholarship – Doctoral">
+                <Text as="span" fontWeight="medium">NSERC CGS-D Scholar</Text>{' '}
+                <AwardAmount>$120k CAD</AwardAmount>
+              </Text>
+              <Icon as={FaAward} boxSize="14px" mt="3px" flexShrink={0} color={useColorModeValue('orange.700', '#FFB347')} aria-hidden="true" />
+              <Text whiteSpace="nowrap" title="Current holder of the UWaterloo President’s Graduate Scholarship">
+                <Text as="span" fontWeight="medium">
+                  <Box as="span" display={{ base: 'inline', sm: 'none' }}>UWaterloo President&apos;s Scholar</Box>
+                  <Box as="span" display={{ base: 'none', sm: 'inline' }}>UWaterloo President&apos;s Graduate Scholar</Box>
+                </Text>{' '}
+                <AwardAmount>$10k CAD</AwardAmount>
+              </Text>
+          </Box>
         </Box>
         <Box
           flexShrink={0}
@@ -269,51 +234,34 @@ const Home = () => (
               Research
             </Text>
             <Paragraph>
-              My research spans XAI Visualization, Human-Computer Interaction, and Machine Learning — building tools to visualize and interpret ML models, designing agentic pipelines for interactive XAI experiences, and developing ML solutions for intelligent transportation. I also collaborate with{' '}
-              <Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
-                Adobe
-              </Link>
-              {' '}on agent-supported interaction and generative workflows for creative design and video generation.
+              My research spans XAI Visualization, Human-Computer Interaction, and Machine Learning — building tools to visualize and interpret ML models, designing agent-supported generative workflows for creative design and video generation, and developing ML solutions for intelligent transportation.
             </Paragraph>
           </Box>
           <Box>
             <Text as="span" fontWeight="semibold" fontSize="sm" color={useColorModeValue('teal.600', 'teal.300')} textTransform="uppercase" letterSpacing="wider" mb={2} display="block">
-              Experience & interests
+              Experience
             </Text>
-            <Paragraph>
-              I&apos;ve interned at{' '}
-              <Link href="https://www.microsoft.com/en-gb/about/" target="_blank" rel="noopener noreferrer">
-                Microsoft
-              </Link>
-              {' '}(Cambridge, UK) and{' '}
-              <Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
-                Adobe
-              </Link>
-              {' '}(San Jose, CA), and am returning to{' '}
-              <Link href="https://www.adobe.com/home" target="_blank" rel="noopener noreferrer">
-                Adobe
-              </Link>
-              {' '}as a research intern. Outside of research, I&apos;m a digital artist, graphic designer, and student pilot.
-            </Paragraph>
+            <ExperienceGrid />
+            <Box textAlign="center" mt={4}>
+              <SectionButton href="/cv">See My Full CV</SectionButton>
+            </Box>
           </Box>
         </VStack>
       </Section>
 
+      {/* Interests — temporarily hidden.
       <Section delay={0.2}>
         <Heading as="h3" variant="section-title">
           I ♥
         </Heading>
         <Wrap spacing={2}>
           {[
-            'Visualization',
-            'Explainable AI',
+            'XAI Visualization',
             'Human-Computer Interaction',
             'Machine Learning',
             'Agentic AI',
-            'Computer Vision',
             'Traditional & Digital Art',
-            'Graphic Design',
-            'UI/UX Design',
+            'Piano',
             'Aviation',
             'Cockatoos'
           ].map(item => (
@@ -332,6 +280,7 @@ const Home = () => (
           ))}
         </Wrap>
       </Section>
+      */}
 
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
@@ -339,7 +288,42 @@ const Home = () => (
         </Heading>
       </Section>
 
-      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+      <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} columnGap={5} rowGap={4}>
+
+        <Section delay={0.4}>
+          <WorkGridItem
+            id="test-kitchen"
+            title="Project Test Kitchen"
+            thumbnail={thumbTestKitchen}
+            thumbnailBrand={{ logo: '/images/adobe2.png', name: 'Adobe Research', overlay: true }}
+            thumbnailObjectFit="cover"
+          >
+            My Adobe internship project, presented at Summit Sneaks 2026
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.4}>
+          <WorkGridItem
+            id="community-library"
+            title="Community Library Creator"
+            thumbnail={thumbCommunityLibrary}
+            thumbnailBrand={{ logo: '/images/microsoft.png', name: 'Microsoft Research' }}
+            thumbnailObjectFit="cover"
+          >
+            Community-led disability representation in AI-generated images
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.4}>
+          <WorkGridItem
+            id="vatra"
+            title="VATRA"
+            thumbnail={thumbVATRA}
+            blurPlaceholder={thumbVATRA2}
+          >
+            Exploring model trade-offs in adversarial machine learning
+          </WorkGridItem>
+        </Section>
 
         <Section delay={0.4}>
           <WorkGridItem
@@ -348,7 +332,7 @@ const Home = () => (
             thumbnail={thumbFGSM}
             blurPlaceholder={thumbFGSM2}
           >
-            An Interactive Visualization for Explaining AI-targeted Adversarial Attacks
+            Understanding adversarial attacks through interactive visualization
           </WorkGridItem>
         </Section>
 
@@ -358,7 +342,18 @@ const Home = () => (
             title="NavEaz"
             thumbnail={thumbNavEaz}
           >
-            An AI-powered SmartWatch App for Driver Impairment Prediction
+            A smartwatch app for predicting driver impairment
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.4}>
+          <WorkGridItem
+            id="gradflix"
+            title="GRADflix"
+            thumbnail={thumbGradflix}
+            blurPlaceholder={thumbGradflix2}
+          >
+            My MMath research, told through an 8-bit pixel game
           </WorkGridItem>
         </Section>
 
@@ -379,11 +374,7 @@ const Home = () => (
 
       <Section delay={0.45}>
         <Box align="center" my={4}>
-          <NextLink href="/works" scroll={false}>
-            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-              See My Full Portfolio
-            </Button>
-          </NextLink>
+          <SectionButton href="/works">See My Full Portfolio</SectionButton>
         </Box>
       </Section>
 
@@ -391,13 +382,34 @@ const Home = () => (
         <Heading as="h3" variant="section-title">
           Recent News
         </Heading>
+        <Box
+          display="grid"
+          gridTemplateColumns={{ base: 'minmax(0, 1fr)', md: 'repeat(3, minmax(0, 1fr))' }}
+          gap={3}
+          overflowWrap="anywhere"
+        >
+          {recentNews.map(article => (
+            <FeaturedCard
+              key={article.href}
+              article={article}
+              imageRatio={{ base: '16 / 9', md: '4 / 3' }}
+              summary={recentNewsSummaries[article.publisher] ||
+                'Recognized for my cybersecurity visualization research.'}
+            />
+          ))}
+        </Box>
+        <Box textAlign="center" mt={4}>
+          <SectionButton href="/press">See Full Press Page</SectionButton>
+        </Box>
+
+        {/* Previous Recent News entries, preserved for future use.
         <Box>
         <BioSection>
             <Box display="flex" alignItems="flex-start">
               <Box width="90px" flexShrink={0}>
                 <BioYear>Apr 2026</BioYear>
               </Box>
-              <Box flex={1}>
+              <Box flex={1} minW={0} overflowWrap="anywhere">
                 Presented 
                 <Link href="https://www.youtube.com/watch?v=HPjwlZ6knHg" target="_blank" rel="noopener noreferrer">
                 &nbsp;#ProjectTestKitchen&nbsp; 
@@ -558,7 +570,7 @@ const Home = () => (
               </Box>
             </Box>
           </BioSection>
-          {/* <BioSection>
+          <BioSection>
             <Box display="flex" alignItems="flex-start">
               <Box width="90px" flexShrink={0}>
                 <BioYear>Mar 2025</BioYear>
@@ -573,92 +585,20 @@ const Home = () => (
                 in the UK!
               </Box>
             </Box>
-          </BioSection> */}
+          </BioSection>
         </Box>
-      </Section>
-
-      <Section delay={0.2}>
-        <Box align="center" my={4}>
-          <NextLink href="/cv" scroll={false}>
-            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-              See My Full CV
-            </Button>
-          </NextLink>
-        </Box>
+        */}
       </Section>
 
       <Section delay={0.3}>
-        <Heading as="h3" variant="section-title">
-          Connect with Me
-        </Heading>
-        <HStack spacing={4} flexWrap="wrap">
-          <Link href="mailto:y28you@uwaterloo.ca">
-            <Button
-              variant="ghost"
-              colorScheme="teal"
-              leftIcon={<IoMail />}
-            >
-              y28you@uwaterloo.ca
-            </Button>
-          </Link>
-          <Link href="https://www.linkedin.com/in/yuzheyou/" target="_blank">
-            <Button
-              variant="ghost"
-              colorScheme="teal"
-              leftIcon={<IoLogoLinkedin />}
-            >
-              @yuzheyou
-            </Button>
-          </Link>
-          <Link href="https://x.com/yuzhe_you" target="_blank">
-            <Button
-              variant="ghost"
-              colorScheme="teal"
-              leftIcon={<IoLogoTwitter />}
-            >
-              @yuzhe_you
-            </Button>
-          </Link>
-        </HStack>
+        <ResearchInAction />
       </Section>
 
       <Section delay={0.5}>
         <Heading as="h3" variant="section-title">
-        Discover My Research in Action!
+          Connect with Me
         </Heading>
-        Watch my presentation from
-        <Link href="https://business.adobe.com/summit/adobe-summit.html" target="_blank" rel="noopener noreferrer">
-          &nbsp;Adobe Summit&nbsp;
-        </Link>
-        Sneaks 2026, where I showcased my research #ProjectTestKitchen in front of thousands of attendees and alongside American comedian and actor
-        <Link href="https://en.wikipedia.org/wiki/Iliza_Shlesinger" target="_blank" rel="noopener noreferrer">
-          &nbsp;Iliza Shlesinger
-        </Link>
-        .
-        <br/>
-        <br/>
-        <iframe
-        width="100%"
-        height="315"
-        src="https://www.youtube.com/embed/HPjwlZ6knHg?si=rLtcegIKdSDnPPVC"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        style={{ maxWidth: '600px', display: 'block', margin: '0 auto' }}
-        ></iframe>
-        <br/>
-        Watch a pixel animation I made about my MMath research on using interactive visualizations to explain machine learning adversarial attacks.
-        <br/>
-        <br/>
-        <iframe
-        width="100%"
-        height="315"
-        src="https://www.youtube.com/embed/ozoFFEIhW4U?si=RkzxvUhTS2XdgQ8O"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        style={{ maxWidth: '600px', display: 'block', margin: '0 auto' }}
-        ></iframe>
+        <ContactLinks />
       </Section>
 
     </Container>

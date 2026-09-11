@@ -1,408 +1,353 @@
 import {
+  AspectRatio,
+  Box,
   Container,
   Heading,
-  Box,
-  Text,
-  HStack,
-  Link,
+  Icon,
   Image,
-  Badge,
+  Link,
+  LinkBox,
+  LinkOverlay,
+  Text,
   useColorModeValue
 } from '@chakra-ui/react'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { ExternalLinkIcon, LockIcon } from '@chakra-ui/icons'
+import { IoNewspaperOutline } from 'react-icons/io5'
 import Layout from './layouts/article'
-import Section from './section'
+import { pressArticles } from '../lib/press'
 
-const PressCard = ({
-  title,
-  publisher,
-  date,
-  href,
-  image,
-  snippet,
-  cardBg,
-  borderColor,
-  mutedColor
-}) => {
-  const titleFallbackColor = useColorModeValue('gray.800', 'whiteAlpha.900')
+const sourceNames = {
+  'Cheriton School of Computer Science, University of Waterloo': 'Waterloo Computer Science',
+  'Faculty of Mathematics, University of Waterloo': 'Waterloo Mathematics',
+  'Math e-Ties, University of Waterloo': 'Waterloo · Math e-Ties',
+  'Cybersecurity and Privacy Institute, University of Waterloo': 'Waterloo · Cybersecurity & Privacy Institute',
+  'Graduate Studies and Postdoctoral Affairs, University of Waterloo': 'Waterloo · Graduate Studies'
+}
+
+export const selectedStories = [
+  pressArticles.find(article => article.href?.endsWith('/adobe-research-intern-follows-her-mentors-footsteps/')),
+  pressArticles.find(article => article.href?.includes('watch?v=WIrwwJNthxc')),
+  pressArticles.find(article => article.href?.endsWith('/yuzhe-you-cooks-storm-adobe-summit-2026')),
+  pressArticles.find(article => article.href?.endsWith('/yuzhe-you-wins-best-student-paper-award-gi-2025-novel')),
+  pressArticles.find(article => article.href?.endsWith('/meet-gradflix-finalist-who-combined-art-and-programming'))
+]
+
+const PressImage = ({ article, selected = false }) => {
+  const background = useColorModeValue('blackAlpha.50', 'whiteAlpha.100')
+  const foreground = useColorModeValue('gray.500', 'gray.400')
 
   return (
-  <Box borderWidth="1px" borderColor={borderColor} bg={cardBg} borderRadius="lg" py={3} px={4}>
-    <HStack align="center" spacing={{ base: 3, md: 4 }}>
+    <AspectRatio ratio={4 / 3} w="full" bg={background} borderRadius="md" overflow="hidden">
       <Image
-        src={image}
-        alt={title}
-        borderRadius="md"
+        src={article.image}
+        alt=""
+        loading={selected ? 'eager' : 'lazy'}
         objectFit="cover"
-        w={{ base: '160px', md: '176px' }}
-        h={{ base: '104px', md: '88px' }}
-        flexShrink={0}
+        objectPosition={article.title === 'Gamifying AI' ? 'center 70%' : 'center'}
+        fallback={
+          <Box display="flex" alignItems="center" justifyContent="center" bg={background} color={foreground}>
+            <Icon as={IoNewspaperOutline} boxSize={6} aria-hidden="true" />
+          </Box>
+        }
       />
+    </AspectRatio>
+  )
+}
+
+const SourceLine = ({ article, showDesk = true }) => {
+  const muted = useColorModeValue('gray.600', 'gray.400')
+  const foreground = useColorModeValue('gray.800', 'gray.100')
+  const isWaterloo = article.publisher.includes('University of Waterloo')
+  const isAdobe = article.publisher.includes('Adobe')
+  const publication = isWaterloo ? 'University of Waterloo' : article.publisher
+  const desk = isWaterloo ? sourceNames[article.publisher].replace(/^Waterloo(?: ·)? /, '') : null
+
+  return (
+    <Box display="flex" alignItems="center" gap={2.5}>
+      {isWaterloo || isAdobe ? (
+        <Image src={isWaterloo ? '/images/uwaterloo.png' : '/images/adobe2.png'} alt="" boxSize="22px" objectFit="contain" flexShrink={0} clipPath={isAdobe ? 'inset(0 2% 0 0)' : undefined} />
+      ) : (
+        <Icon as={IoNewspaperOutline} boxSize="22px" color={muted} flexShrink={0} aria-hidden="true" />
+      )}
       <Box minW={0}>
-        <HStack spacing={2} mb={1} flexWrap="wrap">
-          <Badge colorScheme="teal">{date}</Badge>
-          <Text fontSize="sm" color={mutedColor}>
-            {publisher}
-          </Text>
-        </HStack>
-        <Text fontWeight="bold" mb={1}>
-          {href ? (
-            <Link href={href} isExternal color="#6b93a2">
-              {title}
-              <ExternalLinkIcon mx="2px" />
-            </Link>
-          ) : (
-            <Text as="span" color={titleFallbackColor}>
-              {title}
-            </Text>
-          )}
+        <Text fontSize="sm" fontWeight="semibold" color={foreground} title={article.publisher} lineHeight={1.4}>
+          {publication}
         </Text>
-        <Text fontSize="sm" color={mutedColor}>
-          {snippet}
+        <Text fontSize="xs" color={muted} lineHeight={1.5}>
+          {showDesk && desk && <>{desk} · </>}{article.date}
         </Text>
       </Box>
-    </HStack>
-  </Box>
+    </Box>
+  )
+}
+
+const CoverageCue = ({ article, color }) => {
+  const defaultColor = useColorModeValue('#406b7c', '#86b8cc')
+  return (
+  <Text fontSize="xs" fontWeight="medium" mt={3} color={color || defaultColor}>
+    {article.interviewStart ? `Watch interview · ${article.interviewStart}` : article.href.includes('youtube.com') ? 'Watch coverage' : 'Read coverage'}
+    <ExternalLinkIcon ml={1.5} boxSize={3} aria-hidden="true" />
+  </Text>
+  )
+}
+
+export const FeaturedCard = ({ article, lead = false, fillImage = false, summary = article.snippet, imageRatio = '4 / 3' }) => {
+  const muted = useColorModeValue('gray.600', 'gray.400')
+  const titleColor = useColorModeValue('#426b89', '#9bbbd4')
+  const accent = useColorModeValue('#406b7c', '#709faf')
+  const border = useColorModeValue('blackAlpha.200', 'whiteAlpha.300')
+  const background = useColorModeValue('whiteAlpha.700', '#29292c')
+  const imageBackground = useColorModeValue('blackAlpha.50', 'whiteAlpha.100')
+
+  return (
+    <LinkBox
+      as="article"
+      role="group"
+      minW={0}
+      display="flex"
+      flexDirection="column"
+      gridColumn={{ sm: lead ? '1 / -1' : undefined, md: lead ? 'span 2' : undefined }}
+      bg={background}
+      borderWidth="1px"
+      borderColor={border}
+      borderRadius="lg"
+      overflow="hidden"
+      transition="border-color 0.2s, box-shadow 0.2s, transform 0.2s"
+      _hover={{ borderColor: accent, boxShadow: '0 10px 28px rgba(0, 0, 0, 0.18)', transform: 'translateY(-2px)' }}
+      _focusWithin={{ borderColor: accent }}
+    >
+      <Box
+        position="relative"
+        flexShrink={0}
+        w="full"
+        bg={imageBackground}
+        sx={{ aspectRatio: imageRatio }}
+        flexGrow={fillImage ? 1 : 0}
+      >
+        <Image
+          src={article.image}
+          alt=""
+          position="absolute"
+          inset={0}
+          w="full"
+          h="full"
+          objectFit="cover"
+          objectPosition={article.featuredImagePosition || 'center'}
+          fallback={<Box position="absolute" inset={0} bg={imageBackground} />}
+        />
+      </Box>
+      <Box display="flex" flexDirection="column" flex={fillImage ? 'none' : 1} minW={0} p={{ base: 4, md: lead ? 6 : 4 }}>
+        <SourceLine article={article} showDesk={false} />
+        <Heading as="h4" fontSize={lead ? { base: 'md', md: 'xl' } : 'md'} lineHeight={1.4} mt={3}>
+          <LinkOverlay
+            href={article.href}
+            isExternal
+            color={titleColor}
+            _groupHover={{ textDecoration: 'underline' }}
+            _focusVisible={{ outline: '2px solid', outlineColor: accent, outlineOffset: '4px' }}
+          >
+            {article.title.replace(` | ${article.publisher}`, '')}
+          </LinkOverlay>
+        </Heading>
+        <Text fontSize="sm" lineHeight={1.6} color={muted} mt={2}>{summary}</Text>
+        <Box mt="auto">
+          <CoverageCue article={article} color={accent} />
+        </Box>
+      </Box>
+    </LinkBox>
+  )
+}
+
+export const SelectedStory = ({ article, compact = false, summary = article.snippet }) => {
+  const muted = useColorModeValue('gray.600', 'gray.300')
+  const accent = useColorModeValue('#406b7c', '#709faf')
+  const titleColor = useColorModeValue('#426b89', '#9bbbd4')
+  const border = useColorModeValue('blackAlpha.200', 'whiteAlpha.300')
+  const topBorder = useColorModeValue('gray.400', 'gray.500')
+  const background = useColorModeValue(
+    'linear-gradient(145deg, #ffffff, #f7f7f7)',
+    'linear-gradient(145deg, #333333, #292929)'
+  )
+  const shadow = useColorModeValue('0 8px 24px rgba(0, 0, 0, 0.06)', '0 8px 24px rgba(0, 0, 0, 0.2)')
+
+  return (
+    <LinkBox
+      as="article"
+      minW={0}
+      role="group"
+      display={{ base: 'flex', md: 'grid' }}
+      flexDirection="column"
+      gridTemplateRows={{ md: 'subgrid' }}
+      gridRow={{ md: 'span 4' }}
+      rowGap={0}
+      borderWidth="1px"
+      borderColor={border}
+      borderTopWidth={compact ? '1px' : '3px'}
+      borderTopColor={topBorder}
+      borderRadius="lg"
+      bgImage={background}
+      boxShadow={compact ? 'sm' : shadow}
+      p={compact ? 4 : { base: 4, md: 5 }}
+      transition="border-color 0.2s, box-shadow 0.2s"
+      _hover={{ borderColor: accent, boxShadow: '0 10px 28px rgba(0, 0, 0, 0.18)' }}
+      _focusWithin={{ borderColor: accent }}
+    >
+      <Box pb={compact ? 2 : 3} borderBottomWidth="1px" borderColor={border}>
+        <SourceLine article={article} />
+      </Box>
+        <Heading as="h4" fontSize={compact ? 'md' : 'lg'} lineHeight={1.45} mt={compact ? 3 : 4}>
+          <LinkOverlay
+            href={article.href}
+            aria-label={article.title}
+            isExternal
+            color={titleColor}
+            _groupHover={{ textDecoration: 'underline' }}
+            _focusVisible={{ outline: '2px solid', outlineColor: accent, outlineOffset: '4px' }}
+            transition="color 0.2s"
+          >
+            {article.title}
+          </LinkOverlay>
+        </Heading>
+      <Box display={compact ? 'flex' : 'flow-root'} gap={compact ? 3 : undefined} alignItems="start" mt={3}>
+        <Box
+          float={compact ? undefined : 'right'}
+          w={compact ? '112px' : { base: '104px', md: '120px' }}
+          flexShrink={0}
+          ml={compact ? 0 : 3}
+          mb={compact ? 0 : 2}
+        >
+          <PressImage article={article} selected />
+        </Box>
+        <Text fontSize="sm" lineHeight={compact ? 1.5 : 1.65} color={muted}>{summary}</Text>
+      </Box>
+      <Box mt="auto" pt={compact ? 0 : 4}>
+        <Box borderTopWidth={compact ? 0 : '1px'} borderColor={border}><CoverageCue article={article} color={accent} /></Box>
+      </Box>
+    </LinkBox>
+  )
+}
+
+const PressStory = ({ article }) => {
+  const border = useColorModeValue('blackAlpha.200', 'whiteAlpha.200')
+  const muted = useColorModeValue('gray.600', 'gray.400')
+  const accent = useColorModeValue('#406b7c', '#86b8cc')
+
+  return (
+    <LinkBox
+      as="article"
+      display="grid"
+      gridTemplateColumns={{ base: 'minmax(0, 1fr) 88px', sm: 'minmax(0, 1fr) 128px' }}
+      columnGap={{ base: 3, sm: 5 }}
+      rowGap={2}
+      py={5}
+      borderBottomWidth="1px"
+      borderColor={border}
+      role="group"
+      _first={{ pt: 0 }}
+      _last={{ borderBottomWidth: 0, pb: 0 }}
+    >
+      <Box minW={0}>
+        <SourceLine article={article} />
+      </Box>
+      <Box minW={0} gridColumn={{ base: '1 / -1', sm: '1' }}>
+        <Heading as="h4" fontSize="md" lineHeight={1.5} fontWeight="semibold">
+          {article.href ? (
+            <LinkOverlay
+              href={article.href}
+              isExternal
+              color={accent}
+              _groupHover={{ textDecoration: 'underline' }}
+              _focusVisible={{ outline: '2px solid', outlineColor: accent, outlineOffset: '4px' }}
+              transition="color 0.2s"
+            >
+              {article.title} <ExternalLinkIcon boxSize={3} aria-hidden="true" />
+            </LinkOverlay>
+          ) : article.title}
+        </Heading>
+        {!article.href && (
+          <Text fontSize="xs" color={muted} mt={2}>
+            <LockIcon boxSize={2.5} mr={1} aria-hidden="true" /> Adobe internal feature
+          </Text>
+        )}
+      </Box>
+      <Box alignSelf="start" mt={1} gridRow={{ base: '1', sm: '1 / 4' }} gridColumn={2}>
+        <PressImage article={article} />
+      </Box>
+      <Box gridColumn={{ base: '1 / -1', sm: '1' }}>
+        <Text fontSize="sm" lineHeight={1.65} color={muted}>{article.snippet}</Text>
+        {article.href && <CoverageCue article={article} />}
+      </Box>
+    </LinkBox>
+  )
+}
+
+const CoverageGroup = ({ title, description, articles, id }) => {
+  const accent = useColorModeValue('#406b7c', '#86b8cc')
+  const muted = useColorModeValue('gray.600', 'gray.400')
+  const border = useColorModeValue('blackAlpha.200', 'whiteAlpha.200')
+  const yearBorder = useColorModeValue('blackAlpha.300', 'whiteAlpha.300')
+  const years = [...new Set(articles.map(article => article.date.slice(-4)))]
+    .sort((a, b) => Number(b) - Number(a))
+
+  return (
+    <Box as="section" aria-labelledby={id} mt={{ base: 9, md: 10 }}>
+      <Box pb={4} borderBottomWidth="1px" borderColor={border}>
+        <Heading as="h3" id={id} scrollMarginTop="80px" fontSize="lg" fontWeight="semibold">{title}</Heading>
+        {description && <Text fontSize="sm" color={muted} lineHeight={1.65} mt={2}>{description}</Text>}
+      </Box>
+      {years.map((year, index) => (
+        <Box
+          key={year}
+          display="grid"
+          gridTemplateColumns={{ base: 'minmax(0, 1fr)', md: '48px minmax(0, 1fr)' }}
+          gap={{ base: 4, md: 6 }}
+          mt={6}
+          pt={index > 0 ? 6 : 0}
+          borderTopWidth={index > 0 ? '1px' : 0}
+          borderColor={yearBorder}
+        >
+          <Heading as="h4" fontSize="sm" lineHeight={1.5} fontWeight="medium" color={accent}>{year}</Heading>
+          <Box minW={0}>
+            {articles.filter(article => article.date.endsWith(year)).map(article => (
+              <PressStory article={article} key={article.title} />
+            ))}
+          </Box>
+        </Box>
+      ))}
+    </Box>
   )
 }
 
 const PressPage = () => {
-  const cardBg = useColorModeValue('whiteAlpha.800', 'whiteAlpha.100')
-  const borderColor = useColorModeValue('blackAlpha.200', 'whiteAlpha.300')
-  const mutedColor = useColorModeValue('gray.600', 'gray.300')
-  const yearHeadingColor = useColorModeValue('teal.600', 'teal.300')
+  const muted = useColorModeValue('gray.600', 'gray.400')
+  const border = useColorModeValue('blackAlpha.200', 'whiteAlpha.200')
 
   return (
     <Layout title="Press">
-      <Container maxW="100%" px={0}>
-        <Heading as="h3" fontSize={20} mb={4}>
-          Press Coverage
-        </Heading>
-        <Text fontSize="md" color={mutedColor} mb={4} fontWeight="bold">
-          Coverage that directly names and features me.
-        </Text>
-
-        <Box>
-          <Box mb={6}>
-            <Heading as="h4" size="sm" mb={3} color={yearHeadingColor}>
-              2026
-            </Heading>
-            <Section>
-              <PressCard
-                title="Adobe Research at Summit 2026: Agentic AI for orchestrating customer experiences"
-                publisher="Adobe Research"
-                date="May 2026"
-                href="https://research.adobe.com/news/adobe-research-at-summit-2026-agentic-ai-for-orchestrating-customer-experiences/"
-                image="/images/inside_adobe.png"
-                snippet="Adobe Research recap of Summit 2026 featuring major announcements and Sneaks, including my Project Test Kitchen presentation."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-            <Section delay={0.03}>
-              <PressCard
-                title="Yuzhe You cooks up a storm at Adobe Summit 2026"
-                publisher="Cheriton School of Computer Science, University of Waterloo"
-                date="Apr 2026"
-                href="https://uwaterloo.ca/computer-science/news/yuzhe-you-cooks-storm-adobe-summit-2026"
-                image="https://uwaterloo.ca/computer-science/sites/default/files/uploads/resize/yuzhe-sneaks-photo-1000x666_1.png"
-                snippet="Coverage of my research Project Test Kitchen at Adobe Summit Sneaks, selected as 1 of 7 from 500+ submissions."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-            <Section delay={0.06}>
-              <PressCard
-                title="Yuzhe You presents at Adobe Summit 2026"
-                publisher="Faculty of Mathematics, University of Waterloo"
-                date="Apr 2026"
-                href="https://uwaterloo.ca/math/news/yuzhe-you-presents-adobe-summit-2026"
-                image="https://cs.uwaterloo.ca/sites/default/files/uploads/resize/backstage-of-sneaks-1000x750_1.jpeg"
-                snippet="Mathematics feature highlighting my Adobe Summit presentation and cross-faculty recognition."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-            <Section delay={0.09}>
-              <PressCard
-                title="Summit Sneaks presenters offer a peek into the future of marketing, creativity, and AI."
-                publisher="Inside Adobe"
-                date="Apr 2026"
-                image="https://research.adobe.com/wp-content/uploads/2026/05/Summit-TN-684-x-480-px.png"
-                snippet="Inside Adobe feature about my journey at Adobe and my Project Test Kitchen presentation. This article is on Adobe’s internal employee news site and is not publicly accessible."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-            <Section delay={0.12}>
-              <PressCard
-                title="Five Adobe Sneaks I Want Now"
-                publisher="The AI Economy"
-                date="Apr 2026"
-                href="https://theaieconomy.substack.com/p/adobe-sneaks-2026-five-ai-prototypes-worth-watching"
-                image="https://substackcdn.com/image/fetch/$s_!x1Nj!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F45d75eac-991b-4450-a320-50eedc5b34de_960x540.jpeg"
-                snippet="Independent media coverage of Adobe Sneaks 2026, featuring my research Project Test Kitchen."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-            <Section delay={0.15}>
-              <PressCard
-                title="Math at the forefront of AI"
-                publisher="Math e-Ties, University of Waterloo"
-                date="Mar 2026"
-                href="https://uwaterloo.ca/math-alumni-newsletter/news/math-forefront-ai"
-                image="https://uwaterloo.ca/math-alumni-newsletter/sites/default/files/styles/uw_is_media_x_large/public/uploads/images/picture.jpeg?itok=PmZlLhSj"
-                snippet="Roundup on AI research leadership with a spotlight on my research of gamifying explainable AI."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-            <Section delay={0.18}>
-              <PressCard
-                title="International Women’s Day: Celebrating women researchers and entrepreneurs"
-                publisher="Cheriton School of Computer Science, University of Waterloo"
-                date="Mar 2026"
-                href="https://uwaterloo.ca/computer-science/news/international-womens-day-celebrating-women-researchers-and"
-                image="https://uwaterloo.ca/computer-science/sites/default/files/uploads/images/iwd-2026-banner.jpg"
-                snippet="Feature story on women researchers and entrepreneurs, including my work on human-centered XAI."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-          </Box>
-
-          <Box mb={6}>
-            <Heading as="h4" size="sm" mb={3} color={yearHeadingColor}>
-              2025
-            </Heading>
-            <Section>
-              <PressCard
-                title="Gamifying AI"
-                publisher="Cheriton School of Computer Science, University of Waterloo"
-                date="Sep 2025"
-                href="https://uwaterloo.ca/computer-science/news/gamifying-ai"
-                image="https://uwaterloo.ca/computer-science/sites/default/files/uploads/images/yuzhe_headshot-resized.png"
-                snippet="Profile on my research vision and scholarship support for accessible explainable AI."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-            <Section delay={0.03}>
-              <PressCard
-                title="Yuzhe You wins best student paper award at GI 2025 for novel cybersecurity tool"
-                publisher="Cheriton School of Computer Science, University of Waterloo"
-                date="Jun 2025"
-                href="https://uwaterloo.ca/computer-science/news/yuzhe-you-wins-best-student-paper-award-gi-2025-novel"
-                image="https://uwaterloo.ca/computer-science/sites/default/files/uploads/images/yuzhe-headshot.png"
-                snippet="Coverage highlighting the GI 2025 Best Student Paper recognition for cybersecurity visualization research."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-          </Box>
-
-          <Box>
-            <Heading as="h4" size="sm" mb={3} color={yearHeadingColor}>
-              2024 and before
-            </Heading>
-            <Section>
-              <PressCard
-                title="CPI Congratulates our Top 3 Winners in the CPI Annual Conference Poster Competition"
-                publisher="Cybersecurity and Privacy Institute, University of Waterloo"
-                date="Oct 2024"
-                href="https://uwaterloo.ca/cybersecurity-privacy-institute/news/cpi-congratulates-our-top-3-winners-cpi-annual-conference"
-                image="https://uwaterloo.ca/cybersecurity-privacy-institute/sites/default/files/uploads/images/yuzhe-you-jarvis-tse-advex_cpi_page-0001.jpg"
-                snippet="Conference coverage recognizing top poster awards at the annual CPI conference, where I was selected as one of the award recipients."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-            <Section delay={0.03}>
-              <PressCard
-                title="Meet the GRADflix finalist who combined art and programming to share her research"
-                publisher="Graduate Studies and Postdoctoral Affairs, University of Waterloo"
-                date="May 2023"
-                href="https://uwaterloo.ca/current-graduate-students/news/meet-gradflix-finalist-who-combined-art-and-programming"
-                image="https://uwaterloo.ca/current-graduate-students/sites/default/files/uploads/images/yuzhe_you_0.png"
-                snippet="Feature on my GRADflix project blending pixel-art game design with research communication."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-            <Section delay={0.06}>
-              <PressCard
-                title="Cheriton School of Computer Science undergrads and grads among winners at Waterloo.AI’s Data Challenge"
-                publisher="Cheriton School of Computer Science, University of Waterloo"
-                date="Nov 2022"
-                href="https://cs.uwaterloo.ca/news/cheriton-students-among-winners-at-waterloo-ai-data-challenge"
-                image="https://cs.uwaterloo.ca/sites/default/files/uploads/images/tensor-squad.jpeg"
-                snippet="Recognition of Waterloo.AI Data Challenge winners from Cheriton CS, where my team was selected as one of the award recipients."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
+      <Container maxW="container.md" px={{ base: 0, md: 2 }} pt={{ base: 7, md: 10 }} pb={8} overflowWrap="anywhere" isolation="isolate">
+        <Box mb={6} pb={5} borderBottomWidth="1px" borderColor={border}>
+          <Heading as="h2" fontSize="2xl" letterSpacing="tight" mb={2}>Press</Heading>
+          <Text fontSize="md" lineHeight={1.6} color={muted}>
+            Media coverage and university news featuring my research and collaborations.
+          </Text>
+        </Box>
+        <Box as="section" aria-labelledby="featured-coverage">
+          <Heading as="h3" id="featured-coverage" fontSize="sm" fontWeight="semibold" mb={4}>Featured coverage</Heading>
+          <Box display="grid" gridTemplateColumns={{ base: 'minmax(0, 1fr)', sm: 'repeat(2, minmax(0, 1fr))', md: 'repeat(3, minmax(0, 1fr))' }} gap={4}>
+            {selectedStories.map((article, index) => <FeaturedCard article={article} key={article.title} lead={index === 0} fillImage={index === 1} />)}
           </Box>
         </Box>
-
-        <Text fontSize="md" color={mutedColor} mt={2} fontWeight="bold">
-          In addition to the above, my research at Adobe —{' '}
-          <Link href="https://www.youtube.com/watch?v=HPjwlZ6knHg" isExternal color="#6b93a2">
-            Project Test Kitchen
-            <ExternalLinkIcon mx="2px" />
-          </Link>{' '}
-          — has been highlighted in the following coverage.
-        </Text>
-
-        <Box mt={4}>
-          <Box>
-            <Heading as="h4" size="sm" mb={3} color={yearHeadingColor}>
-              2026
-            </Heading>
-            <Section>
-              <PressCard
-                title="Adobe Summit 2026: Setting the stage for the next era of customer experience orchestration"
-                publisher="Mint"
-                date="May 2026"
-                href="https://www.livemint.com/focus/adobe-summit-2026-setting-the-stage-for-the-next-era-of-customer-experience-orchestration-11777620405723.html"
-                image="https://www.livemint.com/lm-img/img/2026/05/01/600x338/Umbrella_CX_Enterprise_1777620512330_1777620521366.jpg"
-                snippet="Mint feature on Adobe Summit 2026 covering agentic AI announcements and Sneaks projects including my research Project Test Kitchen."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-            <Section delay={0.03}>
-              <PressCard
-                title="The Future of Marketing at Adobe Summit 2026 | Adobe"
-                publisher="Adobe"
-                date="Apr 2026"
-                href="https://www.youtube.com/watch?v=7Z-Dx6RfVLA"
-                image="https://i.ytimg.com/vi/7Z-Dx6RfVLA/hqdefault.jpg"
-                snippet="Official Adobe video coverage from Summit 2026 highlighting future marketing workflows and Sneaks direction. My research Project Test Kitchen is featured in the video."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-            <Section delay={0.06}>
-              <PressCard
-                title="Adobe Summit Sneaks previews how agentic AI is transforming marketing workflows."
-                publisher="Adobe Blog"
-                date="Apr 2026"
-                href="https://business.adobe.com/blog/adobe-summit-sneaks-2026"
-                image="https://business.adobe.com/blog/media_1e82611ab4fd06c48455997acae93f9a91cfbdf50.png?width=2000&format=webply&optimize=medium"
-                snippet="Adobe coverage featuring Sneaks 2026, including my research Project Test Kitchen."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-            <Section delay={0.09}>
-              <PressCard
-                title="Adobe Sneaks 2026: AI That Builds, Tests & Personalizes Everything | Jist"
-                publisher="jistnews"
-                date="Apr 2026"
-                href="https://www.youtube.com/shorts/8LuMmz3ojhM"
-                image="https://i.ytimg.com/vi/8LuMmz3ojhM/hqdefault.jpg"
-                snippet="Short-form coverage of Adobe Sneaks 2026 (including my research Project Test Kitchen) focused on AI-powered building, testing, and personalization workflows."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-            <Section delay={0.12}>
-              <PressCard
-                title="Adobe Summit: Turning guesswork into predictions"
-                publisher="RetailBiz"
-                date="Apr 2026"
-                href="https://www.retailbiz.com.au/technology/adobe-summit-turning-guesswork-into-predictions/"
-                image="https://www.retailbiz.com.au/wp-content/uploads/2026/04/RB-Adobe_Turning-guesswork-into-predictions_Adobe-Sneaks-2026-Eric-Matisoff-Iliza-Shlesinger.jpg"
-                snippet="RetailBiz coverage of Adobe Sneaks 2026, including my research Project Test Kitchen and the seven selected live demos."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-            <Section delay={0.15}>
-              <PressCard
-                title="Adobe unveils AI tools to accelerate marketing content creation"
-                publisher="VARINDIA"
-                date="Apr 2026"
-                href="https://www.varindia.com/news/adobe-unveils-ai-tools-to-accelerate-marketing-content-creation"
-                image="https://www.varindia.com/storage/news/2026/04/THaJc3CFS2SO45fEjioNhLjNjB1UC6fK0UPTvAVe.webp"
-                snippet="VARINDIA coverage of Adobe Summit Sneaks 2026, including Project Test Kitchen and other AI marketing workflow demos."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-            <Section delay={0.18}>
-              <PressCard
-                title="Adobe Sneaks 2026: Winning Demo Sees AI Turn Campaign Guesswork Into Predictions"
-                publisher="B&T"
-                date="Apr 2026"
-                href="https://www.bandt.com.au/adobe-sneaks-2026-winning-demo-sees-ai-turn-campaign-guesswork-into-predictions/"
-                image="https://www.bandt.com.au/information/uploads/2026/04/Screenshot-2026-04-23-at-9.06.02%E2%80%AFAM.png"
-                snippet="B&T coverage of Adobe Sneaks 2026 highlighting my research Project Test Kitchen and other live demos selected from 500+ submissions."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-            <Section delay={0.21}>
-              <PressCard
-                title="Adobe rolls out tools for real-time web personalisation and automated marketing"
-                publisher="Social Samosa"
-                date="Apr 2026"
-                href="https://www.socialsamosa.com/industry-updates/adobe-tools-real-time-web-personalisation-automated-marketing-11757848"
-                image="https://img-cdn.publive.online/fit-in/1280x960/filters:format(webp)/socialsamosa/media/media_files/2026/04/23/19-7-2026-04-23-15-53-04.jpg"
-                snippet="Social Samosa coverage of Adobe Summit Sneaks 2026, including my research Project Test Kitchen and real-time personalization tools."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-            <Section delay={0.24}>
-              <PressCard
-                title="Adobe shows AI tools that turn ideas into full marketing campaigns"
-                publisher="Times Now Digital"
-                date="Apr 2026"
-                href="https://www.msn.com/en-in/money/news/adobe-shows-ai-tools-that-turn-ideas-into-full-marketing-campaigns/ar-AA21Br5D?uxmode=ruby"
-                image="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA21B9FE.img?w=1012&h=569&m=6"
-                snippet="Times Now Digital coverage of Adobe Summit Sneaks 2026, including my research Project Test Kitchen, and AI tools for building end-to-end marketing campaign assets."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-            <Section delay={0.27}>
-              <PressCard
-                title="ターゲットは「人間」から「AIエージェント」へ。Adobe CX Enterpriseが切り拓く次世代マーケティングの姿"
-                publisher="クラウド Watch"
-                date="Apr 2026"
-                href="https://cloud.watch.impress.co.jp/docs/event/2103890.html"
-                image="https://asset.watch.impress.co.jp/img/clw/docs/2103/890/026.jpg"
-                snippet="Cloud Watch coverage of Adobe Summit 2026 and Sneaks, including discussion of my research Project Test Kitchen and agentic AI workflows."
-                cardBg={cardBg}
-                borderColor={borderColor}
-                mutedColor={mutedColor}
-              />
-            </Section>
-          </Box>
-        </Box>
+        <CoverageGroup
+          id="profiles-and-recognition"
+          title="Profiles & recognition"
+          articles={pressArticles.filter(article => article.category === 'profile' && !selectedStories.includes(article))}
+        />
+        <CoverageGroup
+          id="project-coverage"
+          title="Project coverage"
+          description={<>Coverage of <Link href="https://www.youtube.com/watch?v=HPjwlZ6knHg" isExternal>Project Test Kitchen</Link> at Adobe Summit Sneaks 2026.</>}
+          articles={pressArticles.filter(article => article.category === 'project')}
+        />
       </Container>
     </Layout>
   )

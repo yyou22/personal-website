@@ -16,26 +16,26 @@ const Main = ({ children, router }) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Yuzhe's homepage" />
-        <meta name="author" content="Yuzhe Y." />
+        <meta name="author" content="Yuzhe You" />
         <meta name="author" content="yuzhey" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        <meta name="twitter:title" content="Yuzhe Y." />
+        <meta name="twitter:title" content="Yuzhe You" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@craftzdog" />
         <meta name="twitter:creator" content="@craftzdog" />
         <meta name="twitter:image" content="https://yuzhe.vercel.app/card.png" />
-        <meta property="og:site_name" content="Yuzhe Y." />
-        <meta name="og:title" content="Yuzhe Y." />
+        <meta property="og:site_name" content="Yuzhe You" />
+        <meta name="og:title" content="Yuzhe You" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://yuzhe.vercel.app/card.png" />
-        <title>Yuzhe Y. - Homepage</title>
+        <title>Yuzhe You - Homepage</title>
       </Head>
 
       <NavBar path={router.asPath} />
 
       <Container maxW="container.md" pt={14}>
-        <LazyVoxelDog />
+        {!['/press', '/cv', '/publications'].includes(router.pathname) && <LazyVoxelDog />}
 
         {children}
 

@@ -22,16 +22,18 @@ const Work = () => {
           Point Cloud Visibility <Badge>2024</Badge>
         </Title>
         <P>
-          Our project &quot;Exploring Urban Landscapes: A Point Cloud-based Tourist Experience&quot; focuses on improving the tourist experience by providing a visibility assessment software for urban landscapes using point cloud data. 
-          By employing ray-casting techniques, our point cloud application allows users to explore the visibility of Points of Interest (POIs) in a city. Our tool analyzes and visualizes where a specific POI is visible from across the city, 
-          providing tourists, real estate professionals, and urban planners with insights into optimal viewpoints and visibility conditions.
+          Point Cloud Visibility helps users find where a landmark can be seen
+          from across a city. Our tool uses ray casting on point cloud data to
+          assess sightlines and show which viewpoints offer a clear view of a
+          chosen point of interest. We developed it to explore how visibility
+          mapping could support sightseeing, real estate, and urban planning.
         </P>
         <Box my={4}>
           <Box as="span" color={metaColor}>
             <Meta>Recognition & Outreach</Meta>
           </Box>
           <UnorderedList mt={2} pl={6}>
-            <ListItem>Received Business Incubation Award (3rd Place) in a Hackathon hosted by Dynamic Map Platform Co. (50,000 JPY).</ListItem>
+            <ListItem>Received third place and a Business Incubation Award at the Dynamic Map Platform hackathon (50,000 JPY).</ListItem>
           </UnorderedList>
         </Box>
         <Box my={4}>
@@ -39,9 +41,9 @@ const Work = () => {
             <Meta>Core Features</Meta>
           </Box>
           <UnorderedList mt={2} pl={6}>
-            <ListItem>Provides visibility assessments of Points of Interest (POIs) in urban landscapes using point cloud data.</ListItem>
-            <ListItem>Employs ray-casting techniques for accurate viewpoint analysis and visibility mapping.</ListItem>
-            <ListItem>Offers valuable insights for tourism, real estate, and urban planning professionals.</ListItem>
+            <ListItem>Select a point of interest and explore where it is visible.</ListItem>
+            <ListItem>Use ray casting to assess sightlines through an urban point cloud.</ListItem>
+            <ListItem>Visualize potential viewpoints for sightseeing and planning.</ListItem>
           </UnorderedList>
         </Box>
         <WorkImage src="/images/works/point cloud/pc1.png" alt="point cloud" />
