@@ -7,13 +7,13 @@ const shimmer = keyframes`
   to { transform: translateX(110%); }
 `
 
-// Classic emoji wave: quick swings from the wrist that settle, then a pause
+// Classic emoji wave: quick swings from the wrist that settle
 const wave = keyframes`
-  0%, 60%, 100% { transform: rotate(0deg); }
-  10%, 30% { transform: rotate(14deg); }
-  20% { transform: rotate(-8deg); }
-  40% { transform: rotate(-4deg); }
-  50% { transform: rotate(10deg); }
+  0%, 100% { transform: rotate(0deg); }
+  15%, 45% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  60% { transform: rotate(-4deg); }
+  80% { transform: rotate(10deg); }
 `
 
 const WelcomeBanner = () => (
@@ -27,7 +27,7 @@ const WelcomeBanner = () => (
     bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
     sx={{
       backdropFilter: 'blur(10px)',
-      '&::before, &::after': {
+      '&::after': {
         content: '""',
         position: 'absolute',
         inset: 0,
@@ -36,17 +36,16 @@ const WelcomeBanner = () => (
           'linear-gradient(110deg, transparent 25%, rgba(255, 211, 143, 0.16) 50%, transparent 75%)',
         transform: 'translateX(-110%)'
       },
-      '&::before': { animation: `${shimmer} 1.8s ease-in-out 0.5s both` },
       '& .welcome-wave': {
         display: 'inline-block',
         transformOrigin: '25% 80%',
-        animation: `${wave} 3.6s ease-in-out 0.5s infinite both`
+        animation: `${wave} 2s ease-in-out 0.5s both`
       },
       '@media (hover: hover)': {
         '&:hover::after': { animation: `${shimmer} 1.4s ease-in-out` }
       },
       '@media (prefers-reduced-motion: reduce)': {
-        '&::before, &::after, & .welcome-wave, &:hover::after': {
+        '& .welcome-wave, &:hover::after': {
           animation: 'none'
         }
       }
