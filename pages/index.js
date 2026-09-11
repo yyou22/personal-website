@@ -18,6 +18,7 @@ import {
 import { FaAward } from 'react-icons/fa'
 import { RiBookOpenLine, RiFlightTakeoffLine, RiQuillPenLine } from 'react-icons/ri'
 import ContactLinks from '../components/contact-links'
+import WelcomeBanner from '../components/welcome-banner'
 import ResearchInAction from '../components/research-in-action'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
@@ -140,17 +141,13 @@ const Roles = ({ roles }) => {
 
 const Home = () => (
   <Layout>
-    <Container maxW="700px" px={{ base: 0, md: 2 }} py={6}>
-      <Box
-        borderRadius="lg"
-        mb={6}
-        p={3}
-        textAlign="center"
-        bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-        css={{ backdropFilter: 'blur(10px)' }}
-      >
-        Hello, I am Yuzhe! Welcome to my personal website.
-      </Box>
+    <Container
+      maxW="700px"
+      px={{ base: 0, md: 2 }}
+      pt={{ base: 0, md: 6 }}
+      pb={6}
+    >
+      <WelcomeBanner />
 
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1} minW={0}>
@@ -310,7 +307,7 @@ const Home = () => (
             thumbnailBrand={{ logo: '/images/microsoft.png', name: 'Microsoft Research' }}
             thumbnailObjectFit="cover"
           >
-            Community-led disability representation in AI-generated images
+            Research I contributed to during my Microsoft internship, published at CHI 2026
           </WorkGridItem>
         </Section>
 

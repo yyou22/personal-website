@@ -1,4 +1,5 @@
 import { forwardRef } from 'react'
+import { useRouter } from 'next/router'
 import { Box, Spinner } from '@chakra-ui/react'
 
 export const DogSpinner = () => (
@@ -12,20 +13,25 @@ export const DogSpinner = () => (
   />
 )
 
-export const DogContainer = forwardRef(({ children }, ref) => (
-  <Box
-    ref={ref}
-    className="voxel-dog"
-    m="auto"
-    mt={['-20px', '-60px', '-120px']}
-    mb={['-40px', '-140px', '-200px']}
-    w={[280, 480, 640]}
-    h={[280, 480, 640]}
-    position="relative"
-  >
-    {children}
-  </Box>
-))
+export const DogContainer = forwardRef(({ children }, ref) => {
+  const { pathname } = useRouter()
+
+  return (
+    <Box
+      ref={ref}
+      className="voxel-dog"
+      m="auto"
+      mt={['-20px', '-60px', '-120px']}
+      mb={[pathname === '/' ? '-96px' : '-40px', '-140px', '-200px']}
+      w={{ base: '100vw', md: 640 }}
+      h={{ base: '100vw', md: 640 }}
+      mx={{ base: 'calc(50% - 50vw)', md: 'auto' }}
+      position="relative"
+    >
+      {children}
+    </Box>
+  )
+})
 
 const Loader = () => {
   return (
