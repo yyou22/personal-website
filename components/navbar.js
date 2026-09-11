@@ -46,7 +46,7 @@ const Navbar = props => {
       w="100%"
       bg={useColorModeValue('#ffffff40', '#20202380')}
       css={{ backdropFilter: 'blur(10px)' }}
-      zIndex={1}
+      zIndex="sticky"
       {...props}
     >
       <Container
@@ -78,7 +78,7 @@ const Navbar = props => {
             CV
           </LinkItem>
           <LinkItem href="/press" path={path}>
-            Press Coverage
+            Press
           </LinkItem>
           <LinkItem
             target="_blank"
@@ -116,7 +116,7 @@ const Navbar = props => {
                   <MenuItem as={Link}>CV</MenuItem>
                 </NextLink>
                 <NextLink href="/press" passHref>
-                  <MenuItem as={Link}>Press Coverage</MenuItem>
+                  <MenuItem as={Link}>Press</MenuItem>
                 </NextLink>
                 <MenuItem
                   as={Link}

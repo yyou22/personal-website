@@ -8,19 +8,22 @@ import {
   Button,
   useColorModeValue,
   chakra,
-  HStack,
-  Wrap,
-  WrapItem,
-  Tag,
+  // HStack, // Used by the archived Recent News entries below.
+  // Wrap, WrapItem, // Used by the temporarily hidden interests section.
+  // Tag, // Used by the temporarily hidden interests section.
   VStack,
   Text,
   Icon,
 } from '@chakra-ui/react'
 import { FaAward } from 'react-icons/fa'
+import ContactLinks from '../components/contact-links'
+import ResearchInAction from '../components/research-in-action'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
 import ExperienceGrid from '../components/experience-grid'
-import { BioSection, BioYear } from '../components/bio'
+// import { BioSection, BioYear } from '../components/bio' // Archived news below.
+import { SelectedStory } from '../components/press-page'
+import { pressArticles } from '../lib/press'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Image from 'next/image'
@@ -30,12 +33,42 @@ import thumbFGSM from '../public/images/works/advex/advex1_thumbnail.gif'
 import thumbFGSM2 from '../public/images/works/advex/advex1_thumbnail.png'
 import thumbNavEaz from '../public/images/works/naveaz/naveaz1_thumbnail.png'
 //import { IoLogoTwitter} from 'react-icons/io5'
-import { IoLogoTwitter, IoLogoLinkedin, IoMail } from 'react-icons/io5'
 //import { ExternalLinkIcon } from '@chakra-ui/icons'
+
+const recentNews = pressArticles.filter(article =>
+  article.href?.endsWith('/adobe-research-intern-follows-her-mentors-footsteps/') ||
+  article.href?.endsWith('/yuzhe-you-wins-best-student-paper-award-gi-2025-novel')
+)
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
 })
+
+const SectionButton = ({ href, children }) => (
+  <NextLink href={href} passHref scroll={false}>
+    <Button
+      as="a"
+      variant="outline"
+      size="sm"
+      h={9}
+      px={4}
+      fontSize="sm"
+      fontWeight="medium"
+      color={useColorModeValue('teal.700', 'teal.200')}
+      bg={useColorModeValue('whiteAlpha.400', 'whiteAlpha.50')}
+      borderColor={useColorModeValue('blackAlpha.200', 'whiteAlpha.200')}
+      borderRadius="full"
+      rightIcon={<ChevronRightIcon boxSize={4} aria-hidden="true" />}
+      _hover={{
+        bg: useColorModeValue('teal.50', 'whiteAlpha.100'),
+        borderColor: useColorModeValue('teal.300', 'teal.500')
+      }}
+      _focusVisible={{ outline: '2px solid', outlineColor: 'teal.400', outlineOffset: '3px' }}
+    >
+      {children}
+    </Button>
+  </NextLink>
+)
 
 const RoleBadge = ({ emoji, children }) => (
   <Box
@@ -168,10 +201,14 @@ const Home = () => (
               Experience
             </Text>
             <ExperienceGrid />
+            <Box textAlign="center" mt={4}>
+              <SectionButton href="/cv">See My Full CV</SectionButton>
+            </Box>
           </Box>
         </VStack>
       </Section>
 
+      {/* Interests — temporarily hidden.
       <Section delay={0.2}>
         <Heading as="h3" variant="section-title">
           I ♥
@@ -202,6 +239,7 @@ const Home = () => (
           ))}
         </Wrap>
       </Section>
+      */}
 
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
@@ -249,11 +287,7 @@ const Home = () => (
 
       <Section delay={0.45}>
         <Box align="center" my={4}>
-          <NextLink href="/works" scroll={false}>
-            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-              See My Full Portfolio
-            </Button>
-          </NextLink>
+          <SectionButton href="/works">See My Full Portfolio</SectionButton>
         </Box>
       </Section>
 
@@ -261,6 +295,28 @@ const Home = () => (
         <Heading as="h3" variant="section-title">
           Recent News
         </Heading>
+        <Box
+          display="grid"
+          gridTemplateColumns={{ base: 'minmax(0, 1fr)', md: 'repeat(2, minmax(0, 1fr))' }}
+          gap={3}
+          overflowWrap="anywhere"
+        >
+          {recentNews.map(article => (
+            <SelectedStory
+              key={article.href}
+              article={article}
+              compact
+              summary={article.publisher === 'Adobe Research'
+                ? 'My internship, mentorship, and journey to Adobe Summit Sneaks.'
+                : 'Recognized for my cybersecurity visualization research.'}
+            />
+          ))}
+        </Box>
+        <Box textAlign="center" mt={4}>
+          <SectionButton href="/press">See Full Press Page</SectionButton>
+        </Box>
+
+        {/* Previous Recent News entries, preserved for future use.
         <Box>
         <BioSection>
             <Box display="flex" alignItems="flex-start">
@@ -428,7 +484,7 @@ const Home = () => (
               </Box>
             </Box>
           </BioSection>
-          {/* <BioSection>
+          <BioSection>
             <Box display="flex" alignItems="flex-start">
               <Box width="90px" flexShrink={0}>
                 <BioYear>Mar 2025</BioYear>
@@ -443,92 +499,20 @@ const Home = () => (
                 in the UK!
               </Box>
             </Box>
-          </BioSection> */}
+          </BioSection>
         </Box>
-      </Section>
-
-      <Section delay={0.2}>
-        <Box align="center" my={4}>
-          <NextLink href="/cv" scroll={false}>
-            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-              See My Full CV
-            </Button>
-          </NextLink>
-        </Box>
+        */}
       </Section>
 
       <Section delay={0.3}>
-        <Heading as="h3" variant="section-title">
-          Connect with Me
-        </Heading>
-        <HStack spacing={4} flexWrap="wrap">
-          <Link href="mailto:y28you@uwaterloo.ca">
-            <Button
-              variant="ghost"
-              colorScheme="teal"
-              leftIcon={<IoMail />}
-            >
-              y28you@uwaterloo.ca
-            </Button>
-          </Link>
-          <Link href="https://www.linkedin.com/in/yuzheyou/" target="_blank">
-            <Button
-              variant="ghost"
-              colorScheme="teal"
-              leftIcon={<IoLogoLinkedin />}
-            >
-              @yuzheyou
-            </Button>
-          </Link>
-          <Link href="https://x.com/yuzhe_you" target="_blank">
-            <Button
-              variant="ghost"
-              colorScheme="teal"
-              leftIcon={<IoLogoTwitter />}
-            >
-              @yuzhe_you
-            </Button>
-          </Link>
-        </HStack>
+        <ResearchInAction />
       </Section>
 
       <Section delay={0.5}>
         <Heading as="h3" variant="section-title">
-        Discover My Research in Action!
+          Connect with Me
         </Heading>
-        Watch my presentation from
-        <Link href="https://business.adobe.com/summit/adobe-summit.html" target="_blank" rel="noopener noreferrer">
-          &nbsp;Adobe Summit&nbsp;
-        </Link>
-        Sneaks 2026, where I showcased my research #ProjectTestKitchen in front of thousands of attendees and alongside American comedian and actor
-        <Link href="https://en.wikipedia.org/wiki/Iliza_Shlesinger" target="_blank" rel="noopener noreferrer">
-          &nbsp;Iliza Shlesinger
-        </Link>
-        .
-        <br/>
-        <br/>
-        <iframe
-        width="100%"
-        height="315"
-        src="https://www.youtube.com/embed/HPjwlZ6knHg?si=rLtcegIKdSDnPPVC"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        style={{ maxWidth: '600px', display: 'block', margin: '0 auto' }}
-        ></iframe>
-        <br/>
-        Watch a pixel animation I made about my MMath research on using interactive visualizations to explain machine learning adversarial attacks.
-        <br/>
-        <br/>
-        <iframe
-        width="100%"
-        height="315"
-        src="https://www.youtube.com/embed/ozoFFEIhW4U?si=RkzxvUhTS2XdgQ8O"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        style={{ maxWidth: '600px', display: 'block', margin: '0 auto' }}
-        ></iframe>
+        <ContactLinks />
       </Section>
 
     </Container>

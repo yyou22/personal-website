@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "keywords": [],
-  "author": "Yuzhe Y",
+  "author": "Yuzhe You",
   "license": "MIT",
   "dependencies": {
     "@chakra-ui/icons": "^1.1.7",
