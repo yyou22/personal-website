@@ -71,6 +71,20 @@ const SectionButton = ({ href, children }) => (
   </NextLink>
 )
 
+// On mobile the amount drops to its own line so award names never split
+const AwardAmount = ({ children }) => (
+  <Text
+    as="span"
+    display={{ base: 'block', sm: 'inline' }}
+    fontSize={{ base: '12px', sm: 'inherit' }}
+    color={useColorModeValue('gray.600', 'gray.400')}
+    whiteSpace="nowrap"
+  >
+    <Box as="span" display={{ base: 'none', sm: 'inline' }}>· </Box>
+    {children}
+  </Text>
+)
+
 const Roles = ({ roles }) => {
   const accent = useColorModeValue('teal.600', 'teal.300')
   return (
@@ -102,7 +116,12 @@ const Roles = ({ roles }) => {
           whiteSpace={{ base: 'normal', sm: 'nowrap' }}
         >
           <Icon as={icon} boxSize={{ base: '17px', sm: '15px' }} flexShrink={0} color={accent} aria-hidden="true" />
-          {label}
+          {/* On mobile, break before the last word so every role reads as two lines */}
+          <span>
+            {label.slice(0, label.lastIndexOf(' '))}
+            <Box as="br" display={{ sm: 'none' }} />{' '}
+            {label.slice(label.lastIndexOf(' ') + 1)}
+          </span>
         </Box>
       ))}
     </Box>
@@ -135,19 +154,16 @@ const Home = () => (
               { icon: RiFlightTakeoffLine, label: 'Student Pilot' }
             ]}
           />
-          <Box display="grid" gridTemplateColumns="14px minmax(0, 1fr)" alignItems="start" columnGap={2} mt={3} fontSize="13px" lineHeight={1.6} color={useColorModeValue('gray.700', 'gray.200')}>
+          <Box display="grid" gridTemplateColumns="14px minmax(0, 1fr)" alignItems="start" columnGap={2} rowGap={{ base: 1.5, sm: 0 }} mt={3} fontSize="13px" lineHeight={1.6} color={useColorModeValue('gray.700', 'gray.200')}>
             <Icon as={FaAward} boxSize="14px" mt="3px" flexShrink={0} color={useColorModeValue('orange.700', '#FFB347')} aria-hidden="true" />
               <Text title="Current holder of the NSERC Canada Graduate Scholarship – Doctoral">
                 <Text as="span" fontWeight="medium">NSERC CGS-D Scholar</Text>{' '}
-                <Text as="span" color={useColorModeValue('gray.600', 'gray.400')} whiteSpace="nowrap">· $120k CAD</Text>
+                <AwardAmount>$120k CAD</AwardAmount>
               </Text>
               <Icon as={FaAward} boxSize="14px" mt="3px" flexShrink={0} color={useColorModeValue('orange.700', '#FFB347')} aria-hidden="true" />
               <Text title="Current holder of the UWaterloo President’s Graduate Scholarship">
-                <Text as="span" fontWeight="medium">UWaterloo President&apos;s</Text>{' '}
-                <Text as="span" whiteSpace="nowrap">
-                  <Text as="span" fontWeight="medium">Graduate Scholar</Text>{' '}
-                  <Text as="span" color={useColorModeValue('gray.600', 'gray.400')}>· $10k CAD</Text>
-                </Text>
+                <Text as="span" fontWeight="medium" whiteSpace="nowrap">UWaterloo President&apos;s Graduate Scholar</Text>{' '}
+                <AwardAmount>$10k CAD</AwardAmount>
               </Text>
           </Box>
         </Box>

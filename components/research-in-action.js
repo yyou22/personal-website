@@ -17,7 +17,8 @@ const ResearchVideo = ({ label, title, videoId, children }) => (
     overflow="hidden"
     borderRadius="xl"
     borderWidth="1px"
-    borderColor={useColorModeValue('blackAlpha.200', 'whiteAlpha.200')}
+    borderColor={useColorModeValue('blackAlpha.200', 'whiteAlpha.300')}
+    borderTopColor={useColorModeValue('gray.400', 'gray.500')}
     bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.50')}
   >
     <AspectRatio ratio={16 / 9} flexShrink={0}>
