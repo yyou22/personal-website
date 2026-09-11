@@ -23,7 +23,7 @@ import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
 import ExperienceGrid from '../components/experience-grid'
 // import { BioSection, BioYear } from '../components/bio' // Archived news below.
-import { SelectedStory } from '../components/press-page'
+import { FeaturedCard } from '../components/press-page'
 import { pressArticles } from '../lib/press'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
@@ -44,8 +44,13 @@ import thumbGradflix2 from '../public/images/works/gradflix/gradflix_thumbnail.p
 
 const recentNews = pressArticles.filter(article =>
   article.href?.endsWith('/adobe-research-intern-follows-her-mentors-footsteps/') ||
+  article.href?.includes('watch?v=WIrwwJNthxc') ||
   article.href?.endsWith('/yuzhe-you-wins-best-student-paper-award-gi-2025-novel')
 )
+const recentNewsSummaries = {
+  'Adobe Research': 'My internship, mentorship, and journey to Adobe Summit Sneaks.',
+  'Adobe for Business': 'A behind-the-scenes interview on Project Test Kitchen.'
+}
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -379,18 +384,17 @@ const Home = () => (
         </Heading>
         <Box
           display="grid"
-          gridTemplateColumns={{ base: 'minmax(0, 1fr)', md: 'repeat(2, minmax(0, 1fr))' }}
+          gridTemplateColumns={{ base: 'minmax(0, 1fr)', md: 'repeat(3, minmax(0, 1fr))' }}
           gap={3}
           overflowWrap="anywhere"
         >
           {recentNews.map(article => (
-            <SelectedStory
+            <FeaturedCard
               key={article.href}
               article={article}
-              compact
-              summary={article.publisher === 'Adobe Research'
-                ? 'My internship, mentorship, and journey to Adobe Summit Sneaks.'
-                : 'Recognized for my cybersecurity visualization research.'}
+              imageRatio={{ base: '16 / 9', md: '4 / 3' }}
+              summary={recentNewsSummaries[article.publisher] ||
+                'Recognized for my cybersecurity visualization research.'}
             />
           ))}
         </Box>

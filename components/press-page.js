@@ -91,7 +91,7 @@ const CoverageCue = ({ article, color }) => {
   )
 }
 
-const FeaturedCard = ({ article, lead = false }) => {
+export const FeaturedCard = ({ article, lead = false, fillImage = false, summary = article.snippet, imageRatio = '4 / 3' }) => {
   const muted = useColorModeValue('gray.600', 'gray.400')
   const titleColor = useColorModeValue('#426b89', '#9bbbd4')
   const accent = useColorModeValue('#406b7c', '#709faf')
@@ -121,7 +121,8 @@ const FeaturedCard = ({ article, lead = false }) => {
         flexShrink={0}
         w="full"
         bg={imageBackground}
-        sx={{ aspectRatio: '4 / 3' }}
+        sx={{ aspectRatio: imageRatio }}
+        flexGrow={fillImage ? 1 : 0}
       >
         <Image
           src={article.image}
@@ -135,7 +136,7 @@ const FeaturedCard = ({ article, lead = false }) => {
           fallback={<Box position="absolute" inset={0} bg={imageBackground} />}
         />
       </Box>
-      <Box display="flex" flexDirection="column" flex={1} minW={0} p={{ base: 4, md: lead ? 6 : 4 }}>
+      <Box display="flex" flexDirection="column" flex={fillImage ? 'none' : 1} minW={0} p={{ base: 4, md: lead ? 6 : 4 }}>
         <SourceLine article={article} showDesk={false} />
         <Heading as="h4" fontSize={lead ? { base: 'md', md: 'xl' } : 'md'} lineHeight={1.4} mt={3}>
           <LinkOverlay
@@ -145,10 +146,10 @@ const FeaturedCard = ({ article, lead = false }) => {
             _groupHover={{ textDecoration: 'underline' }}
             _focusVisible={{ outline: '2px solid', outlineColor: accent, outlineOffset: '4px' }}
           >
-            {article.title}
+            {article.title.replace(` | ${article.publisher}`, '')}
           </LinkOverlay>
         </Heading>
-        <Text fontSize="sm" lineHeight={1.6} color={muted} mt={2}>{article.snippet}</Text>
+        <Text fontSize="sm" lineHeight={1.6} color={muted} mt={2}>{summary}</Text>
         <Box mt="auto">
           <CoverageCue article={article} color={accent} />
         </Box>
@@ -333,7 +334,7 @@ const PressPage = () => {
         <Box as="section" aria-labelledby="featured-coverage">
           <Heading as="h3" id="featured-coverage" fontSize="sm" fontWeight="semibold" mb={4}>Featured coverage</Heading>
           <Box display="grid" gridTemplateColumns={{ base: 'minmax(0, 1fr)', sm: 'repeat(2, minmax(0, 1fr))', md: 'repeat(3, minmax(0, 1fr))' }} gap={4}>
-            {selectedStories.map((article, index) => <FeaturedCard article={article} key={article.title} lead={index === 0} />)}
+            {selectedStories.map((article, index) => <FeaturedCard article={article} key={article.title} lead={index === 0} fillImage={index === 1} />)}
           </Box>
         </Box>
         <CoverageGroup
