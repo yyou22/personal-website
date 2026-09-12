@@ -21,7 +21,7 @@ export const DogContainer = forwardRef(({ children }, ref) => {
       ref={ref}
       className="voxel-dog"
       m="auto"
-      mt={{ base: 0, md: '-120px' }}
+      mt={{ base: '-40px', md: '-120px' }}
       mb={{
         base: pathname === '/' ? 'calc(20px - 16vw)' : 'calc(32px - 16vw)',
         md: '-200px'
