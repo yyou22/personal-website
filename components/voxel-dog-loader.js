@@ -23,7 +23,7 @@ export const DogContainer = forwardRef(({ children }, ref) => {
       m="auto"
       mt={{ base: 0, md: '-120px' }}
       mb={{
-        base: pathname === '/' ? 'calc(12px - 20vw)' : 'calc(24px - 20vw)',
+        base: pathname === '/' ? 'calc(20px - 16vw)' : 'calc(32px - 16vw)',
         md: '-200px'
       }}
       w={{ base: '100vw', md: 640 }}
