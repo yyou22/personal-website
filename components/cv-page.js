@@ -1,4 +1,5 @@
 import NextLink from 'next/link'
+import PreviewImage from './preview-image'
 import {
   Box,
   Container,
@@ -348,8 +349,10 @@ const CV = () => {
             as="nav"
             aria-label="CV sections"
             display="flex"
-            flexWrap="wrap"
-            gap={1}
+            flexWrap="nowrap"
+            overflowX="auto"
+            gap={{ base: 1, md: 0 }}
+            sx={{ scrollbarWidth: 'thin' }}
             mt={5}
             py={2}
             borderY="1px solid"
@@ -362,7 +365,9 @@ const CV = () => {
                 fontSize="sm"
                 fontWeight="medium"
                 color={muted}
-                px={2.5}
+                px={{ base: 2, md: 1.5 }}
+                flexShrink={0}
+                whiteSpace="nowrap"
                 py={2.5}
                 borderRadius="md"
                 _hover={{ color: accent, bg: navHover, textDecoration: 'none' }}
@@ -452,10 +457,11 @@ const CV = () => {
                     alignItems="start"
                   >
                     <Box w="144px" h="80px" borderRadius="md" overflow="hidden">
-                      <Image
+                      <PreviewImage
                         src={paper.image}
                         alt=""
                         loading="lazy"
+                        sizes="144px"
                         w="full"
                         h="full"
                         objectFit="cover"

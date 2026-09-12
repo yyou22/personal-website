@@ -1,3 +1,4 @@
+import YouTubePreview from '../../components/youtube-preview'
 import { Container, Badge, Link, ListItem, UnorderedList, Box, VStack, Text, useColorModeValue, Wrap, WrapItem, Tag } from '@chakra-ui/react'
 import { Title, WorkImage,Meta } from '../../components/work'
 import P from '../../components/paragraph'
@@ -55,24 +56,8 @@ const Work = () => {
       </P>*/}
       <WorkImage src="/images/works/coprompt4.jpeg" alt="coprompt" />
       <WorkImage src="/images/works/coprompt1.png" alt="coprompt" />
-      <iframe
-        width="100%"
-        height="315"
-        src="https://www.youtube.com/embed/JGnXe_geyY0?si=GSnYmJMhmGsYzT95"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        style={{ maxWidth: '600px' }}
-      ></iframe>
-      <iframe
-        width="100%"
-        height="315"
-        src="https://www.youtube.com/embed/BiToRaCrnHg?si=QH4xBRllEmPblA-0"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        style={{ maxWidth: '600px' }}
-      ></iframe>
+      <YouTubePreview videoId="JGnXe_geyY0" title="CoPrompt demonstration" maxW="600px" />
+      <YouTubePreview videoId="BiToRaCrnHg" title="CoPrompt presentation" maxW="600px" />
       <Box my={4} p={3} borderWidth="1px" borderColor={borderColor} borderRadius="md">
         <Meta>Links</Meta>
         <VStack align="stretch" spacing={2} mt={2}>

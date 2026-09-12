@@ -1,3 +1,4 @@
+import YouTubePreview from '../../components/youtube-preview'
 import { Container, Badge, ListItem, UnorderedList, Link, Box, VStack, Text, useColorModeValue, Wrap, WrapItem, Tag } from '@chakra-ui/react'
 import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
@@ -53,15 +54,7 @@ const Work = () => {
       <WorkImage src="/images/works/gradflix/gradflix.gif" alt="GRADflix" />
       <WorkImage src="/images/works/gradflix/gradflix2.gif" alt="GRADflix" />
       <WorkImage src="/images/works/gradflix/gradflix4.png" alt="GRADflix" />
-      <iframe
-        width="100%"
-        height="315"
-        src="https://www.youtube.com/embed/ozoFFEIhW4U?si=RkzxvUhTS2XdgQ8O"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        style={{ maxWidth: '600px' }}
-      ></iframe>
+      <YouTubePreview videoId="ozoFFEIhW4U" title="My MMath Research" maxW="600px" />
       <Box my={4} p={3} borderWidth="1px" borderColor={borderColor} borderRadius="md">
         <Meta>Links</Meta>
         <VStack align="stretch" spacing={2} mt={2}>

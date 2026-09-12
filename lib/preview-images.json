@@ -1,0 +1,812 @@
+{
+  "https://i.ytimg.com/vi/HPjwlZ6knHg/hqdefault.jpg": {
+    "width": 480,
+    "height": 360,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/cb785342c3e64cbd-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/images/previews/cb785342c3e64cbd-480.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAQCdASoMAAkAAwBSJYgCw7EPDZKaIEAA/vRePQ9I2ec0O3o+01OrhVW7cbmi6MEZh99f4/wBDA87ZNMbM/YCuTEJfHIXpdDwo2IlCmhPrOoUi2AAAA=="
+  },
+  "https://i.ytimg.com/vi/ozoFFEIhW4U/hqdefault.jpg": {
+    "width": 480,
+    "height": 360,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/f75a6188e2ddb021-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/images/previews/f75a6188e2ddb021-480.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoMAAkAAwBSJYwC7AEOIdfhXwAA/qN/J3X9OAND1i5OsXQRUg+mpxuOoCISVr9dvs9mX0Mc/2Nnd1R4xETAAA=="
+  },
+  "https://i.ytimg.com/vi/h5JMTz7PoKQ/hqdefault.jpg": {
+    "width": 480,
+    "height": 360,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/7056184da14156ab-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/images/previews/7056184da14156ab-480.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACwAQCdASoMAAkAAwBSJZwAAuaZ/62wAP5Pg6nnVzQIcCKyEphfidn6y8Th+J7+LiFkTCj8NGeeggoAAAA="
+  },
+  "https://i.ytimg.com/vi/yDacHXX2EZw/hqdefault.jpg": {
+    "width": 480,
+    "height": 360,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/700c8d2b3a1be5da-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/images/previews/700c8d2b3a1be5da-480.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQAgCdASoMAAkAAwBSJQBYdiHhhfdYvpQAAPw7udKwaYKUQxTpic+6jzv7itLy5rAKp4ymsPwmPJCJ3+vhHXvr7BQ9nngKIMxZZee1pSZ504AA"
+  },
+  "https://i.ytimg.com/vi/UUkftG2KH5o/hqdefault.jpg": {
+    "width": 480,
+    "height": 360,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/600f90dca79a87c1-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/images/previews/600f90dca79a87c1-480.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoMAAkAAwBSJaQAAuc4iP7AAADMo96/RjOj9Unh+79zOw5STTzRVyXtAvh10tkO/nuDw90JHrtr3Q5x9D+zIAAA"
+  },
+  "https://i.ytimg.com/vi/JGnXe_geyY0/hqdefault.jpg": {
+    "width": 480,
+    "height": 360,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/af30548f43905b94-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/images/previews/af30548f43905b94-480.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoMAAkAAwBSJaQAAp2w5f84AADN8/ymB4Zrx4u6+nZCH5jTHYpVukPTM4bJ1P+XwypIoGnacyXjhjluD3sgAAAA"
+  },
+  "https://i.ytimg.com/vi/BiToRaCrnHg/hqdefault.jpg": {
+    "width": 480,
+    "height": 360,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/9dd309b493dbc4a1-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/images/previews/9dd309b493dbc4a1-480.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADQAQCdASoMAAkAAwBSJaQAAudb/KgEAAD+4Av53+X/dUhRmFn7JnPP+yP0AAAA"
+  },
+  "/images/inside_adobe.png": {
+    "width": 1724,
+    "height": 1152,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/a29f3221aa4b4524-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/a29f3221aa4b4524-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/a29f3221aa4b4524-960.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAQCdASoMAAgAAwBSJbACdADW1uSAAPYcAuUnB9NgyZ7WVfLGruUA9xuHzDc/cltMFlDNPmRI73UOC2fXcPnH/w84l3vDSkOr0/AJgXuNT+WGfhzWie1C8KoSAAAA"
+  },
+  "/images/adobe-for-business-interview.jpg": {
+    "width": 3220,
+    "height": 1804,
+    "sourceUrl": "/images/adobe-for-business-interview.jpg",
+    "preset": "detail-v2",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/b05a14388e0e82f3-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/b05a14388e0e82f3-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/b05a14388e0e82f3-960.webp"
+      },
+      {
+        "width": 1280,
+        "src": "/images/previews/b05a14388e0e82f3-1280.webp"
+      },
+      {
+        "width": 1920,
+        "src": "/images/previews/b05a14388e0e82f3-1920.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQAgCdASoMAAcAAwBSJYwCdAEWPX+VsZkAAP7qTAdSMQZ+34JPqBXoZqM/yr13CkJNgx2cH2ew4p9XkPBpTovmoIpH8CtX7V+1PS0t4gAAAA=="
+  },
+  "https://research.adobe.com/wp-content/uploads/2026/08/Tongyu-Yuzhe-Blog-Version-1024x768-1.png": {
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/49cd13ae8bdd3296-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/49cd13ae8bdd3296-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/49cd13ae8bdd3296-960.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAQAgCdASoMAAkAAwBSJYwC7AYtBvtvEk9AAPlS6E2PiOFpyXRZoun/TNKU0YEZB2QLzP/coxMD4QyfJ21NTuWbcaLb6FvkkxPycZhtUFWXusZhMj+Z5XNVUIqdkrdFHAA="
+  },
+  "https://cs.uwaterloo.ca/sites/default/files/uploads/resize/backstage-of-sneaks-1000x750_1.jpeg": {
+    "width": 1000,
+    "height": 750,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/4f792524ea6b2dc9-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/4f792524ea6b2dc9-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/4f792524ea6b2dc9-960.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAQCdASoMAAkAAwBSJQBOgCKGqSdpMAD+76NLvJZzURHK4pfE+iTMCldOMdHOuC1+UMcAJkPyPReCEfcCyLPFGJ76yBKQjC2EKzKcBAA="
+  },
+  "https://research.adobe.com/wp-content/uploads/2026/05/Summit-TN-684-x-480-px.png": {
+    "width": 684,
+    "height": 480,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/361299384253d7a8-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/361299384253d7a8-640.webp"
+      },
+      {
+        "width": 684,
+        "src": "/images/previews/361299384253d7a8-684.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAQCdASoMAAgAAwBSJYwCdADO8hZiEAD+6EpfgZebWBebGk3dkd5bS6rsfPbN4FjsXJz6Os/iZoKllnH+lRmBKQfuSPOYMYxW+K311c9ppOYtgAA="
+  },
+  "https://uwaterloo.ca/computer-science/sites/default/files/uploads/resize/yuzhe-sneaks-photo-1000x666_1.png": {
+    "width": 1000,
+    "height": 666,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/67f7dfdfb5886bc5-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/67f7dfdfb5886bc5-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/67f7dfdfb5886bc5-960.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQAgCdASoMAAgAAwBSJbACdAYsPa0c0zvAAP7SgEfU97sHS4z031KVJiphmPrWdVPO3nhXYdaKRGfMXHY90H6bR+KMbVbREM2DWzFBSrqMiK+/gqig1Mv/FnWz/1d8FdGAAA=="
+  },
+  "https://substackcdn.com/image/fetch/$s_!x1Nj!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F45d75eac-991b-4450-a320-50eedc5b34de_960x540.jpeg": {
+    "width": 960,
+    "height": 540,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/a32ea7a06b40203d-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/a32ea7a06b40203d-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/a32ea7a06b40203d-960.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADwAQCdASoMAAcAAwBSJaACdAELZRRC8wAA/tz85EUqRDf5+BUjR2STB+PRcDIXNPTFc1lCOOIWtmY/K46lJqe3AEPZk5Zlwa6p6OOzh4R2AA=="
+  },
+  "https://uwaterloo.ca/math-alumni-newsletter/sites/default/files/styles/uw_is_media_x_large/public/uploads/images/picture.jpeg?itok=PmZlLhSj": {
+    "width": 1920,
+    "height": 1130,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/c2d809450b44bcc8-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/c2d809450b44bcc8-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/c2d809450b44bcc8-960.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAAAQAgCdASoMAAcAAwBSJYwCdAD7FobhfkwAAP5tKdr3h0vj009wJQAjV/25AkRv6sQxcchGvMYeGUI6/ZLd0v9s2AA="
+  },
+  "https://uwaterloo.ca/computer-science/sites/default/files/uploads/images/yuzhe_headshot-resized.png": {
+    "width": 333,
+    "height": 500,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/a85e459130f3992a-320.webp"
+      },
+      {
+        "width": 333,
+        "src": "/images/previews/a85e459130f3992a-333.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAwBACdASoMABIAPt1apkyopSOiMAgBEBuJQBOmUAS2QrUN1hnKZ0/k6AAA/ryZ9i6ubCarlsISKt5v9a0TMx6KQnVAlpaPpPK+0UstjMMEZI4akHIkPCI+wuG+9D1Xx9SsKdnfL0MC7kgOUEVuZsQRWEHf6di9UVYNk1v1OrhyOAvgsyjCwpSQzkJwAA=="
+  },
+  "https://uwaterloo.ca/computer-science/sites/default/files/uploads/images/iwd-2026-banner.jpg": {
+    "width": 2000,
+    "height": 800,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/0884597200e02532-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/0884597200e02532-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/0884597200e02532-960.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAQCdASoMAAUAAwBSJYwCdADZlN2AAP55FdF9qkKT9EPwyMBtCuh9bwePiIDG/NWg6I+wrT/wfu2/mftXbzjEQc2DsAAA"
+  },
+  "https://uwaterloo.ca/current-graduate-students/sites/default/files/uploads/images/yuzhe_you_0.png": {
+    "width": 220,
+    "height": 220,
+    "variants": [
+      {
+        "width": 220,
+        "src": "/images/previews/4b0ddd528693e958-220.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAQAgCdASoMAAwAAwBSJQBOgB9i0k3U/tzAAPkFmGjhGptuWLN669BBQxvw7DhW/GE3LysXwqnKep6AvtjJKCMQwtEkgR9q0lY6AyYsVoYMfQUajYkFWiFmtH0TVNzwhsy2o+w9g8AAAA=="
+  },
+  "https://cs.uwaterloo.ca/sites/default/files/uploads/images/tensor-squad.jpeg": {
+    "width": 1250,
+    "height": 776,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/420f66077ddb8c45-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/420f66077ddb8c45-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/420f66077ddb8c45-960.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAQCdASoMAAcAAwBSJZwAAubhk2awAPY5tz1OIgz9p/vf+47t6C23ntHBHwYsEPfyg01gRW8rqIPfPIltn7RkjqlIAA=="
+  },
+  "https://uwaterloo.ca/cybersecurity-privacy-institute/sites/default/files/uploads/images/yuzhe-you-jarvis-tse-advex_cpi_page-0001.jpg": {
+    "width": 7021,
+    "height": 4966,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/fd5b6b041000f77e-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/fd5b6b041000f77e-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/fd5b6b041000f77e-960.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQAgCdASoMAAgAAwBSJQBOgB6uWw7t7/gAAP6U8ekpMz9T07z5lWoNqwpxQ0x8VMtWCzGvj/DhwvQVyJwjk1myhAp/wAAA"
+  },
+  "https://www.livemint.com/lm-img/img/2026/05/01/600x338/Umbrella_CX_Enterprise_1777620512330_1777620521366.jpg": {
+    "width": 600,
+    "height": 338,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/f71d8f4b6f6e872f-320.webp"
+      },
+      {
+        "width": 600,
+        "src": "/images/previews/f71d8f4b6f6e872f-600.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQAgCdASoMAAcAAwBSJbACdAYuvazv9ReAAP62H6W0Vcm+ev3yhi2QLJdUX743fmSl+V4zSbvhvdm5FOuTR/RY+rleo7j+Wxt9O3MIrsmtLFXtv9F5ZvRD2PLoH/uc3v8prf+66efH8AAA"
+  },
+  "https://i.ytimg.com/vi/7Z-Dx6RfVLA/hqdefault.jpg": {
+    "width": 480,
+    "height": 360,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/c44ed5b68a12303d-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/images/previews/c44ed5b68a12303d-480.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABwAgCdASoMAAkAAwBSJZQCdAaaZmg5Kq4rwn0AAPwif+4A/PMhTmvT6tEuZjmIC+11tYdL1CgR+cMrBcYPZGlnYFvgv3VaEfRqqkAD7TdHr2dWAgBDXoAfrmyAAA=="
+  },
+  "https://i.ytimg.com/vi/8LuMmz3ojhM/hqdefault.jpg": {
+    "width": 480,
+    "height": 360,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/7996cde1409823d5-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/images/previews/7996cde1409823d5-480.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoMAAkAAwBSJYwC7ADdr0jSCoAA/vlPA33miVyG8fN/uJXINUi5CBIMmTmoeOhfXCrIy2tgu6yAEGvla0BX1OFdRzz56fgA"
+  },
+  "https://uwaterloo.ca/computer-science/sites/default/files/uploads/images/yuzhe-headshot.png": {
+    "width": 1500,
+    "height": 2250,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/f161161f241bf0a9-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/f161161f241bf0a9-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/f161161f241bf0a9-960.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAQBACdASoMABIAPt1apkyopSOiMAgBEBuJYwCdMoAlwBMx1mpurDmD6AD837DEbBVa1OueMjf6+7luwPYW4Sb5A1tZaV8fbqxerXQz3T6jvhnCzO0tvHwkd/t5J7N3xsbPaW5CXhIvpeYtReAgFBx08u7j+30PAra4kuGjAAA="
+  },
+  "https://www.varindia.com/storage/news/2026/04/THaJc3CFS2SO45fEjioNhLjNjB1UC6fK0UPTvAVe.webp": {
+    "width": 500,
+    "height": 500,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/39f31c9482e61632-320.webp"
+      },
+      {
+        "width": 500,
+        "src": "/images/previews/39f31c9482e61632-500.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABwAgCdASoMAAwAAwBSJbACdLoAEJYXm2ce+jgIAP4Z/EwEUxNGDt5bgrbhIKoLyYyUcSzT8ybis08p24LZcc/IVrGlAp8c+eUG02kWlxLXdG4xyXIXvOqjxvD9dv/xMM5f6YpAh/O0QKTe/zSWU8QAAAA="
+  },
+  "https://www.retailbiz.com.au/wp-content/uploads/2026/04/RB-Adobe_Turning-guesswork-into-predictions_Adobe-Sneaks-2026-Eric-Matisoff-Iliza-Shlesinger.jpg": {
+    "width": 1600,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/b3f88f9ac84699f5-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/b3f88f9ac84699f5-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/b3f88f9ac84699f5-960.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAQCdASoMAAgAAwBSJYgCw7YrnasFLSgA/k6H8bbb2Whv1YBRuCO7VV9q2VmmzrYVQnpnY4bteJx/BN9Ihd29jjKPGVvp8UgU+aEAS0Tk8NYcDwr3fuySMAAAAA=="
+  },
+  "https://www.bandt.com.au/information/uploads/2026/04/Screenshot-2026-04-23-at-9.06.02%E2%80%AFAM.png": {
+    "width": 2048,
+    "height": 1066,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/92f7be4d96b4e804-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/92f7be4d96b4e804-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/92f7be4d96b4e804-960.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAQCdASoMAAYAAwBSJQBOgBuhk8MAAPk37XTHfbHI+chmd0xVZf+AxslA6kr0mkoo0cPwla3qsuOJXMCcin8fXhMFy2UXAAA="
+  },
+  "https://img-cdn.publive.online/fit-in/1280x960/filters:format(webp)/socialsamosa/media/media_files/2026/04/23/19-7-2026-04-23-15-53-04.jpg": {
+    "width": 1280,
+    "height": 720,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/129ac9432f938d8d-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/129ac9432f938d8d-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/129ac9432f938d8d-960.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAQCdASoMAAcAAwBSJaACdADcEZK9gAD+9fCWsr1KUF/iRY70m/LZ15VjTtXYDvtvhio1LvteZ0TPAJj5p8zUQ07G2nNzlwdQ7EAA"
+  },
+  "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA21B9FE.img?w=1012&h=569&m=6": {
+    "width": 1012,
+    "height": 569,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/789d2d8a401660c2-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/789d2d8a401660c2-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/789d2d8a401660c2-960.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAQCdASoMAAcAAwBSJbACdAEfbIjnsAD+9KEbwCYFE8wybeeFsvWm710So8CwOwHI/GLLHHaDOcNdGq/xFptsv9Lf8qsZSZmGNfSdOo6EQW0AAoNuNgAA"
+  },
+  "https://asset.watch.impress.co.jp/img/clw/docs/2103/890/026.jpg": {
+    "width": 1200,
+    "height": 900,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/8cfc027bc37495c0-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/8cfc027bc37495c0-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/8cfc027bc37495c0-960.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAgCdASoMAAkAAwBSJZACdADhil8SjeQAAP7tJhNnHQD/9lc38OXtAIv+TZu7bqmMYvWgGws7zwBkeWjT4gNx/qyzSKaT7wwMUGc7Qcm2HG6uLbEiNNMAAAA="
+  },
+  "/images/publications/community-library.png": {
+    "width": 826,
+    "height": 1162,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/da18a506983a86f8-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/da18a506983a86f8-640.webp"
+      },
+      {
+        "width": 826,
+        "src": "/images/previews/da18a506983a86f8-826.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAADwAwCdASoMABEAPt1apkyopSOiMAgBEBuJZwAFEALdzt2SKGZC0sWYAP7np2YdWaqlSjg+z1xUlNOXymybiuZkYhf5rX067o3hSsTVYlYUH2UBLBRn31DG2BvRqzxHFlJwSUzVSJ6UJiDgAAA="
+  },
+  "/images/works/test-kitchen/workflow.png": {
+    "width": 1705,
+    "height": 909,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/25b35fb9b45dca79-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/25b35fb9b45dca79-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/25b35fb9b45dca79-960.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACwAQCdASoMAAYAAwBSJaQAAlv/MwsAAP72Gog5XS3SvgFbnj6k66ovKlRdZYHDFhHnjQ2lSW4fsM3sHAA="
+  },
+  "/images/publications/traffic-forecasting.png": {
+    "width": 948,
+    "height": 356,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/d28d60b06b0e6582-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/d28d60b06b0e6582-640.webp"
+      },
+      {
+        "width": 948,
+        "src": "/images/previews/d28d60b06b0e6582-948.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAADQAQCdASoMAAUAAwBSJaQAAxZhq37yMAD+91M/rT0rhppwcWAAAA=="
+  },
+  "/images/publications/macedon.png": {
+    "width": 1010,
+    "height": 522,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/d3e033d563abd8f6-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/d3e033d563abd8f6-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/d3e033d563abd8f6-960.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoMAAYAAwBSJaQAA3AA/vYDdRAAAA=="
+  },
+  "/images/works/coprompt4.jpeg": {
+    "width": 1920,
+    "height": 1080,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/2d001022511ce4a9-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/2d001022511ce4a9-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/2d001022511ce4a9-960.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACQAQCdASoMAAcAAwBSJaQAAvekt5AA/vdaeITQRrgulIjsdxVK353gbuOzfq2kj1xwQAAA"
+  },
+  "/images/works/traffic-flow/thumbnail-intersection-hd.webp": {
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/67d70268ec4c9dc0-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/67d70268ec4c9dc0-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/67d70268ec4c9dc0-960.webp"
+      },
+      {
+        "width": 1672,
+        "src": "/images/previews/67d70268ec4c9dc0-1672.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADQAQCdASoMAAcAAwBSJZQAAlnG7lw8AADNpdsw12m5ZT8wwV1vk9s7aDnBQUhEN7tJ0kn5ARg8YMG/pAAQ8AAA"
+  },
+  "https://i.ytimg.com/vi/HPjwlZ6knHg/maxresdefault.jpg": {
+    "width": 1280,
+    "height": 720,
+    "sourceUrl": "https://i.ytimg.com/vi/HPjwlZ6knHg/maxresdefault.jpg",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/1c16886efd1596a9-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/1c16886efd1596a9-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/1c16886efd1596a9-960.webp"
+      },
+      {
+        "width": 1280,
+        "src": "/images/previews/1c16886efd1596a9-1280.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQAgCdASoMAAcAAwBSJbACdAYsPlCL9AwAAP7w37EbyE8A+1rAmcYHxA6V5uv6Bf0ZsS8PtS5H2cMfvDT+4JDY8iUTKWwEmh/dozTtU08AAA=="
+  },
+  "https://i.ytimg.com/vi/ozoFFEIhW4U/maxresdefault.jpg": {
+    "width": 1280,
+    "height": 720,
+    "sourceUrl": "https://i.ytimg.com/vi/ozoFFEIhW4U/maxresdefault.jpg",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/ef417052896001e6-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/ef417052896001e6-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/ef417052896001e6-960.webp"
+      },
+      {
+        "width": 1280,
+        "src": "/images/previews/ef417052896001e6-1280.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAwAgCdASoMAAcAAwBSJYwCdAECpd0Y3B/0AADb3g3bHbZ6moRypVi+nAN6gMXy/6sbVW6LD6h1pCWL8ghQAA=="
+  },
+  "https://i.ytimg.com/vi/h5JMTz7PoKQ/maxresdefault.jpg": {
+    "width": 1280,
+    "height": 720,
+    "sourceUrl": "https://i.ytimg.com/vi/h5JMTz7PoKQ/maxresdefault.jpg",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/4ebac50ba2869b64-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/4ebac50ba2869b64-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/4ebac50ba2869b64-960.webp"
+      },
+      {
+        "width": 1280,
+        "src": "/images/previews/4ebac50ba2869b64-1280.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACwAQCdASoMAAcAAwBSJZQAAuaawBMwAP4L2BM56/FCPmA3GIXfUacfI5cbLvjI66ShrA2kpv7iN4oAAAA="
+  },
+  "https://i.ytimg.com/vi/UUkftG2KH5o/maxresdefault.jpg": {
+    "width": 1280,
+    "height": 720,
+    "sourceUrl": "https://i.ytimg.com/vi/UUkftG2KH5o/maxresdefault.jpg",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/66e0f64f7fad0ffd-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/66e0f64f7fad0ffd-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/66e0f64f7fad0ffd-960.webp"
+      },
+      {
+        "width": 1280,
+        "src": "/images/previews/66e0f64f7fad0ffd-1280.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACwAQCdASoMAAcAAwBSJaQAAsQ29a3gAP62x2GW/7uhesRJvbAX359ntl/3IdfQu9VOvN7BCCAhVGT0pyW5g+xgAAA="
+  },
+  "https://i.ytimg.com/vi/yDacHXX2EZw/maxresdefault.jpg": {
+    "width": 1280,
+    "height": 720,
+    "sourceUrl": "https://i.ytimg.com/vi/yDacHXX2EZw/maxresdefault.jpg",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/1e6b895a617f4062-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/1e6b895a617f4062-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/1e6b895a617f4062-960.webp"
+      },
+      {
+        "width": 1280,
+        "src": "/images/previews/1e6b895a617f4062-1280.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoMAAcAAwBSJaACdADhZZxukIAA/gvgw9Y7g0NQi4i6KWEIfrtZmdfVKv6aVrBZOE03NKNpotEJe4oU1iPsEQz6I17gAA=="
+  },
+  "https://i.ytimg.com/vi/JGnXe_geyY0/maxresdefault.jpg": {
+    "width": 1280,
+    "height": 720,
+    "sourceUrl": "https://i.ytimg.com/vi/JGnXe_geyY0/maxresdefault.jpg",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/66442ad0444f20b5-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/66442ad0444f20b5-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/66442ad0444f20b5-960.webp"
+      },
+      {
+        "width": 1280,
+        "src": "/images/previews/66442ad0444f20b5-1280.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADQAQCdASoMAAcAAwBSJZwAAvxVXfe/QAD+4j33Caz8/s8mw1dU+my+oqH2vP93r3tKdhxL2jMr6dZ4/likHgXT/a4AAA=="
+  },
+  "https://i.ytimg.com/vi/BiToRaCrnHg/maxresdefault.jpg": {
+    "width": 1280,
+    "height": 720,
+    "sourceUrl": "https://i.ytimg.com/vi/BiToRaCrnHg/maxresdefault.jpg",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/images/previews/33e0441f664a9f0a-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/images/previews/33e0441f664a9f0a-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/previews/33e0441f664a9f0a-960.webp"
+      },
+      {
+        "width": 1280,
+        "src": "/images/previews/33e0441f664a9f0a-1280.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoMAAcAAwBSJaQAA3AA/vZ8AAA="
+  }
+}

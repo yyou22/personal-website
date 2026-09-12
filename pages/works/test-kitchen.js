@@ -1,3 +1,4 @@
+import YouTubePreview from '../../components/youtube-preview'
 import {
   AspectRatio,
   Badge,
@@ -144,14 +145,7 @@ const Work = () => {
             borderRadius="lg"
             overflow="hidden"
           >
-            <iframe
-              src="https://www.youtube.com/embed/HPjwlZ6knHg"
-              title="Project Test Kitchen — Adobe Summit Sneaks 2026"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              style={{ border: 0 }}
-            />
+            <YouTubePreview videoId="HPjwlZ6knHg" title="Project Test Kitchen — Adobe Summit Sneaks 2026" maxW="600px" />
           </AspectRatio>
 
         </Box>

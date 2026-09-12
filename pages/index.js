@@ -281,7 +281,7 @@ const Home = () => (
 
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
-          Featured Works
+          Featured Projects
         </Heading>
       </Section>
 

@@ -1,5 +1,6 @@
 import NextLink from 'next/link'
 import Image from 'next/image'
+import PreviewImage from './preview-image'
 import {
   Box,
   Text,
@@ -88,7 +89,7 @@ export const GridItem = ({ children, href, title, thumbnail, blurPlaceholder }) 
           alt={title}
           className="grid-item-thumbnail"
           placeholder="blur"
-          blurDataURL={isGif(thumbnail) ? blurPlaceholder?.src : undefined}
+          blurDataURL={isGif(thumbnail) ? (blurPlaceholder?.blurDataURL || blurPlaceholder?.src) : undefined}
           loading="lazy"
           layout="intrinsic"
         />
@@ -104,7 +105,7 @@ export const GridItem = ({ children, href, title, thumbnail, blurPlaceholder }) 
 )
 
 // For works displayed directly inside the site
-export const WorkGridItem = ({ children, id, title, thumbnail, blurPlaceholder, thumbnailBrand, thumbnailObjectFit, thumbnailPosition, thumbnailDynamicRange }) => (
+export const WorkGridItem = ({ children, id, title, thumbnail, blurPlaceholder, thumbnailBrand, thumbnailObjectFit, thumbnailPosition, thumbnailDynamicRange, priority = false }) => (
   <Box w="100%" textAlign="left">
     <NextLink href={`/works/${id}`}>
     <WorkBox>
@@ -138,6 +139,9 @@ export const WorkGridItem = ({ children, id, title, thumbnail, blurPlaceholder, 
           </Box>
         )}
         <Box as="span" display="block" position="relative" flex={1} minH={0} sx={{ dynamicRangeLimit: thumbnailDynamicRange }}>
+        {typeof thumbnail === 'string' ? (
+          <PreviewImage src={thumbnail} alt={title} objectFit={thumbnailObjectFit || 'cover'} objectPosition={thumbnailPosition} priority={priority} sizes="(max-width: 480px) calc(100vw - 32px), (max-width: 768px) 50vw, 360px" />
+        ) : (
         <Image
           src={thumbnail}
           alt={title}
@@ -145,10 +149,14 @@ export const WorkGridItem = ({ children, id, title, thumbnail, blurPlaceholder, 
           objectFit={thumbnailObjectFit || (thumbnailBrand ? 'contain' : 'cover')}
           objectPosition={thumbnailPosition}
           className="grid-item-thumbnail"
+          sizes="(max-width: 480px) calc(100vw - 32px), (max-width: 768px) 50vw, 360px"
+          priority={priority}
+          lazyBoundary="600px"
           placeholder="blur"
-          blurDataURL={isGif(thumbnail) ? blurPlaceholder?.src : undefined}
-          loading="lazy"
+          blurDataURL={isGif(thumbnail) ? (blurPlaceholder?.blurDataURL || blurPlaceholder?.src) : undefined}
+          loading={priority ? undefined : 'lazy'}
         />
+        )}
         </Box>
         </Box>
         <LinkOverlay href={`/works/${id}`}>
@@ -182,7 +190,7 @@ export const WorkGridItemWithModal = ({
           alt={title}
           className="grid-item-thumbnail"
           placeholder="blur"
-          blurDataURL={isGif(thumbnail) ? blurPlaceholder?.src : undefined}
+          blurDataURL={isGif(thumbnail) ? (blurPlaceholder?.blurDataURL || blurPlaceholder?.src) : undefined}
         />
         <Text mt={2} fontSize={20}>
           {title}

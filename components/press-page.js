@@ -15,6 +15,7 @@ import { ExternalLinkIcon, LockIcon } from '@chakra-ui/icons'
 import { IoNewspaperOutline } from 'react-icons/io5'
 import Layout from './layouts/article'
 import { pressArticles } from '../lib/press'
+import PreviewImage from './preview-image'
 
 const sourceNames = {
   'Cheriton School of Computer Science, University of Waterloo': 'Waterloo Computer Science',
@@ -32,23 +33,18 @@ export const selectedStories = [
   pressArticles.find(article => article.href?.endsWith('/meet-gradflix-finalist-who-combined-art-and-programming'))
 ]
 
-const PressImage = ({ article, selected = false }) => {
+const PressImage = ({ article }) => {
   const background = useColorModeValue('blackAlpha.50', 'whiteAlpha.100')
-  const foreground = useColorModeValue('gray.500', 'gray.400')
 
   return (
     <AspectRatio ratio={4 / 3} w="full" bg={background} borderRadius="md" overflow="hidden">
-      <Image
+      <PreviewImage
         src={article.image}
+        unoptimized={article.preserveOriginalImage}
         alt=""
-        loading={selected ? 'eager' : 'lazy'}
+        sizes="(max-width: 480px) 40vw, 240px"
         objectFit="cover"
         objectPosition={article.title === 'Gamifying AI' ? 'center 70%' : 'center'}
-        fallback={
-          <Box display="flex" alignItems="center" justifyContent="center" bg={background} color={foreground}>
-            <Icon as={IoNewspaperOutline} boxSize={6} aria-hidden="true" />
-          </Box>
-        }
       />
     </AspectRatio>
   )
@@ -124,8 +120,9 @@ export const FeaturedCard = ({ article, lead = false, fillImage = false, summary
         sx={{ aspectRatio: imageRatio }}
         flexGrow={fillImage ? 1 : 0}
       >
-        <Image
+        <PreviewImage
           src={article.image}
+          unoptimized={article.preserveOriginalImage}
           alt=""
           position="absolute"
           inset={0}
@@ -133,7 +130,8 @@ export const FeaturedCard = ({ article, lead = false, fillImage = false, summary
           h="full"
           objectFit="cover"
           objectPosition={article.featuredImagePosition || 'center'}
-          fallback={<Box position="absolute" inset={0} bg={imageBackground} />}
+          sizes={fillImage ? '(max-width: 480px) 100vw, 800px' : lead ? '(max-width: 480px) 100vw, 640px' : '(max-width: 480px) 100vw, 360px'}
+          priority={lead}
         />
       </Box>
       <Box display="flex" flexDirection="column" flex={fillImage ? 'none' : 1} minW={0} p={{ base: 4, md: lead ? 6 : 4 }}>

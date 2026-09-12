@@ -1,5 +1,4 @@
 import {
-  AspectRatio,
   Box,
   Heading,
   Link,
@@ -7,6 +6,7 @@ import {
   Text,
   useColorModeValue
 } from '@chakra-ui/react'
+import YouTubePreview from './youtube-preview'
 
 const ResearchVideo = ({ label, title, videoId, children }) => (
   <Box
@@ -21,18 +21,7 @@ const ResearchVideo = ({ label, title, videoId, children }) => (
     borderTopColor={useColorModeValue('gray.400', 'gray.500')}
     bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.50')}
   >
-    <AspectRatio ratio={16 / 9} flexShrink={0}>
-      <Box
-        as="iframe"
-        src={`https://www.youtube.com/embed/${videoId}`}
-        title={title}
-        loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        border={0}
-        bg="blackAlpha.500"
-      />
-    </AspectRatio>
+    <YouTubePreview videoId={videoId} title={title} flexShrink={0} />
     <Box p={5} flex={1}>
       <Text
         mb={2}

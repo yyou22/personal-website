@@ -1,3 +1,4 @@
+import YouTubePreview from '../../components/youtube-preview'
 import { useEffect } from 'react'
 import { Container, Badge, ListItem, UnorderedList, Link, Box, VStack, Text, useColorModeValue, Wrap, WrapItem, Tag } from '@chakra-ui/react'
 import { Title, Meta, WorkImage } from '../../components/work'
@@ -66,15 +67,7 @@ const Work = () => {
           alt="visxai"
           caption="Presentation at the VISxAI Workshop"
         />
-        <iframe
-          width="100%"
-          height="315"
-          src="https://www.youtube.com/embed/UUkftG2KH5o?si=fMe0QTaigj2GuP6T&amp;start=5444"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          style={{ maxWidth: '600px' }}
-        ></iframe>
+        <YouTubePreview videoId="UUkftG2KH5o" title="VISxAI workshop presentation" start={5444} maxW="600px" />
         <Text mt={2} fontSize="sm" color="gray.500" textAlign="center">
           Video of my presentation at the 7th VISxAI workshop (starts from 1:30:44)
         </Text>

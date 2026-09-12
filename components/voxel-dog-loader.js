@@ -21,10 +21,13 @@ export const DogContainer = forwardRef(({ children }, ref) => {
       ref={ref}
       className="voxel-dog"
       m="auto"
-      mt={['-20px', '-60px', '-120px']}
-      mb={[pathname === '/' ? '-96px' : '-40px', '-140px', '-200px']}
+      mt={{ base: 0, md: '-120px' }}
+      mb={{
+        base: pathname === '/' ? 'calc(12px - 20vw)' : 'calc(24px - 20vw)',
+        md: '-200px'
+      }}
       w={{ base: '100vw', md: 640 }}
-      h={{ base: '100vw', md: 640 }}
+      h={{ base: '78vw', md: 640 }}
       mx={{ base: 'calc(50% - 50vw)', md: 'auto' }}
       position="relative"
     >
