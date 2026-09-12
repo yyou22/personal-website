@@ -52,10 +52,11 @@ const Panel = ({ children, ...props }) => (
   <Box
     minW={0}
     p={{ base: 4, md: 5 }}
-    bg={useColorModeValue('whiteAlpha.700', '#29292c')}
+    bg={useColorModeValue('day.surface', '#29292c')}
     borderWidth="1px"
-    borderColor={useColorModeValue('blackAlpha.100', 'whiteAlpha.200')}
+    borderColor={useColorModeValue('day.border', 'whiteAlpha.200')}
     borderRadius="lg"
+    boxShadow={useColorModeValue('0 3px 16px rgba(36, 51, 68, 0.04)', undefined)}
     {...props}
   >
     {children}
@@ -65,14 +66,14 @@ const Details = ({ children, ...props }) => (
   <Text
     fontSize="15px"
     lineHeight={1.65}
-    color={useColorModeValue('gray.600', 'gray.400')}
+    color={useColorModeValue('day.muted', 'gray.400')}
     {...props}
   >
     {children}
   </Text>
 )
 const Reveal = ({ label, children, ...props }) => {
-  const accent = useColorModeValue('#426b89', '#9bbbd4')
+  const accent = useColorModeValue('day.title', '#9bbbd4')
   return (
     <Box as="details" mt={3} {...props}>
       <Box
@@ -106,7 +107,7 @@ const Row = ({ children, ...props }) => (
     gap={{ base: 1, md: 5 }}
     py={4}
     borderBottomWidth="1px"
-    borderColor={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+    borderColor={useColorModeValue('day.border', 'whiteAlpha.100')}
     _last={{ borderBottomWidth: 0 }}
     {...props}
   >
@@ -123,7 +124,7 @@ const CVSection = ({ id, title, children, description, ...props }) => {
       mt={id === 'education' ? { base: 7, md: 8 } : { base: 9, md: 12 }}
       pt={id === 'education' ? 0 : { base: 6, md: 7 }}
       borderTopWidth={id === 'education' ? 0 : '1px'}
-      borderColor={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+      borderColor={useColorModeValue('day.border', 'whiteAlpha.100')}
       scrollMarginTop="88px"
       {...props}
     >
@@ -136,7 +137,7 @@ const CVSection = ({ id, title, children, description, ...props }) => {
         <Icon
           as={icon}
           boxSize={4}
-          color={useColorModeValue('#426b89', '#9bbbd4')}
+          color={useColorModeValue('day.title', '#9bbbd4')}
           aria-hidden="true"
         />
         <Heading as="h3" id={`${id}-title`} fontSize="xl" letterSpacing="tight">
@@ -184,7 +185,7 @@ const Recognition = ({ children }) => (
     alignItems="flex-start"
     gap={2}
     mt={3}
-    color={useColorModeValue('orange.800', '#d9b77c')}
+    color={useColorModeValue('day.gold', '#d9b77c')}
   >
     <Icon
       as={FaTrophy}
@@ -199,7 +200,7 @@ const Recognition = ({ children }) => (
   </Box>
 )
 const ItemTitle = ({ href, children }) => {
-  const accent = useColorModeValue('#426b89', '#9bbbd4')
+  const accent = useColorModeValue('day.title', '#9bbbd4')
   return (
     <Heading as="h4" fontSize="md" fontWeight="semibold" lineHeight={1.5}>
       {href ? (
@@ -226,7 +227,7 @@ const SmallEntry = ({ date, children }) => (
   <Box
     py={3}
     borderBottomWidth="1px"
-    borderColor={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+    borderColor={useColorModeValue('day.border', 'whiteAlpha.100')}
     _first={{ pt: 0 }}
     _last={{ pb: 0, borderBottomWidth: 0 }}
   >
@@ -238,7 +239,7 @@ const SmallEntry = ({ date, children }) => (
 )
 
 const AwardRow = ({ item }) => {
-  const accent = useColorModeValue('#426b89', '#9bbbd4')
+  const accent = useColorModeValue('day.title', '#9bbbd4')
   const amount = item.title.match(/\((\$?[\d,]+ (?:CAD|JPY|RMB))\)/)
   const title = item.title
     .replace(/\s*\(\$?[\d,]+ (?:CAD|JPY|RMB)\)/, '')
@@ -254,7 +255,7 @@ const AwardRow = ({ item }) => {
       rowGap={0.5}
       py={3}
       borderBottomWidth="1px"
-      borderColor={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+      borderColor={useColorModeValue('day.border', 'whiteAlpha.100')}
       _first={{ pt: 0 }}
       _last={{ pb: 0, borderBottomWidth: 0 }}
     >
@@ -299,13 +300,13 @@ const additionalAwards = cv.awards
   )
 
 const CV = () => {
-  const accent = useColorModeValue('#426b89', '#9bbbd4')
-  const muted = useColorModeValue('gray.600', 'gray.400')
-  const foreground = useColorModeValue('gray.800', 'gray.200')
-  const navHover = useColorModeValue('blackAlpha.50', 'whiteAlpha.100')
-  const border = useColorModeValue('blackAlpha.200', 'whiteAlpha.200')
-  const chipBg = useColorModeValue('#426b8914', '#9bbbd41f')
-  const highlightBorder = useColorModeValue('#c9a15f', '#d9b77c')
+  const accent = useColorModeValue('day.title', '#9bbbd4')
+  const muted = useColorModeValue('day.muted', 'gray.400')
+  const foreground = useColorModeValue('day.ink', 'gray.200')
+  const navHover = useColorModeValue('day.tint', 'whiteAlpha.100')
+  const border = useColorModeValue('day.border', 'whiteAlpha.200')
+  const chipBg = useColorModeValue('day.tint', '#9bbbd41f')
+  const highlightBorder = useColorModeValue('day.gold', '#d9b77c')
   const highlights = [
     {
       title: 'NSERC Canada Graduate Scholarship — Doctoral',
@@ -357,6 +358,7 @@ const CV = () => {
             py={2}
             borderY="1px solid"
             borderColor={border}
+            borderRadius={useColorModeValue('md', undefined)}
           >
             {sections.map(([id, label]) => (
               <Link

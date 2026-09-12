@@ -36,7 +36,7 @@ const contacts = [
 ]
 
 const ContactLinks = () => {
-  const accent = useColorModeValue('teal.700', 'teal.200')
+  const accent = useColorModeValue('day.link', 'teal.200')
 
   return (
     <Box display="flex" flexWrap="wrap" columnGap={6} rowGap={1}>

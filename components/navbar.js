@@ -20,13 +20,17 @@ import { IoLogoGithub } from 'react-icons/io5'
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
-  const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
+  const inactiveColor = useColorModeValue('day.muted', 'whiteAlpha.900')
+  const activeBackground = useColorModeValue('day.tint', 'grassTeal')
+  const activeColor = useColorModeValue('day.link', '#202023')
   return (
     <NextLink href={href} passHref scroll={false}>
       <Link
         p={2}
-        bg={active ? 'grassTeal' : undefined}
-        color={active ? '#202023' : inactiveColor}
+        bg={active ? activeBackground : undefined}
+        color={active ? activeColor : inactiveColor}
+        borderRadius={useColorModeValue('md', undefined)}
+        _hover={useColorModeValue({ bg: 'day.hover', color: 'day.link', textDecoration: 'none' }, undefined)}
         target={target}
         {...props}
       >
@@ -44,7 +48,8 @@ const Navbar = props => {
       position="fixed"
       as="nav"
       w="100%"
-      bg={useColorModeValue('#ffffff40', '#20202380')}
+      bg={useColorModeValue('rgba(248, 247, 244, 0.94)', '#20202380')}
+      boxShadow={useColorModeValue('0 1px 0 rgba(36, 51, 68, 0.09)', undefined)}
       css={{ backdropFilter: 'blur(10px)' }}
       zIndex="sticky"
       {...props}

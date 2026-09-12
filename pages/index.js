@@ -67,14 +67,14 @@ const SectionButton = ({ href, children }) => (
       px={4}
       fontSize="sm"
       fontWeight="medium"
-      color={useColorModeValue('teal.700', 'teal.200')}
-      bg={useColorModeValue('whiteAlpha.400', 'whiteAlpha.50')}
-      borderColor={useColorModeValue('blackAlpha.200', 'whiteAlpha.200')}
+      color={useColorModeValue('day.link', 'teal.200')}
+      bg={useColorModeValue('day.surface', 'whiteAlpha.50')}
+      borderColor={useColorModeValue('day.border', 'whiteAlpha.200')}
       borderRadius="md"
       rightIcon={<ChevronRightIcon boxSize={4} aria-hidden="true" />}
       _hover={{
-        bg: useColorModeValue('teal.50', 'whiteAlpha.100'),
-        borderColor: useColorModeValue('teal.300', 'teal.500')
+        bg: useColorModeValue('day.hover', 'whiteAlpha.100'),
+        borderColor: useColorModeValue('day.strongBorder', 'teal.500')
       }}
       _focusVisible={{ outline: '2px solid', outlineColor: 'teal.400', outlineOffset: '3px' }}
     >
@@ -88,7 +88,7 @@ const AwardAmount = ({ children }) => (
     as="span"
     display="inline"
     fontSize="inherit"
-    color={useColorModeValue('gray.600', 'gray.400')}
+    color={useColorModeValue('day.muted', 'gray.400')}
     whiteSpace="nowrap"
   >
     ·{' '}
@@ -97,7 +97,7 @@ const AwardAmount = ({ children }) => (
 )
 
 const Roles = ({ roles }) => {
-  const accent = useColorModeValue('teal.600', 'teal.300')
+  const accent = useColorModeValue('day.link', 'teal.300')
   return (
     <Box
       as="p"
@@ -112,7 +112,7 @@ const Roles = ({ roles }) => {
       letterSpacing={{ base: '0.1em', sm: '0.08em' }}
       textTransform="uppercase"
       lineHeight={{ base: 1.4, sm: 'tall' }}
-      color={useColorModeValue('gray.700', 'gray.300')}
+      color={useColorModeValue('day.ink', 'gray.300')}
     >
       {roles.map(({ icon, label }) => (
         <Box
@@ -161,13 +161,13 @@ const Home = () => (
               { icon: RiFlightTakeoffLine, label: 'Student Pilot' }
             ]}
           />
-          <Box display="grid" gridTemplateColumns="14px minmax(0, 1fr)" alignItems="start" columnGap={2} rowGap={{ base: 1.5, md: 0 }} mt={3} fontSize="13px" lineHeight={1.6} color={useColorModeValue('gray.700', 'gray.200')}>
-            <Icon as={FaAward} boxSize="14px" mt="3px" flexShrink={0} color={useColorModeValue('orange.700', '#FFB347')} aria-hidden="true" />
+          <Box display="grid" gridTemplateColumns="14px minmax(0, 1fr)" alignItems="start" columnGap={2} rowGap={{ base: 1.5, md: 0 }} mt={3} fontSize="13px" lineHeight={1.6} color={useColorModeValue('day.ink', 'gray.200')}>
+            <Icon as={FaAward} boxSize="14px" mt="3px" flexShrink={0} color={useColorModeValue('day.gold', '#FFB347')} aria-hidden="true" />
               <Text whiteSpace="nowrap" title="Current holder of the NSERC Canada Graduate Scholarship – Doctoral">
                 <Text as="span" fontWeight="medium">NSERC CGS-D Scholar</Text>{' '}
                 <AwardAmount>$120k CAD</AwardAmount>
               </Text>
-              <Icon as={FaAward} boxSize="14px" mt="3px" flexShrink={0} color={useColorModeValue('orange.700', '#FFB347')} aria-hidden="true" />
+              <Icon as={FaAward} boxSize="14px" mt="3px" flexShrink={0} color={useColorModeValue('day.gold', '#FFB347')} aria-hidden="true" />
               <Text whiteSpace="nowrap" title="Current holder of the UWaterloo President’s Graduate Scholarship">
                 <Text as="span" fontWeight="medium">
                   <Box as="span" display={{ base: 'inline', sm: 'none' }}>UWaterloo President&apos;s Scholar</Box>
@@ -184,7 +184,8 @@ const Home = () => (
           textAlign="center"
         >
           <Box
-            borderColor="whiteAlpha.800"
+            borderColor={useColorModeValue('day.surface', 'whiteAlpha.800')}
+            boxShadow={useColorModeValue('0 0 0 1px #d8e0e3, 0 5px 20px rgba(36, 51, 68, 0.08)', undefined)}
             borderWidth={2}
             borderStyle="solid"
             w="100px"
@@ -227,7 +228,7 @@ const Home = () => (
             </Paragraph>
           </Box>
           <Box>
-            <Text as="span" fontWeight="semibold" fontSize="sm" color={useColorModeValue('teal.600', 'teal.300')} textTransform="uppercase" letterSpacing="wider" mb={2} display="block">
+            <Text as="span" fontWeight="semibold" fontSize="sm" color={useColorModeValue('day.link', 'teal.300')} textTransform="uppercase" letterSpacing="wider" mb={2} display="block">
               Research
             </Text>
             <Paragraph>
@@ -235,7 +236,7 @@ const Home = () => (
             </Paragraph>
           </Box>
           <Box>
-            <Text as="span" fontWeight="semibold" fontSize="sm" color={useColorModeValue('teal.600', 'teal.300')} textTransform="uppercase" letterSpacing="wider" mb={2} display="block">
+            <Text as="span" fontWeight="semibold" fontSize="sm" color={useColorModeValue('day.link', 'teal.300')} textTransform="uppercase" letterSpacing="wider" mb={2} display="block">
               Experience
             </Text>
             <ExperienceGrid />

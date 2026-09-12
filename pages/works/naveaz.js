@@ -4,7 +4,7 @@ import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 
 const Work = () => {
-  const metaColor = useColorModeValue('green.800', undefined)
+  const metaColor = useColorModeValue('day.link', undefined)
 
   return (
   <Layout title="naveaz">

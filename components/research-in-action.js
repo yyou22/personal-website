@@ -17,9 +17,10 @@ const ResearchVideo = ({ label, title, videoId, children }) => (
     overflow="hidden"
     borderRadius="xl"
     borderWidth="1px"
-    borderColor={useColorModeValue('blackAlpha.200', 'whiteAlpha.300')}
-    borderTopColor={useColorModeValue('gray.400', 'gray.500')}
-    bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.50')}
+    borderColor={useColorModeValue('day.border', 'whiteAlpha.300')}
+    borderTopColor={useColorModeValue('day.strongBorder', 'gray.500')}
+    bg={useColorModeValue('day.surface', 'whiteAlpha.50')}
+    boxShadow={useColorModeValue('0 4px 18px rgba(36, 51, 68, 0.05)', undefined)}
   >
     <YouTubePreview videoId={videoId} title={title} flexShrink={0} />
     <Box p={5} flex={1}>
@@ -29,7 +30,7 @@ const ResearchVideo = ({ label, title, videoId, children }) => (
         fontWeight="semibold"
         letterSpacing="0.1em"
         textTransform="uppercase"
-        color={useColorModeValue('teal.700', 'teal.200')}
+        color={useColorModeValue('day.link', 'teal.200')}
       >
         {label}
       </Text>
@@ -40,7 +41,7 @@ const ResearchVideo = ({ label, title, videoId, children }) => (
         mt={3}
         fontSize="sm"
         lineHeight={1.65}
-        color={useColorModeValue('gray.700', 'gray.300')}
+        color={useColorModeValue('day.ink', 'gray.300')}
       >
         {children}
       </Text>

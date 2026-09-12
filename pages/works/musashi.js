@@ -6,9 +6,11 @@ import Layout from '../../components/layouts/article'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 const Work = () => {
-  const linkColor = useColorModeValue('pink.600', 'teal.300')
-  const borderColor = useColorModeValue('teal.500', 'teal.600')
-  const metaColor = useColorModeValue('green.800', undefined)
+  const linkColor = useColorModeValue('day.link', 'teal.300')
+  const borderColor = useColorModeValue('day.strongBorder', 'teal.600')
+  const panelBackground = useColorModeValue('day.surface', undefined)
+  const metaColor = useColorModeValue('day.link', undefined)
+  const captionColor = useColorModeValue('day.subtle', 'gray.500')
 
   useEffect(() => {
     // Load any necessary scripts for external components
@@ -63,7 +65,7 @@ const Work = () => {
         </Box>
         <WorkImage src="/images/works/musashi/musashi5.png" alt="musashi" />
         <WorkImage src="/images/works/musashi/musashi3.jpeg" alt="musashi" />
-        <Box my={4} p={3} borderWidth="1px" borderColor={borderColor} borderRadius="md">
+        <Box my={4} p={3} borderWidth="1px" borderColor={borderColor} bg={panelBackground} borderRadius="md">
           <Meta>Links</Meta>
           <VStack align="stretch" spacing={2} mt={2}>
             <Box>
@@ -76,7 +78,7 @@ const Work = () => {
               >
                 UWaterloo SCS News <ExternalLinkIcon mx="1px" />
               </Link>
-              <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+              <Text fontSize="xs" color={captionColor} lineHeight="1.2">
                 Cheriton students among winners at Waterloo.AI Data Challenge.
               </Text>
             </Box>
@@ -90,7 +92,7 @@ const Work = () => {
               >
                 Waterloo.AI News <ExternalLinkIcon mx="1px" />
               </Link>
-              <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+              <Text fontSize="xs" color={captionColor} lineHeight="1.2">
                 Cheriton undergrads and grads among winners.
               </Text>
             </Box>

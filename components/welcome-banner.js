@@ -24,7 +24,9 @@ const WelcomeBanner = () => (
     textAlign="center"
     position="relative"
     overflow="hidden"
-    bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+    bg={useColorModeValue('day.surface', 'whiteAlpha.200')}
+    color={useColorModeValue('day.link', undefined)}
+    boxShadow={useColorModeValue('inset 0 0 0 1px #d8e0e3, 0 3px 12px rgba(36, 51, 68, 0.04)', undefined)}
     sx={{
       backdropFilter: 'blur(10px)',
       '&::after': {
@@ -58,7 +60,7 @@ const WelcomeBanner = () => (
         aria-hidden="true"
         boxSize="18px"
         verticalAlign="-3px"
-        color={useColorModeValue('teal.600', 'teal.300')}
+        color={useColorModeValue('day.link', 'teal.300')}
         mr={1.5}
       />
       Hello, I am Yuzhe! Welcome to my website.

@@ -48,9 +48,9 @@ const galleryGroups = [
 ]
 
 const Work = () => {
-  const metaColor = useColorModeValue('green.800', undefined)
-  const yearColor = useColorModeValue('gray.600', 'gray.400')
-  const imageShadow = useColorModeValue('0 6px 20px rgba(0, 0, 0, 0.10)', '0 6px 20px rgba(0, 0, 0, 0.35)')
+  const metaColor = useColorModeValue('day.link', undefined)
+  const yearColor = useColorModeValue('day.muted', 'gray.400')
+  const imageShadow = useColorModeValue('0 0 0 4px #ffffff, 0 0 0 5px #d8e0e3, 0 8px 24px rgba(36, 51, 68, 0.10)', '0 6px 20px rgba(0, 0, 0, 0.35)')
   const [selected, setSelected] = useState(null)
 
   return (

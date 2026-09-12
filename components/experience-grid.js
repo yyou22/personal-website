@@ -68,9 +68,9 @@ const industry = [
 ]
 
 const ExperienceGrid = () => {
-  const mutedColor = useColorModeValue('gray.600', 'gray.400')
+  const mutedColor = useColorModeValue('day.muted', 'gray.400')
   const isDark = useColorModeValue(false, true)
-  const highlightColor = useColorModeValue('orange.700', '#FFB347')
+  const highlightColor = useColorModeValue('day.gold', '#FFB347')
 
   return (
     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
