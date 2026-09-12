@@ -92,10 +92,14 @@ const hits = createModelHitTest(
 assert.equal(hits(520, 350), true)
 assert.equal(
   hits(400, 350),
-  false,
-  'Empty space BETWEEN meshes inside the overall model bounds must scroll'
+  true,
+  'Empty space between meshes must interact with the model'
 )
 assert.equal(hits(110, 60), false, 'Empty canvas corners must scroll')
+model.rotation.z = Math.PI / 4
+assert.equal(hits(400, 350), true, 'Interior gaps remain interactive after rotation')
+assert.equal(hits(480, 430), false, 'Space outside the rotated outline must scroll, even inside its bounding rectangle')
+model.rotation.z = 0
 model.visible = false
 assert.equal(hits(520, 350), false)
 model.visible = true
@@ -115,12 +119,12 @@ const unbind = bindModelInput(controls, canvas, hits, {
 })
 assert.equal(canvas.style.touchAction, 'pan-y pinch-zoom')
 assert.equal(
-  emit('wheel', { clientX: 400, clientY: 350, deltaY: -100 }).prevented,
+  emit('wheel', { clientX: 110, clientY: 60, deltaY: -100 }).prevented,
   false
 )
 assert.equal(camera.zoom, 1)
 assert.equal(
-  emit('wheel', { clientX: 520, clientY: 350, deltaY: -100 }).prevented,
+  emit('wheel', { clientX: 400, clientY: 350, deltaY: -100 }).prevented,
   true
 )
 function wheelOnMesh(deltaY) {
@@ -140,21 +144,26 @@ controls.reset()
 assert.equal(
   emit('pointerdown', {
     pointerType: 'mouse',
-    clientX: 400,
-    clientY: 350,
+    clientX: 110,
+    clientY: 60,
     pointerId: 1,
     button: 0
   }).stopped,
   true
 )
 assert.equal(
-  emit('pointermove', { pointerType: 'mouse', clientX: 520, clientY: 350 })
+  emit('pointermove', { pointerType: 'mouse', clientX: 400, clientY: 350 })
     .stopped,
   false
 )
 assert.equal(canvas.style.cursor, 'grab')
-const blank = { clientX: 400, clientY: 350 }
+const blank = { clientX: 110, clientY: 60 }
 const solid = { clientX: 520, clientY: 350 }
+assert.equal(emit('touchstart', { touches: [{ clientX: 400, clientY: 350 }] }).prevented, true, 'A touch in an interior gap belongs to the model')
+emit('touchmove', { touches: [{ clientX: 410, clientY: 355 }] })
+assert.equal(rotations, 1)
+emit('touchend', { touches: [] })
+rotations = 0
 assert.equal(emit('touchstart', { touches: [blank] }).prevented, false)
 assert.equal(
   emit('touchmove', { touches: [solid] }).prevented,
@@ -177,5 +186,5 @@ unbind()
 controls.dispose()
 assert.equal([...listeners.values()].flat().length, 0)
 console.log(
-  'Passed: mesh hit testing, empty gaps, wheel routing, zoom limits, touch gesture ownership, cursor feedback, and cleanup.'
+  'Passed: interior gaps interact, outside outline scrolls, rotation updates hit area, wheel routing, zoom limits, touch gesture ownership, cursor feedback, and cleanup.'
 )
