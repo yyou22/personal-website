@@ -27,7 +27,7 @@ const eyebrow = {
 }
 
 const Authors = ({ authors }) => {
-  const foreground = useColorModeValue('gray.800', 'gray.100')
+  const foreground = useColorModeValue('day.ink', 'gray.100')
   return authors.replace(/\.$/, '').split(/(Yuzhe You)/).map((part, index) =>
     part === 'Yuzhe You' ? (
       <Text as="strong" key={index} fontWeight="semibold" color={foreground}>
@@ -38,15 +38,15 @@ const Authors = ({ authors }) => {
 }
 
 const Publication = ({ paper }) => {
-  const muted = useColorModeValue('gray.600', 'gray.400')
-  const subtle = useColorModeValue('gray.500', 'gray.500')
-  const accent = useColorModeValue('#406b7c', '#86b8cc')
-  const titleColor = useColorModeValue('#426b89', '#9bbbd4')
-  const border = useColorModeValue('blackAlpha.200', 'whiteAlpha.200')
-  const imageBackground = useColorModeValue('blackAlpha.50', 'whiteAlpha.100')
-  const hoverBackground = useColorModeValue('whiteAlpha.600', 'whiteAlpha.50')
-  const awardColor = useColorModeValue('orange.800', 'orange.200')
-  const awardBackground = useColorModeValue('orange.50', 'whiteAlpha.100')
+  const muted = useColorModeValue('day.muted', 'gray.400')
+  const subtle = useColorModeValue('day.subtle', 'gray.500')
+  const accent = useColorModeValue('day.link', '#86b8cc')
+  const titleColor = useColorModeValue('day.title', '#9bbbd4')
+  const border = useColorModeValue('day.border', 'whiteAlpha.200')
+  const imageBackground = useColorModeValue('day.tint', 'whiteAlpha.100')
+  const hoverBackground = useColorModeValue('day.surface', 'whiteAlpha.50')
+  const awardColor = useColorModeValue('day.gold', 'orange.200')
+  const awardBackground = useColorModeValue('day.goldBackground', 'whiteAlpha.100')
 
   return (
     <LinkBox
@@ -146,10 +146,10 @@ const Publication = ({ paper }) => {
 }
 
 const PublicationsPage = () => {
-  const muted = useColorModeValue('gray.600', 'gray.400')
-  const accent = useColorModeValue('#406b7c', '#86b8cc')
-  const border = useColorModeValue('blackAlpha.200', 'whiteAlpha.200')
-  const yearBorder = useColorModeValue('blackAlpha.300', 'whiteAlpha.300')
+  const muted = useColorModeValue('day.muted', 'gray.400')
+  const accent = useColorModeValue('day.link', '#86b8cc')
+  const border = useColorModeValue('day.border', 'whiteAlpha.200')
+  const yearBorder = useColorModeValue('day.strongBorder', 'whiteAlpha.300')
 
   return (
     <Layout title="Publications">

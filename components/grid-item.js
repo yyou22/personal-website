@@ -43,13 +43,13 @@ const GridBox = styled.span`
     transform: scale(1.05);
   }
   &:hover .code{
-    color: #88ccca;
+    color: var(--portfolio-accent, #88ccca);
   }
 `
 const WorkBox = styled.span`
   display: block;
   .work-thumb {
-    box-shadow: 0 0 0 1px rgba(128, 128, 128, 0.22);
+    box-shadow: var(--portfolio-thumb-shadow, 0 0 0 1px rgba(128, 128, 128, 0.22));
     transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
   .work-thumb img {
@@ -63,7 +63,7 @@ const WorkBox = styled.span`
     transition: color 0.25s ease-out, transform 0.25s ease-out;
   }
   &:hover .work-thumb {
-    box-shadow: 0 0 0 1px #88ccca, 0 10px 28px rgba(0, 0, 0, 0.22);
+    box-shadow: var(--portfolio-thumb-hover-shadow, 0 0 0 1px #88ccca, 0 10px 28px rgba(0, 0, 0, 0.22));
     transform: translateY(-2px);
   }
   &:hover .work-thumb img {
@@ -71,7 +71,7 @@ const WorkBox = styled.span`
   }
   &:hover .code,
   &:focus-within .code {
-    color: #88ccca;
+    color: var(--portfolio-accent, #88ccca);
     transform: translateX(0);
   }
 `
@@ -160,7 +160,7 @@ export const WorkGridItem = ({ children, id, title, thumbnail, blurPlaceholder, 
         </Box>
         </Box>
         <LinkOverlay href={`/works/${id}`}>
-          <Text mt={3} fontSize={18} fontWeight="medium" lineHeight={1.35}>
+          <Text mt={3} fontSize={18} fontWeight="medium" lineHeight={1.35} color={useColorModeValue('day.title', undefined)}>
             {title.includes(' ') && `${title.slice(0, title.lastIndexOf(' '))} `}
             <Box as="span" whiteSpace="nowrap">
               {title.slice(title.lastIndexOf(' ') + 1)}
@@ -168,7 +168,7 @@ export const WorkGridItem = ({ children, id, title, thumbnail, blurPlaceholder, 
             </Box>
           </Text>
         </LinkOverlay>
-        <Text mt={1} fontSize={14} lineHeight={1.55} opacity={0.75}>{children}</Text>
+        <Text mt={1} fontSize={14} lineHeight={1.55} opacity={useColorModeValue(1, 0.75)} color={useColorModeValue('day.muted', undefined)}>{children}</Text>
       </LinkBox>
       </WorkBox>
     </NextLink>
@@ -199,9 +199,9 @@ export const WorkGridItemWithModal = ({
       </Box>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent bgColor={useColorModeValue('#f0e7db', '#202023')}>
+        <ModalContent bgColor={useColorModeValue('day.canvas', '#202023')}>
           <ModalHeader
-            bgColor={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            bgColor={useColorModeValue('day.surface', 'whiteAlpha.200')}
           >
             {title}
           </ModalHeader>

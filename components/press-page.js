@@ -34,7 +34,7 @@ export const selectedStories = [
 ]
 
 const PressImage = ({ article }) => {
-  const background = useColorModeValue('blackAlpha.50', 'whiteAlpha.100')
+  const background = useColorModeValue('day.tint', 'whiteAlpha.100')
 
   return (
     <AspectRatio ratio={4 / 3} w="full" bg={background} borderRadius="md" overflow="hidden">
@@ -51,8 +51,8 @@ const PressImage = ({ article }) => {
 }
 
 const SourceLine = ({ article, showDesk = true }) => {
-  const muted = useColorModeValue('gray.600', 'gray.400')
-  const foreground = useColorModeValue('gray.800', 'gray.100')
+  const muted = useColorModeValue('day.muted', 'gray.400')
+  const foreground = useColorModeValue('day.ink', 'gray.100')
   const isWaterloo = article.publisher.includes('University of Waterloo')
   const isAdobe = article.publisher.includes('Adobe')
   const publication = isWaterloo ? 'University of Waterloo' : article.publisher
@@ -78,7 +78,7 @@ const SourceLine = ({ article, showDesk = true }) => {
 }
 
 const CoverageCue = ({ article, color }) => {
-  const defaultColor = useColorModeValue('#406b7c', '#86b8cc')
+  const defaultColor = useColorModeValue('day.link', '#86b8cc')
   return (
   <Text fontSize="xs" fontWeight="medium" mt={3} color={color || defaultColor}>
     {article.interviewStart ? `Watch interview · ${article.interviewStart}` : article.href.includes('youtube.com') ? 'Watch coverage' : 'Read coverage'}
@@ -88,12 +88,14 @@ const CoverageCue = ({ article, color }) => {
 }
 
 export const FeaturedCard = ({ article, lead = false, fillImage = false, summary = article.snippet, imageRatio = '4 / 3' }) => {
-  const muted = useColorModeValue('gray.600', 'gray.400')
-  const titleColor = useColorModeValue('#426b89', '#9bbbd4')
-  const accent = useColorModeValue('#406b7c', '#709faf')
-  const border = useColorModeValue('blackAlpha.200', 'whiteAlpha.300')
-  const background = useColorModeValue('whiteAlpha.700', '#29292c')
-  const imageBackground = useColorModeValue('blackAlpha.50', 'whiteAlpha.100')
+  const muted = useColorModeValue('day.muted', 'gray.400')
+  const titleColor = useColorModeValue('day.title', '#9bbbd4')
+  const accent = useColorModeValue('day.link', '#709faf')
+  const border = useColorModeValue('day.border', 'whiteAlpha.300')
+  const background = useColorModeValue('day.surface', '#29292c')
+  const imageBackground = useColorModeValue('day.tint', 'whiteAlpha.100')
+  const shadow = useColorModeValue('0 4px 20px rgba(36, 51, 68, 0.06)', undefined)
+  const hoverShadow = useColorModeValue('0 10px 28px rgba(36, 51, 68, 0.12)', '0 10px 28px rgba(0, 0, 0, 0.18)')
 
   return (
     <LinkBox
@@ -104,12 +106,13 @@ export const FeaturedCard = ({ article, lead = false, fillImage = false, summary
       flexDirection="column"
       gridColumn={{ sm: lead ? '1 / -1' : undefined, md: lead ? 'span 2' : undefined }}
       bg={background}
+      boxShadow={shadow}
       borderWidth="1px"
       borderColor={border}
       borderRadius="lg"
       overflow="hidden"
       transition="border-color 0.2s, box-shadow 0.2s, transform 0.2s"
-      _hover={{ borderColor: accent, boxShadow: '0 10px 28px rgba(0, 0, 0, 0.18)', transform: 'translateY(-2px)' }}
+      _hover={{ borderColor: accent, boxShadow: hoverShadow, transform: 'translateY(-2px)' }}
       _focusWithin={{ borderColor: accent }}
     >
       <Box
@@ -157,16 +160,17 @@ export const FeaturedCard = ({ article, lead = false, fillImage = false, summary
 }
 
 export const SelectedStory = ({ article, compact = false, summary = article.snippet }) => {
-  const muted = useColorModeValue('gray.600', 'gray.300')
-  const accent = useColorModeValue('#406b7c', '#709faf')
-  const titleColor = useColorModeValue('#426b89', '#9bbbd4')
-  const border = useColorModeValue('blackAlpha.200', 'whiteAlpha.300')
-  const topBorder = useColorModeValue('gray.400', 'gray.500')
+  const muted = useColorModeValue('day.muted', 'gray.300')
+  const accent = useColorModeValue('day.link', '#709faf')
+  const titleColor = useColorModeValue('day.title', '#9bbbd4')
+  const border = useColorModeValue('day.border', 'whiteAlpha.300')
+  const topBorder = useColorModeValue('day.strongBorder', 'gray.500')
   const background = useColorModeValue(
-    'linear-gradient(145deg, #ffffff, #f7f7f7)',
+    'linear-gradient(145deg, #ffffff, #f3f7f6)',
     'linear-gradient(145deg, #333333, #292929)'
   )
-  const shadow = useColorModeValue('0 8px 24px rgba(0, 0, 0, 0.06)', '0 8px 24px rgba(0, 0, 0, 0.2)')
+  const shadow = useColorModeValue('0 6px 24px rgba(36, 51, 68, 0.07)', '0 8px 24px rgba(0, 0, 0, 0.2)')
+  const hoverShadow = useColorModeValue('0 10px 28px rgba(36, 51, 68, 0.12)', '0 10px 28px rgba(0, 0, 0, 0.18)')
 
   return (
     <LinkBox
@@ -187,7 +191,7 @@ export const SelectedStory = ({ article, compact = false, summary = article.snip
       boxShadow={compact ? 'sm' : shadow}
       p={compact ? 4 : { base: 4, md: 5 }}
       transition="border-color 0.2s, box-shadow 0.2s"
-      _hover={{ borderColor: accent, boxShadow: '0 10px 28px rgba(0, 0, 0, 0.18)' }}
+      _hover={{ borderColor: accent, boxShadow: hoverShadow }}
       _focusWithin={{ borderColor: accent }}
     >
       <Box pb={compact ? 2 : 3} borderBottomWidth="1px" borderColor={border}>
@@ -226,9 +230,9 @@ export const SelectedStory = ({ article, compact = false, summary = article.snip
 }
 
 const PressStory = ({ article }) => {
-  const border = useColorModeValue('blackAlpha.200', 'whiteAlpha.200')
-  const muted = useColorModeValue('gray.600', 'gray.400')
-  const accent = useColorModeValue('#406b7c', '#86b8cc')
+  const border = useColorModeValue('day.border', 'whiteAlpha.200')
+  const muted = useColorModeValue('day.muted', 'gray.400')
+  const accent = useColorModeValue('day.link', '#86b8cc')
 
   return (
     <LinkBox
@@ -280,10 +284,10 @@ const PressStory = ({ article }) => {
 }
 
 const CoverageGroup = ({ title, description, articles, id }) => {
-  const accent = useColorModeValue('#406b7c', '#86b8cc')
-  const muted = useColorModeValue('gray.600', 'gray.400')
-  const border = useColorModeValue('blackAlpha.200', 'whiteAlpha.200')
-  const yearBorder = useColorModeValue('blackAlpha.300', 'whiteAlpha.300')
+  const accent = useColorModeValue('day.link', '#86b8cc')
+  const muted = useColorModeValue('day.muted', 'gray.400')
+  const border = useColorModeValue('day.border', 'whiteAlpha.200')
+  const yearBorder = useColorModeValue('day.strongBorder', 'whiteAlpha.300')
   const years = [...new Set(articles.map(article => article.date.slice(-4)))]
     .sort((a, b) => Number(b) - Number(a))
 
@@ -317,8 +321,8 @@ const CoverageGroup = ({ title, description, articles, id }) => {
 }
 
 const PressPage = () => {
-  const muted = useColorModeValue('gray.600', 'gray.400')
-  const border = useColorModeValue('blackAlpha.200', 'whiteAlpha.200')
+  const muted = useColorModeValue('day.muted', 'gray.400')
+  const border = useColorModeValue('day.border', 'whiteAlpha.200')
 
   return (
     <Layout title="Press">

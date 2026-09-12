@@ -24,9 +24,10 @@ const adobeUrl =
   'https://research.adobe.com/news/adobe-research-intern-follows-her-mentors-footsteps/'
 
 const Work = () => {
-  const linkColor = useColorModeValue('pink.600', 'teal.300')
-  const borderColor = useColorModeValue('teal.500', 'teal.600')
-  const metaColor = useColorModeValue('green.800', undefined)
+  const linkColor = useColorModeValue('day.link', 'teal.300')
+  const borderColor = useColorModeValue('day.strongBorder', 'teal.600')
+  const panelBackground = useColorModeValue('day.surface', undefined)
+  const metaColor = useColorModeValue('day.link', undefined)
 
   return (
     <Layout title="Project Test Kitchen / Surprise2Refine">
@@ -154,7 +155,7 @@ const Work = () => {
           my={4}
           p={3}
           borderWidth="1px"
-          borderColor={borderColor}
+          borderColor={borderColor} bg={panelBackground}
           borderRadius="md"
         >
           <Meta>Links</Meta>

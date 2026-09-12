@@ -1,5 +1,5 @@
 import NextLink from 'next/link'
-import { Heading, Box, Image, Link, Badge, Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, useDisclosure, Text } from '@chakra-ui/react'
+import { Heading, Box, Image, Link, Badge, Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, useDisclosure, Text, useColorModeValue } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
 export const Title = ({ children }) => (
@@ -19,6 +19,7 @@ export const Title = ({ children }) => (
 
 export const WorkImage = ({ src, alt, caption, sidePadding = 0, verticalPadding = 0 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const captionColor = useColorModeValue('day.subtle', 'gray.500')
   
   return (
     <>
@@ -41,7 +42,7 @@ export const WorkImage = ({ src, alt, caption, sidePadding = 0, verticalPadding 
           <Text
             mt={2}
             fontSize="sm"
-            color="gray.500"
+            color={captionColor}
             textAlign="center"
           >
             {caption}

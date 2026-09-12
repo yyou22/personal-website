@@ -2,10 +2,10 @@ import { Box, Heading, Text, useColorModeValue } from '@chakra-ui/react'
 import Image from 'next/image'
 
 const ProfileIntro = () => {
-  const foreground = useColorModeValue('gray.800', 'gray.100')
-  const muted = useColorModeValue('gray.600', 'gray.400')
-  const border = useColorModeValue('blackAlpha.200', 'whiteAlpha.200')
-  const roleBackground = useColorModeValue('whiteAlpha.500', 'whiteAlpha.50')
+  const foreground = useColorModeValue('day.ink', 'gray.100')
+  const muted = useColorModeValue('day.muted', 'gray.400')
+  const border = useColorModeValue('day.border', 'whiteAlpha.200')
+  const roleBackground = useColorModeValue('day.surface', 'whiteAlpha.50')
 
   return (
     <Box as="header" mb={8} color={foreground}>

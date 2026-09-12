@@ -5,9 +5,11 @@ import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 
 const Work = () => {
-  const linkColor = useColorModeValue('pink.600', 'teal.300')
-  const borderColor = useColorModeValue('teal.500', 'teal.600')
-  const metaColor = useColorModeValue('green.800', undefined)
+  const linkColor = useColorModeValue('day.link', 'teal.300')
+  const borderColor = useColorModeValue('day.strongBorder', 'teal.600')
+  const panelBackground = useColorModeValue('day.surface', undefined)
+  const metaColor = useColorModeValue('day.link', undefined)
+  const captionColor = useColorModeValue('day.subtle', 'gray.500')
 
   return (
   <Layout title="robust">
@@ -37,9 +39,9 @@ const Work = () => {
         <Box as="span" color={metaColor}>
           <Meta>Links</Meta>
         </Box>
-        <VStack align="stretch" spacing={2} mt={2} pl={2} borderLeftWidth="2px" borderColor={borderColor}>
+        <VStack align="stretch" spacing={2} mt={2} pl={2} borderLeftWidth="2px" borderColor={borderColor} bg={panelBackground}>
           <Box>
-            <Text as="span" fontWeight="medium" color="gray.500">Code: </Text>
+            <Text as="span" fontWeight="medium" color={captionColor}>Code: </Text>
             <Link href="https://github.com/yyou22/TRADES" target="_blank" rel="noopener noreferrer" color={linkColor}>
               GitHub – TRADES <ExternalLinkIcon mx="2px" />
             </Link>

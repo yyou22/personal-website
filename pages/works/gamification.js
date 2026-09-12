@@ -7,9 +7,11 @@ import Layout from '../../components/layouts/article'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 const Work = () => {
-  const linkColor = useColorModeValue('pink.600', 'teal.300')
-  const borderColor = useColorModeValue('teal.500', 'teal.600')
-  const metaColor = useColorModeValue('green.800', undefined)
+  const linkColor = useColorModeValue('day.link', 'teal.300')
+  const borderColor = useColorModeValue('day.strongBorder', 'teal.600')
+  const panelBackground = useColorModeValue('day.surface', undefined)
+  const metaColor = useColorModeValue('day.link', undefined)
+  const captionColor = useColorModeValue('day.subtle', 'gray.500')
 
   useEffect(() => {
     // Load any necessary scripts for external components
@@ -62,7 +64,7 @@ const Work = () => {
           my={4}
           p={3}
           borderWidth="1px"
-          borderColor={borderColor}
+          borderColor={borderColor} bg={panelBackground}
           borderRadius="md"
         >
           <Meta>Links</Meta>
@@ -77,7 +79,7 @@ const Work = () => {
               >
                 Paper Link <ExternalLinkIcon mx="1px" />
               </Link>
-              <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+              <Text fontSize="xs" color={captionColor} lineHeight="1.2">
                 Enhancing AI Explainability for Non-technical Users with LLM-Driven Narrative Gamification (ACM DL).
               </Text>
             </Box>
@@ -92,7 +94,7 @@ const Work = () => {
               >
                 Video figure <ExternalLinkIcon mx="1px" />
               </Link>
-              <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+              <Text fontSize="xs" color={captionColor} lineHeight="1.2">
                 Short visual overview of the system.
               </Text>
             </Box>
@@ -107,7 +109,7 @@ const Work = () => {
               >
                 Video demo <ExternalLinkIcon mx="1px" />
               </Link>
-              <Text fontSize="xs" color="gray.500" lineHeight="1.2">
+              <Text fontSize="xs" color={captionColor} lineHeight="1.2">
                 Full walkthrough of the interaction design.
               </Text>
             </Box>

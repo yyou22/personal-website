@@ -18,9 +18,11 @@ import { Title, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 
 const Work = () => {
-  const linkColor = useColorModeValue('pink.600', 'teal.300')
-  const borderColor = useColorModeValue('teal.500', 'teal.600')
-  const metaColor = useColorModeValue('green.800', undefined)
+  const linkColor = useColorModeValue('day.link', 'teal.300')
+  const borderColor = useColorModeValue('day.strongBorder', 'teal.600')
+  const panelBackground = useColorModeValue('day.surface', undefined)
+  const metaColor = useColorModeValue('day.link', undefined)
+  const captionColor = useColorModeValue('day.subtle', 'gray.500')
 
   return (
   <Layout title="Melody AI">
@@ -55,15 +57,15 @@ const Work = () => {
         <Box as="span" color={metaColor}>
           <Meta>Links</Meta>
         </Box>
-        <VStack align="stretch" spacing={2} mt={2} pl={2} borderLeftWidth="2px" borderColor={borderColor}>
+        <VStack align="stretch" spacing={2} mt={2} pl={2} borderLeftWidth="2px" borderColor={borderColor} bg={panelBackground}>
           <Box>
-            <Text as="span" fontWeight="medium" color="gray.500">Playlist: </Text>
+            <Text as="span" fontWeight="medium" color={captionColor}>Playlist: </Text>
             <Link href="https://soundcloud.com/yyou22/sets/melody-ai" target="_blank" rel="noopener noreferrer" color={linkColor}>
               Listen on SoundCloud <ExternalLinkIcon mx="2px" />
             </Link>
           </Box>
           <Box>
-            <Text as="span" fontWeight="medium" color="gray.500">Code: </Text>
+            <Text as="span" fontWeight="medium" color={captionColor}>Code: </Text>
             <Link href="https://github.com/yyou22/RNN-Melody-Generator" target="_blank" rel="noopener noreferrer" color={linkColor}>
               GitHub – RNN Melody Generator <ExternalLinkIcon mx="2px" />
             </Link>
