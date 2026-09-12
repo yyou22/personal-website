@@ -4,7 +4,6 @@ import {
   Container,
   Heading,
   Icon,
-  Image,
   LinkBox,
   LinkOverlay,
   Text,
@@ -14,6 +13,7 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { FaTrophy } from 'react-icons/fa'
 import Layout from './layouts/article'
 import { publications } from '../lib/publications'
+import PreviewImage from './preview-image'
 
 const years = [...new Set(publications.map(paper => paper.year))].sort((a, b) => b - a)
 const publicationTypes = { J: 'Journal', C: 'Conference', W: 'Workshop' }
@@ -71,10 +71,11 @@ const Publication = ({ paper }) => {
           borderWidth="1px"
           borderColor={border}
         >
-          <Image
+          <PreviewImage
             src={paper.image}
             alt=""
             loading="lazy"
+            sizes="(max-width: 480px) 88px, 168px"
             objectFit="cover"
             objectPosition={paper.position}
             transition="transform 0.35s ease"

@@ -5,19 +5,22 @@ import WebGL from 'three/examples/jsm/capabilities/WebGL.js'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGLTFModel } from '../lib/model'
 import { DogSpinner, DogContainer } from './voxel-dog-loader'
+import {
+  configureModelControls,
+  createModelHitTest,
+  bindModelInput,
+  MODEL_ZOOM_LIMITS,
+  getModelFrustum
+} from '../lib/model-interaction'
 
 const FALLBACK_MODEL_SRC = '/images/fallback_model.png'
-
-//function easeOutCirc(x) {
-  //return Math.sqrt(1 - Math.pow(x - 1, 4))
-//}
 
 const VoxelDog = () => {
   const refContainer = useRef()
   const [loading, setLoading] = useState(true)
   const [staticFallback, setStaticFallback] = useState(false)
   const [renderer, setRenderer] = useState()
-  const [_camera, setCamera] = useState()
+  const [camera, setCamera] = useState()
   const [target] = useState(new THREE.Vector3(-0.5, 1.2, 0))
   const [initialCameraPosition] = useState(
     new THREE.Vector3(
@@ -27,7 +30,6 @@ const VoxelDog = () => {
     )
   )
   const [scene] = useState(new THREE.Scene())
-  const [_controls, setControls] = useState()
 
   const handleWindowResize = useCallback(() => {
     const { current: container } = refContainer
@@ -36,8 +38,12 @@ const VoxelDog = () => {
       const scH = container.clientHeight
 
       renderer.setSize(scW, scH)
+      if (camera) {
+        Object.assign(camera, getModelFrustum(scW, scH))
+        camera.updateProjectionMatrix()
+      }
     }
-  }, [renderer])
+  }, [renderer, camera])
 
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
@@ -70,20 +76,18 @@ const VoxelDog = () => {
           return
         }
       }
-      renderer.setPixelRatio(window.devicePixelRatio)
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
       renderer.setSize(scW, scH)
       renderer.outputEncoding = THREE.sRGBEncoding
       container.appendChild(renderer.domElement)
       setRenderer(renderer)
 
-      // 640 -> 240
-      // 8   -> 6
-      const scale = scH * 0.005 + 4.8
+      const framing = getModelFrustum(scW, scH)
       const camera = new THREE.OrthographicCamera(
-        -scale,
-        scale,
-        scale,
-        -scale,
+        framing.left,
+        framing.right,
+        framing.top,
+        framing.bottom,
         0.01,
         50000
       )
@@ -95,16 +99,64 @@ const VoxelDog = () => {
       scene.add(ambientLight)
 
       const controls = new OrbitControls(camera, renderer.domElement)
+      controls.target.copy(target)
+      configureModelControls(controls)
       controls.autoRotate = true
-      controls.target = target
-      setControls(controls)
+      controls.update()
+      controls.saveState()
+      let model = null
+      const hitsModel = createModelHitTest(
+        new THREE.Raycaster(),
+        new THREE.Vector2(),
+        camera,
+        renderer.domElement,
+        () => model
+      )
+      const spherical = new THREE.Spherical()
+      const offset = new THREE.Vector3()
+      const unbindInput = bindModelInput(
+        controls,
+        renderer.domElement,
+        hitsModel,
+        {
+          rotateTouch(dx, dy) {
+            spherical.setFromVector3(
+              offset.copy(camera.position).sub(controls.target)
+            )
+            const speed = (2 * Math.PI) / container.clientHeight
+            spherical.theta -= dx * speed
+            spherical.phi -= dy * speed
+            spherical.makeSafe()
+            camera.position
+              .copy(controls.target)
+              .add(offset.setFromSpherical(spherical))
+            controls.update()
+          },
+          zoomTouch(ratio) {
+            camera.zoom = THREE.MathUtils.clamp(
+              camera.zoom * Math.pow(ratio, controls.zoomSpeed),
+              MODEL_ZOOM_LIMITS.min,
+              MODEL_ZOOM_LIMITS.max
+            )
+            camera.updateProjectionMatrix()
+            controls.update()
+          }
+        }
+      )
 
       let req = null
       let disposed = false
+      let visible = true
+      const observer = new IntersectionObserver(([entry]) => {
+        visible = entry.isIntersecting
+      })
+      observer.observe(container)
       const disposeRenderer = () => {
         if (disposed) return
         disposed = true
         cancelAnimationFrame(req)
+        observer.disconnect()
+        unbindInput()
         controls.dispose()
         if (renderer.domElement.parentNode === container) {
           container.removeChild(renderer.domElement)
@@ -112,27 +164,10 @@ const VoxelDog = () => {
         renderer.dispose()
       }
 
-      let frame = 0
       const animate = () => {
         req = requestAnimationFrame(animate)
-
-        frame = frame <= 0 ? frame + 1 : frame
-
-        if (frame == 0) {
-          const p = initialCameraPosition
-          //const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20
-          const rotSpeed = 5
-
-          camera.position.y = 10
-          camera.position.x =
-            p.x * Math.cos(rotSpeed) + p.z * Math.sin(rotSpeed)
-          camera.position.z =
-            p.z * Math.cos(rotSpeed) - p.x * Math.sin(rotSpeed)
-          camera.lookAt(target)
-        } else {
-          controls.update()
-        }
-
+        if (!visible || document.hidden) return
+        controls.update()
         renderer.render(scene, camera)
       }
 
@@ -140,11 +175,14 @@ const VoxelDog = () => {
         receiveShadow: false,
         castShadow: false
       })
-        .then(() => {
+        .then(loadedModel => {
+          if (disposed) return
+          model = loadedModel
           animate()
           setLoading(false)
         })
         .catch(() => {
+          if (disposed) return
           disposeRenderer()
           setRenderer(undefined)
           setStaticFallback(true)
@@ -152,7 +190,6 @@ const VoxelDog = () => {
         })
 
       return () => {
-        console.log('unmount')
         disposeRenderer()
       }
     }

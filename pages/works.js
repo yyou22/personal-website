@@ -27,12 +27,12 @@ import thumbVATRA2 from '../public/images/works/vatra/vatra2_thumbnail.png'
 import thumbArt from '../public/images/works/art/the-long-way-home-original.jpg'
 import thumbTestKitchen from '../public/images/works/test-kitchen/iliza-live-demo.jpg'
 import thumbCommunityLibrary from '../public/images/publications/community-library.png'
-import thumbTrafficFlow from '../public/images/works/traffic-flow/thumbnail-intersection.webp'
+const thumbTrafficFlow = '/images/works/traffic-flow/thumbnail-intersection-hd.webp'
 import thumbMacedon from '../public/images/works/macedon/thumbnail-generated.png'
 
 const Works = () => (
 
-  <Layout title="Works">
+  <Layout title="Portfolio">
     <Container maxW="container.md" px={{ base: 0, md: 2 }}>
       <Section>
         <Heading as="h3" fontSize={20} mb={4}>
@@ -43,6 +43,7 @@ const Works = () => (
         <Section>
           <WorkGridItem
             id="test-kitchen"
+            priority
             title="Project Test Kitchen"
             thumbnail={thumbTestKitchen}
             thumbnailBrand={{ logo: '/images/adobe2.png', name: 'Adobe Research', overlay: true }}
@@ -54,6 +55,7 @@ const Works = () => (
         <Section>
           <WorkGridItem
             id="community-library"
+            priority
             title="Community Library Creator"
             thumbnail={thumbCommunityLibrary}
             thumbnailBrand={{ logo: '/images/microsoft.png', name: 'Microsoft Research' }}

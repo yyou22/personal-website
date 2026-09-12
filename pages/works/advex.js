@@ -1,3 +1,4 @@
+import YouTubePreview from '../../components/youtube-preview'
 import { Container, Badge, ListItem, UnorderedList, Link, Box, VStack, Text, useColorModeValue, Wrap, WrapItem, Tag } from '@chakra-ui/react'
 import { Title, WorkImage,Meta } from '../../components/work'
 import P from '../../components/paragraph'
@@ -59,15 +60,7 @@ const Work = () => {
       <WorkImage src="/images/works/advex/advex2.gif" alt="fgsm" />
       <WorkImage src="/images/works/advex/advex3.gif" alt="fgsm" />
       <WorkImage src="/images/works/advex/advex5.png" alt="fgsm" />
-      <iframe
-        width="100%"
-        height="315"
-        src="https://www.youtube.com/embed/h5JMTz7PoKQ?si=AefDTdUdqGgzbzj1"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        style={{ maxWidth: '600px' }}
-      ></iframe>
+      <YouTubePreview videoId="h5JMTz7PoKQ" title="Adversarial attack visualization demo" maxW="600px" />
       <Box
         my={4}
         p={3}

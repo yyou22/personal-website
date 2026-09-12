@@ -1,3 +1,4 @@
+import YouTubePreview from '../../components/youtube-preview'
 import { useEffect } from 'react'
 import { Container, Badge, ListItem, UnorderedList, Link, Box, VStack, Text, useColorModeValue, Wrap, WrapItem, Tag } from '@chakra-ui/react'
 import { Title, Meta, WorkImage } from '../../components/work'
@@ -56,15 +57,7 @@ const Work = () => {
         <WorkImage src="/images/works/gamification/gamification1.gif" alt="gamification" />
         {/*<WorkImage src="/images/works/gamification/gamification6.gif" alt="gamification" />*/}
         <WorkImage src="/images/works/gamification/gamification5.gif" alt="gamification" />
-        <iframe
-        width="100%"
-        height="315"
-        src="https://www.youtube.com/embed/yDacHXX2EZw?si=OsEBJtQn2HiHWoG0"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        style={{ maxWidth: '600px' }}
-      ></iframe>
+        <YouTubePreview videoId="yDacHXX2EZw" title="Gamification for learning adversarial attacks" maxW="600px" />
         <Box
           my={4}
           p={3}

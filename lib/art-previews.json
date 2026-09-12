@@ -1,0 +1,185 @@
+{
+  "cool-scottish-pilot-original.jpg": {
+    "width": 4284,
+    "height": 5712,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/images/art-previews/c849b63aed580bc0-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/art-previews/c849b63aed580bc0-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/images/art-previews/c849b63aed580bc0-1600.webp"
+      },
+      {
+        "width": 2200,
+        "src": "/images/art-previews/c849b63aed580bc0-2200.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABQAgCdASoMABAAAwBSJYwCdIExgpScXC7foUgA/mFuqbUaGv9KbR+FC4ZI3lTgRAgf5XjCluERzQtL12+yBI9XiX7VWIuoekxLBXUBSbhtkFsDVoixHg/WUiJTgosvm0d6MdDNyQJnIFeCgwAAAA=="
+  },
+  "the-long-way-home-original.jpg": {
+    "width": 2971,
+    "height": 3978,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/images/art-previews/a16b97ec3121a062-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/art-previews/a16b97ec3121a062-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/images/art-previews/a16b97ec3121a062-1600.webp"
+      },
+      {
+        "width": 2200,
+        "src": "/images/art-previews/a16b97ec3121a062-2200.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAwAgCdASoMABAAAwBSJbACdEf/gY9INTDJ0AD78oAjwZ2fUSNqLL1r6X4ImAnbV23jCuzFSEHCEYPoPzJJ3o+w0vdV98gEZoC+fGbfyiQ+WQkXWgDB/yV6tV/aV/G2gsCYJYAA"
+  },
+  "terrifier-original.jpg": {
+    "width": 3337,
+    "height": 2481,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/images/art-previews/2504518adc9af7ec-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/art-previews/2504518adc9af7ec-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/images/art-previews/2504518adc9af7ec-1600.webp"
+      },
+      {
+        "width": 2200,
+        "src": "/images/art-previews/2504518adc9af7ec-2200.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQAgCdASoMAAkAAwBSJZQCdIExE4W02hiAAM4+n3hmLUd45tkdMlLcqD8aRFVWFRY6QqL4stQw99WXAaX7UFCdddQoQL47MV3YUZ8UQgWsQAAA"
+  },
+  "art1.png": {
+    "width": 1564,
+    "height": 1124,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/images/art-previews/3039182c8a4e893d-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/art-previews/3039182c8a4e893d-960.webp"
+      },
+      {
+        "width": 1564,
+        "src": "/images/art-previews/3039182c8a4e893d-1564.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQAgCdASoMAAkAAwBSJZACdAEegoJBEUjeAP5q88bs9uC5Anx7i+a9jZorbFIDEFidxwzWx8P6dVCPN4mBVZ/Vs5UvsLkzI42Du5FHAAA="
+  },
+  "art3.png": {
+    "width": 1306,
+    "height": 1962,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/images/art-previews/fff27134f0f8e6d3-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/art-previews/fff27134f0f8e6d3-960.webp"
+      },
+      {
+        "width": 1306,
+        "src": "/images/art-previews/fff27134f0f8e6d3-1306.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAABQBQCdASoMABIAPt1apkyopSOiMAgBEBuJbACdMoR4PoK8BLMY5YZ5uLZrN44CuLu/lQAA4hisAe7EtNpRcUdt/7uVpq9tc7R6A5yRjDckI1kpZiTEcphQeTQWMwJR1MrdZuOekbCRPrrWRkvwRI0LoTrhwLhgOmGrOsWnxkv9nRrA63w6Qi2/LCSSfUEozwALrpCh3IX/qks1UdBdpbRGCo41qfmeIbSJ4hO2rX2qk6uFjXfyCwoGCAAAAA=="
+  },
+  "art2.png": {
+    "width": 746,
+    "height": 826,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/images/art-previews/3be57bbf2b009d5f-480.webp"
+      },
+      {
+        "width": 746,
+        "src": "/images/art-previews/3be57bbf2b009d5f-746.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABQAgCdASoMAA0AAwBSJZACdAYtpvt9VUyOzsAA/uthbKPe1Lrx7SK9VkGea3fi7FazMA9msLd8WRRMdu6GQukxflOIVOFtBsTGeB+qdXHY0D17tRylrdoZj6awVvbyAK/eRq28hvOFhjzbaaAAAA=="
+  },
+  "art4.png": {
+    "width": 852,
+    "height": 760,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/images/art-previews/39b2ade69bca7b15-480.webp"
+      },
+      {
+        "width": 852,
+        "src": "/images/art-previews/39b2ade69bca7b15-852.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAQCdASoMAAsAAwBSJQBWABs3NOnPAAD+50/qSgGtmfjo+vljplhz6bee7SNP1SmV6WtfzLNfGcmijMXItWUbT0LgjtFtCT4IfoAA"
+  },
+  "art5.png": {
+    "width": 1680,
+    "height": 1262,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/images/art-previews/1e294428fbd5f61a-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/art-previews/1e294428fbd5f61a-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/images/art-previews/1e294428fbd5f61a-1600.webp"
+      },
+      {
+        "width": 1680,
+        "src": "/images/art-previews/1e294428fbd5f61a-1680.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRooAAABXRUJQVlA4WAoAAAAQAAAACwAACAAAQUxQSBMAAAABD9D/iAgIBAgH/m/cWYjof7IJAFZQOCBQAAAAkAEAnQEqDAAJAAMAUiWkAAJSZjYAAP7xvqOwfwpQR9+rXRurJN2j+Eo6rMcBY2hP/D8Q+ZubPmy3LVwfBZrwC0uG3bKLytuQrBZrhyMAAAA="
+  },
+  "blessing-of-the-mountain.jpg": {
+    "width": 2112,
+    "height": 2789,
+    "variants": [
+      {
+        "width": 480,
+        "src": "/images/art-previews/13e6d3b4d8d0d0ff-480.webp"
+      },
+      {
+        "width": 960,
+        "src": "/images/art-previews/13e6d3b4d8d0d0ff-960.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/images/art-previews/13e6d3b4d8d0d0ff-1600.webp"
+      },
+      {
+        "width": 2112,
+        "src": "/images/art-previews/13e6d3b4d8d0d0ff-2112.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAQAgCdASoMABAAAwBSJZACdAEfB8q2xH2AAP7GAWLLeyQs0luGoFHNtU9sewVz3yY7t88kdDC8z9FqHgUFsnRQBAams5zhd8hJFrRt2mpXH9HWSe5YcvoAP7zCjIXHkn2CrWZFcAA="
+  }
+}

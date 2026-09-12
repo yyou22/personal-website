@@ -1,11 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import {
   Container, ListItem, UnorderedList, Box, Heading, Image, useColorModeValue, Wrap, WrapItem, Tag,
-  Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, Text
+  Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, Text, Link
 } from '@chakra-ui/react'
 import { Title, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
+import PreviewImage from '../../components/preview-image'
+import artPreviews from '../../lib/art-previews.json'
 
 // Each row is laid out at equal height; widths follow each piece's aspect ratio,
 // so nothing is cropped and every row ends flush on both sides.
@@ -50,14 +52,6 @@ const Work = () => {
   const yearColor = useColorModeValue('gray.600', 'gray.400')
   const imageShadow = useColorModeValue('0 6px 20px rgba(0, 0, 0, 0.10)', '0 6px 20px rgba(0, 0, 0, 0.35)')
   const [selected, setSelected] = useState(null)
-
-  useEffect(() => {
-    // Load any necessary scripts for external components
-    const script = document.createElement('script')
-    script.src = 'https://platform.twitter.com/widgets.js'
-    script.async = true
-    document.body.appendChild(script)
-  }, [])
 
   return (
     <Layout title="Art & Illustration">
@@ -116,19 +110,21 @@ const Work = () => {
                     onClick={() => setSelected(artwork)}
                     _focusVisible={{ outline: '2px solid', outlineColor: 'teal.400', outlineOffset: '3px' }}
                   >
-                    <Image
+                    <PreviewImage
                       src={`/images/works/art/${artwork.image}`}
+                      preview={artPreviews[artwork.image]}
                       alt={`${artwork.title}, ${artwork.year}`}
-                      htmlWidth={artwork.width}
-                      htmlHeight={artwork.height}
                       w="full"
                       h="auto"
+                      objectFit="contain"
+                      sizes={`(max-width: 480px) calc(100vw - 64px), ${row.length === 1 ? '688px' : '344px'}`}
                       display="block"
                       loading="lazy"
                       borderRadius="md"
+                      overflow="hidden"
                       boxShadow={imageShadow}
                       // Prevent iPhone HDR gain maps from boosting artwork brightness.
-                      sx={{ dynamicRangeLimit: 'standard' }}
+                      sx={{ aspectRatio: `${artwork.width} / ${artwork.height}`, '& img': { dynamicRangeLimit: 'standard' } }}
                     />
                   </Box>
                   <Box as="figcaption" display="flex" justifyContent="space-between" alignItems="baseline" gap={3} mt={2.5}>
@@ -163,8 +159,10 @@ const Work = () => {
               {selected && (
                 <>
                   <Image
-                    src={`/images/works/art/${selected.image}`}
+                    src={artPreviews[selected.image].variants.slice(-1)[0].src}
                     alt={`${selected.title}, ${selected.year}`}
+                    decoding="async"
+                    ignoreFallback
                     maxH="85vh"
                     maxW="92vw"
                     w="auto"
@@ -176,6 +174,11 @@ const Work = () => {
                   <Text mt={3} textAlign="center" fontSize="sm" color="whiteAlpha.900">
                     {selected.title} · {selected.year}
                   </Text>
+                  <Box textAlign="center" mt={1}>
+                    <Link href={`/images/works/art/${selected.image}`} isExternal fontSize="xs" color="whiteAlpha.800" textDecoration="underline">
+                      View full-resolution original
+                    </Link>
+                  </Box>
                 </>
               )}
             </ModalBody>
