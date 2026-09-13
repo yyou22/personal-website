@@ -637,7 +637,14 @@ const CV = () => {
                       {details[0]}
                     </Details>
                   )}
-                  {award && <Recognition>{award}</Recognition>}
+                  {award && (
+                    <Box display="flex" alignItems="flex-start" gap={2} mt={1} color={highlightBorder}>
+                      <Icon as={FaTrophy} boxSize={3} mt="5px" flexShrink={0} aria-hidden="true" />
+                      <Details fontSize="sm" fontWeight="normal" color="inherit">
+                        {award}
+                      </Details>
+                    </Box>
+                  )}
                 </SmallEntry>
               ))}
             </Panel>

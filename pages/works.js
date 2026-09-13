@@ -2,6 +2,7 @@ import { Box, Container, Heading, SimpleGrid, Divider, Text } from '@chakra-ui/r
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
+import ArtThumbnail from '../components/art-thumbnail'
 
 //import thumbRNN from '../public/images/works/rnn_eyecatch.png'
 //import thumbST from '../public/images/works/st_eyecatch.png'
@@ -24,7 +25,6 @@ import thumbGamification from '../public/images/works/gamification/gamification3
 import thumbGamification2 from '../public/images/works/gamification/gamification4_thumbnail.png'
 import thumbVATRA from '../public/images/works/vatra/vatra1_thumbnail_.gif'
 import thumbVATRA2 from '../public/images/works/vatra/vatra2_thumbnail.png'
-import thumbArt from '../public/images/works/art/the-long-way-home-original.jpg'
 import thumbTestKitchen from '../public/images/works/test-kitchen/iliza-live-demo.jpg'
 import thumbCommunityLibrary from '../public/images/publications/community-library.png'
 const thumbTrafficFlow = '/images/works/traffic-flow/thumbnail-intersection-hd.webp'
@@ -290,8 +290,7 @@ const Works = () => (
           <WorkGridItem
             id="art"
             title="Art & Illustration"
-            thumbnail={thumbArt}
-            thumbnailPosition="50% 45%"
+            thumbnailContent={<ArtThumbnail />}
             thumbnailDynamicRange="standard"
           >
             Explore my paintings, drawings, and illustrations

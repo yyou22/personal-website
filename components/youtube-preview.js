@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { Box, Icon, Text } from '@chakra-ui/react'
 import { FaPlay } from 'react-icons/fa'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 import PreviewImage from './preview-image'
 
-const YouTubePreview = ({ videoId, title, start = 0, ...props }) => {
+const YouTubePreview = ({ videoId, title, start = 0, openInNewTab = false, ...props }) => {
   const [playing, setPlaying] = useState(false)
   const [ready, setReady] = useState(false)
   return (
@@ -11,10 +12,13 @@ const YouTubePreview = ({ videoId, title, start = 0, ...props }) => {
       {!ready && <PreviewImage src={`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`} alt="" sizes="(max-width: 480px) 100vw, 600px" position="absolute" inset={0} />}
       {!playing ? (
         <Box
-          as="button"
-          type="button"
-          aria-label={`Play ${title}`}
-          onClick={() => setPlaying(true)}
+          as={openInNewTab ? 'a' : 'button'}
+          type={openInNewTab ? undefined : 'button'}
+          href={openInNewTab ? `https://www.youtube.com/watch?v=${videoId}${start ? `&t=${start}s` : ''}` : undefined}
+          target={openInNewTab ? '_blank' : undefined}
+          rel={openInNewTab ? 'noopener noreferrer' : undefined}
+          aria-label={openInNewTab ? `Watch ${title} on YouTube (opens in a new tab)` : `Play ${title}`}
+          onClick={openInNewTab ? undefined : () => setPlaying(true)}
           position="absolute"
           inset={0}
           w="full"
@@ -30,6 +34,11 @@ const YouTubePreview = ({ videoId, title, start = 0, ...props }) => {
           <Box display="flex" alignItems="center" justifyContent="center" w="64px" h="44px" borderRadius="xl" bg="#c4302b" boxShadow="lg">
             <Icon as={FaPlay} boxSize={5} ml={1} aria-hidden="true" />
           </Box>
+          {openInNewTab && (
+            <Text as="span" position="absolute" bottom={3} right={3} fontSize="xs" fontWeight="medium" bg="blackAlpha.800" px={2.5} py={1} borderRadius="md">
+              Watch on YouTube <ExternalLinkIcon ml={1} aria-hidden="true" />
+            </Text>
+          )}
         </Box>
       ) : (
         <>

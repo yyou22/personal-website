@@ -290,6 +290,7 @@ const Home = () => (
 
         <Section delay={0.4}>
           <WorkGridItem
+            fromHome
             id="test-kitchen"
             title="Project Test Kitchen"
             thumbnail={thumbTestKitchen}
@@ -302,6 +303,7 @@ const Home = () => (
 
         <Section delay={0.4}>
           <WorkGridItem
+            fromHome
             id="community-library"
             title="Community Library Creator"
             thumbnail={thumbCommunityLibrary}
@@ -314,6 +316,7 @@ const Home = () => (
 
         <Section delay={0.4}>
           <WorkGridItem
+            fromHome
             id="vatra"
             title="VATRA"
             thumbnail={thumbVATRA}
@@ -325,6 +328,7 @@ const Home = () => (
 
         <Section delay={0.4}>
           <WorkGridItem
+            fromHome
             id="advex"
             title="AdvEx"
             thumbnail={thumbFGSM}
@@ -336,6 +340,7 @@ const Home = () => (
 
         <Section delay={0.4}>
           <WorkGridItem
+            fromHome
             id="naveaz"
             title="NavEaz"
             thumbnail={thumbNavEaz}
@@ -346,6 +351,7 @@ const Home = () => (
 
         <Section delay={0.4}>
           <WorkGridItem
+            fromHome
             id="gradflix"
             title="GRADflix"
             thumbnail={thumbGradflix}
@@ -358,6 +364,7 @@ const Home = () => (
         {/*
         <Section delay={0.4}>
           <WorkGridItem
+            fromHome
             id="socr"
             title="SOCR - Big Data"
             thumbnail={thumbSocr}
