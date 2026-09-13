@@ -1,8 +1,9 @@
 import NextLink from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
-import { Heading, Box, Image, Badge, Link, Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, useDisclosure, Text, useColorModeValue } from '@chakra-ui/react'
+import { Heading, Box, Image, Icon, Badge, Link, Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, useDisclosure, Text, useColorModeValue } from '@chakra-ui/react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
+import { RiHome4Line } from 'react-icons/ri'
 
 export const Title = ({ children }) => {
   const { query } = useRouter()
@@ -26,7 +27,10 @@ export const Title = ({ children }) => {
       {fromHome && (
         <>
           <NextLink href="/" passHref scroll={false}>
-            <Link {...linkStyle}>Home</Link>
+            <Link {...linkStyle}>
+              <Icon as={RiHome4Line} boxSize={4} mr={1.5} flexShrink={0} aria-hidden="true" />
+              Home
+            </Link>
           </NextLink>
           <ChevronRightIcon boxSize={4} flexShrink={0} aria-hidden="true" />
         </>
