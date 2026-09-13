@@ -1,0 +1,33 @@
+{
+  "model": "/assets/hero/scene-aaa0c4227a9d3556.glb",
+  "profile": {
+    "width": 2400,
+    "height": 2400,
+    "variants": [
+      {
+        "width": 100,
+        "src": "/assets/hero/profile-41715760d326689d-100.webp"
+      },
+      {
+        "width": 200,
+        "src": "/assets/hero/profile-be3faadda6323361-200.webp"
+      },
+      {
+        "width": 300,
+        "src": "/assets/hero/profile-381df87e2f9395b3-300.webp"
+      },
+      {
+        "width": 400,
+        "src": "/assets/hero/profile-7384e1a10920ecf6-400.webp"
+      },
+      {
+        "width": 600,
+        "src": "/assets/hero/profile-7492066efc8d1e32-600.webp"
+      },
+      {
+        "width": 2400,
+        "src": "/assets/hero/profile-1b7f8a629a0d9024-2400.webp"
+      }
+    ]
+  }
+}

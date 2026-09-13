@@ -166,4 +166,3 @@ const CommunityLibrary = () => {
 }
 
 export default CommunityLibrary
-export { getServerSideProps } from '../../components/chakra'

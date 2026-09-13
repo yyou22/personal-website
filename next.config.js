@@ -6,10 +6,11 @@ module.exports = phase => ({
   reactStrictMode: true,
   swcMinify: true,
   async headers() {
-    return ['/images/previews/:path*', '/images/art-previews/:path*'].map(source => ({
+    const cachedAssets = ['/images/previews/:path*', '/images/art-previews/:path*', '/assets/hero/:path*'].map(source => ({
       // These preview filenames contain a hash of their source image.
       source,
       headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }]
     }))
+    return cachedAssets
   }
 })

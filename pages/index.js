@@ -7,7 +7,6 @@ import {
   SimpleGrid,
   Button,
   useColorModeValue,
-  chakra,
   // HStack, // Used by the archived Recent News entries below.
   // Wrap, WrapItem, // Used by the temporarily hidden interests section.
   // Tag, // Used by the temporarily hidden interests section.
@@ -19,6 +18,7 @@ import { FaAward } from 'react-icons/fa'
 import { RiBookOpenLine, RiFlightTakeoffLine, RiQuillPenLine } from 'react-icons/ri'
 import ContactLinks from '../components/contact-links'
 import WelcomeBanner from '../components/welcome-banner'
+import ProfilePhoto from '../components/profile-photo'
 import ResearchInAction from '../components/research-in-action'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
@@ -28,7 +28,6 @@ import { FeaturedCard } from '../components/press-page'
 import { pressArticles } from '../lib/press'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import Image from 'next/image'
 import { WorkGridItem } from '../components/grid-item'
 //import thumbSocr from '../public/images/works/socr_eyecatch.png'
 import thumbFGSM from '../public/images/works/advex/advex1_thumbnail.gif'
@@ -52,10 +51,6 @@ const recentNewsSummaries = {
   'Adobe Research': 'My internship, mentorship, and journey to Adobe Summit Sneaks.',
   'Adobe for Business': 'A behind-the-scenes interview on Project Test Kitchen.'
 }
-
-const ProfileImage = chakra(Image, {
-  shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
-})
 
 const SectionButton = ({ href, children }) => (
   <NextLink href={href} passHref scroll={false}>
@@ -194,13 +189,7 @@ const Home = () => (
             borderRadius="full"
             overflow="hidden"
           >
-            <ProfileImage
-              src="/images/photo1.png"
-              alt="Profile image"
-              borderRadius="full"
-              width="100%"
-              height="100%"
-            />
+            <ProfilePhoto />
           </Box>
         </Box>
       </Box>
@@ -612,4 +601,3 @@ const Home = () => (
 )
 
 export default Home
-export { getServerSideProps } from '../components/chakra'

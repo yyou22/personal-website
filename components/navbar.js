@@ -1,5 +1,7 @@
 import Logo from './logo'
 import NextLink from 'next/link'
+import { useRouter } from 'next/router'
+import NavigationProgress from './navigation-progress'
 import {
   Container,
   Box,
@@ -42,6 +44,13 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
 
 const Navbar = props => {
   const { path } = props
+  const router = useRouter()
+  const prefetchMenu = () => {
+    if (typeof navigator !== 'undefined' && navigator.connection?.saveData) return
+    ;['/', '/works', '/cv', '/publications', '/press'].forEach(route => {
+      router.prefetch(route).catch(() => {})
+    })
+  }
 
   return (
     <Box
@@ -106,27 +115,28 @@ const Navbar = props => {
           <ThemeToggleButton />
 
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
-            <Menu isLazy id="navbar-menu">
+            <Menu isLazy id="navbar-menu" onOpen={prefetchMenu}>
               <MenuButton
                 as={IconButton}
                 icon={<HamburgerIcon />}
                 variant="outline"
                 aria-label="Options"
+                onFocus={prefetchMenu}
               />
               <MenuList>
-                <NextLink href="/" passHref>
+                <NextLink href="/" passHref scroll={false}>
                   <MenuItem as={Link}>About</MenuItem>
                 </NextLink>
-                <NextLink href="/works" passHref>
+                <NextLink href="/works" passHref scroll={false}>
                   <MenuItem as={Link}>Portfolio</MenuItem>
                 </NextLink>
-                <NextLink href="/cv" passHref>
+                <NextLink href="/cv" passHref scroll={false}>
                   <MenuItem as={Link}>CV</MenuItem>
                 </NextLink>
-                <NextLink href="/publications" passHref>
+                <NextLink href="/publications" passHref scroll={false}>
                   <MenuItem as={Link}>Publications</MenuItem>
                 </NextLink>
-                <NextLink href="/press" passHref>
+                <NextLink href="/press" passHref scroll={false}>
                   <MenuItem as={Link}>Press</MenuItem>
                 </NextLink>
                 <MenuItem
@@ -140,6 +150,7 @@ const Navbar = props => {
           </Box>
         </Box>
       </Container>
+      <NavigationProgress />
     </Box>
   )
 }
