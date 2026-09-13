@@ -4,6 +4,7 @@ import NavBar from '../navbar'
 import { Box, Container } from '@chakra-ui/react'
 import Footer from '../footer'
 import VoxelDogLoader from '../voxel-dog-loader'
+import heroAssets from '../../lib/hero-assets.json'
 
 const LazyVoxelDog = dynamic(() => import('../voxel-dog'), {
   ssr: false,
@@ -15,6 +16,7 @@ const Main = ({ children, router }) => {
     <Box as="main" pb={8}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link key="model-preload" rel="preload" as="fetch" href={heroAssets.model} crossOrigin="anonymous" />
         <meta name="description" content="Yuzhe's homepage" />
         <meta name="author" content="Yuzhe You" />
         <meta name="author" content="yuzhey" />

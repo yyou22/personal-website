@@ -22,7 +22,7 @@ const ResearchVideo = ({ label, title, videoId, children }) => (
     bg={useColorModeValue('day.surface', 'whiteAlpha.50')}
     boxShadow={useColorModeValue('0 4px 18px rgba(36, 51, 68, 0.05)', undefined)}
   >
-    <YouTubePreview videoId={videoId} title={title} flexShrink={0} />
+    <YouTubePreview videoId={videoId} title={title} openInNewTab flexShrink={0} />
     <Box p={5} flex={1}>
       <Text
         mb={2}
@@ -35,7 +35,9 @@ const ResearchVideo = ({ label, title, videoId, children }) => (
         {label}
       </Text>
       <Heading as="h4" fontSize="xl" lineHeight={1.3}>
-        {title}
+        <Link href={`https://www.youtube.com/watch?v=${videoId}`} isExternal color="inherit">
+          {title}
+        </Link>
       </Heading>
       <Text
         mt={3}

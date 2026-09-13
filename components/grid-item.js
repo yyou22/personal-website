@@ -105,9 +105,9 @@ export const GridItem = ({ children, href, title, thumbnail, blurPlaceholder }) 
 )
 
 // For works displayed directly inside the site
-export const WorkGridItem = ({ children, id, title, thumbnail, blurPlaceholder, thumbnailBrand, thumbnailObjectFit, thumbnailPosition, thumbnailDynamicRange, priority = false }) => (
+export const WorkGridItem = ({ children, id, title, thumbnail, thumbnailContent, blurPlaceholder, thumbnailBrand, thumbnailObjectFit, thumbnailPosition, thumbnailDynamicRange, fromHome = false, priority = false }) => (
   <Box w="100%" textAlign="left">
-    <NextLink href={`/works/${id}`}>
+    <NextLink href={`/works/${id}${fromHome ? '?from=home' : ''}`} scroll={false}>
     <WorkBox>
       <LinkBox cursor="pointer">
         <Box
@@ -139,7 +139,7 @@ export const WorkGridItem = ({ children, id, title, thumbnail, blurPlaceholder, 
           </Box>
         )}
         <Box as="span" display="block" position="relative" flex={1} minH={0} sx={{ dynamicRangeLimit: thumbnailDynamicRange }}>
-        {typeof thumbnail === 'string' ? (
+        {thumbnailContent || (typeof thumbnail === 'string' ? (
           <PreviewImage src={thumbnail} alt={title} objectFit={thumbnailObjectFit || 'cover'} objectPosition={thumbnailPosition} priority={priority} sizes="(max-width: 480px) calc(100vw - 32px), (max-width: 768px) 50vw, 360px" />
         ) : (
         <Image
@@ -156,10 +156,10 @@ export const WorkGridItem = ({ children, id, title, thumbnail, blurPlaceholder, 
           blurDataURL={isGif(thumbnail) ? (blurPlaceholder?.blurDataURL || blurPlaceholder?.src) : undefined}
           loading={priority ? undefined : 'lazy'}
         />
-        )}
+        ))}
         </Box>
         </Box>
-        <LinkOverlay href={`/works/${id}`}>
+        <LinkOverlay href={`/works/${id}${fromHome ? '?from=home' : ''}`}>
           <Text mt={3} fontSize={18} fontWeight="medium" lineHeight={1.35} color={useColorModeValue('day.title', undefined)}>
             {title.includes(' ') && `${title.slice(0, title.lastIndexOf(' '))} `}
             <Box as="span" whiteSpace="nowrap">
@@ -227,7 +227,7 @@ export const WorkGridItemWithModal = ({
             >
               Close
             </Button>
-            <NextLink href={`/works/${id}`}>
+            <NextLink href={`/works/${id}`} scroll={false}>
               <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
                 Detail
               </Button>

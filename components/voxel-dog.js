@@ -4,6 +4,7 @@ import * as THREE from 'three'
 import WebGL from 'three/examples/jsm/capabilities/WebGL.js'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGLTFModel } from '../lib/model'
+import heroAssets from '../lib/hero-assets.json'
 import { DogSpinner, DogContainer } from './voxel-dog-loader'
 import {
   configureModelControls,
@@ -171,7 +172,7 @@ const VoxelDog = () => {
         renderer.render(scene, camera)
       }
 
-      loadGLTFModel(scene, '/scene.glb', {
+      loadGLTFModel(scene, heroAssets.model, {
         receiveShadow: false,
         castShadow: false
       })
