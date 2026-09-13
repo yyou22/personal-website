@@ -268,7 +268,7 @@ const AwardRow = ({ item }) => {
         </Text>
         {item.title.includes('had to decline') && (
           <Details fontSize="sm" mt={0.5}>
-            Declined while holding the NSERC doctoral scholarship.
+            Awarded; declined funding to retain the NSERC doctoral scholarship.
           </Details>
         )}
       </Box>
