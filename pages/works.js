@@ -297,6 +297,29 @@ const Works = () => (
           </WorkGridItem>
         </Section>
         <Section delay={0.5}>
+          <WorkGridItem
+            id="piano"
+            title="Piano"
+            thumbnail="https://i.ytimg.com/vi/JBXyzqtB8FI/frame0.jpg"
+            thumbnailObjectFit="cover"
+            thumbnailPosition="center bottom"
+          >
+            Returning to the piano after more than a decade away
+          </WorkGridItem>
+        </Section>
+        <Section delay={0.5}>
+          <WorkGridItem
+            id="aviation"
+            title="Aviation"
+            thumbnail="/images/works/aviation/golden-gate-640.jpg"
+            thumbnailObjectFit="cover"
+            thumbnailPosition="center 55%"
+            thumbnailDynamicRange="standard"
+          >
+            Flight training and views from the cockpit
+          </WorkGridItem>
+        </Section>
+        <Section delay={0.5}>
           <Box as="article" w="full" textAlign="left">
             <Box
               as="svg"

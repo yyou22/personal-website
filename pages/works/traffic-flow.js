@@ -38,12 +38,6 @@ const project = {
         '76 Waterloo intersections for training and testing with limited local data; 36 Milton intersections for testing without local training data.'
     },
     {
-      src: '/images/works/traffic-flow/forecasting-architectures.png',
-      alt: 'An encoder–decoder forecasting model above a decoder-only model that generates predictions one step at a time.',
-      caption:
-        'Two forecasting approaches: a separate encoder and decoder (top), and a decoder-only model that predicts each next step directly (bottom).'
-    },
-    {
       src: '/images/publications/traffic-forecasting.png',
       alt: 'Workflow from traffic data and feature extraction to model training and evaluation.',
       caption:
