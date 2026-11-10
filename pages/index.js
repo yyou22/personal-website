@@ -226,6 +226,26 @@ const Home = () => (
           </Box>
           <Box>
             <Text as="span" fontWeight="semibold" fontSize="sm" color={useColorModeValue('day.link', 'teal.300')} textTransform="uppercase" letterSpacing="wider" mb={2} display="block">
+              Outside Research
+            </Text>
+            <Paragraph>
+              Outside of research, I enjoy{' '}
+              <NextLink href="/works/art?from=home" passHref scroll={false}>
+                <Link>making art</Link>
+              </NextLink>
+              {' '}and{' '}
+              <NextLink href="/works/piano?from=home" passHref scroll={false}>
+                <Link>playing the piano</Link>
+              </NextLink>
+              , and I&apos;m a post-solo{' '}
+              <NextLink href="/works/aviation?from=home" passHref scroll={false}>
+                <Link>student pilot</Link>
+              </NextLink>
+              .
+            </Paragraph>
+          </Box>
+          <Box>
+            <Text as="span" fontWeight="semibold" fontSize="sm" color={useColorModeValue('day.link', 'teal.300')} textTransform="uppercase" letterSpacing="wider" mb={2} display="block">
               Experience
             </Text>
             <ExperienceGrid />

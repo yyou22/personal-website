@@ -4,12 +4,12 @@ import { FaPlay } from 'react-icons/fa'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import PreviewImage from './preview-image'
 
-const YouTubePreview = ({ videoId, title, start = 0, openInNewTab = false, ...props }) => {
+const YouTubePreview = ({ videoId, title, start = 0, openInNewTab = false, thumbnailSrc = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`, thumbnailPosition = 'center', ...props }) => {
   const [playing, setPlaying] = useState(false)
   const [ready, setReady] = useState(false)
   return (
     <Box position="relative" w="full" bg="gray.900" overflow="hidden" sx={{ aspectRatio: '16 / 9' }} aria-busy={playing && !ready} {...props}>
-      {!ready && <PreviewImage src={`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`} alt="" sizes="(max-width: 480px) 100vw, 600px" position="absolute" inset={0} />}
+      {!ready && <PreviewImage src={thumbnailSrc} alt="" objectPosition={thumbnailPosition} sizes="(max-width: 480px) 100vw, 600px" position="absolute" inset={0} />}
       {!playing ? (
         <Box
           as={openInNewTab ? 'a' : 'button'}
